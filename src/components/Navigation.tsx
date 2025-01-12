@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Home, FileText, List, MessageSquare, HelpCircle, Menu, X } from "lucide-react";
+import { Home, FileText, List, MessageSquare, HelpCircle, Menu, X, Phone } from "lucide-react";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -11,6 +11,7 @@ export const Navigation = () => {
     { name: "Home", href: "/", icon: Home },
     { name: "About", href: "/about", icon: FileText },
     { name: "Services", href: "/services", icon: List },
+    { name: "Blog", href: "/blog", icon: FileText },
     { name: "FAQ", href: "/faq", icon: HelpCircle },
     { name: "Contact", href: "/contact", icon: MessageSquare },
   ];
@@ -18,12 +19,12 @@ export const Navigation = () => {
   return (
     <header className="sticky top-0 z-50 border-b bg-background/80 backdrop-blur">
       <nav className="container mx-auto flex items-center justify-between px-4 py-4">
-        <Link to="/" className="font-serif text-xl font-semibold">
+        <Link to="/" className="font-serif text-2xl font-semibold">
           London Rug Cleaning
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden items-center gap-1 md:flex">
+        <div className="hidden items-center gap-4 md:flex">
           {navigation.map((item) => {
             const Icon = item.icon;
             return (
@@ -39,6 +40,10 @@ export const Navigation = () => {
               </Button>
             );
           })}
+          <Button size="lg" className="ml-4 gap-2">
+            <Phone className="h-4 w-4" />
+            Get Free Quote
+          </Button>
         </div>
 
         {/* Mobile Navigation */}
@@ -71,6 +76,10 @@ export const Navigation = () => {
                   </Button>
                 );
               })}
+              <Button size="lg" className="mt-4 w-full gap-2">
+                <Phone className="h-4 w-4" />
+                Get Free Quote
+              </Button>
             </div>
           </div>
         )}
