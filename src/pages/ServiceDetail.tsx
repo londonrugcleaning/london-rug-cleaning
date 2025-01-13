@@ -1,12 +1,10 @@
 import { useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Check, Phone, Star } from "lucide-react";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
+import { Phone } from "lucide-react";
+import { ServiceHero } from "@/components/service-detail/ServiceHero";
+import { ServiceFeatures } from "@/components/service-detail/ServiceFeatures";
+import { ServiceGallery } from "@/components/service-detail/ServiceGallery";
+import { ServiceFAQ } from "@/components/service-detail/ServiceFAQ";
 
 interface ServiceProcess {
   title: string;
@@ -189,6 +187,160 @@ const serviceDetails: Record<string, ServiceDetails> = {
       "serviceType": "Rug Cleaning",
       "description": "Professional Oriental rug cleaning services in London"
     }
+  },
+  "wool-rug-cleaning": {
+    title: "Wool Rug Cleaning",
+    description: "Expert wool rug cleaning services in London with specialized care for natural fibers",
+    hero: "/lovable-uploads/wool-rug-hero.jpg",
+    gallery: [
+      "/lovable-uploads/wool-rug-1.jpg",
+      "/lovable-uploads/wool-rug-2.jpg",
+      "/lovable-uploads/wool-rug-3.jpg"
+    ],
+    intro: "Wool rugs require special attention and care to maintain their natural beauty and longevity. Our expert cleaning service ensures your wool rugs are cleaned thoroughly while preserving their unique characteristics and extending their lifespan.",
+    features: [
+      "Specialized wool fiber cleaning",
+      "pH-balanced solutions",
+      "Natural fiber protection",
+      "Moth prevention treatment",
+      "Gentle drying process",
+      "Color preservation",
+      "Free collection and delivery",
+      "Full insurance coverage",
+      "Expert fringe cleaning",
+      "Stain protection treatment"
+    ],
+    process: [
+      {
+        title: "Fiber analysis",
+        description: "We analyze your wool rug's fiber type and condition to determine the best cleaning approach."
+      },
+      {
+        title: "Gentle dusting",
+        description: "Careful removal of dry soil and debris without damaging wool fibers."
+      },
+      {
+        title: "Specialized cleaning",
+        description: "Using wool-specific cleaning solutions and techniques."
+      },
+      {
+        title: "Moth prevention",
+        description: "Application of safe, effective moth prevention treatment."
+      },
+      {
+        title: "Controlled drying",
+        description: "Careful drying process to prevent shrinkage and maintain shape."
+      }
+    ],
+    benefits: [
+      "Preserves wool quality",
+      "Extends rug lifespan",
+      "Prevents moth damage",
+      "Maintains natural oils",
+      "Improves appearance",
+      "Removes allergens"
+    ],
+    faqs: [
+      {
+        question: "How often should wool rugs be cleaned?",
+        answer: "We recommend professional cleaning every 12-18 months for wool rugs, or more frequently in high-traffic areas."
+      },
+      {
+        question: "Will cleaning damage my wool rug?",
+        answer: "No, our specialized cleaning process is designed to protect and preserve wool fibers while thoroughly cleaning your rug."
+      },
+      {
+        question: "How do you prevent shrinkage?",
+        answer: "We use controlled temperature and humidity during cleaning and drying to prevent wool fiber shrinkage."
+      }
+    ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Wool Rug Cleaning London",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "London Rug Cleaning",
+        "areaServed": "London"
+      },
+      "serviceType": "Rug Cleaning",
+      "description": "Expert wool rug cleaning services in London with specialized care for natural fibers"
+    }
+  },
+  "area-rug-cleaning": {
+    title: "Area Rug Cleaning",
+    description: "Professional area rug cleaning services for all types and sizes",
+    hero: "/lovable-uploads/area-rug-hero.jpg",
+    gallery: [
+      "/lovable-uploads/area-rug-1.jpg",
+      "/lovable-uploads/area-rug-2.jpg",
+      "/lovable-uploads/area-rug-3.jpg"
+    ],
+    intro: "Area rugs come in various materials, sizes, and styles, each requiring specific cleaning approaches. Our professional cleaning service caters to all types of area rugs, ensuring they receive the appropriate care and treatment.",
+    features: [
+      "All rug types cleaned",
+      "Custom cleaning solutions",
+      "Stain removal expertise",
+      "Size-appropriate handling",
+      "Deep cleaning process",
+      "Free pickup and delivery",
+      "Satisfaction guarantee",
+      "Quick turnaround time",
+      "Pet stain treatment",
+      "Deodorizing service"
+    ],
+    process: [
+      {
+        title: "Initial assessment",
+        description: "Evaluating rug type, condition, and cleaning requirements."
+      },
+      {
+        title: "Pre-treatment",
+        description: "Application of appropriate cleaning solutions for specific stains."
+      },
+      {
+        title: "Deep cleaning",
+        description: "Thorough cleaning using suitable methods for the rug type."
+      },
+      {
+        title: "Finishing",
+        description: "Final grooming and inspection to ensure quality results."
+      }
+    ],
+    benefits: [
+      "Enhanced appearance",
+      "Longer rug life",
+      "Healthier home",
+      "Odor elimination",
+      "Stain protection",
+      "Professional results"
+    ],
+    faqs: [
+      {
+        question: "What types of area rugs do you clean?",
+        answer: "We clean all types of area rugs including synthetic, natural fiber, hand-knotted, and machine-made rugs."
+      },
+      {
+        question: "How long does the cleaning process take?",
+        answer: "Typically 5-7 days, though we offer express service for urgent needs."
+      },
+      {
+        question: "Do you clean oversized rugs?",
+        answer: "Yes, we have facilities to handle rugs of all sizes, including very large area rugs."
+      }
+    ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Area Rug Cleaning London",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "London Rug Cleaning",
+        "areaServed": "London"
+      },
+      "serviceType": "Rug Cleaning",
+      "description": "Professional area rug cleaning services for all types and sizes"
+    }
   }
 };
 
@@ -200,39 +352,12 @@ const ServiceDetail = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-cream-50 to-white">
-      {/* Hero Section */}
-      <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src={service.hero}
-            alt={service.title}
-            className="h-full w-full object-cover"
-          />
-          <div className="absolute inset-0 bg-black/40" />
-        </div>
-        <div className="container relative z-10 mx-auto flex h-full items-center px-4">
-          <div className="max-w-3xl">
-            <h1 className="font-serif text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-              {service.title}
-            </h1>
-            <p className="mt-6 text-lg text-white/90">
-              {service.description}
-            </p>
-            <div className="mt-4 flex items-center gap-2">
-              {[1, 2, 3, 4, 5].map((star) => (
-                <Star key={star} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
-              ))}
-              <span className="ml-2 text-white">Rated 4.9/5 by our customers</span>
-            </div>
-            <Button size="lg" className="mt-8 gap-2 bg-blue-600 hover:bg-blue-700">
-              <Phone className="h-4 w-4" />
-              Get Your Free Quote
-            </Button>
-          </div>
-        </div>
-      </section>
+      <ServiceHero
+        title={service.title}
+        description={service.description}
+        heroImage={service.hero}
+      />
 
-      {/* Introduction */}
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
@@ -243,87 +368,10 @@ const ServiceDetail = () => {
         </div>
       </section>
 
-      {/* Features & Process Grid */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid gap-8 md:grid-cols-2">
-            <div>
-              <h2 className="font-serif text-2xl font-semibold">Features & Benefits</h2>
-              <ul className="mt-6 grid gap-4">
-                {service.features.map((feature, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <Check className="mt-1 h-5 w-5 flex-shrink-0 text-blue-600" />
-                    <span>{feature}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
-            <div>
-              <h2 className="font-serif text-2xl font-semibold">Our Process</h2>
-              <ul className="mt-6 space-y-6">
-                {service.process.map((step, index) => (
-                  <li key={index} className="flex items-start gap-3">
-                    <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-sm text-white">
-                      {index + 1}
-                    </span>
-                    <div>
-                      <h3 className="font-medium">{step.title}</h3>
-                      <p className="mt-1 text-sm text-muted-foreground">{step.description}</p>
-                    </div>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
+      <ServiceFeatures features={service.features} process={service.process} />
+      <ServiceGallery title={service.title} gallery={service.gallery} />
+      <ServiceFAQ faqs={service.faqs} />
 
-      {/* Gallery */}
-      <section className="bg-cream-50 py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center font-serif text-3xl font-semibold">
-            Our Work
-          </h2>
-          <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-            {service.gallery.map((image, index) => (
-              <div key={index} className="aspect-square overflow-hidden rounded-lg">
-                <img
-                  src={image}
-                  alt={`${service.title} example ${index + 1}`}
-                  className="h-full w-full object-cover transition-transform hover:scale-105"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* FAQ Section */}
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <h2 className="mb-12 text-center font-serif text-3xl font-semibold">
-            Frequently Asked Questions
-          </h2>
-          <div className="mx-auto max-w-3xl">
-            <Accordion type="single" collapsible className="w-full">
-              {service.faqs.map((faq, index) => (
-                <AccordionItem key={index} value={`item-${index}`}>
-                  <AccordionTrigger>{faq.question}</AccordionTrigger>
-                  <AccordionContent>{faq.answer}</AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </div>
-        </div>
-      </section>
-
-      {/* Schema.org markup */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(service.schema) }}
-      />
-
-      {/* CTA Section */}
       <section className="bg-blue-600 py-20 text-white">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
@@ -339,6 +387,11 @@ const ServiceDetail = () => {
           </div>
         </div>
       </section>
+
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(service.schema) }}
+      />
     </div>
   );
 };
