@@ -1,8 +1,37 @@
 import { useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Check, Phone, Star } from "lucide-react";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion";
 
-const serviceDetails = {
+interface ServiceProcess {
+  title: string;
+  description: string;
+}
+
+interface FAQ {
+  question: string;
+  answer: string;
+}
+
+interface ServiceDetails {
+  title: string;
+  description: string;
+  hero: string;
+  gallery: string[];
+  intro: string;
+  features: string[];
+  process: ServiceProcess[];
+  benefits: string[];
+  faqs: FAQ[];
+  schema: Record<string, any>;
+}
+
+const serviceDetails: Record<string, ServiceDetails> = {
   "persian-rug-cleaning": {
     title: "Persian Rug Cleaning",
     description: "Expert Persian rug cleaning services in London with free collection and delivery",
@@ -12,7 +41,7 @@ const serviceDetails = {
       "/lovable-uploads/persian-rug-2.jpg",
       "/lovable-uploads/persian-rug-3.jpg"
     ],
-    intro: "Persian rugs are more than just floor coverings – they're works of art that require specialized care and attention. Our expert cleaning service preserves the integrity, colors, and value of your Persian rugs while ensuring they're thoroughly cleaned and refreshed.",
+    intro: "Persian rugs are more than just floor coverings – they're valuable works of art that require specialized care and attention. Our expert cleaning service preserves the integrity, colors, and value of your Persian rugs while ensuring they're thoroughly cleaned and refreshed.",
     features: [
       "Specialized cleaning for delicate Persian rugs",
       "Traditional hand-cleaning methods",
@@ -58,11 +87,53 @@ const serviceDetails = {
       "Eliminates allergens",
       "Prevents moth damage",
       "Maintains rug value"
-    ]
+    ],
+    faqs: [
+      {
+        question: "How much does Persian rug cleaning cost?",
+        answer: "The cost varies depending on the size and condition of your rug. We provide free assessments and quotes before proceeding with any cleaning work."
+      },
+      {
+        question: "How long does Persian rug cleaning take?",
+        answer: "Typically, the process takes 7-10 days to ensure proper cleaning and drying. We offer express services for urgent requirements."
+      },
+      {
+        question: "Do you provide insurance for valuable Persian rugs?",
+        answer: "Yes, all rugs in our care are fully insured. We specialize in handling valuable Persian rugs and provide comprehensive coverage."
+      },
+      {
+        question: "How often should I clean my Persian rug?",
+        answer: "We recommend professional cleaning every 18-24 months for Persian rugs in residential settings. High-traffic areas may require more frequent cleaning."
+      }
+    ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Persian Rug Cleaning London",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "London Rug Cleaning",
+        "areaServed": "London"
+      },
+      "serviceType": "Rug Cleaning",
+      "description": "Expert Persian rug cleaning services in London with free collection and delivery",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "areaServed": "London"
+      }
+    }
   },
   "oriental-rug-cleaning": {
     title: "Oriental Rug Cleaning",
-    description: "Professional Oriental rug cleaning services",
+    description: "Professional Oriental rug cleaning services in London",
+    hero: "/lovable-uploads/oriental-rug-hero.jpg",
+    gallery: [
+      "/lovable-uploads/oriental-rug-1.jpg",
+      "/lovable-uploads/oriental-rug-2.jpg",
+      "/lovable-uploads/oriental-rug-3.jpg"
+    ],
+    intro: "Oriental rugs require specialized care to maintain their beauty and value. Our expert cleaning service combines traditional methods with modern technology to ensure the best results.",
     features: [
       "Expert care for all Oriental rug types",
       "Customized cleaning solutions",
@@ -72,15 +143,53 @@ const serviceDetails = {
       "Free collection and delivery",
     ],
     process: [
-      "Detailed inspection",
-      "Pre-treatment testing",
-      "Gentle cleaning process",
-      "Spot treatment",
-      "Controlled drying",
-      "Final inspection",
+      {
+        title: "Initial Assessment",
+        description: "Thorough inspection of your rug's condition and cleaning needs"
+      },
+      {
+        title: "Pre-treatment Testing",
+        description: "Testing for colorfastness and material stability"
+      },
+      {
+        title: "Deep Cleaning",
+        description: "Gentle but effective cleaning process using appropriate methods"
+      },
+      {
+        title: "Drying Process",
+        description: "Controlled environment drying to prevent damage"
+      }
     ],
-  },
-  // ... Add similar details for other services
+    benefits: [
+      "Preserves rug integrity",
+      "Extends lifespan",
+      "Removes allergens",
+      "Restores colors",
+      "Protects investment"
+    ],
+    faqs: [
+      {
+        question: "What types of Oriental rugs do you clean?",
+        answer: "We clean all types of Oriental rugs including Turkish, Chinese, Indian, and Afghani rugs."
+      },
+      {
+        question: "Do you offer repairs for Oriental rugs?",
+        answer: "Yes, we provide comprehensive repair services including fringe repair, edge binding, and patch work."
+      }
+    ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Oriental Rug Cleaning London",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "London Rug Cleaning",
+        "areaServed": "London"
+      },
+      "serviceType": "Rug Cleaning",
+      "description": "Professional Oriental rug cleaning services in London"
+    }
+  }
 };
 
 const ServiceDetail = () => {
@@ -188,6 +297,31 @@ const ServiceDetail = () => {
           </div>
         </div>
       </section>
+
+      {/* FAQ Section */}
+      <section className="py-20">
+        <div className="container mx-auto px-4">
+          <h2 className="mb-12 text-center font-serif text-3xl font-semibold">
+            Frequently Asked Questions
+          </h2>
+          <div className="mx-auto max-w-3xl">
+            <Accordion type="single" collapsible className="w-full">
+              {service.faqs.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`}>
+                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionContent>{faq.answer}</AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+        </div>
+      </section>
+
+      {/* Schema.org markup */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(service.schema) }}
+      />
 
       {/* CTA Section */}
       <section className="bg-blue-600 py-20 text-white">
