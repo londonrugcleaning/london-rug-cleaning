@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
-import { Home, FileText, List, MessageSquare, HelpCircle, Menu, X, Phone, MapPin } from "lucide-react";
+import { Home, FileText, List, MessageSquare, HelpCircle, Menu, X, Phone } from "lucide-react";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,16 +40,10 @@ export const Navigation = () => {
               </Button>
             );
           })}
-          <div className="flex items-center gap-2 ml-4">
-            <Button variant="outline" size="sm" className="gap-2">
-              <MapPin className="h-4 w-4" />
-              Find Near You
-            </Button>
-            <Button size="sm" className="gap-2">
-              <Phone className="h-4 w-4" />
-              Get Free Quote
-            </Button>
-          </div>
+          <Button size="lg" className="gap-2 bg-blue-600 hover:bg-blue-700">
+            <Phone className="h-4 w-4" />
+            Get Free Quote
+          </Button>
         </div>
 
         {/* Mobile Navigation */}
@@ -82,11 +76,7 @@ export const Navigation = () => {
                   </Button>
                 );
               })}
-              <Button size="sm" className="mt-4 w-full gap-2">
-                <MapPin className="h-4 w-4" />
-                Find Near You
-              </Button>
-              <Button size="sm" className="w-full gap-2">
+              <Button size="lg" className="mt-4 w-full gap-2 bg-blue-600 hover:bg-blue-700">
                 <Phone className="h-4 w-4" />
                 Get Free Quote
               </Button>
