@@ -1,57 +1,88 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
-import type { BlogPost } from "@/types/blog";
 
 interface BlogLayoutProps {
-  post: BlogPost;
-  relatedPosts: BlogPost[];
+  children: React.ReactNode;
+  title: string;
+  date: string;
+  author: string;
+  content: string;
+  tableOfContents: {
+    items: Array<{
+      title: string;
+      url: string;
+      items?: Array<{
+        title: string;
+        url: string;
+      }>;
+    }>;
+  };
 }
 
-export const BlogLayout = ({ post, relatedPosts }: BlogLayoutProps) => {
+export const BlogLayout: React.FC<BlogLayoutProps> = ({
+  children,
+  title,
+  date,
+  author,
+  tableOfContents
+}) => {
   return (
-    <article className="prose prose-slate mx-auto max-w-3xl px-4 py-8 lg:prose-lg">
-      <header className="mb-8">
-        <h1 className="mb-2">{post.title}</h1>
-        <div className="flex items-center gap-4 text-sm text-muted-foreground">
-          <span>{post.date}</span>
-          <span>•</span>
-          <span>{post.readingTime}</span>
-          <span>•</span>
-          <span>{post.author}</span>
-        </div>
-      </header>
-
-      <div className="mb-8">
-        <TableOfContents content={post.content} />
-      </div>
-
-      <div className="mb-12" dangerouslySetInnerHTML={{ __html: post.content }} />
-
-      <div className="my-12 rounded-lg bg-muted p-6 text-center">
-        <h3 className="mb-4 text-xl font-semibold">Ready to Get Your Rugs Professionally Cleaned?</h3>
-        <Button size="lg" className="gap-2">
-          <Phone className="h-4 w-4" />
-          Get Your Free Quote
-        </Button>
-      </div>
-
-      {relatedPosts.length > 0 && (
-        <section className="mt-12">
-          <h2 className="mb-6 text-2xl font-semibold">Related Articles</h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            {relatedPosts.map((relatedPost) => (
-              <div key={relatedPost.slug} className="rounded-lg border p-4">
-                <h3 className="mb-2 text-lg font-medium">
-                  <a href={`/blog/${relatedPost.slug}`} className="hover:text-primary">
-                    {relatedPost.title}
-                  </a>
-                </h3>
-                <p className="text-sm text-muted-foreground">{relatedPost.excerpt}</p>
-              </div>
-            ))}
+    <article className="container mx-auto px-4 py-12">
+      <div className="mx-auto max-w-3xl">
+        <header className="mb-8">
+          <h1 className="font-serif text-4xl font-bold">{title}</h1>
+          <div className="mt-4 flex items-center text-muted-foreground">
+            <span>{author}</span>
+            <span className="mx-2">•</span>
+            <time>{date}</time>
           </div>
-        </section>
-      )}
+        </header>
+
+        <div className="prose prose-slate max-w-none">
+          <div className="mb-8 rounded-lg border bg-card p-4">
+            <h2 className="font-semibold">Table of Contents</h2>
+            <nav className="mt-2">
+              <ul className="space-y-1">
+                {tableOfContents.items.map((item) => (
+                  <li key={item.url}>
+                    <a href={item.url} className="text-muted-foreground hover:text-foreground">
+                      {item.title}
+                    </a>
+                    {item.items && (
+                      <ul className="ml-4 space-y-1">
+                        {item.items.map((subItem) => (
+                          <li key={subItem.url}>
+                            <a
+                              href={subItem.url}
+                              className="text-muted-foreground hover:text-foreground"
+                            >
+                              {subItem.title}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          </div>
+
+          {children}
+
+          <div className="mt-12 rounded-lg border bg-card p-6 text-center">
+            <h3 className="text-xl font-semibold">Need Professional Rug Cleaning?</h3>
+            <p className="mt-2 text-muted-foreground">
+              Get a free quote for our expert rug cleaning services in London
+            </p>
+            <Button size="lg" className="mt-4 gap-2">
+              <Phone className="h-4 w-4" />
+              Get Your Free Quote
+            </Button>
+          </div>
+        </div>
+      </div>
     </article>
   );
 };
