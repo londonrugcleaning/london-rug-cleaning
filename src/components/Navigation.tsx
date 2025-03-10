@@ -44,7 +44,7 @@ export const Navigation = () => {
 
   const navigation = [
     { name: "Home", href: "/", icon: Home },
-    { name: "Services", href: "/services", icon: List },
+    // Remove Services entry from here since we show it in desktop menu differently
     { name: "About", href: "/about", icon: FileText },
     { name: "Blog", href: "/blog", icon: FileText },
     { name: "FAQ", href: "/faq", icon: HelpCircle },
@@ -61,14 +61,21 @@ export const Navigation = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden items-center gap-2 md:flex">
-            <Button variant="ghost" asChild>
+            <Button 
+              variant={location.pathname === "/" ? "secondary" : "ghost"} 
+              asChild
+            >
               <Link to="/">Home</Link>
             </Button>
             
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                  <NavigationMenuTrigger 
+                    className={location.pathname.startsWith("/services") ? "bg-secondary" : ""}
+                  >
+                    Services
+                  </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[500px] grid-cols-2 gap-3 p-4">
                       {services.map((service) => (
@@ -76,7 +83,7 @@ export const Navigation = () => {
                           <NavigationMenuLink asChild>
                             <Link
                               to={service.href}
-                              className="block rounded-lg p-3 hover:bg-accent"
+                              className={`block rounded-lg p-3 ${location.pathname === service.href ? 'bg-secondary' : 'hover:bg-accent'}`}
                             >
                               <div className="text-sm font-medium">{service.name}</div>
                               <p className="text-xs leading-snug text-muted-foreground">
@@ -92,7 +99,7 @@ export const Navigation = () => {
               </NavigationMenuList>
             </NavigationMenu>
 
-            {navigation.slice(1).map((item) => {
+            {navigation.map((item) => {
               const Icon = item.icon;
               return (
                 <Button
@@ -126,7 +133,31 @@ export const Navigation = () => {
           {isOpen && (
             <div className="absolute left-0 top-full mt-2 w-full rounded-lg border bg-white/70 p-4 shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/70 md:hidden">
               <div className="flex flex-col gap-2">
-                {navigation.map((item) => {
+                <Button
+                  variant={location.pathname === "/" ? "secondary" : "ghost"}
+                  className="w-full justify-start"
+                  asChild
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Link to="/" className="gap-2">
+                    <Home className="h-4 w-4" />
+                    Home
+                  </Link>
+                </Button>
+                
+                <Button
+                  variant={location.pathname === "/services" ? "secondary" : "ghost"}
+                  className="w-full justify-start"
+                  asChild
+                  onClick={() => setIsOpen(false)}
+                >
+                  <Link to="/services" className="gap-2">
+                    <List className="h-4 w-4" />
+                    Services
+                  </Link>
+                </Button>
+                
+                {navigation.slice(1).map((item) => {
                   const Icon = item.icon;
                   return (
                     <Button
@@ -148,7 +179,7 @@ export const Navigation = () => {
                   {services.map((service) => (
                     <Button
                       key={service.name}
-                      variant="ghost"
+                      variant={location.pathname === service.href ? "secondary" : "ghost"}
                       className="w-full justify-start"
                       asChild
                       onClick={() => setIsOpen(false)}
