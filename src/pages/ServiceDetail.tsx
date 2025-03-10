@@ -246,6 +246,7 @@ const serviceDetails: Record<string, ServiceDetails> = {
       }
     }
   },
+  
   "wool-rug-cleaning": {
     title: "Wool Rug Cleaning",
     description: "Expert wool rug cleaning services in London with specialized care for natural fibers",
@@ -255,61 +256,77 @@ const serviceDetails: Record<string, ServiceDetails> = {
       "/lovable-uploads/wool-rug-2.jpg",
       "/lovable-uploads/wool-rug-3.jpg"
     ],
-    intro: "Wool rugs require special attention and care to maintain their natural beauty and longevity. Our expert cleaning service ensures your wool rugs are cleaned thoroughly while preserving their unique characteristics and extending their lifespan.",
+    intro: "Wool rugs require special attention due to their natural fibers and unique properties. Our eco-friendly wool rug cleaning service maintains the softness, durability, and appearance of your wool rugs while extending their lifespan. We understand the specific requirements of wool and use specialized techniques that preserve the natural lanolin and fiber integrity.",
     features: [
       "Specialized wool fiber cleaning",
-      "pH-balanced solutions",
-      "Natural fiber protection",
+      "pH-balanced natural solutions",
+      "Natural fiber preservation techniques",
+      "Eco-friendly cleaning methods",
       "Moth prevention treatment",
-      "Gentle drying process",
-      "Color preservation",
+      "Gentle controlled drying process",
+      "Color and texture preservation",
       "Free collection and delivery",
-      "Full insurance coverage",
-      "Expert fringe cleaning",
-      "Stain protection treatment"
+      "Expert fringe cleaning and restoration",
+      "Wool-specific stain protection treatment"
     ],
     process: [
       {
-        title: "Fiber analysis",
-        description: "We analyze your wool rug's fiber type and condition to determine the best cleaning approach."
+        title: "Comprehensive inspection",
+        description: "We thoroughly examine your wool rug for specific care requirements and condition assessment."
       },
       {
-        title: "Gentle dusting",
-        description: "Careful removal of dry soil and debris without damaging wool fibers."
+        title: "Natural dust removal",
+        description: "Gentle but effective removal of dust and dry soil without damaging delicate wool fibers."
       },
       {
-        title: "Specialized cleaning",
-        description: "Using wool-specific cleaning solutions and techniques."
+        title: "Wool-specific washing",
+        description: "Cleaning with pH-balanced solutions designed specifically for natural wool fibers."
       },
       {
-        title: "Moth prevention",
-        description: "Application of safe, effective moth prevention treatment."
+        title: "Gentle stain treatment",
+        description: "Careful spot treatment using wool-safe products and techniques."
       },
       {
-        title: "Controlled drying",
-        description: "Careful drying process to prevent shrinkage and maintain shape."
+        title: "Natural drying process",
+        description: "Controlled temperature drying that preserves wool's natural elasticity and prevents shrinkage."
+      },
+      {
+        title: "Wool conditioning",
+        description: "Application of natural conditioning agents to maintain wool's softness and resilience."
       }
     ],
     benefits: [
-      "Preserves wool quality",
-      "Extends rug lifespan",
+      "Maintains wool's natural oils and softness",
+      "Extends rug lifespan significantly",
+      "Preserves natural colors and texture",
+      "Removes allergens and dust mites",
       "Prevents moth damage",
-      "Maintains natural oils",
-      "Improves appearance",
-      "Removes allergens"
+      "Maintains wool's natural insulating properties"
     ],
     faqs: [
       {
-        question: "How often should wool rugs be cleaned?",
-        answer: "We recommend professional cleaning every 12-18 months for wool rugs, or more frequently in high-traffic areas."
+        question: "How often should wool rugs be professionally cleaned?",
+        answer: "For wool rugs in residential settings, we recommend professional cleaning every 18-24 months. Rugs in high-traffic areas or homes with children and pets may benefit from more frequent cleaning, approximately every 12-18 months. Regular professional maintenance helps preserve the natural beauty and extends the lifespan of your wool investment."
       },
       {
-        question: "Will cleaning damage my wool rug?",
-        answer: "No, our specialized cleaning process is designed to protect and preserve wool fibers while thoroughly cleaning your rug."
+        question: "Will professional cleaning damage the natural oils in my wool rug?",
+        answer: "No, our specialized wool cleaning process is designed to preserve the natural lanolin oils in wool fibers. We use gentle, pH-balanced cleaning solutions and techniques specifically developed for wool. Our methods clean thoroughly while maintaining wool's natural properties, softness, and resilience."
       },
       {
-        question: "How do you prevent shrinkage?",
-        answer: "We use controlled temperature and humidity during cleaning and drying to prevent wool fiber shrinkage."
+        question: "How do you prevent shrinkage when cleaning wool rugs?",
+        answer: "We prevent shrinkage through carefully controlled cleaning and drying processes. Our technicians use regulated water temperatures, gentle agitation, and specialized drying techniques in temperature-controlled environments. This maintains the dimensional stability of wool rugs throughout the cleaning process."
+      },
+      {
+        question: "Do you use eco-friendly methods for wool rug cleaning?",
+        answer: "Yes, we prioritize eco-friendly cleaning methods for all natural fiber rugs, especially wool. Our cleaning solutions are biodegradable, non-toxic, and specifically formulated to be gentle on both wool fibers and the environment. We minimize water usage and avoid harsh chemicals that could damage wool or harm the ecosystem."
+      },
+      {
+        question: "How do you handle moth damage in wool rugs?",
+        answer: "For wool rugs with moth damage, we provide a two-part service: treatment and prevention. First, we thoroughly clean the rug to remove any moth larvae or eggs. Then we apply safe, effective moth repellent treatments. We can also repair moth damage through specialized reweaving and restoration techniques to restore the rug's appearance and integrity."
+      },
+      {
+        question: "What makes wool rugs require different cleaning than synthetic rugs?",
+        answer: "Wool rugs require specialized cleaning because wool is a natural, protein-based fiber with unique properties. Wool has scales along the fiber that can lock together and cause shrinkage if improperly cleaned. Wool also contains natural lanolin oils that should be preserved. Additionally, wool can be more sensitive to high alkalinity, temperature extremes, and aggressive agitation than synthetic fibers."
       }
     ],
     schema: {
@@ -319,12 +336,26 @@ const serviceDetails: Record<string, ServiceDetails> = {
       "provider": {
         "@type": "LocalBusiness",
         "name": "London Rug Cleaning",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "4 Maddison Court, 145 Great North Way",
+          "addressLocality": "London",
+          "postalCode": "NW4 1PW",
+          "addressCountry": "UK"
+        },
+        "telephone": "02034888344",
         "areaServed": "London"
       },
       "serviceType": "Rug Cleaning",
-      "description": "Expert wool rug cleaning services in London with specialized care for natural fibers"
+      "description": "Expert wool rug cleaning services in London with specialized care for natural fibers",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "areaServed": "London"
+      }
     }
   },
+  
   "area-rug-cleaning": {
     title: "Area Rug Cleaning",
     description: "Professional area rug cleaning services for all types and sizes",
@@ -334,57 +365,77 @@ const serviceDetails: Record<string, ServiceDetails> = {
       "/lovable-uploads/area-rug-2.jpg",
       "/lovable-uploads/area-rug-3.jpg"
     ],
-    intro: "Area rugs come in various materials, sizes, and styles, each requiring specific cleaning approaches. Our professional cleaning service caters to all types of area rugs, ensuring they receive the appropriate care and treatment.",
+    intro: "Area rugs require specialized cleaning approaches based on their varied materials, construction methods, and designs. Our comprehensive area rug cleaning service handles rugs of all sizes and types, from small accent rugs to large room-sized pieces. We tailor our cleaning methods to each rug's specific requirements, ensuring optimal results while preserving colors, textures, and structural integrity.",
     features: [
-      "All rug types cleaned",
-      "Custom cleaning solutions",
-      "Stain removal expertise",
-      "Size-appropriate handling",
-      "Deep cleaning process",
-      "Free pickup and delivery",
-      "Satisfaction guarantee",
-      "Quick turnaround time",
-      "Pet stain treatment",
-      "Deodorizing service"
+      "Customized cleaning for all rug types",
+      "Size-appropriate handling techniques",
+      "Deep soil and stain removal",
+      "Pet stain and odor treatment",
+      "Comprehensive deodorizing",
+      "Free collection and delivery",
+      "Quick turnaround options",
+      "Edge and fringe cleaning",
+      "Protective treatments available",
+      "Satisfaction guarantee"
     ],
     process: [
       {
-        title: "Initial assessment",
-        description: "Evaluating rug type, condition, and cleaning requirements."
+        title: "Detailed inspection",
+        description: "Assessment of rug type, materials, construction, soiling level, and any special concerns."
       },
       {
-        title: "Pre-treatment",
-        description: "Application of appropriate cleaning solutions for specific stains."
+        title: "Customized pre-treatment",
+        description: "Application of appropriate pre-cleaning treatments based on rug composition and needs."
       },
       {
-        title: "Deep cleaning",
-        description: "Thorough cleaning using suitable methods for the rug type."
+        title: "Thorough cleaning",
+        description: "Using specialized methods tailored to the rug's specific materials and construction."
       },
       {
-        title: "Finishing",
-        description: "Final grooming and inspection to ensure quality results."
+        title: "Spot treatment",
+        description: "Targeted stain removal using appropriate techniques for the specific stain and fiber type."
+      },
+      {
+        title: "Proper drying",
+        description: "Controlled drying methods that maintain rug shape and dimensional stability."
+      },
+      {
+        title: "Final grooming",
+        description: "Professional finishing to restore pile direction and enhance appearance."
       }
     ],
     benefits: [
-      "Enhanced appearance",
-      "Longer rug life",
-      "Healthier home",
-      "Odor elimination",
-      "Stain protection",
-      "Professional results"
+      "Improves indoor air quality",
+      "Removes embedded dirt and allergens",
+      "Extends rug life and appearance",
+      "Restores vibrant colors",
+      "Eliminates odors and bacteria",
+      "Protects your flooring investment"
     ],
     faqs: [
       {
         question: "What types of area rugs do you clean?",
-        answer: "We clean all types of area rugs including synthetic, natural fiber, hand-knotted, and machine-made rugs."
+        answer: "We clean all types of area rugs including hand-knotted, hand-tufted, hand-woven, machine-made, natural fiber (wool, cotton, silk, jute, sisal), synthetic fiber (nylon, polyester, olefin), indoor/outdoor rugs, and specialty rugs like shag, flatweaves, and Moroccan styles. Each receives cleaning tailored to its specific requirements."
       },
       {
-        question: "How long does the cleaning process take?",
-        answer: "Typically 5-7 days, though we offer express service for urgent needs."
+        question: "How do you handle different sizes of area rugs?",
+        answer: "Our facility is equipped to handle area rugs of all sizes, from small 2'x3' accent rugs to oversized 12'x18' room rugs. We have specialized equipment and adequate space for proper cleaning of large rugs. For extremely oversized rugs, we may use sectional cleaning techniques to ensure thorough and even results."
       },
       {
-        question: "Do you clean oversized rugs?",
-        answer: "Yes, we have facilities to handle rugs of all sizes, including very large area rugs."
+        question: "Can you remove pet stains and odors from area rugs?",
+        answer: "Yes, we specialize in pet stain and odor removal from area rugs. We use a multi-step approach that includes enzyme treatments to break down organic matter, specialized deodorizing agents, and appropriate cleaning methods based on the rug's materials. Even severe pet damage can usually be significantly improved with our professional treatments."
+      },
+      {
+        question: "How long does the area rug cleaning process take?",
+        answer: "Standard area rug cleaning typically takes 5-7 business days from pickup to delivery. This includes assessment, cleaning, thorough drying, and quality inspection. For urgent needs, we offer express service with 2-3 day turnaround at an additional charge, subject to our current schedule."
+      },
+      {
+        question: "What's the difference between cleaning area rugs and wall-to-wall carpet?",
+        answer: "Area rug cleaning is much more specialized than carpet cleaning. Area rugs often have delicate fringes, backing materials, and construction that requires handling by specialists. We clean area rugs in our dedicated facility with controlled conditions, unlike on-site carpet cleaning. Our process includes more thorough dust removal, immersion washing when appropriate, and proper drying techniques."
+      },
+      {
+        question: "How much does it cost to clean an area rug?",
+        answer: "Area rug cleaning costs vary based on size, material, construction, and condition. Basic synthetic rugs typically start at £4-6 per square foot, while wool rugs range from £6-10 per square foot. Hand-knotted, silk, or antique rugs may cost £8-15+ per square foot. We provide exact quotes after assessing your specific rug."
       }
     ],
     schema: {
@@ -394,12 +445,26 @@ const serviceDetails: Record<string, ServiceDetails> = {
       "provider": {
         "@type": "LocalBusiness",
         "name": "London Rug Cleaning",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "4 Maddison Court, 145 Great North Way",
+          "addressLocality": "London",
+          "postalCode": "NW4 1PW",
+          "addressCountry": "UK"
+        },
+        "telephone": "02034888344",
         "areaServed": "London"
       },
       "serviceType": "Rug Cleaning",
-      "description": "Professional area rug cleaning services for all types and sizes"
+      "description": "Professional area rug cleaning services for all types and sizes in London",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "areaServed": "London"
+      }
     }
   },
+  
   "synthetic-rug-cleaning": {
     title: "Synthetic Rug Cleaning",
     description: "Expert cleaning for modern synthetic rugs with advanced cleaning techniques and technology",
@@ -507,59 +572,124 @@ const serviceDetails: Record<string, ServiceDetails> = {
         "areaServed": "London"
       }
     }
-  }
-};
-
-const ServiceDetail = () => {
-  const { id } = useParams();
-  const service = serviceDetails[id as keyof typeof serviceDetails];
-
-  if (!service) return <div>Service not found</div>;
-
-  return (
-    <div className="min-h-screen bg-gradient-to-b from-cream-50 to-white">
-      <ServiceHero
-        title={service.title}
-        description={service.description}
-        heroImage={service.hero}
-      />
-
-      <section className="py-20">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-3xl text-center">
-            <p className="text-lg text-muted-foreground">
-              {service.intro}
-            </p>
-          </div>
-        </div>
-      </section>
-
-      <ServiceFeatures features={service.features} process={service.process} />
-      <ServiceGallery title={service.title} gallery={service.gallery} />
-      <ServiceFAQ faqs={service.faqs} />
-
-      <section className="bg-blue-600 py-20 text-white">
-        <div className="container mx-auto px-4">
-          <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-serif text-3xl font-bold">
-              Ready to Clean Your {service.title.split(" ")[0]} Rug?
-            </h2>
-            <p className="mt-4 text-blue-100">
-              Book your free collection today and experience our professional service.
-            </p>
-            <Button size="lg" variant="secondary" className="mt-8">
-              Schedule Free Collection
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(service.schema) }}
-      />
-    </div>
-  );
-};
-
-export default ServiceDetail;
+  },
+  
+  "antique-rug-cleaning": {
+    title: "Antique Rug Cleaning",
+    description: "Specialized cleaning and preservation for valuable antique and vintage rugs in London",
+    hero: "/lovable-uploads/antique-rug-hero.jpg",
+    gallery: [
+      "/lovable-uploads/antique-rug-1.jpg",
+      "/lovable-uploads/antique-rug-2.jpg",
+      "/lovable-uploads/antique-rug-3.jpg"
+    ],
+    intro: "Antique rugs are treasured heirlooms that require extraordinary care during cleaning. Our specialized antique rug cleaning service combines traditional methods with modern conservation techniques to safely clean these valuable pieces while preserving their historical integrity, color stability, and structural condition. With decades of experience handling rare and valuable rugs, our master cleaners understand the unique requirements of antique textiles.",
+    features: [
+      "Specialized antique rug conservation",
+      "Pre-cleaning stability testing",
+      "Traditional hand-washing techniques",
+      "Museum-quality preservation methods",
+      "Color and dye stabilization",
+      "Gentle pH-neutral cleaning solutions",
+      "Careful structural reinforcement",
+      "Climate-controlled drying process",
+      "Full documentation and condition reports",
+      "Free specialized transportation"
+    ],
+    process: [
+      {
+        title: "Heritage assessment",
+        description: "Detailed examination of age, provenance, construction, dyes, and condition with documentation."
+      },
+      {
+        title: "Conservation planning",
+        description: "Development of a customized cleaning approach based on the rug's specific needs and vulnerabilities."
+      },
+      {
+        title: "Controlled dust removal",
+        description: "Gentle extraction of embedded particulates using specialized techniques for fragile textiles."
+      },
+      {
+        title: "Hand washing",
+        description: "Traditional hand cleaning using cold water and pH-neutral solutions appropriate for aged fibers."
+      },
+      {
+        title: "Delicate drying",
+        description: "Controlled air drying in a climate-regulated environment to prevent fiber stress."
+      },
+      {
+        title: "Conservation finishing",
+        description: "Careful blocking, stabilization of weak areas, and gentle grooming of pile."
+      }
+    ],
+    benefits: [
+      "Preserves historical and monetary value",
+      "Extends lifespan of fragile antique textiles",
+      "Removes harmful accumulated soil",
+      "Stabilizes vulnerable areas",
+      "Improves appearance while maintaining patina",
+      "Prevents deterioration from embedded grit"
+    ],
+    faqs: [
+      {
+        question: "How do you determine if an antique rug is safe to clean?",
+        answer: "We conduct a comprehensive assessment that includes dye stability testing, structural integrity evaluation, and fiber condition analysis. We examine previous repairs, look for areas of deterioration, and test for colorfastness. Based on these assessments, we develop a customized cleaning approach or may recommend alternative conservation methods if full cleaning presents too much risk."
+      },
+      {
+        question: "Will cleaning diminish the value of my antique rug?",
+        answer: "When properly performed, professional cleaning typically enhances rather than diminishes an antique rug's value. Accumulated soil contains abrasive particles that damage fibers over time. Our gentle conservation cleaning removes these harmful elements while preserving the rug's patina and historical character. We maintain detailed documentation of the rug's condition before and after cleaning."
+      },
+      {
+        question: "How old must a rug be to require antique cleaning methods?",
+        answer: "We generally recommend our specialized antique cleaning approach for rugs over 80 years old. However, some rugs made with traditional methods and natural dyes may benefit from antique cleaning protocols even if they're somewhat younger. Conversely, some older rugs that have been previously restored or treated may not require the full antique protocol."
+      },
+      {
+        question: "Do you offer restoration services for damaged antique rugs?",
+        answer: "Yes, we provide comprehensive restoration services for antique rugs, including reweaving, rewrapping, fringe replacement, side cord repair, foundation stabilization, and color restoration. Our master restorers use traditional techniques and materials that match the original construction methods. All restoration work is documented and performed with archival-quality materials."
+      },
+      {
+        question: "How much does antique rug cleaning cost?",
+        answer: "Antique rug cleaning is priced based on the rug's size, age, condition, and the complexity of required treatments. Prices typically range from £12-25 per square foot. We provide detailed price quotes after in-person assessment. While this represents a premium over standard cleaning, the specialized methods and materials required for proper antique conservation justify the investment for valuable pieces."
+      },
+      {
+        question: "How often should antique rugs be cleaned?",
+        answer: "We recommend professional cleaning for antique rugs every 3-5 years under normal conditions. However, this varies based on the rug's specific condition, use, and environment. Rugs in low-traffic areas with stable climate conditions may go longer between cleanings. We offer maintenance assessments to help determine the optimal cleaning schedule for your specific piece."
+      }
+    ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Antique Rug Cleaning London",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "London Rug Cleaning",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "4 Maddison Court, 145 Great North Way",
+          "addressLocality": "London",
+          "postalCode": "NW4 1PW",
+          "addressCountry": "UK"
+        },
+        "telephone": "02034888344",
+        "areaServed": "London"
+      },
+      "serviceType": "Rug Cleaning",
+      "description": "Specialized cleaning and preservation for valuable antique and vintage rugs in London",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "areaServed": "London"
+      }
+    }
+  },
+  
+  "hand-knotted-rug-cleaning": {
+    title: "Hand-Knotted Rug Cleaning",
+    description: "Specialized cleaning for luxury hand-knotted rugs with meticulous attention to detail",
+    hero: "/lovable-uploads/hand-knotted-rug-hero.jpg",
+    gallery: [
+      "/lovable-uploads/hand-knotted-rug-1.jpg",
+      "/lovable-uploads/hand-knotted-rug-2.jpg",
+      "/lovable-uploads/hand-knotted-rug-3.jpg"
+    ],
+    intro: "Hand-knotted rugs represent the pinnacle of rug craftsmanship and require cleaning methods that preserve their intricate details and structural integrity. Our specialized hand-knotted rug cleaning service honors the artistry in these luxury pieces while providing thorough cleaning that enhances their beauty and
