@@ -39,7 +39,7 @@ const serviceDetails: Record<string, ServiceDetails> = {
       "/lovable-uploads/persian-rug-2.jpg",
       "/lovable-uploads/persian-rug-3.jpg"
     ],
-    intro: "Persian rugs are more than just floor coverings – they're valuable works of art that require specialized care and attention. Our expert cleaning service preserves the integrity, colors, and value of your Persian rugs while ensuring they're thoroughly cleaned and refreshed.",
+    intro: "Persian rugs are more than just floor coverings – they're valuable works of art that require specialized care and attention. Our expert cleaning service preserves the integrity, colors, and value of your Persian rugs while ensuring they're thoroughly cleaned and refreshed. With decades of experience cleaning luxury rugs across London, we understand the unique requirements of these handcrafted treasures.",
     features: [
       "Specialized cleaning for delicate Persian rugs",
       "Traditional hand-cleaning methods",
@@ -89,19 +89,27 @@ const serviceDetails: Record<string, ServiceDetails> = {
     faqs: [
       {
         question: "How much does Persian rug cleaning cost?",
-        answer: "The cost varies depending on the size and condition of your rug. We provide free assessments and quotes before proceeding with any cleaning work."
+        answer: "The cost varies depending on the size and condition of your rug. We provide free assessments and quotes before proceeding with any cleaning work. Persian rug cleaning typically starts from £8 per square foot, with an average 6x9 rug costing approximately £150-£250 for a complete professional cleaning."
       },
       {
         question: "How long does Persian rug cleaning take?",
-        answer: "Typically, the process takes 7-10 days to ensure proper cleaning and drying. We offer express services for urgent requirements."
+        answer: "Typically, the process takes 7-10 days to ensure proper cleaning and drying. We offer express services for urgent requirements at an additional cost, with turnaround as quick as 3-5 days depending on the condition and size of your Persian rug."
       },
       {
         question: "Do you provide insurance for valuable Persian rugs?",
-        answer: "Yes, all rugs in our care are fully insured. We specialize in handling valuable Persian rugs and provide comprehensive coverage."
+        answer: "Yes, all rugs in our care are fully insured. We specialize in handling valuable Persian rugs and provide comprehensive coverage during the entire cleaning process. Our insurance covers the full valuation of your rug from collection through to delivery."
       },
       {
         question: "How often should I clean my Persian rug?",
-        answer: "We recommend professional cleaning every 18-24 months for Persian rugs in residential settings. High-traffic areas may require more frequent cleaning."
+        answer: "We recommend professional cleaning every 18-24 months for Persian rugs in residential settings. High-traffic areas may require more frequent cleaning. Regular professional maintenance helps preserve the beauty, colors, and structural integrity of these valuable investments."
+      },
+      {
+        question: "What makes Persian rugs require special cleaning?",
+        answer: "Persian rugs are typically made with natural wool or silk fibers, delicate hand-knotted construction, and natural dyes. These elements require specialized cleaning approaches to prevent damage to the fibers, bleeding of colors, or distortion of the rug structure. Our cleaning methods are specifically tailored to these unique characteristics."
+      },
+      {
+        question: "Can you remove old stains from Persian rugs?",
+        answer: "Yes, we can successfully remove most stains from Persian rugs, even those that have been present for some time. Our technicians use specialized stain removal techniques appropriate for the specific type of stain and the rug's materials. However, some very old or improperly treated stains may be permanent."
       }
     ],
     schema: {
@@ -111,6 +119,14 @@ const serviceDetails: Record<string, ServiceDetails> = {
       "provider": {
         "@type": "LocalBusiness",
         "name": "London Rug Cleaning",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "4 Maddison Court, 145 Great North Way",
+          "addressLocality": "London",
+          "postalCode": "NW4 1PW",
+          "addressCountry": "UK"
+        },
+        "telephone": "02034888344",
         "areaServed": "London"
       },
       "serviceType": "Rug Cleaning",
@@ -124,55 +140,84 @@ const serviceDetails: Record<string, ServiceDetails> = {
   },
   "oriental-rug-cleaning": {
     title: "Oriental Rug Cleaning",
-    description: "Professional Oriental rug cleaning services in London",
+    description: "Professional Oriental rug cleaning services in London with specialized care for traditional and antique pieces",
     hero: "/lovable-uploads/oriental-rug-hero.jpg",
     gallery: [
       "/lovable-uploads/oriental-rug-1.jpg",
       "/lovable-uploads/oriental-rug-2.jpg",
       "/lovable-uploads/oriental-rug-3.jpg"
     ],
-    intro: "Oriental rugs require specialized care to maintain their beauty and value. Our expert cleaning service combines traditional methods with modern technology to ensure the best results.",
+    intro: "Oriental rugs are treasured possessions that embody centuries of artisanal tradition. Our specialized Oriental rug cleaning service combines time-honored techniques with modern technology to care for these exquisite pieces. Whether you have Chinese, Turkish, Indian, Pakistani, Afghan, Tibetan, and Moroccan rugs, our expert team understands the unique characteristics and cleaning requirements of each style.",
     features: [
       "Expert care for all Oriental rug types",
-      "Customized cleaning solutions",
-      "Dye stability testing",
+      "Customized cleaning solutions for each rug",
+      "Dye stability testing and color preservation",
       "Fringe cleaning and repair",
       "Odor removal treatment",
-      "Free collection and delivery",
+      "Free collection and delivery across London",
+      "Full insurance coverage for valuable pieces",
+      "Gentle cleaning agents for delicate fibers",
+      "Hand-finished details",
+      "Natural drying process"
     ],
     process: [
       {
         title: "Initial Assessment",
-        description: "Thorough inspection of your rug's condition and cleaning needs"
+        description: "Thorough inspection of your rug's origin, materials, construction, and condition"
       },
       {
         title: "Pre-treatment Testing",
-        description: "Testing for colorfastness and material stability"
+        description: "Testing for colorfastness and material stability to determine the optimal cleaning method"
       },
       {
-        title: "Deep Cleaning",
-        description: "Gentle but effective cleaning process using appropriate methods"
+        title: "Dust and Particle Removal",
+        description: "Special beating and vacuum techniques to remove deeply embedded particles"
       },
       {
-        title: "Drying Process",
-        description: "Controlled environment drying to prevent damage"
+        title: "Customized Cleaning",
+        description: "Hand washing with appropriate solutions based on your rug's specific characteristics"
+      },
+      {
+        title: "Spot Treatment",
+        description: "Targeted stain removal for any problem areas"
+      },
+      {
+        title: "Controlled Drying",
+        description: "Careful air drying in a temperature-controlled environment to preserve shape and prevent damage"
       }
     ],
     benefits: [
-      "Preserves rug integrity",
-      "Extends lifespan",
-      "Removes allergens",
-      "Restores colors",
-      "Protects investment"
+      "Preserves rug integrity and value",
+      "Extends lifespan significantly",
+      "Removes allergens and dust mites",
+      "Restores vibrant colors and patterns",
+      "Protects your investment",
+      "Improves indoor air quality"
     ],
     faqs: [
       {
         question: "What types of Oriental rugs do you clean?",
-        answer: "We clean all types of Oriental rugs including Turkish, Chinese, Indian, and Afghani rugs."
+        answer: "We clean all types of Oriental rugs including Turkish, Chinese, Indian, Pakistani, Afghan, Tibetan, and Moroccan rugs. Each type receives cleaning treatments specifically tailored to its unique characteristics, materials, and construction methods."
       },
       {
         question: "Do you offer repairs for Oriental rugs?",
-        answer: "Yes, we provide comprehensive repair services including fringe repair, edge binding, and patch work."
+        answer: "Yes, we provide comprehensive repair services including fringe repair, edge binding, patch work, reweaving, and restoration for damaged areas. Our skilled artisans can address most structural and aesthetic issues to restore your Oriental rug's beauty and integrity."
+      },
+      {
+        question: "How do you prevent color bleeding in Oriental rugs?",
+        answer: "We always perform dye stability tests before cleaning any Oriental rug. Based on these results, we select appropriate cleaning solutions and techniques. For rugs with sensitive dyes, we use specialized methods that clean effectively while preventing color migration."
+      },
+      {
+        question: "Can antique Oriental rugs be safely cleaned?",
+        answer: "Yes, antique Oriental rugs can be safely cleaned with proper techniques. We use gentle methods specifically designed for fragile, aged fibers and structures. Our specialists have extensive experience with valuable antique pieces and understand the delicate care they require."
+      },
+      {
+        question: "How much does Oriental rug cleaning cost?",
+        answer: "Oriental rug cleaning typically costs between £7-£15 per square foot depending on the rug's size, age, condition, and complexity. We provide free, no-obligation quotes after assessing your specific rug, so you'll know the exact cost before any work begins."
+      },
+      {
+        question: "How long will my Oriental rug last after professional cleaning?",
+        answer: "With proper care including professional cleaning every 2-3 years, Oriental rugs can last for generations. Regular professional cleaning not only keeps your rug looking beautiful but also removes abrasive dirt and grit that would otherwise wear down fibers over time."
       }
     ],
     schema: {
@@ -182,10 +227,23 @@ const serviceDetails: Record<string, ServiceDetails> = {
       "provider": {
         "@type": "LocalBusiness",
         "name": "London Rug Cleaning",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "4 Maddison Court, 145 Great North Way",
+          "addressLocality": "London",
+          "postalCode": "NW4 1PW",
+          "addressCountry": "UK"
+        },
+        "telephone": "02034888344",
         "areaServed": "London"
       },
       "serviceType": "Rug Cleaning",
-      "description": "Professional Oriental rug cleaning services in London"
+      "description": "Professional Oriental rug cleaning services in London with specialized care for traditional and antique pieces",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "areaServed": "London"
+      }
     }
   },
   "wool-rug-cleaning": {
@@ -340,6 +398,114 @@ const serviceDetails: Record<string, ServiceDetails> = {
       },
       "serviceType": "Rug Cleaning",
       "description": "Professional area rug cleaning services for all types and sizes"
+    }
+  },
+  "synthetic-rug-cleaning": {
+    title: "Synthetic Rug Cleaning",
+    description: "Expert cleaning for modern synthetic rugs with advanced cleaning techniques and technology",
+    hero: "/lovable-uploads/synthetic-rug-hero.jpg",
+    gallery: [
+      "/lovable-uploads/synthetic-rug-1.jpg",
+      "/lovable-uploads/synthetic-rug-2.jpg",
+      "/lovable-uploads/synthetic-rug-3.jpg"
+    ],
+    intro: "Synthetic rugs require different cleaning approaches than natural fiber rugs. Our specialized synthetic rug cleaning service uses modern techniques and solutions specifically formulated for nylon, polyester, polypropylene, and other synthetic materials. We help restore the appearance and extend the lifespan of your modern rugs while removing deeply embedded dirt and allergens.",
+    features: [
+      "Specialized synthetic fiber cleaning",
+      "Advanced stain removal technology",
+      "Deep cleaning for high-traffic synthetic rugs",
+      "Fast-drying methods",
+      "Static reduction treatment",
+      "Color restoration and brightening",
+      "Free collection and delivery service",
+      "Affordable pricing for synthetic rugs",
+      "Eco-friendly cleaning options",
+      "Protection treatments available"
+    ],
+    process: [
+      {
+        title: "Fiber analysis",
+        description: "Identifying your specific synthetic fiber type to determine the ideal cleaning approach"
+      },
+      {
+        title: "Pre-treatment",
+        description: "Application of specialized solutions to loosen dirt and prepare fibers for cleaning"
+      },
+      {
+        title: "Hot water extraction",
+        description: "Deep cleaning with equipment specially calibrated for synthetic fibers"
+      },
+      {
+        title: "Stain treatment",
+        description: "Targeted treatment of any stains or spots with synthetic-specific solutions"
+      },
+      {
+        title: "Rapid drying",
+        description: "Accelerated drying process suitable for synthetic materials"
+      },
+      {
+        title: "Finishing treatment",
+        description: "Application of protective finishes to improve appearance and longevity"
+      }
+    ],
+    benefits: [
+      "Restores appearance and vibrancy",
+      "Extends rug lifespan",
+      "Removes allergens and bacteria",
+      "Eliminates odors",
+      "Improves indoor air quality",
+      "Prevents permanent staining"
+    ],
+    faqs: [
+      {
+        question: "How often should synthetic rugs be cleaned?",
+        answer: "We recommend professional cleaning for synthetic rugs every 12-18 months for average household use. Rugs in high-traffic areas or homes with children, pets, or allergy sufferers may benefit from more frequent cleaning, approximately every 6-12 months."
+      },
+      {
+        question: "Are there advantages to synthetic rug cleaning vs. natural fiber cleaning?",
+        answer: "Yes, synthetic rugs generally dry faster after cleaning, are more resistant to staining, and typically cost less to clean professionally. Synthetic fibers also withstand more aggressive cleaning methods when needed for tough stains without risk of damage to the fibers."
+      },
+      {
+        question: "Can you remove pet odors from synthetic rugs?",
+        answer: "Yes, our specialized cleaning process for synthetic rugs includes effective deodorizing treatments specifically designed to eliminate pet odors. For severe cases, we apply additional enzyme treatments that break down organic materials causing the odors."
+      },
+      {
+        question: "How much does synthetic rug cleaning cost?",
+        answer: "Synthetic rug cleaning is generally more affordable than natural fiber rug cleaning, with prices typically starting from £5-7 per square foot. Most standard 8x10 synthetic rugs can be professionally cleaned for approximately £100-140, depending on condition and soiling level."
+      },
+      {
+        question: "Will cleaning damage the backing of my synthetic rug?",
+        answer: "Our cleaning methods are designed to be safe for all parts of your synthetic rug, including the backing. We use controlled amounts of moisture and appropriate drying techniques to ensure the backing doesn't delaminate or deteriorate during the cleaning process."
+      },
+      {
+        question: "How long does it take to clean synthetic rugs?",
+        answer: "The cleaning process for synthetic rugs is typically faster than for natural fiber rugs. Most synthetic rugs can be cleaned and returned within 3-5 days, with optional express service available for 1-2 day turnaround in urgent situations."
+      }
+    ],
+    schema: {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Synthetic Rug Cleaning London",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "London Rug Cleaning",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "4 Maddison Court, 145 Great North Way",
+          "addressLocality": "London",
+          "postalCode": "NW4 1PW",
+          "addressCountry": "UK"
+        },
+        "telephone": "02034888344",
+        "areaServed": "London"
+      },
+      "serviceType": "Rug Cleaning",
+      "description": "Expert cleaning for modern synthetic rugs with advanced cleaning techniques and technology",
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "areaServed": "London"
+      }
     }
   }
 };

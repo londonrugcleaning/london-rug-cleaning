@@ -32,7 +32,14 @@ export const Navigation = () => {
     { name: "Oriental Rug Cleaning", href: "/services/oriental-rug-cleaning" },
     { name: "Wool Rug Cleaning", href: "/services/wool-rug-cleaning" },
     { name: "Area Rug Cleaning", href: "/services/area-rug-cleaning" },
+    { name: "Synthetic Rug Cleaning", href: "/services/synthetic-rug-cleaning" },
+    { name: "Antique Rug Cleaning", href: "/services/antique-rug-cleaning" },
+    { name: "Hand-Knotted Rug Cleaning", href: "/services/hand-knotted-rug-cleaning" },
+    { name: "Rug Stain Removal", href: "/services/rug-stain-removal" },
+    { name: "Rug Deodorizing", href: "/services/rug-deodorizing" },
+    { name: "Rug Maintenance", href: "/services/rug-maintenance" },
     { name: "Pickup & Delivery", href: "/services/pickup-delivery" },
+    { name: "Moth Treatment", href: "/services/moth-treatment" },
   ];
 
   const navigation = [
@@ -62,7 +69,7 @@ export const Navigation = () => {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger>Services</NavigationMenuTrigger>
                   <NavigationMenuContent>
-                    <ul className="grid w-[400px] gap-2 p-4">
+                    <ul className="grid w-[500px] grid-cols-2 gap-3 p-4">
                       {services.map((service) => (
                         <li key={service.name}>
                           <NavigationMenuLink asChild>
@@ -71,7 +78,7 @@ export const Navigation = () => {
                               className="block rounded-lg p-3 hover:bg-accent"
                             >
                               <div className="text-sm font-medium">{service.name}</div>
-                              <p className="text-sm leading-snug text-muted-foreground">
+                              <p className="text-xs leading-snug text-muted-foreground">
                                 Professional {service.name.toLowerCase()} services in London
                               </p>
                             </Link>
@@ -101,7 +108,7 @@ export const Navigation = () => {
             })}
             <Button size="lg" className="gap-2 bg-blue-600 hover:bg-blue-700">
               <Phone className="h-4 w-4" />
-              020 3488 8344
+              02034888344
             </Button>
           </div>
 
@@ -151,7 +158,7 @@ export const Navigation = () => {
                 </div>
                 <Button size="lg" className="mt-4 w-full gap-2 bg-blue-600 hover:bg-blue-700">
                   <Phone className="h-4 w-4" />
-                  020 3488 8344
+                  02034888344
                 </Button>
               </div>
             </div>

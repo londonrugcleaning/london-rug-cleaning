@@ -1,7 +1,11 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Droplets, Shield, Brush, Home, Truck, Bug, Sparkles, Clock } from "lucide-react";
+import { 
+  Droplets, Shield, Brush, Home, Truck, Bug, 
+  Sparkles, Clock, Award, Paintbrush, Gem, 
+  Feather, Zap, Heart, Star
+} from "lucide-react";
 
 const services = [
   {
@@ -31,6 +35,48 @@ const services = [
     description: "Comprehensive cleaning solutions for all types of area rugs",
     icon: Home,
     color: "bg-yellow-100",
+  },
+  {
+    id: "synthetic-rug-cleaning",
+    title: "Synthetic Rug Cleaning",
+    description: "Specialized cleaning for modern synthetic rugs using advanced techniques",
+    icon: Zap,
+    color: "bg-indigo-100",
+  },
+  {
+    id: "antique-rug-cleaning",
+    title: "Antique Rug Cleaning",
+    description: "Delicate handling and restoration of vintage and antique rugs",
+    icon: Award,
+    color: "bg-amber-100",
+  },
+  {
+    id: "hand-knotted-rug-cleaning",
+    title: "Hand-Knotted Rug Cleaning",
+    description: "Meticulous cleaning of handcrafted luxury rugs",
+    icon: Gem,
+    color: "bg-pink-100",
+  },
+  {
+    id: "rug-stain-removal",
+    title: "Rug Stain Removal",
+    description: "Professional spot and stain treatment for all rug types",
+    icon: Feather,
+    color: "bg-teal-100",
+  },
+  {
+    id: "rug-deodorizing",
+    title: "Rug Deodorizing",
+    description: "Effective odor elimination and freshening treatments",
+    icon: Heart,
+    color: "bg-lime-100",
+  },
+  {
+    id: "rug-maintenance",
+    title: "Rug Maintenance",
+    description: "Ongoing protection and preservation services for rugs",
+    icon: Star,
+    color: "bg-cyan-100",
   },
   {
     id: "pickup-delivery",

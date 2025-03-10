@@ -21,7 +21,7 @@ const Index = () => {
           <div className="flex flex-col items-center justify-center gap-4">
             <div className="flex items-center gap-2">
               <Phone className="h-5 w-5 text-primary" />
-              <span>020 3488 8344</span>
+              <span>02034888344</span>
             </div>
             <div className="flex items-center gap-2">
               <MapPin className="h-5 w-5 text-primary" />
