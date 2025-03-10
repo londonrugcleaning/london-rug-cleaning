@@ -44,6 +44,7 @@ export const Navigation = () => {
 
   const navigation = [
     { name: "Home", href: "/", icon: Home },
+    { name: "Services", href: "/services", icon: List },
     { name: "About", href: "/about", icon: FileText },
     { name: "Blog", href: "/blog", icon: FileText },
     { name: "FAQ", href: "/faq", icon: HelpCircle },

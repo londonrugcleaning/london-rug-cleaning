@@ -1,4 +1,3 @@
-
 import { useParams } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Phone } from "lucide-react";
@@ -33,18 +32,18 @@ interface ServiceDetails {
 const serviceDetails: Record<string, ServiceDetails> = {
   "persian-rug-cleaning": {
     title: "Persian Rug Cleaning",
-    description: "Expert Persian rug cleaning services in London with free collection and delivery",
+    description: "Expert Persian rug cleaning services in London combining traditional methods with modern technology",
     hero: "/lovable-uploads/persian-rug-hero.jpg",
     gallery: [
       "/lovable-uploads/persian-rug-1.jpg",
       "/lovable-uploads/persian-rug-2.jpg",
       "/lovable-uploads/persian-rug-3.jpg"
     ],
-    intro: "Persian rugs are more than just floor coverings – they're valuable works of art that require specialized care and attention. Our expert cleaning service preserves the integrity, colors, and value of your Persian rugs while ensuring they're thoroughly cleaned and refreshed. With decades of experience cleaning luxury rugs across London, we understand the unique requirements of these handcrafted treasures.",
+    intro: "Persian rugs are masterpieces of artisanal craftsmanship, distinguished by their intricate patterns, natural dyes, and hand-knotted construction. These valuable pieces require specialized cleaning expertise that respects their delicate nature while ensuring thorough cleansing. Our expert Persian rug cleaning service combines centuries-old traditional methods with modern cleaning technology to preserve the integrity, colors, and inherent value of your Persian rugs. With extensive experience in handling these precious textiles, we understand the unique care requirements of different Persian rug styles, from fine silk Qums to robust Heriz carpets.",
     features: [
       "Specialized cleaning for delicate Persian rugs",
       "Traditional hand-cleaning methods",
-      "Color and pattern preservation",
+      "Natural dye preservation techniques",
       "Gentle pH-balanced solutions",
       "Deep dirt and stain removal",
       "Free collection and delivery in London",
@@ -56,27 +55,27 @@ const serviceDetails: Record<string, ServiceDetails> = {
     process: [
       {
         title: "Initial inspection and assessment",
-        description: "We carefully examine your rug's condition, materials, and any specific cleaning requirements."
+        description: "Expert evaluation of your rug's origin, age, dyes, and specific cleaning requirements"
       },
       {
         title: "Dust and dirt removal",
-        description: "Using specialized equipment to remove embedded dirt without damaging delicate fibers."
+        description: "Specialized gentle beating and vacuum techniques to remove embedded particles while protecting delicate fibers"
       },
       {
-        title: "Gentle hand washing",
-        description: "Traditional Persian rug cleaning techniques with pH-balanced solutions."
+        title: "Dye testing",
+        description: "Careful testing of all colors to ensure dye stability before cleaning"
+      },
+      {
+        title: "Hand washing",
+        description: "Traditional Persian rug washing techniques using pH-balanced solutions and soft water"
       },
       {
         title: "Specialized stain treatment",
-        description: "Targeted treatment for any spots or stains using appropriate cleaning agents."
+        description: "Targeted treatment for any spots or stains using appropriate cleaning agents for Persian rugs"
       },
       {
-        title: "Controlled drying process",
-        description: "Climate-controlled drying to prevent shrinkage or color bleeding."
-      },
-      {
-        title: "Final quality check",
-        description: "Thorough inspection to ensure perfect cleaning results and condition."
+        title: "Controlled drying",
+        description: "Climate-controlled drying process to prevent shrinkage or color bleeding"
       }
     ],
     benefits: [
@@ -131,7 +130,7 @@ const serviceDetails: Record<string, ServiceDetails> = {
         "areaServed": "London"
       },
       "serviceType": "Rug Cleaning",
-      "description": "Expert Persian rug cleaning services in London with free collection and delivery",
+      "description": "Expert Persian rug cleaning services in London combining traditional methods with modern technology",
       "offers": {
         "@type": "Offer",
         "availability": "https://schema.org/InStock",
@@ -141,50 +140,50 @@ const serviceDetails: Record<string, ServiceDetails> = {
   },
   "oriental-rug-cleaning": {
     title: "Oriental Rug Cleaning",
-    description: "Professional Oriental rug cleaning services in London with specialized care for traditional and antique pieces",
+    description: "Professional Oriental rug cleaning services specializing in antique and traditional pieces",
     hero: "/lovable-uploads/oriental-rug-hero.jpg",
     gallery: [
       "/lovable-uploads/oriental-rug-1.jpg",
       "/lovable-uploads/oriental-rug-2.jpg",
       "/lovable-uploads/oriental-rug-3.jpg"
     ],
-    intro: "Oriental rugs are treasured possessions that embody centuries of artisanal tradition. Our specialized Oriental rug cleaning service combines time-honored techniques with modern technology to care for these exquisite pieces. Whether you have Chinese, Turkish, Indian, Pakistani, Afghan, Tibetan, and Moroccan rugs, our expert team understands the unique characteristics and cleaning requirements of each style.",
+    intro: "Oriental rugs are distinguished by their unique characteristics, from intricate tribal patterns to sophisticated court designs. Each type presents its own cleaning challenges, whether it's silk highlights in Chinese rugs, vegetable dyes in Turkish pieces, or delicate knots in antique carpets. Our specialized Oriental rug cleaning service addresses common issues like dye bleeding, fiber deterioration, and foundation weakening while preserving the distinctive qualities of each piece. We combine traditional cleaning wisdom with modern conservation techniques to ensure your Oriental rug receives the most appropriate and effective treatment.",
     features: [
       "Expert care for all Oriental rug types",
-      "Customized cleaning solutions for each rug",
-      "Dye stability testing and color preservation",
-      "Fringe cleaning and repair",
-      "Odor removal treatment",
-      "Free collection and delivery across London",
-      "Full insurance coverage for valuable pieces",
-      "Gentle cleaning agents for delicate fibers",
-      "Hand-finished details",
-      "Natural drying process"
+      "Antique rug conservation methods",
+      "Traditional cleaning techniques",
+      "Dye stability testing",
+      "Color and pattern preservation",
+      "Foundation strengthening",
+      "Free collection and delivery",
+      "Full insurance coverage",
+      "Expert fringe restoration",
+      "Climate-controlled facility"
     ],
     process: [
       {
-        title: "Initial Assessment",
-        description: "Thorough inspection of your rug's origin, materials, construction, and condition"
+        title: "Detailed Assessment",
+        description: "Comprehensive evaluation of rug type, age, construction method, and condition"
       },
       {
-        title: "Pre-treatment Testing",
-        description: "Testing for colorfastness and material stability to determine the optimal cleaning method"
+        title: "Pre-cleaning Testing",
+        description: "Thorough testing of dyes, fibers, and structure to determine optimal cleaning approach"
       },
       {
-        title: "Dust and Particle Removal",
-        description: "Special beating and vacuum techniques to remove deeply embedded particles"
+        title: "Gentle Dust Removal",
+        description: "Careful removal of embedded dirt using techniques appropriate for antique and delicate rugs"
       },
       {
-        title: "Customized Cleaning",
-        description: "Hand washing with appropriate solutions based on your rug's specific characteristics"
+        title: "Hand Cleaning",
+        description: "Traditional washing methods using appropriate solutions for each type of Oriental rug"
       },
       {
-        title: "Spot Treatment",
-        description: "Targeted stain removal for any problem areas"
+        title: "Specialized Care",
+        description: "Targeted treatment of specific issues like dye bleeding, worn areas, or foundation problems"
       },
       {
         title: "Controlled Drying",
-        description: "Careful air drying in a temperature-controlled environment to preserve shape and prevent damage"
+        description: "Careful drying in a climate-controlled environment to prevent any damage"
       }
     ],
     benefits: [
@@ -239,7 +238,7 @@ const serviceDetails: Record<string, ServiceDetails> = {
         "areaServed": "London"
       },
       "serviceType": "Rug Cleaning",
-      "description": "Professional Oriental rug cleaning services in London with specialized care for traditional and antique pieces",
+      "description": "Professional Oriental rug cleaning services specializing in antique and traditional pieces",
       "offers": {
         "@type": "Offer",
         "availability": "https://schema.org/InStock",
