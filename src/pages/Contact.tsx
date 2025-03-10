@@ -49,7 +49,7 @@ const Contact = () => {
               <div className="space-y-4">
                 <div className="flex items-center gap-3">
                   <Phone className="h-5 w-5 text-primary" />
-                  <span>020 1234 5678</span>
+                  <span>020 3488 8344</span>
                 </div>
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-primary" />
@@ -57,7 +57,7 @@ const Contact = () => {
                 </div>
                 <div className="flex items-center gap-3">
                   <MapPin className="h-5 w-5 text-primary" />
-                  <span>London, United Kingdom</span>
+                  <span>4 Maddison Court, 145 Great North Way, NW4 1PW</span>
                 </div>
               </div>
             </div>

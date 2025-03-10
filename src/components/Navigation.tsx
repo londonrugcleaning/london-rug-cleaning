@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -13,11 +14,14 @@ import {
   ChevronDown,
 } from "lucide-react";
 import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+  NavigationMenu,
+  NavigationMenuContent,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+  NavigationMenuTrigger,
+} from "@/components/ui/navigation-menu";
+import { Logo } from "./Logo";
 
 export const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -40,105 +44,119 @@ export const Navigation = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <nav className="container mx-auto flex items-center justify-between px-4 py-4">
-        <Link to="/" className="font-serif text-2xl font-semibold">
-          London Rug Cleaning
-        </Link>
+    <header className="sticky top-4 z-50 mx-auto max-w-7xl px-4">
+      <nav className="rounded-xl border bg-white/70 px-6 py-4 shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/70">
+        <div className="flex items-center justify-between">
+          <Link to="/" className="transition-opacity hover:opacity-80">
+            <Logo />
+          </Link>
 
-        {/* Desktop Navigation */}
-        <div className="hidden items-center gap-4 md:flex">
-          <Button variant="ghost" asChild>
-            <Link to="/">Home</Link>
-          </Button>
-          
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="ghost" className="gap-1">
-                Services <ChevronDown className="h-4 w-4" />
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end" className="w-56">
-              {services.map((service) => (
-                <DropdownMenuItem key={service.name} asChild>
-                  <Link to={service.href}>{service.name}</Link>
-                </DropdownMenuItem>
-              ))}
-            </DropdownMenuContent>
-          </DropdownMenu>
+          {/* Desktop Navigation */}
+          <div className="hidden items-center gap-2 md:flex">
+            <Button variant="ghost" asChild>
+              <Link to="/">Home</Link>
+            </Button>
+            
+            <NavigationMenu>
+              <NavigationMenuList>
+                <NavigationMenuItem>
+                  <NavigationMenuTrigger>Services</NavigationMenuTrigger>
+                  <NavigationMenuContent>
+                    <ul className="grid w-[400px] gap-2 p-4">
+                      {services.map((service) => (
+                        <li key={service.name}>
+                          <NavigationMenuLink asChild>
+                            <Link
+                              to={service.href}
+                              className="block rounded-lg p-3 hover:bg-accent"
+                            >
+                              <div className="text-sm font-medium">{service.name}</div>
+                              <p className="text-sm leading-snug text-muted-foreground">
+                                Professional {service.name.toLowerCase()} services in London
+                              </p>
+                            </Link>
+                          </NavigationMenuLink>
+                        </li>
+                      ))}
+                    </ul>
+                  </NavigationMenuContent>
+                </NavigationMenuItem>
+              </NavigationMenuList>
+            </NavigationMenu>
 
-          {navigation.slice(1).map((item) => {
-            const Icon = item.icon;
-            return (
-              <Button
-                key={item.name}
-                variant={location.pathname === item.href ? "secondary" : "ghost"}
-                asChild
-              >
-                <Link to={item.href} className="gap-2">
-                  <Icon className="h-4 w-4" />
-                  {item.name}
-                </Link>
-              </Button>
-            );
-          })}
-          <Button size="lg" className="gap-2 bg-blue-600 hover:bg-blue-700">
-            <Phone className="h-4 w-4" />
-            Get Free Quote
-          </Button>
-        </div>
-
-        {/* Mobile Navigation */}
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden"
-          onClick={() => setIsOpen(!isOpen)}
-        >
-          {isOpen ? <X /> : <Menu />}
-        </Button>
-
-        {isOpen && (
-          <div className="absolute left-0 top-full w-full bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 p-4 shadow-lg md:hidden">
-            <div className="flex flex-col gap-2">
-              {navigation.map((item) => {
-                const Icon = item.icon;
-                return (
-                  <Button
-                    key={item.name}
-                    variant={location.pathname === item.href ? "secondary" : "ghost"}
-                    className="w-full justify-start"
-                    asChild
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <Link to={item.href} className="gap-2">
-                      <Icon className="h-4 w-4" />
-                      {item.name}
-                    </Link>
-                  </Button>
-                );
-              })}
-              <div className="my-2 border-t pt-2">
-                <p className="mb-2 text-sm font-medium text-muted-foreground">Services</p>
-                {services.map((service) => (
-                  <Button
-                    key={service.name}
-                    variant="ghost"
-                    className="w-full justify-start"
-                    asChild
-                    onClick={() => setIsOpen(false)}
-                  >
-                    <Link to={service.href}>{service.name}</Link>
-                  </Button>
-                ))}
-              </div>
-              <Button size="lg" className="mt-4 w-full gap-2 bg-blue-600 hover:bg-blue-700">
-                <Phone className="h-4 w-4" />
-                Get Free Quote
-              </Button>
-            </div>
+            {navigation.slice(1).map((item) => {
+              const Icon = item.icon;
+              return (
+                <Button
+                  key={item.name}
+                  variant={location.pathname === item.href ? "secondary" : "ghost"}
+                  asChild
+                >
+                  <Link to={item.href} className="gap-2">
+                    <Icon className="h-4 w-4" />
+                    {item.name}
+                  </Link>
+                </Button>
+              );
+            })}
+            <Button size="lg" className="gap-2 bg-blue-600 hover:bg-blue-700">
+              <Phone className="h-4 w-4" />
+              020 3488 8344
+            </Button>
           </div>
-        )}
+
+          {/* Mobile Navigation */}
+          <Button
+            variant="ghost"
+            size="icon"
+            className="md:hidden"
+            onClick={() => setIsOpen(!isOpen)}
+          >
+            {isOpen ? <X /> : <Menu />}
+          </Button>
+
+          {isOpen && (
+            <div className="absolute left-0 top-full mt-2 w-full rounded-lg border bg-white/70 p-4 shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/70 md:hidden">
+              <div className="flex flex-col gap-2">
+                {navigation.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <Button
+                      key={item.name}
+                      variant={location.pathname === item.href ? "secondary" : "ghost"}
+                      className="w-full justify-start"
+                      asChild
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <Link to={item.href} className="gap-2">
+                        <Icon className="h-4 w-4" />
+                        {item.name}
+                      </Link>
+                    </Button>
+                  );
+                })}
+                <div className="my-2 border-t pt-2">
+                  <p className="mb-2 text-sm font-medium text-muted-foreground">Services</p>
+                  {services.map((service) => (
+                    <Button
+                      key={service.name}
+                      variant="ghost"
+                      className="w-full justify-start"
+                      asChild
+                      onClick={() => setIsOpen(false)}
+                    >
+                      <Link to={service.href}>{service.name}</Link>
+                    </Button>
+                  ))}
+                </div>
+                <Button size="lg" className="mt-4 w-full gap-2 bg-blue-600 hover:bg-blue-700">
+                  <Phone className="h-4 w-4" />
+                  020 3488 8344
+                </Button>
+              </div>
+            </div>
+          )}
+        </div>
       </nav>
     </header>
   );
