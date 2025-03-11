@@ -14,6 +14,7 @@ import AreaRugCleaning from "./pages/services/AreaRugCleaning";
 import SyntheticRugCleaning from "./pages/services/SyntheticRugCleaning";
 import AntiqueRugCleaning from "./pages/services/AntiqueRugCleaning";
 import HandKnottedRugCleaning from "./pages/services/HandKnottedRugCleaning";
+import RugStainRemoval from "./pages/services/RugStainRemoval";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
@@ -40,6 +41,7 @@ const App = () => (
           <Route path="/services/synthetic-rug-cleaning" element={<SyntheticRugCleaning />} />
           <Route path="/services/antique-rug-cleaning" element={<AntiqueRugCleaning />} />
           <Route path="/services/hand-knotted-rug-cleaning" element={<HandKnottedRugCleaning />} />
+          <Route path="/services/rug-stain-removal" element={<RugStainRemoval />} />
           <Route path="/services/:id" element={<ServiceDetail />} />
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/faq" element={<FAQ />} />

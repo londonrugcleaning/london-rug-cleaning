@@ -1,10 +1,10 @@
-
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ServiceHero } from "@/components/service-detail/ServiceHero";
 import { ServiceFeatures } from "@/components/service-detail/ServiceFeatures";
 import { ServiceGallery } from "@/components/service-detail/ServiceGallery";
 import { ServiceFAQ } from "@/components/service-detail/ServiceFAQ";
+import { PricingTable } from "@/components/service-detail/PricingTable";
 
 const PersianRugCleaning = () => {
   const service = {
@@ -141,6 +141,8 @@ const PersianRugCleaning = () => {
         title={service.title}
         gallery={service.gallery}
       />
+      
+      <PricingTable />
       
       <ServiceFAQ 
         faqs={service.faqs}

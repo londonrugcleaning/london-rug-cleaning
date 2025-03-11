@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -36,15 +35,10 @@ export const Navigation = () => {
     { name: "Antique Rug Cleaning", href: "/services/antique-rug-cleaning" },
     { name: "Hand-Knotted Rug Cleaning", href: "/services/hand-knotted-rug-cleaning" },
     { name: "Rug Stain Removal", href: "/services/rug-stain-removal" },
-    { name: "Rug Deodorizing", href: "/services/rug-deodorizing" },
-    { name: "Rug Maintenance", href: "/services/rug-maintenance" },
-    { name: "Pickup & Delivery", href: "/services/pickup-delivery" },
-    { name: "Moth Treatment", href: "/services/moth-treatment" },
   ];
 
   const navigation = [
     { name: "Home", href: "/", icon: Home },
-    // Remove Services entry from here since we show it in desktop menu differently
     { name: "About", href: "/about", icon: FileText },
     { name: "Blog", href: "/blog", icon: FileText },
     { name: "FAQ", href: "/faq", icon: HelpCircle },
@@ -59,7 +53,6 @@ export const Navigation = () => {
             <Logo />
           </Link>
 
-          {/* Desktop Navigation */}
           <div className="hidden items-center gap-2 md:flex">
             <Button 
               variant={location.pathname === "/" ? "secondary" : "ghost"} 
@@ -120,7 +113,6 @@ export const Navigation = () => {
             </Button>
           </div>
 
-          {/* Mobile Navigation */}
           <Button
             variant="ghost"
             size="icon"

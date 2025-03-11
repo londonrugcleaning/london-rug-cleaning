@@ -1,11 +1,10 @@
-
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { 
   Droplets, Shield, Brush, Home, Truck, Bug, 
   Sparkles, Clock, Award, Paintbrush, Gem, 
-  Feather, Zap, Heart, Star
+  Feather
 } from "lucide-react";
 
 const services = [
@@ -41,7 +40,7 @@ const services = [
     id: "synthetic-rug-cleaning",
     title: "Synthetic Rug Cleaning",
     description: "Specialized cleaning for modern synthetic rugs using advanced techniques",
-    icon: Zap,
+    icon: Feather,
     color: "bg-indigo-100",
   },
   {
@@ -62,37 +61,9 @@ const services = [
     id: "rug-stain-removal",
     title: "Rug Stain Removal",
     description: "Professional spot and stain treatment for all rug types",
-    icon: Feather,
+    icon: Droplets,
     color: "bg-teal-100",
-  },
-  {
-    id: "rug-deodorizing",
-    title: "Rug Deodorizing",
-    description: "Effective odor elimination and freshening treatments",
-    icon: Heart,
-    color: "bg-lime-100",
-  },
-  {
-    id: "rug-maintenance",
-    title: "Rug Maintenance",
-    description: "Ongoing protection and preservation services for rugs",
-    icon: Star,
-    color: "bg-cyan-100",
-  },
-  {
-    id: "pickup-delivery",
-    title: "Free Collection & Delivery",
-    description: "Convenient pickup and delivery service across London",
-    icon: Truck,
-    color: "bg-red-100",
-  },
-  {
-    id: "moth-treatment",
-    title: "Moth Treatment",
-    description: "Effective moth prevention and treatment services",
-    icon: Bug,
-    color: "bg-orange-100",
-  },
+  }
 ];
 
 const Services = () => {
