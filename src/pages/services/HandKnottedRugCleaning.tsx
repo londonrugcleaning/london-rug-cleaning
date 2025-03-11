@@ -5,6 +5,7 @@ import { ServiceHero } from "@/components/service-detail/ServiceHero";
 import { ServiceFeatures } from "@/components/service-detail/ServiceFeatures";
 import { ServiceGallery } from "@/components/service-detail/ServiceGallery";
 import { ServiceFAQ } from "@/components/service-detail/ServiceFAQ";
+import { PricingTable } from "@/components/service-detail/PricingTable";
 
 const HandKnottedRugCleaning = () => {
   const service = {
@@ -85,8 +86,8 @@ const HandKnottedRugCleaning = () => {
         answer: "Our specialized cleaning process for hand-knotted rugs is designed to preserve colors while achieving thorough cleaning. We first test dye stability and then select appropriate cleaning methods and solutions. For rugs with sensitive dyes, we use specialized techniques that minimize any risk of color migration or fading."
       },
       {
-        question: "How do you handle silk elements in hand-knotted rugs?",
-        answer: "Hand-knotted rugs with silk elements or highlights require special attention. Our technicians identify silk components and use specialized cleaning methods appropriate for this delicate material. We use different solutions and handling techniques for silk versus wool sections of the same rug, ensuring each fiber type receives optimal care."
+        question: "How much does it cost to clean a hand-knotted rug?",
+        answer: "Our standard pricing for hand-knotted rugs is £20-30 per square meter with a minimum charge of £70. Due to the specialized care required, hand-knotted rugs typically fall at the higher end of this range. All prices include collection, professional cleaning, and delivery. After initial inspection, we provide a detailed quotation as additional treatments may be needed based on the rug's specific condition and materials."
       }
     ],
     schema: {
@@ -141,6 +142,8 @@ const HandKnottedRugCleaning = () => {
         title={service.title}
         gallery={service.gallery}
       />
+      
+      <PricingTable />
       
       <ServiceFAQ 
         faqs={service.faqs}

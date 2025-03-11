@@ -1,3 +1,4 @@
+
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ServiceHero } from "@/components/service-detail/ServiceHero";
@@ -82,7 +83,7 @@ const OrientalRugCleaning = () => {
       },
       {
         question: "How much does Oriental rug cleaning cost?",
-        answer: "Oriental rug cleaning typically costs between £7-£15 per square foot depending on the rug's size, age, condition, and complexity. We provide free, no-obligation quotes after assessing your specific rug, so you'll know the exact cost before any work begins."
+        answer: "Our standard pricing is £20-30 per square meter with a minimum charge of £70 regardless of rug size. Oriental rugs typically fall within this range, with more intricate or delicate pieces at the higher end. All prices include collection, professional cleaning, and delivery. After initial inspection, we provide a detailed quotation as additional specialized treatments may be recommended based on your rug's specific condition."
       },
       {
         question: "How long will my Oriental rug last after professional cleaning?",
@@ -142,7 +143,7 @@ const OrientalRugCleaning = () => {
         gallery={service.gallery}
       />
       
-      <PricingTable />
+      <PricingTable title={`${service.title} Pricing`} />
       
       <ServiceFAQ 
         faqs={service.faqs}

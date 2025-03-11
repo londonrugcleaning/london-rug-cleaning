@@ -5,6 +5,7 @@ import { ServiceHero } from "@/components/service-detail/ServiceHero";
 import { ServiceFeatures } from "@/components/service-detail/ServiceFeatures";
 import { ServiceGallery } from "@/components/service-detail/ServiceGallery";
 import { ServiceFAQ } from "@/components/service-detail/ServiceFAQ";
+import { PricingTable } from "@/components/service-detail/PricingTable";
 
 const AntiqueRugCleaning = () => {
   const service = {
@@ -82,7 +83,7 @@ const AntiqueRugCleaning = () => {
       },
       {
         question: "How much does antique rug cleaning cost?",
-        answer: "Antique rug cleaning is priced based on the rug's size, age, condition, and the complexity of required treatments. Prices typically range from £12-25 per square foot. We provide detailed price quotes after in-person assessment. While this represents a premium over standard cleaning, the specialized methods and materials required for proper antique conservation justify the investment for valuable pieces."
+        answer: "Our pricing for antique rugs typically starts at the higher end of our standard range of £20-30 per square meter, with a minimum charge of £70. Due to the specialized care and techniques required, antique rugs often require premium treatment which may cost more. All prices include careful collection, professional cleaning, and delivery. We provide a detailed quotation after initial inspection, as additional conservation treatments may be recommended based on your rug's specific condition."
       },
       {
         question: "How often should antique rugs be cleaned?",
@@ -141,6 +142,8 @@ const AntiqueRugCleaning = () => {
         title={service.title}
         gallery={service.gallery}
       />
+      
+      <PricingTable />
       
       <ServiceFAQ 
         faqs={service.faqs}

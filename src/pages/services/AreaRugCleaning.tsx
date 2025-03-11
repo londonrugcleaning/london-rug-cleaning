@@ -5,6 +5,7 @@ import { ServiceHero } from "@/components/service-detail/ServiceHero";
 import { ServiceFeatures } from "@/components/service-detail/ServiceFeatures";
 import { ServiceGallery } from "@/components/service-detail/ServiceGallery";
 import { ServiceFAQ } from "@/components/service-detail/ServiceFAQ";
+import { PricingTable } from "@/components/service-detail/PricingTable";
 
 const AreaRugCleaning = () => {
   const service = {
@@ -86,7 +87,7 @@ const AreaRugCleaning = () => {
       },
       {
         question: "How much does it cost to clean an area rug?",
-        answer: "Area rug cleaning costs vary based on size, material, construction, and condition. Basic synthetic rugs typically start at £4-6 per square foot, while wool rugs range from £6-10 per square foot. Hand-knotted, silk, or antique rugs may cost £8-15+ per square foot. We provide exact quotes after assessing your specific rug."
+        answer: "Our standard pricing is £20-30 per square meter with a minimum charge of £70 regardless of rug size. For example, a small 1m² rug would cost £70, while a large 4m² rug would range from £80-£120. All prices include collection, professional cleaning, and delivery. Additional charges may apply for stubborn stains, heavy soiling, pet odors, or extensive damage requiring special treatments."
       }
     ],
     schema: {
@@ -141,6 +142,8 @@ const AreaRugCleaning = () => {
         title={service.title}
         gallery={service.gallery}
       />
+      
+      <PricingTable />
       
       <ServiceFAQ 
         faqs={service.faqs}

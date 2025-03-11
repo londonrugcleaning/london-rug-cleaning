@@ -87,7 +87,7 @@ const RugStainRemoval = () => {
       },
       {
         question: "How much does rug stain removal cost?",
-        answer: "Rug stain treatment starts at £25 for small, simple stains and ranges up to £120+ for extensive or challenging stains requiring specialized treatments. Most standard stain removals fall in the £40-80 range. For rugs requiring multiple stain treatments, we offer package pricing. We provide exact quotes after assessing the specific stains and rug type."
+        answer: "Our standard pricing for complete rug cleaning is £20-30 per square meter with a minimum charge of £70. For spot treatments and stain removal only, services start at £25 for small, simple stains and range up to £120+ for extensive or challenging stains requiring specialized treatments. We provide a detailed quotation after initial inspection, as additional treatments may be needed depending on the type and severity of stains."
       }
     ],
     schema: {
@@ -143,7 +143,7 @@ const RugStainRemoval = () => {
         gallery={service.gallery}
       />
       
-      <PricingTable />
+      <PricingTable title={`${service.title} Pricing`} />
       
       <ServiceFAQ 
         faqs={service.faqs}

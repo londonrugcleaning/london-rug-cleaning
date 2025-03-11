@@ -1,13 +1,17 @@
 
 import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from "@/components/ui/table";
 
-export const PricingTable = () => {
+interface PricingTableProps {
+  title?: string;
+}
+
+export const PricingTable = ({ title = "Professional Rug Cleaning Services" }: PricingTableProps) => {
   return (
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           <h2 className="text-3xl font-serif font-semibold text-center mb-6">
-            Professional Rug Cleaning Services
+            {title}
           </h2>
           <p className="text-lg text-center mb-8">
             We provide expert cleaning for all types of rugs including Persian, Oriental, Wool, Silk, and more. 

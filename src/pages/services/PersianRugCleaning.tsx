@@ -1,3 +1,4 @@
+
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ServiceHero } from "@/components/service-detail/ServiceHero";
@@ -66,7 +67,7 @@ const PersianRugCleaning = () => {
     faqs: [
       {
         question: "How much does Persian rug cleaning cost?",
-        answer: "The cost varies depending on the size and condition of your rug. We provide free assessments and quotes before proceeding with any cleaning work. Persian rug cleaning typically starts from £8 per square foot, with an average 6x9 rug costing approximately £150-£250 for a complete professional cleaning."
+        answer: "Our standard pricing is £20-30 per square meter with a minimum charge of £70 regardless of rug size. Persian rugs, due to their valuable nature and specialized cleaning requirements, often fall at the higher end of this range. All prices include collection, professional cleaning, and delivery. Additional charges may apply for stubborn stains, heavy soiling, or extensive repairs."
       },
       {
         question: "How long does Persian rug cleaning take?",
@@ -142,7 +143,7 @@ const PersianRugCleaning = () => {
         gallery={service.gallery}
       />
       
-      <PricingTable />
+      <PricingTable title={`${service.title} Pricing`} />
       
       <ServiceFAQ 
         faqs={service.faqs}

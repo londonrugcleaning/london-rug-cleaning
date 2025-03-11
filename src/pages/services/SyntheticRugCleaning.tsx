@@ -5,6 +5,7 @@ import { ServiceHero } from "@/components/service-detail/ServiceHero";
 import { ServiceFeatures } from "@/components/service-detail/ServiceFeatures";
 import { ServiceGallery } from "@/components/service-detail/ServiceGallery";
 import { ServiceFAQ } from "@/components/service-detail/ServiceFAQ";
+import { PricingTable } from "@/components/service-detail/PricingTable";
 
 const SyntheticRugCleaning = () => {
   const service = {
@@ -78,7 +79,7 @@ const SyntheticRugCleaning = () => {
       },
       {
         question: "How much does synthetic rug cleaning cost?",
-        answer: "Synthetic rug cleaning is generally more affordable than natural fiber rug cleaning, with prices typically starting from £5-7 per square foot. Most standard 8x10 synthetic rugs can be professionally cleaned for approximately £100-140, depending on condition and soiling level."
+        answer: "Our standard pricing is £20-30 per square meter with a minimum charge of £70 regardless of rug size. Synthetic rugs often fall at the lower end of this range due to their more straightforward cleaning requirements. All prices include collection, professional cleaning, and delivery. Additional treatments for stubborn stains or odors may incur extra charges."
       },
       {
         question: "Will cleaning damage the backing of my synthetic rug?",
@@ -141,6 +142,8 @@ const SyntheticRugCleaning = () => {
         title={service.title}
         gallery={service.gallery}
       />
+      
+      <PricingTable />
       
       <ServiceFAQ 
         faqs={service.faqs}
