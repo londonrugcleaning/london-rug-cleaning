@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -12,15 +13,44 @@ const Contact = () => {
     phone: "",
     message: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    toast({
-      title: "Thank you for your message",
-      description: "We'll get back to you as soon as possible.",
-    });
-    setFormData({ name: "", email: "", phone: "", message: "" });
+    setIsSubmitting(true);
+
+    try {
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        toast({
+          title: "Thank you for your message",
+          description: "We'll get back to you as soon as possible.",
+        });
+        setFormData({ name: "", email: "", phone: "", message: "" });
+      } else {
+        toast({
+          title: "Error sending message",
+          description: "Please try again or call us directly.",
+          variant: "destructive",
+        });
+      }
+    } catch (error) {
+      toast({
+        title: "Error sending message",
+        description: "Please try again or call us directly.",
+        variant: "destructive",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -41,16 +71,18 @@ const Contact = () => {
           <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2">
             <div className="space-y-8">
               <div className="space-y-6">
-                <h2 className="font-serif text-3xl font-semibold">Get in Touch</h2>
+                <h2 className="font-serif text-3xl font-semibold">Get a Free Quote</h2>
                 <p className="text-muted-foreground">
                   We're here to help with all your rug cleaning needs. Contact us for a free quote or any questions you may have.
                 </p>
               </div>
               <div className="space-y-4">
-                <div className="flex items-center gap-3">
-                  <Phone className="h-5 w-5 text-primary" />
-                  <span>020 3488 8344</span>
-                </div>
+                <Button asChild variant="link" className="flex items-center justify-start gap-3 p-0 hover:text-primary">
+                  <a href="tel:02034888344">
+                    <Phone className="h-5 w-5 text-primary" />
+                    <span>020 3488 8344</span>
+                  </a>
+                </Button>
                 <div className="flex items-center gap-3">
                   <Mail className="h-5 w-5 text-primary" />
                   <span>info@londonrugcleaning.co.uk</span>
@@ -69,6 +101,7 @@ const Contact = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
+                required
               />
               <Input
                 type="email"
@@ -77,6 +110,7 @@ const Contact = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
+                required
               />
               <Input
                 placeholder="Phone Number"
@@ -84,6 +118,7 @@ const Contact = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, phone: e.target.value })
                 }
+                required
               />
               <Textarea
                 placeholder="Your Message"
@@ -91,9 +126,15 @@ const Contact = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, message: e.target.value })
                 }
+                required
               />
-              <Button type="submit" size="lg" className="w-full">
-                Send Message
+              <Button 
+                type="submit" 
+                size="lg" 
+                className="w-full"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Sending..." : "Send Message"}
               </Button>
             </form>
           </div>

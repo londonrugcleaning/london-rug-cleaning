@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
@@ -107,9 +108,11 @@ export const Navigation = () => {
                 </Button>
               );
             })}
-            <Button size="lg" className="gap-2 bg-blue-600 hover:bg-blue-700">
-              <Phone className="h-4 w-4" />
-              02034888344
+            <Button size="lg" asChild className="gap-2 bg-blue-600 hover:bg-blue-700">
+              <a href="tel:02034888344">
+                <Phone className="h-4 w-4" />
+                02034888344
+              </a>
             </Button>
           </div>
 
@@ -180,9 +183,11 @@ export const Navigation = () => {
                     </Button>
                   ))}
                 </div>
-                <Button size="lg" className="mt-4 w-full gap-2 bg-blue-600 hover:bg-blue-700">
-                  <Phone className="h-4 w-4" />
-                  02034888344
+                <Button size="lg" asChild className="mt-4 w-full gap-2 bg-blue-600 hover:bg-blue-700">
+                  <a href="tel:02034888344">
+                    <Phone className="h-4 w-4" />
+                    02034888344
+                  </a>
                 </Button>
               </div>
             </div>
