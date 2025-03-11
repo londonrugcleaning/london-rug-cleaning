@@ -1,7 +1,17 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, Truck, Shield, MapPin } from "lucide-react";
+import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 export const Hero = () => {
+  const navigate = useNavigate();
+  
+  const scrollToContact = () => {
+    const contactSection = document.getElementById('contact-section');
+    contactSection?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   const benefits = [
     {
       icon: Shield,
@@ -49,12 +59,16 @@ export const Hero = () => {
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Button size="lg" className="gap-2 bg-blue-600 hover:bg-blue-700">
+                <Button 
+                  size="lg" 
+                  className="gap-2 bg-blue-600 hover:bg-blue-700"
+                  onClick={scrollToContact}
+                >
                   Get Started
                   <ArrowRight className="h-4 w-4" />
                 </Button>
-                <Button size="lg" variant="outline">
-                  View Our Services
+                <Button size="lg" variant="outline" asChild>
+                  <Link to="/services">View Our Services</Link>
                 </Button>
               </div>
             </div>

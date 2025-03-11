@@ -1,83 +1,114 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import type { BlogPost } from "@/types/blog";
 
-// This would normally come from your MD files
-const blogPosts: BlogPost[] = [
-  {
-    slug: "how-to-clean-carpet-rug",
-    title: "How to Clean a Carpet Rug: A Complete Guide",
-    date: "2024-03-14",
-    excerpt: "Learn the professional techniques for cleaning your carpet rug effectively and safely at home.",
-    content: "...",
-    author: "London Rug Cleaning Team",
-    tags: ["rug cleaning", "carpet care", "DIY", "maintenance"],
-    readingTime: "8 min read"
-  },
-  // Add more blog posts here
-];
+import { useState, useEffect } from "react";
+import { Button } from "@/components/ui/button";
+import { Calendar, Tag, User } from "lucide-react";
+import { Link } from "react-router-dom";
+
+interface BlogPost {
+  slug: string;
+  title: string;
+  date: string;
+  author: string;
+  excerpt: string;
+  tags: string[];
+}
 
 const Blog = () => {
-  const [selectedTag, setSelectedTag] = useState<string | null>(null);
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
 
-  const allTags = Array.from(
-    new Set(blogPosts.flatMap((post) => post.tags))
-  );
-
-  const filteredPosts = selectedTag
-    ? blogPosts.filter((post) => post.tags.includes(selectedTag))
-    : blogPosts;
+  useEffect(() => {
+    // This is a mock fetch that would normally get blog posts from an API
+    // For now we'll just use our one blog post we have
+    const mockPosts = [
+      {
+        slug: "how-to-clean-carpet-rug",
+        title: "How to Clean a Carpet Rug: A Complete Guide",
+        date: "2024-03-14",
+        author: "London Rug Cleaning Team",
+        excerpt: "Learn the professional techniques for cleaning your carpet rug effectively and safely at home.",
+        tags: ["rug cleaning", "carpet care", "DIY", "maintenance"],
+      }
+    ];
+    
+    setPosts(mockPosts);
+    setIsLoading(false);
+  }, []);
 
   return (
-    <div className="container mx-auto px-4 py-12">
-      <h1 className="mb-8 text-center font-serif text-4xl font-semibold">Rug Care Blog</h1>
-      
-      <div className="mb-8 flex flex-wrap gap-2 justify-center">
-        <Button
-          variant={selectedTag === null ? "secondary" : "ghost"}
-          onClick={() => setSelectedTag(null)}
-        >
-          All
-        </Button>
-        {allTags.map((tag) => (
-          <Button
-            key={tag}
-            variant={selectedTag === tag ? "secondary" : "ghost"}
-            onClick={() => setSelectedTag(tag)}
-          >
-            {tag}
-          </Button>
-        ))}
-      </div>
+    <div className="min-h-screen">
+      <section className="hero-pattern py-24">
+        <div className="container mx-auto px-4">
+          <h1 className="animate-fade-up font-serif text-4xl font-semibold sm:text-5xl">
+            Our Blog
+          </h1>
+          <p className="mt-6 animate-fade-up text-lg text-muted-foreground">
+            Expert advice and insights on rug care and maintenance
+          </p>
+        </div>
+      </section>
 
-      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {filteredPosts.map((post) => (
-          <article key={post.slug} className="rounded-lg border bg-card p-6">
-            <h2 className="mb-2 font-serif text-xl font-semibold">
-              <Link to={`/blog/${post.slug}`} className="hover:text-primary">
-                {post.title}
-              </Link>
-            </h2>
-            <div className="mb-4 text-sm text-muted-foreground">
-              <span>{post.date}</span>
-              <span className="mx-2">•</span>
-              <span>{post.readingTime}</span>
+      <section className="py-16">
+        <div className="container mx-auto px-4">
+          {isLoading ? (
+            <div className="flex justify-center py-12">
+              <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary border-t-transparent"></div>
             </div>
-            <p className="mb-4 text-muted-foreground">{post.excerpt}</p>
-            <div className="flex flex-wrap gap-2">
-              {post.tags.map((tag) => (
-                <span
-                  key={tag}
-                  className="rounded-full bg-secondary px-3 py-1 text-xs text-secondary-foreground"
+          ) : (
+            <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+              {posts.map((post) => (
+                <div 
+                  key={post.slug} 
+                  className="group overflow-hidden rounded-lg border bg-card shadow-sm transition-all hover:shadow-md"
                 >
-                  {tag}
-                </span>
+                  <div className="p-6">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                      <div className="flex items-center gap-1">
+                        <Calendar className="h-4 w-4" />
+                        <span>{new Date(post.date).toLocaleDateString()}</span>
+                      </div>
+                      <span>•</span>
+                      <div className="flex items-center gap-1">
+                        <User className="h-4 w-4" />
+                        <span>{post.author}</span>
+                      </div>
+                    </div>
+                    
+                    <h3 className="mt-2 text-xl font-semibold group-hover:text-primary">
+                      <Link to={`/blog/${post.slug}`}>
+                        {post.title}
+                      </Link>
+                    </h3>
+                    
+                    <p className="mt-2 line-clamp-3 text-muted-foreground">
+                      {post.excerpt}
+                    </p>
+                    
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {post.tags.map((tag) => (
+                        <div key={tag} className="flex items-center gap-1 rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-800">
+                          <Tag className="h-3 w-3" />
+                          <span>{tag}</span>
+                        </div>
+                      ))}
+                    </div>
+                    
+                    <Button
+                      variant="link"
+                      className="mt-4 p-0 text-primary"
+                      asChild
+                    >
+                      <Link to={`/blog/${post.slug}`}>
+                        Read more
+                      </Link>
+                    </Button>
+                  </div>
+                </div>
               ))}
             </div>
-          </article>
-        ))}
-      </div>
+          )}
+        </div>
+      </section>
     </div>
   );
 };

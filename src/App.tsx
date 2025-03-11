@@ -18,6 +18,7 @@ import RugStainRemoval from "./pages/services/RugStainRemoval";
 import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
+import Blog from "./pages/Blog";
 import { Navigation } from "./components/Navigation";
 import ServiceDetail from "./pages/ServiceDetail";
 
@@ -46,6 +47,7 @@ const App = () => (
           <Route path="/gallery" element={<Gallery />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/blog" element={<Blog />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>
