@@ -11,11 +11,11 @@ const PersianRugCleaning = () => {
   const service = {
     title: "Persian Rug Cleaning",
     description: "Expert Persian rug cleaning services in London combining traditional methods with modern technology",
-    hero: "/lovable-uploads/persian-rug-hero.jpg",
+    hero: "/images/persian-rug-hero.jpg",
     gallery: [
-      "/lovable-uploads/persian-rug-1.jpg",
-      "/lovable-uploads/persian-rug-2.jpg",
-      "/lovable-uploads/persian-rug-3.jpg"
+      "/images/persian-rug-1.jpg",
+      "/images/persian-rug-2.jpg",
+      "/images/persian-rug-3.jpg"
     ],
     intro: "Persian rugs are masterpieces of artisanal craftsmanship, distinguished by their intricate patterns, natural dyes, and hand-knotted construction. These valuable pieces require specialized cleaning expertise that respects their delicate nature while ensuring thorough cleansing. Our expert Persian rug cleaning service combines centuries-old traditional methods with modern cleaning technology to preserve the integrity, colors, and inherent value of your Persian rugs. With extensive experience in handling these precious textiles, we understand the unique care requirements of different Persian rug styles, from fine silk Qums to robust Heriz carpets.",
     features: [

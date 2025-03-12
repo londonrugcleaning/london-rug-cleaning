@@ -10,11 +10,11 @@ const HandKnottedRugCleaning = () => {
   const service = {
     title: "Hand-Knotted Rug Cleaning",
     description: "Specialized cleaning for luxury hand-knotted rugs with meticulous attention to detail",
-    hero: "/lovable-uploads/hand-knotted-rug-hero.jpg",
+    hero: "/images/hand-knotted-rug-hero.jpg",
     gallery: [
-      "/lovable-uploads/hand-knotted-rug-1.jpg",
-      "/lovable-uploads/hand-knotted-rug-2.jpg",
-      "/lovable-uploads/hand-knotted-rug-3.jpg"
+      "/images/hand-knotted-rug-1.jpg",
+      "/images/hand-knotted-rug-2.jpg",
+      "/images/hand-knotted-rug-3.jpg"
     ],
     intro: "Hand-knotted rugs represent the pinnacle of rug craftsmanship and require cleaning methods that preserve their intricate details and structural integrity. Our specialized hand-knotted rug cleaning service honors the artistry in these luxury pieces while providing thorough cleaning that enhances their beauty and longevity. With exacting techniques and specialized knowledge, we ensure these valuable rugs receive the premium care they deserve.",
     features: [

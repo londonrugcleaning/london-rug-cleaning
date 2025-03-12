@@ -10,11 +10,11 @@ const WoolRugCleaning = () => {
   const service = {
     title: "Wool Rug Cleaning",
     description: "Specialized cleaning for premium wool rugs to maintain their beauty and extend their lifespan",
-    hero: "/lovable-uploads/wool-rug-hero.jpg",
+    hero: "/images/wool-rug-hero.jpg",
     gallery: [
-      "/lovable-uploads/wool-rug-1.jpg",
-      "/lovable-uploads/wool-rug-2.jpg",
-      "/lovable-uploads/wool-rug-3.jpg"
+      "/images/wool-rug-1.jpg",
+      "/images/wool-rug-2.jpg",
+      "/images/wool-rug-3.jpg"
     ],
     intro: "Wool rugs represent some of the finest floor coverings available, prized for their durability, natural beauty, and luxurious feel. However, wool's unique properties—including its susceptibility to water damage, dye bleeding, and shrinkage—mean that improper cleaning can cause permanent harm. Our specialized wool rug cleaning service takes these sensitivities into account, providing thorough yet gentle cleaning that preserves your wool rug's inherent qualities while extending its lifespan.",
     features: [

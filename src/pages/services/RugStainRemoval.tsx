@@ -11,11 +11,11 @@ const RugStainRemoval = () => {
   const service = {
     title: "Rug Stain Removal",
     description: "Professional spot and stain treatment for all rug types in London",
-    hero: "/lovable-uploads/rug-stain-removal-hero.jpg",
+    hero: "/images/rug-stain-removal-hero.jpg",
     gallery: [
-      "/lovable-uploads/rug-stain-removal-1.jpg",
-      "/lovable-uploads/rug-stain-removal-2.jpg",
-      "/lovable-uploads/rug-stain-removal-3.jpg"
+      "/images/rug-stain-removal-1.jpg",
+      "/images/rug-stain-removal-2.jpg",
+      "/images/rug-stain-removal-3.jpg"
     ],
     intro: "Stains on valuable rugs can be distressing, particularly when they affect cherished or investment pieces. Our specialized rug stain removal service tackles a wide range of challenging stains while protecting your rug's delicate fibers, dyes, and structure. Using targeted treatments appropriate for each specific stain type and rug material, we achieve outstanding results even on stubborn, set-in stains that ordinary cleaning methods can't touch.",
     features: [

@@ -10,11 +10,11 @@ const AntiqueRugCleaning = () => {
   const service = {
     title: "Antique Rug Cleaning",
     description: "Specialized cleaning and preservation for valuable antique and vintage rugs in London",
-    hero: "/lovable-uploads/antique-rug-hero.jpg",
+    hero: "/images/antique-rug-hero.webp",
     gallery: [
-      "/lovable-uploads/antique-rug-1.jpg",
-      "/lovable-uploads/antique-rug-2.jpg",
-      "/lovable-uploads/antique-rug-3.jpg"
+      "/images/antique-rug-1.jpg",
+      "/images/antique-rug-2.jpg",
+      "/images/antique-rug-3.jpg"
     ],
     intro: "Antique rugs are treasured heirlooms that require extraordinary care during cleaning. Our specialized antique rug cleaning service combines traditional methods with modern conservation techniques to safely clean these valuable pieces while preserving their historical integrity, color stability, and structural condition. With decades of experience handling rare and valuable rugs, our master cleaners understand the unique requirements of antique textiles.",
     features: [

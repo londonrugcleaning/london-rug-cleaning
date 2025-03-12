@@ -10,11 +10,11 @@ const SyntheticRugCleaning = () => {
   const service = {
     title: "Synthetic Rug Cleaning",
     description: "Professional cleaning services for all types of synthetic and machine-made rugs",
-    hero: "/lovable-uploads/synthetic-rug-hero.jpg",
+    hero: "/images/synthetic-rug-hero.jpg",
     gallery: [
-      "/lovable-uploads/synthetic-rug-1.jpg",
-      "/lovable-uploads/synthetic-rug-2.jpg",
-      "/lovable-uploads/synthetic-rug-3.jpg"
+      "/images/synthetic-rug-1.jpg",
+      "/images/synthetic-rug-2.jpg",
+      "/images/synthetic-rug-3.jpg"
     ],
     intro: "Synthetic rugs offer durability and stain resistance, but they require specialized cleaning approaches to maintain their appearance and extend their lifespan. Our synthetic rug cleaning service is specifically designed to address the unique characteristics of nylon, polyester, polypropylene (olefin), and other manufactured fibers, providing thorough cleaning without damaging the materials or backing.",
     features: [

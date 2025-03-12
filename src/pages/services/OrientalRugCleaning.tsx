@@ -10,11 +10,11 @@ const OrientalRugCleaning = () => {
   const service = {
     title: "Oriental Rug Cleaning",
     description: "Professional Oriental rug cleaning services specializing in antique and traditional pieces",
-    hero: "/lovable-uploads/oriental-rug-hero.jpg",
+    hero: "/images/oriental-rug-hero.jpg",
     gallery: [
-      "/lovable-uploads/oriental-rug-1.jpg",
-      "/lovable-uploads/oriental-rug-2.jpg",
-      "/lovable-uploads/oriental-rug-3.jpg"
+      "/images/oriental-rug-1.jpg",
+      "/images/oriental-rug-2.jpg",
+      "/images/oriental-rug-3.jpg"
     ],
     intro: "Oriental rugs are distinguished by their unique characteristics, from intricate tribal patterns to sophisticated court designs. Each type presents its own cleaning challenges, whether it's silk highlights in Chinese rugs, vegetable dyes in Turkish pieces, or delicate knots in antique carpets. Our specialized Oriental rug cleaning service addresses common issues like dye bleeding, fiber deterioration, and foundation weakening while preserving the distinctive qualities of each piece. We combine traditional cleaning wisdom with modern conservation techniques to ensure your Oriental rug receives the most appropriate and effective treatment.",
     features: [
