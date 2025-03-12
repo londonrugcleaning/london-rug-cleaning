@@ -21,6 +21,7 @@ import Gallery from "./pages/Gallery";
 import Blog from "./pages/Blog";
 import { Navigation } from "./components/Navigation";
 import ServiceDetail from "./pages/ServiceDetail";
+import { Footer } from "./components/Footer";
 
 const queryClient = new QueryClient();
 
@@ -49,6 +50,7 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>

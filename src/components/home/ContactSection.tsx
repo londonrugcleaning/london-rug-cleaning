@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Phone } from "lucide-react";
+import { CTAButtons } from "../CTAButtons";
 
 interface ContactSectionProps {
   title?: string;
@@ -67,12 +67,9 @@ export const ContactSection = ({ title = "Get a Free Quote" }: ContactSectionPro
           <p className="mt-4 text-muted-foreground">
             Request a quote or ask us any questions
           </p>
-          <Button asChild className="mt-4 gap-2 bg-blue-600 hover:bg-blue-700">
-            <a href="tel:02034888344">
-              <Phone className="h-4 w-4" />
-              Call Us: 020 3488 8344
-            </a>
-          </Button>
+          <div className="mt-4 flex justify-center">
+            <CTAButtons />
+          </div>
         </div>
         <form
           onSubmit={handleSubmit}

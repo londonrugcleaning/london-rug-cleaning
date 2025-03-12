@@ -1,3 +1,4 @@
+
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
@@ -6,6 +7,7 @@ import {
   Sparkles, Clock, Award, Paintbrush, Gem, 
   Feather
 } from "lucide-react";
+import { CTAButtons } from "@/components/CTAButtons";
 
 const services = [
   {
@@ -81,12 +83,7 @@ const Services = () => {
               with free collection and delivery across London.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button size="lg" className="w-full bg-blue-600 hover:bg-blue-700 sm:w-auto">
-                Get Your Free Quote
-              </Button>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto">
-                Learn More About Our Process
-              </Button>
+              <CTAButtons variant="hero" />
             </div>
           </div>
         </div>
@@ -125,8 +122,15 @@ const Services = () => {
             <p className="mt-4 text-blue-100">
               Book your free collection today and experience the difference of professional rug cleaning.
             </p>
-            <Button size="lg" variant="secondary" className="mt-8">
-              Schedule Your Free Collection
+            <Button 
+              size="lg" 
+              variant="secondary" 
+              className="mt-8"
+              onClick={() => {
+                window.location.href = "/contact";
+              }}
+            >
+              Get a Free Quote
             </Button>
           </div>
         </div>

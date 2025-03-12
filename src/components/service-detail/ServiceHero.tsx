@@ -1,5 +1,6 @@
-import { Phone, Star } from "lucide-react";
-import { Button } from "@/components/ui/button";
+
+import { Star } from "lucide-react";
+import { CTAButtons } from "../CTAButtons";
 
 interface ServiceHeroProps {
   title: string;
@@ -32,10 +33,9 @@ export const ServiceHero = ({ title, description, heroImage }: ServiceHeroProps)
             ))}
             <span className="ml-2 text-white">Rated 4.9/5 by our customers</span>
           </div>
-          <Button size="lg" className="mt-8 gap-2 bg-blue-600 hover:bg-blue-700">
-            <Phone className="h-4 w-4" />
-            Get Your Free Quote
-          </Button>
+          <div className="mt-8">
+            <CTAButtons />
+          </div>
         </div>
       </div>
     </section>
