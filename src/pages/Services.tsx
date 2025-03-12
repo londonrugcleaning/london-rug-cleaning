@@ -68,6 +68,58 @@ const services = [
   }
 ];
 
+// Service schema for this page
+const servicesSchema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Professional Rug Cleaning Services in London",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "London Rug Cleaning",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4 Maddison Court, 145 Great North Way",
+      "addressLocality": "London",
+      "postalCode": "NW4 1PW",
+      "addressCountry": "UK"
+    },
+    "telephone": "02034888344",
+    "priceRange": "££",
+    "areaServed": "London"
+  },
+  "serviceType": "Rug Cleaning",
+  "description": "Expert rug cleaning services near you. Specializing in Persian, Oriental, and Wool rugs with free collection and delivery across London.",
+  "offers": {
+    "@type": "Offer",
+    "availability": "https://schema.org/InStock",
+    "areaServed": "London"
+  }
+};
+
+// Local business schema
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "London Rug Cleaning",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "4 Maddison Court, 145 Great North Way",
+    "addressLocality": "London",
+    "postalCode": "NW4 1PW",
+    "addressCountry": "UK"
+  },
+  "telephone": "02034888344",
+  "priceRange": "££",
+  "areaServed": "London",
+  "url": "https://londonrugcleaning.com",
+  "image": "https://londonrugcleaning.com/images/logo.png",
+  "sameAs": [
+    "https://www.facebook.com/londonrugcleaning",
+    "https://twitter.com/londonrugclean",
+    "https://www.instagram.com/londonrugcleaning"
+  ]
+};
+
 const Services = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
@@ -135,6 +187,16 @@ const Services = () => {
           </div>
         </div>
       </section>
+
+      {/* Add schema markup */}
+      <script 
+        type="application/ld+json" 
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }} 
+      />
+      <script 
+        type="application/ld+json" 
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} 
+      />
     </div>
   );
 };

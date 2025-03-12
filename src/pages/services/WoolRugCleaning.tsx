@@ -1,93 +1,92 @@
 
-import { Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import { ServiceHero } from "@/components/service-detail/ServiceHero";
 import { ServiceFeatures } from "@/components/service-detail/ServiceFeatures";
 import { ServiceGallery } from "@/components/service-detail/ServiceGallery";
 import { ServiceFAQ } from "@/components/service-detail/ServiceFAQ";
 import { PricingTable } from "@/components/service-detail/PricingTable";
+import { CTAButtons } from "@/components/CTAButtons";
 
 const WoolRugCleaning = () => {
   const service = {
     title: "Wool Rug Cleaning",
-    description: "Expert wool rug cleaning services in London with specialized care for natural fibers",
+    description: "Specialized cleaning for premium wool rugs to maintain their beauty and extend their lifespan",
     hero: "/lovable-uploads/wool-rug-hero.jpg",
     gallery: [
       "/lovable-uploads/wool-rug-1.jpg",
       "/lovable-uploads/wool-rug-2.jpg",
       "/lovable-uploads/wool-rug-3.jpg"
     ],
-    intro: "Wool rugs require special attention due to their natural fibers and unique properties. Our eco-friendly wool rug cleaning service maintains the softness, durability, and appearance of your wool rugs while extending their lifespan. We understand the specific requirements of wool and use specialized techniques that preserve the natural lanolin and fiber integrity.",
+    intro: "Wool rugs represent some of the finest floor coverings available, prized for their durability, natural beauty, and luxurious feel. However, wool's unique properties—including its susceptibility to water damage, dye bleeding, and shrinkage—mean that improper cleaning can cause permanent harm. Our specialized wool rug cleaning service takes these sensitivities into account, providing thorough yet gentle cleaning that preserves your wool rug's inherent qualities while extending its lifespan.",
     features: [
-      "Specialized wool fiber cleaning",
-      "pH-balanced natural solutions",
-      "Natural fiber preservation techniques",
-      "Eco-friendly cleaning methods",
-      "Moth prevention treatment",
-      "Gentle controlled drying process",
-      "Color and texture preservation",
+      "Specialized wool-safe cleaning",
+      "Natural lanolin preservation",
+      "Gentle pH-balanced solutions",
+      "Color and dye stabilization",
+      "Controlled moisture cleaning",
+      "Moth prevention treatments",
       "Free collection and delivery",
-      "Expert fringe cleaning and restoration",
-      "Wool-specific stain protection treatment"
+      "Full insurance coverage",
+      "Expert fringe cleaning",
+      "Proper blocking and finishing"
     ],
     process: [
       {
-        title: "Comprehensive inspection",
-        description: "We thoroughly examine your wool rug for specific care requirements and condition assessment."
+        title: "Wool assessment",
+        description: "Evaluation of wool type, construction method, dyes, and current condition"
       },
       {
-        title: "Natural dust removal",
-        description: "Gentle but effective removal of dust and dry soil without damaging delicate wool fibers."
+        title: "Specialized dusting",
+        description: "Thorough dry soil removal using methods that protect wool fibers"
       },
       {
-        title: "Wool-specific washing",
-        description: "Cleaning with pH-balanced solutions designed specifically for natural wool fibers."
+        title: "Dye testing",
+        description: "Careful testing to ensure colorfast cleaning without bleeding or fading"
       },
       {
-        title: "Gentle stain treatment",
-        description: "Careful spot treatment using wool-safe products and techniques."
+        title: "Hand washing",
+        description: "Gentle cleaning with wool-safe, pH-controlled solutions"
       },
       {
-        title: "Natural drying process",
-        description: "Controlled temperature drying that preserves wool's natural elasticity and prevents shrinkage."
+        title: "Controlled rinsing",
+        description: "Thorough yet careful rinsing to remove all cleaning agents"
       },
       {
-        title: "Wool conditioning",
-        description: "Application of natural conditioning agents to maintain wool's softness and resilience."
+        title: "Proper drying",
+        description: "Controlled drying methods that prevent shrinkage and distortion"
       }
     ],
     benefits: [
-      "Maintains wool's natural oils and softness",
       "Extends rug lifespan significantly",
-      "Preserves natural colors and texture",
-      "Removes allergens and dust mites",
+      "Maintains wool's natural properties",
+      "Removes harmful grit and soil",
       "Prevents moth damage",
-      "Maintains wool's natural insulating properties"
+      "Preserves colors and texture",
+      "Improves indoor air quality"
     ],
     faqs: [
       {
-        question: "How often should wool rugs be professionally cleaned?",
-        answer: "For wool rugs in residential settings, we recommend professional cleaning every 18-24 months. Rugs in high-traffic areas or homes with children and pets may benefit from more frequent cleaning, approximately every 12-18 months. Regular professional maintenance helps preserve the natural beauty and extends the lifespan of your wool investment."
+        question: "How often should I have my wool rug professionally cleaned?",
+        answer: "We recommend professional cleaning for wool rugs every 2-3 years for rugs in normal household use. However, rugs in high-traffic areas or homes with children, pets, or allergy sufferers may benefit from more frequent cleaning, perhaps annually. Regular vacuuming between professional cleanings is important to prevent soil buildup."
       },
       {
-        question: "Will professional cleaning damage the natural oils in my wool rug?",
-        answer: "No, our specialized wool cleaning process is designed to preserve the natural lanolin oils in wool fibers. We use gentle, pH-balanced cleaning solutions and techniques specifically developed for wool. Our methods clean thoroughly while maintaining wool's natural properties, softness, and resilience."
+        question: "Why can't I clean my wool rug myself?",
+        answer: "Wool rugs can be permanently damaged by incorrect cleaning methods including excessive moisture, improper agitation, high alkalinity, or high temperatures. Common issues from DIY cleaning include shrinkage, color bleeding, browning, distortion, and fiber damage. Our professional process manages these risks while ensuring deep cleaning."
       },
       {
-        question: "How do you prevent shrinkage when cleaning wool rugs?",
-        answer: "We prevent shrinkage through carefully controlled cleaning and drying processes. Our technicians use regulated water temperatures, gentle agitation, and specialized drying techniques in temperature-controlled environments. This maintains the dimensional stability of wool rugs throughout the cleaning process."
+        question: "Will cleaning remove the lanolin from my wool rug?",
+        answer: "Our specialized wool cleaning process preserves as much of wool's natural lanolin as possible. This natural oil gives wool its characteristic softness and soil resistance. While some lanolin is inevitably removed during any cleaning process, our gentle methods and wool-safe solutions minimize this loss while still achieving thorough cleaning."
       },
       {
-        question: "Do you use eco-friendly methods for wool rug cleaning?",
-        answer: "Yes, we prioritize eco-friendly cleaning methods for all natural fiber rugs, especially wool. Our cleaning solutions are biodegradable, non-toxic, and specifically formulated to be gentle on both wool fibers and the environment. We minimize water usage and avoid harsh chemicals that could damage wool or harm the ecosystem."
+        question: "How do you handle the fringes on my wool rug?",
+        answer: "Fringes (usually made of cotton) are cleaned separately from the wool portion of the rug using appropriate cleaning agents and techniques. We take extra care to prevent tangling, yellowing, or weakening of the fringe fibers. After cleaning, fringes are carefully combed and straightened during the drying process."
       },
       {
-        question: "How do you handle moth damage in wool rugs?",
-        answer: "For wool rugs with moth damage, we provide a two-part service: treatment and prevention. First, we thoroughly clean the rug to remove any moth larvae or eggs. Then we apply safe, effective moth repellent treatments. We can also repair moth damage through specialized reweaving and restoration techniques to restore the rug's appearance and integrity."
+        question: "Do you offer moth prevention for wool rugs?",
+        answer: "Yes, we offer optional moth prevention treatments that can be applied after cleaning. These safe, odorless treatments deter moths from laying eggs in your wool rug, helping prevent future damage. We also provide advice on home care practices that minimize moth risk, such as regular vacuuming and periodic rotation."
       },
       {
-        question: "What makes wool rugs require different cleaning than synthetic rugs?",
-        answer: "Wool rugs require specialized cleaning because wool is a natural, protein-based fiber with unique properties. Wool has scales along the fiber that can lock together and cause shrinkage if improperly cleaned. Wool also contains natural lanolin oils that should be preserved. Additionally, wool can be more sensitive to high alkalinity, temperature extremes, and aggressive agitation than synthetic fibers."
+        question: "How much does wool rug cleaning cost?",
+        answer: "Our standard pricing is £20-30 per square meter with a minimum charge of £70 regardless of rug size. Wool rugs typically fall in the middle to upper part of this range depending on their construction and condition. All prices include collection, professional cleaning, and delivery. After initial inspection, we provide a detailed quotation as additional treatments may be needed based on your rug's specific condition."
       }
     ],
     schema: {
@@ -108,12 +107,34 @@ const WoolRugCleaning = () => {
         "areaServed": "London"
       },
       "serviceType": "Rug Cleaning",
-      "description": "Expert wool rug cleaning services in London with specialized care for natural fibers",
+      "description": "Specialized cleaning for premium wool rugs to maintain their beauty and extend their lifespan",
       "offers": {
         "@type": "Offer",
         "availability": "https://schema.org/InStock",
         "areaServed": "London"
       }
+    },
+    localSchema: {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "London Rug Cleaning",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4 Maddison Court, 145 Great North Way",
+        "addressLocality": "London",
+        "postalCode": "NW4 1PW",
+        "addressCountry": "UK"
+      },
+      "telephone": "02034888344",
+      "priceRange": "££",
+      "areaServed": "London",
+      "url": "https://londonrugcleaning.com",
+      "image": "https://londonrugcleaning.com/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/londonrugcleaning",
+        "https://twitter.com/londonrugclean",
+        "https://www.instagram.com/londonrugcleaning"
+      ]
     }
   };
   
@@ -143,7 +164,7 @@ const WoolRugCleaning = () => {
         gallery={service.gallery}
       />
       
-      <PricingTable />
+      <PricingTable title={`${service.title} Pricing`} />
       
       <ServiceFAQ 
         faqs={service.faqs}
@@ -157,16 +178,19 @@ const WoolRugCleaning = () => {
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Contact us today for a free quote and consultation. We offer free collection and delivery across London.
           </p>
-          <Button size="lg" className="gap-2 bg-blue-600 hover:bg-blue-700">
-            <Phone className="h-4 w-4" />
-            02034888344
-          </Button>
+          <div className="flex justify-center">
+            <CTAButtons />
+          </div>
         </div>
       </section>
       
       <script 
         type="application/ld+json" 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(service.schema) }} 
+      />
+      <script 
+        type="application/ld+json" 
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(service.localSchema) }} 
       />
     </div>
   );

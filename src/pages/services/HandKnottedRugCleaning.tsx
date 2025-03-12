@@ -113,6 +113,28 @@ const HandKnottedRugCleaning = () => {
         "availability": "https://schema.org/InStock",
         "areaServed": "London"
       }
+    },
+    localSchema: {
+      "@context": "https://schema.org",
+      "@type": "LocalBusiness",
+      "name": "London Rug Cleaning",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "4 Maddison Court, 145 Great North Way",
+        "addressLocality": "London",
+        "postalCode": "NW4 1PW",
+        "addressCountry": "UK"
+      },
+      "telephone": "02034888344",
+      "priceRange": "££",
+      "areaServed": "London",
+      "url": "https://londonrugcleaning.com",
+      "image": "https://londonrugcleaning.com/images/logo.png",
+      "sameAs": [
+        "https://www.facebook.com/londonrugcleaning",
+        "https://twitter.com/londonrugclean",
+        "https://www.instagram.com/londonrugcleaning"
+      ]
     }
   };
   
@@ -165,6 +187,10 @@ const HandKnottedRugCleaning = () => {
       <script 
         type="application/ld+json" 
         dangerouslySetInnerHTML={{ __html: JSON.stringify(service.schema) }} 
+      />
+      <script 
+        type="application/ld+json" 
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(service.localSchema) }} 
       />
     </div>
   );

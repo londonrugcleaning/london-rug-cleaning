@@ -11,6 +11,7 @@ import {
   X,
   Phone,
   ChevronDown,
+  Image,
 } from "lucide-react";
 import {
   NavigationMenu,
@@ -39,6 +40,7 @@ export const Navigation = () => {
 
   const navigation = [
     { name: "About", href: "/about", icon: FileText },
+    { name: "Gallery", href: "/gallery", icon: Image },
     { name: "Blog", href: "/blog", icon: FileText },
     { name: "Contact", href: "/contact", icon: MessageSquare },
   ];
@@ -56,7 +58,10 @@ export const Navigation = () => {
               variant={location.pathname === "/" ? "secondary" : "ghost"} 
               asChild
             >
-              <Link to="/">Home</Link>
+              <Link to="/" className="gap-2">
+                <Home className="h-4 w-4" />
+                Home
+              </Link>
             </Button>
             
             <NavigationMenu>
@@ -65,7 +70,10 @@ export const Navigation = () => {
                   <NavigationMenuTrigger 
                     className={location.pathname.startsWith("/services") ? "bg-secondary" : ""}
                   >
-                    Services
+                    <span className="flex items-center gap-2">
+                      <List className="h-4 w-4" />
+                      Services
+                    </span>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[500px] grid-cols-2 gap-3 p-4">
