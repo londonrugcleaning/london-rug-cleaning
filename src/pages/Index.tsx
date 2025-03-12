@@ -12,7 +12,7 @@ const Index = () => {
       <ServicesSection />
       <ProcessSection />
       <TestimonialsSection />
-      <ContactSection title="Get a Free Quote" />
+      <ContactSection />
     </div>
   );
 };
