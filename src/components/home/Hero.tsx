@@ -2,12 +2,9 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Star, Truck, Shield, MapPin } from "lucide-react";
 import { Link } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
 import { CTAButtons } from "../CTAButtons";
 
 export const Hero = () => {
-  const navigate = useNavigate();
-  
   const scrollToContact = () => {
     const contactSection = document.getElementById('contact-section');
     contactSection?.scrollIntoView({ behavior: 'smooth' });

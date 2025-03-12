@@ -22,6 +22,7 @@ import Blog from "./pages/Blog";
 import { Navigation } from "./components/Navigation";
 import ServiceDetail from "./pages/ServiceDetail";
 import { Footer } from "./components/Footer";
+import { FloatingButtons } from "./components/FloatingButtons";
 
 const queryClient = new QueryClient();
 
@@ -51,6 +52,7 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
         </Routes>
         <Footer />
+        <FloatingButtons />
       </BrowserRouter>
     </TooltipProvider>
   </QueryClientProvider>
