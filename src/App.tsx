@@ -15,10 +15,10 @@ import SyntheticRugCleaning from "./pages/services/SyntheticRugCleaning";
 import AntiqueRugCleaning from "./pages/services/AntiqueRugCleaning";
 import HandKnottedRugCleaning from "./pages/services/HandKnottedRugCleaning";
 import RugStainRemoval from "./pages/services/RugStainRemoval";
-import FAQ from "./pages/FAQ";
 import Contact from "./pages/Contact";
 import Gallery from "./pages/Gallery";
 import Blog from "./pages/Blog";
+import BlogPost from "./pages/BlogPost";
 import { Navigation } from "./components/Navigation";
 import ServiceDetail from "./pages/ServiceDetail";
 import { Footer } from "./components/Footer";
@@ -47,9 +47,9 @@ const App = () => (
           <Route path="/services/rug-stain-removal" element={<RugStainRemoval />} />
           <Route path="/services/:id" element={<ServiceDetail />} />
           <Route path="/gallery" element={<Gallery />} />
-          <Route path="/faq" element={<FAQ />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
         </Routes>
         <Footer />
         <FloatingButtons />

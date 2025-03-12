@@ -7,7 +7,6 @@ import {
   FileText,
   List,
   MessageSquare,
-  HelpCircle,
   Menu,
   X,
   Phone,
@@ -39,10 +38,8 @@ export const Navigation = () => {
   ];
 
   const navigation = [
-    { name: "Home", href: "/", icon: Home },
     { name: "About", href: "/about", icon: FileText },
     { name: "Blog", href: "/blog", icon: FileText },
-    { name: "FAQ", href: "/faq", icon: HelpCircle },
     { name: "Contact", href: "/contact", icon: MessageSquare },
   ];
 
@@ -152,7 +149,7 @@ export const Navigation = () => {
                   </Link>
                 </Button>
                 
-                {navigation.slice(1).map((item) => {
+                {navigation.map((item) => {
                   const Icon = item.icon;
                   return (
                     <Button

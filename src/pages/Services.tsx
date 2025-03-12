@@ -5,7 +5,7 @@ import { Card } from "@/components/ui/card";
 import { 
   Droplets, Shield, Brush, Home, Truck, Bug, 
   Sparkles, Clock, Award, Paintbrush, Gem, 
-  Feather
+  Feather, MapPin, Scissors, ShieldCheck
 } from "lucide-react";
 import { CTAButtons } from "@/components/CTAButtons";
 
@@ -14,21 +14,21 @@ const services = [
     id: "persian-rug-cleaning",
     title: "Persian Rug Cleaning",
     description: "Expert care for your valuable Persian rugs using traditional methods and modern technology",
-    icon: Sparkles,
+    icon: Gem,
     color: "bg-blue-100",
   },
   {
     id: "oriental-rug-cleaning",
     title: "Oriental Rug Cleaning",
     description: "Specialized cleaning for delicate oriental rugs with attention to detail",
-    icon: Brush,
+    icon: Paintbrush,
     color: "bg-green-100",
   },
   {
     id: "wool-rug-cleaning",
     title: "Wool Rug Cleaning",
     description: "Professional wool rug cleaning that preserves fiber integrity and natural colors",
-    icon: Shield,
+    icon: Feather,
     color: "bg-purple-100",
   },
   {
@@ -42,7 +42,7 @@ const services = [
     id: "synthetic-rug-cleaning",
     title: "Synthetic Rug Cleaning",
     description: "Specialized cleaning for modern synthetic rugs using advanced techniques",
-    icon: Feather,
+    icon: ShieldCheck,
     color: "bg-indigo-100",
   },
   {
@@ -56,7 +56,7 @@ const services = [
     id: "hand-knotted-rug-cleaning",
     title: "Hand-Knotted Rug Cleaning",
     description: "Meticulous cleaning of handcrafted luxury rugs",
-    icon: Gem,
+    icon: Scissors,
     color: "bg-pink-100",
   },
   {
