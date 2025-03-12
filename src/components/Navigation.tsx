@@ -47,15 +47,15 @@ export const Navigation = () => {
 
   return (
     <header className="sticky top-4 z-50 mx-auto max-w-7xl px-4">
-      <nav className="rounded-xl border bg-white/70 px-6 py-4 shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/70">
+      <nav className="rounded-full border bg-white/80 px-6 py-4 shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/80">
         <div className="flex items-center justify-between">
           <Link to="/" className="transition-opacity hover:opacity-80">
             <Logo />
           </Link>
 
           <div className="hidden items-center gap-2 md:flex">
-            <Button 
-              variant={location.pathname === "/" ? "secondary" : "ghost"} 
+            <Button
+              variant={location.pathname === "/" ? "secondary" : "ghost"}
               asChild
             >
               <Link to="/" className="gap-2">
@@ -63,11 +63,10 @@ export const Navigation = () => {
                 Home
               </Link>
             </Button>
-            
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
-                  <NavigationMenuTrigger 
+                  <NavigationMenuTrigger
                     className={location.pathname.startsWith("/services") ? "bg-secondary" : ""}
                   >
                     <span className="flex items-center gap-2">
@@ -113,13 +112,13 @@ export const Navigation = () => {
                 </Button>
               );
             })}
+          </div>
             <Button size="lg" asChild className="gap-2 bg-blue-600 hover:bg-blue-700">
               <a href="tel:02034888344">
                 <Phone className="h-4 w-4" />
                 02034888344
               </a>
             </Button>
-          </div>
 
           <Button
             variant="ghost"
@@ -144,7 +143,7 @@ export const Navigation = () => {
                     Home
                   </Link>
                 </Button>
-                
+
                 <Button
                   variant={location.pathname === "/services" ? "secondary" : "ghost"}
                   className="w-full justify-start"
@@ -156,7 +155,7 @@ export const Navigation = () => {
                     Services
                   </Link>
                 </Button>
-                
+
                 {navigation.map((item) => {
                   const Icon = item.icon;
                   return (
