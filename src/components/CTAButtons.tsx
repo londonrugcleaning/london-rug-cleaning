@@ -26,7 +26,7 @@ export const CTAButtons = ({
           {showText ? "Get a Free Quote" : null}
         </Button>
 
-        <Button asChild size="lg" variant={"outline"} className="gap-2">
+        <Button asChild size="lg" variant={variant === "hero" ? "outlineWhite" : "outline"} className="gap-2">
           <a href="tel:02034888344">
             <Phone className="h-4 w-4" />
             {showText ? "02034888344" : null}
