@@ -63,7 +63,7 @@
 
 .service-card::before {
   content: '';
-  @apply absolute inset-0 bg-gradient-to-r from-cream-100/50 to-transparent opacity-0 transition-opacity duration-300;
+  @apply absolute inset-0 bg-gradient-to-r from-blue-100/50 to-transparent opacity-0 transition-opacity duration-300;
 }
 
 .service-card:hover::before {
@@ -76,7 +76,7 @@
 
 .testimonial-card::before {
   content: '';
-  @apply absolute inset-0 bg-gradient-to-b from-cream-50/50 to-transparent opacity-0 transition-opacity duration-300;
+  @apply absolute inset-0 bg-gradient-to-b from-blue-50/50 to-transparent opacity-0 transition-opacity duration-300;
 }
 
 .testimonial-card:hover::before {

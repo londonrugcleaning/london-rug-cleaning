@@ -52,21 +52,13 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
-        cream: {
-          50: "#FDFBF7",
-          100: "#FAF6ED",
-          200: "#F5ECDB",
-          300: "#EFE2C9",
-          400: "#E9D8B7",
-          500: "#E3CEA5",
-        },
-        sand: {
-          50: "#F9F7F4",
-          100: "#F2EEE8",
-          200: "#E5DDD1",
-          300: "#D8CCBA",
-          400: "#CBBBA3",
-          500: "#BEA98C",
+        blue: {
+          50: "#F0F7FF",
+          100: "#E0EFFF",
+          200: "#B8DBFF",
+          300: "#8FC7FF",
+          400: "#66B3FF",
+          500: "#3D9FFF",
         },
       },
       fontFamily: {
