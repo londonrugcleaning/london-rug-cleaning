@@ -29,7 +29,7 @@ export const Hero = () => {
   ];
 
   return (
-    <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white">
+    <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white pt-4">
       <div className="absolute inset-0 bg-grid-pattern opacity-5" />
       <div className="container relative z-10 mx-auto px-4 py-24 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">

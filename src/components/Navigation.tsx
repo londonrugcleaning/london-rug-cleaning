@@ -46,16 +46,16 @@ export const Navigation = () => {
   ];
 
   return (
-    <header className="sticky top-4 z-50 mx-auto max-w-7xl px-4">
-      <nav className="rounded-full border bg-white/80 px-6 py-4 shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/80">
+    <header className="fixed top-4 z-50 mx-auto w-full px-4">
+      <nav className="rounded-full border bg-white/90 py-4 shadow-lg px-8 backdrop-blur-xs w-full max-w-7xl mx-auto">
         <div className="flex items-center justify-between">
-          <Link to="/" className="transition-opacity hover:opacity-80">
+          <Link to="/">
             <Logo />
           </Link>
 
-          <div className="hidden items-center gap-2 md:flex">
+          <div className="hidden items-center md:gap-2 lg:gap-4 md:flex">
             <Button
-              variant={location.pathname === "/" ? "secondary" : "ghost"}
+              variant={location.pathname === "/" ? "link" : "ghost"}
               asChild
             >
               <Link to="/" className="gap-2">
@@ -67,7 +67,7 @@ export const Navigation = () => {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger
-                    className={location.pathname.startsWith("/services") ? "bg-secondary" : ""}
+                    className={location.pathname.startsWith("/services") ? "text-blue-600" : ""}
                   >
                     <span className="flex items-center gap-2">
                       <List className="h-4 w-4" />
@@ -81,7 +81,7 @@ export const Navigation = () => {
                           <NavigationMenuLink asChild>
                             <Link
                               to={service.href}
-                              className={`block rounded-lg p-3 ${location.pathname === service.href ? 'bg-secondary' : 'hover:bg-accent'}`}
+                              className={`block rounded-lg p-3 ${location.pathname === service.href ? 'text-blue-600' : 'hover:bg-accent'}`}
                             >
                               <div className="text-sm font-medium">{service.name}</div>
                               <p className="text-xs leading-snug text-muted-foreground">
@@ -102,7 +102,7 @@ export const Navigation = () => {
               return (
                 <Button
                   key={item.name}
-                  variant={location.pathname === item.href ? "secondary" : "ghost"}
+                  variant={location.pathname === item.href ? "link" : "ghost"}
                   asChild
                 >
                   <Link to={item.href} className="gap-2">
@@ -113,10 +113,10 @@ export const Navigation = () => {
               );
             })}
           </div>
-            <Button size="lg" asChild className="gap-2 bg-blue-600 hover:bg-blue-700">
+            <Button size="lg" asChild className="hidden gap-2 bg-blue-600 hover:bg-blue-700 lg:flex">
               <a href="tel:02034888344">
-                <Phone className="h-4 w-4" />
-                02034888344
+                <Phone className="h-5 w-5" />
+                020 3488 8344
               </a>
             </Button>
 
@@ -126,11 +126,11 @@ export const Navigation = () => {
             className="md:hidden"
             onClick={() => setIsOpen(!isOpen)}
           >
-            {isOpen ? <X /> : <Menu />}
+            {isOpen ? <X /> : <Menu/>}
           </Button>
 
           {isOpen && (
-            <div className="absolute left-0 top-full mt-2 w-full rounded-lg border bg-white/70 p-4 shadow-lg backdrop-blur supports-[backdrop-filter]:bg-white/70 md:hidden">
+            <div className="absolute left-0 top-full mt-2 w-full rounded-lg border bg-white p-4 md:hidden">
               <div className="flex flex-col gap-2">
                 <Button
                   variant={location.pathname === "/" ? "secondary" : "ghost"}

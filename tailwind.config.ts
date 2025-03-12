@@ -52,6 +52,14 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        cream: {
+          50: "#FDFBF7",
+          100: "#FAF6ED",
+          200: "#F5ECDB",
+          300: "#EFE2C9",
+          400: "#E9D8B7",
+          500: "#E3CEA5",
+        },
         blue: {
           50: "#F0F7FF",
           100: "#E0EFFF",

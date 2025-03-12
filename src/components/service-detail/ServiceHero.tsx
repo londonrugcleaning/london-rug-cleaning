@@ -10,14 +10,14 @@ interface ServiceHeroProps {
 
 export const ServiceHero = ({ title, description, heroImage }: ServiceHeroProps) => {
   return (
-    <section className="relative h-[60vh] min-h-[400px] overflow-hidden">
+    <section className="relative h-[50vh] min-h-[300px] overflow-hidden pt-12">
       <div className="absolute inset-0">
         <img
           src={heroImage}
           alt={title}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/60" />
       </div>
       <div className="container relative z-10 mx-auto flex h-full items-center px-4">
         <div className="max-w-3xl">
@@ -34,7 +34,7 @@ export const ServiceHero = ({ title, description, heroImage }: ServiceHeroProps)
             <span className="ml-2 text-white">Rated 4.9/5 by our customers</span>
           </div>
           <div className="mt-8">
-            <CTAButtons />
+            <CTAButtons variant="hero" />
           </div>
         </div>
       </div>

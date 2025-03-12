@@ -7,7 +7,7 @@ interface ServiceFeaturesProps {
 
 export const ServiceFeatures = ({ features, process }: ServiceFeaturesProps) => {
   return (
-    <section className="py-20">
+    <section className="max-w-7xl py-16 px-8 mx-auto">
       <div className="container mx-auto px-4">
         <div className="grid gap-8 md:grid-cols-2">
           <div>
