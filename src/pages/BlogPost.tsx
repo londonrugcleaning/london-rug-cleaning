@@ -26,6 +26,32 @@ const BlogPost = () => {
     fetchPost();
   }, [slug]);
 
+  // Add CSS for heading offsets and styling
+  useEffect(() => {
+    // Add style for heading offsets to ensure smooth scrolling lands at the right position
+    const style = document.createElement('style');
+    style.innerHTML = `
+      h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
+        scroll-margin-top: 8rem;
+      }
+      
+      .blog-content a {
+        color: #3D9FFF;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .blog-content a:hover {
+        color: #1a81ff;
+        text-decoration: underline;
+      }
+    `;
+    document.head.appendChild(style);
+    
+    return () => {
+      document.head.removeChild(style);
+    };
+  }, []);
+
   if (isLoading) {
     return (
       <div className="flex min-h-screen items-center justify-center">
@@ -84,7 +110,7 @@ const BlogPost = () => {
     <div className="container mx-auto min-h-screen px-4 py-12">
       {post && <BlogSchema post={post} />}
       <div className="mx-auto max-w-3xl">
-        <Button variant="ghost" asChild className="mb-6">
+        <Button variant="ghost" asChild className="mb-6 text-blue-600 hover:text-blue-700">
           <Link to="/blog">
             <ArrowLeft className="mr-2 h-4 w-4" />
             Back to Blog
@@ -120,7 +146,7 @@ const BlogPost = () => {
 
         <TableOfContents content={post.content} />
 
-        <div className="prose prose-blue mt-8 max-w-none">
+        <div className="prose prose-blue mt-8 max-w-none blog-content">
           {renderMarkdown(post.content)}
         </div>
 

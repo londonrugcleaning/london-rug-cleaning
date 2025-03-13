@@ -25,21 +25,24 @@ export function parseMarkdownFrontmatter(markdown: string): {
       
       // Handle arrays (tags)
       if (value.startsWith("[") && value.endsWith("]")) {
-        value = value
+        // Fix: Ensure we're handling arrays correctly
+        const arrayItems = value
           .substring(1, value.length - 1)
           .split(",")
           .map((item) => item.trim().replace(/"/g, "").replace(/'/g, ""));
+        
+        frontmatter[key.trim()] = arrayItems; // Now properly assigning array to frontmatter
+      } else {
+        // Remove quotes if present
+        if (
+          (value.startsWith('"') && value.endsWith('"')) ||
+          (value.startsWith("'") && value.endsWith("'"))
+        ) {
+          value = value.substring(1, value.length - 1);
+        }
+        
+        frontmatter[key.trim()] = value;
       }
-      
-      // Remove quotes if present
-      if (
-        (value.startsWith('"') && value.endsWith('"')) ||
-        (value.startsWith("'") && value.endsWith("'"))
-      ) {
-        value = value.substring(1, value.length - 1);
-      }
-      
-      frontmatter[key.trim()] = value;
     }
   });
 

@@ -1,5 +1,5 @@
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { ChevronDown, ChevronRight, List } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -10,7 +10,7 @@ interface TableOfContentsProps {
 }
 
 export const TableOfContents = ({ content }: TableOfContentsProps) => {
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const headings = extractHeadings(content);
 
   // Group headings by their top-level sections
@@ -23,6 +23,34 @@ export const TableOfContents = ({ content }: TableOfContentsProps) => {
       );
     }
   });
+
+  // Add smooth scrolling with offset
+  useEffect(() => {
+    const handleClick = (e: MouseEvent) => {
+      const target = e.target as HTMLElement;
+      const anchor = target.closest('a[href^="#"]');
+      
+      if (anchor) {
+        e.preventDefault();
+        const targetId = anchor.getAttribute('href')?.slice(1);
+        const targetElement = document.getElementById(targetId || '');
+        
+        if (targetElement) {
+          const headerOffset = 128; // 8rem = 128px
+          const elementPosition = targetElement.getBoundingClientRect().top;
+          const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+          
+          window.scrollTo({
+            top: offsetPosition,
+            behavior: 'smooth'
+          });
+        }
+      }
+    };
+    
+    document.addEventListener('click', handleClick);
+    return () => document.removeEventListener('click', handleClick);
+  }, []);
 
   // Schema for the table of contents
   const tocSchema = {
@@ -43,10 +71,10 @@ export const TableOfContents = ({ content }: TableOfContentsProps) => {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(tocSchema) }}
       />
       
-      <div className="mb-8 rounded-lg border bg-muted/50 p-4">
+      <div className="mb-8 rounded-lg border bg-muted/50 p-4 shadow-sm">
         <Button
           variant="ghost"
-          className="mb-2 w-full justify-between"
+          className="mb-2 w-full justify-between text-blue-600"
           onClick={() => setIsOpen(!isOpen)}
         >
           <span className="flex items-center gap-2 font-semibold">
@@ -62,8 +90,8 @@ export const TableOfContents = ({ content }: TableOfContentsProps) => {
               .filter(heading => heading.level === 2)
               .map((heading, index) => (
                 <AccordionItem key={index} value={`section-${index}`}>
-                  <AccordionTrigger className="text-sm hover:no-underline py-2">
-                    <a href={`#${heading.id}`} className="hover:text-primary">
+                  <AccordionTrigger className="text-sm hover:no-underline hover:text-blue-600 py-2">
+                    <a href={`#${heading.id}`} className="hover:text-blue-600">
                       {heading.text}
                     </a>
                   </AccordionTrigger>
@@ -77,7 +105,7 @@ export const TableOfContents = ({ content }: TableOfContentsProps) => {
                             headings.indexOf(h) < headings.indexOf(headings.filter(h2 => h2.level === 2)[index + 1]))
                         )
                         .map((subheading, idx) => (
-                          <li key={idx} className="text-sm text-muted-foreground hover:text-foreground">
+                          <li key={idx} className="text-sm text-muted-foreground hover:text-blue-600">
                             <a href={`#${subheading.id}`}>{subheading.text}</a>
                           </li>
                         ))
