@@ -1,38 +1,24 @@
 
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Calendar, Tag, User } from "lucide-react";
+import { Calendar, Tag, User, Clock } from "lucide-react";
 import { Link } from "react-router-dom";
-
-interface BlogPost {
-  slug: string;
-  title: string;
-  date: string;
-  author: string;
-  excerpt: string;
-  tags: string[];
-}
+import { getAllBlogPosts } from "@/lib/blog";
+import { BlogPost } from "@/types/blog";
+import { LazyLoadImage } from "@/components/ui/lazyload-image";
 
 const Blog = () => {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // This is a mock fetch that would normally get blog posts from an API
-    // For now we'll just use our one blog post we have
-    const mockPosts = [
-      {
-        slug: "how-to-clean-carpet-rug",
-        title: "How to Clean a Carpet Rug: A Complete Guide",
-        date: "2024-03-14",
-        author: "London Rug Cleaning Team",
-        excerpt: "Learn the professional techniques for cleaning your carpet rug effectively and safely at home.",
-        tags: ["rug cleaning", "carpet care", "DIY", "maintenance"],
-      }
-    ];
-    
-    setPosts(mockPosts);
-    setIsLoading(false);
+    const fetchPosts = async () => {
+      const allPosts = await getAllBlogPosts();
+      setPosts(allPosts);
+      setIsLoading(false);
+    };
+
+    fetchPosts();
   }, []);
 
   return (
@@ -62,7 +48,7 @@ const Blog = () => {
                   className="group overflow-hidden rounded-lg border bg-card shadow-sm transition-all hover:shadow-md"
                 >
                   <div className="p-6">
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <div className="flex items-center gap-2 text-sm text-muted-foreground flex-wrap">
                       <div className="flex items-center gap-1">
                         <Calendar className="h-4 w-4" />
                         <span>{new Date(post.date).toLocaleDateString()}</span>
@@ -71,6 +57,11 @@ const Blog = () => {
                       <div className="flex items-center gap-1">
                         <User className="h-4 w-4" />
                         <span>{post.author}</span>
+                      </div>
+                      <span>•</span>
+                      <div className="flex items-center gap-1">
+                        <Clock className="h-4 w-4" />
+                        <span>{post.readingTime}</span>
                       </div>
                     </div>
                     

@@ -1,3 +1,4 @@
+
 import { BlogPost } from "@/types/blog";
 
 interface BlogSchemaProps {
@@ -16,6 +17,7 @@ export const BlogSchema = ({ post }: BlogSchemaProps) => {
     },
     "description": post.excerpt,
     "keywords": post.tags.join(", "),
+    "timeRequired": post.readingTime,
     "publisher": {
       "@type": "Organization",
       "name": "London Rug Cleaning",
