@@ -4,8 +4,8 @@ import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, Calendar, User, Tag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { TableOfContents } from '@/components/blog/TableOfContents';
-import { BlogSchema } from '@/components/blog/BlogSchema';
 import { getBlogPostBySlug } from '@/lib/blog';
+import { HeadMeta } from '@/components/HeadMeta';
 
 const BlogPost = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -79,6 +79,28 @@ const BlogPost = () => {
     );
   }
 
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "headline": post.title,
+    "datePublished": post.date,
+    "author": {
+      "@type": "Person",
+      "name": post.author
+    },
+    "description": post.excerpt,
+    "keywords": post.tags.join(", "),
+    "timeRequired": post.readingTime,
+    "publisher": {
+      "@type": "Organization",
+      "name": "London Rug Cleaning",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "/logo.png"
+      }
+    }
+  };
+
   // Helper function to render markdown content as JSX
   const renderMarkdown = (content: string) => {
     return content.split('\n').map((line: string, index: number) => {
@@ -107,60 +129,67 @@ const BlogPost = () => {
   };
 
   return (
-    <div className="container mx-auto min-h-screen px-4 py-12">
-      {post && <BlogSchema post={post} />}
-      <div className="mx-auto max-w-3xl">
-        <Button variant="ghost" asChild className="mb-6 text-blue-600 hover:text-blue-700">
-          <Link to="/blog">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Blog
-          </Link>
-        </Button>
-
-        <h1 className="font-serif text-3xl font-bold sm:text-4xl md:text-5xl">
-          {post.title}
-        </h1>
-
-        <div className="mt-4 flex flex-wrap items-center gap-4 text-muted-foreground">
-          <div className="flex items-center gap-2">
-            <Calendar className="h-4 w-4" />
-            <span>{new Date(post.date).toLocaleDateString()}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <User className="h-4 w-4" />
-            <span>{post.author}</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <span>{post.readingTime}</span>
-          </div>
-        </div>
-
-        <div className="mt-4 flex flex-wrap gap-2">
-          {post.tags.map((tag: string) => (
-            <div key={tag} className="flex items-center gap-1 rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-800">
-              <Tag className="h-3 w-3" />
-              <span>{tag}</span>
-            </div>
-          ))}
-        </div>
-
-        <TableOfContents content={post.content} />
-
-        <div className="prose prose-blue mt-8 max-w-none blog-content">
-          {renderMarkdown(post.content)}
-        </div>
-
-        <div className="mt-12 rounded-lg border bg-blue-50 p-6 text-center">
-          <h3 className="text-xl font-semibold">Need Professional Rug Cleaning?</h3>
-          <p className="mt-2 text-muted-foreground">
-            Get a free quote for our expert rug cleaning services in London
-          </p>
-          <Button size="lg" className="mt-4 gap-2">
-            <Link to="/contact">Get Your Free Quote</Link>
+    <>
+      <HeadMeta
+        title={post.title}
+        description={post.excerpt}
+        canonicalUrl={`https://londonrugcleaning.co.uk/blog/${post.slug}`}
+        schema={schema}
+      />
+      <div className="container mx-auto min-h-screen px-4 py-12">
+        <div className="mx-auto max-w-3xl">
+          <Button variant="ghost" asChild className="mb-6 text-blue-600 hover:text-blue-700">
+            <Link to="/blog">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Blog
+            </Link>
           </Button>
+
+          <h1 className="font-serif text-3xl font-bold sm:text-4xl md:text-5xl">
+            {post.title}
+          </h1>
+
+          <div className="mt-4 flex flex-wrap items-center gap-4 text-muted-foreground">
+            <div className="flex items-center gap-2">
+              <Calendar className="h-4 w-4" />
+              <span>{new Date(post.date).toLocaleDateString()}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <User className="h-4 w-4" />
+              <span>{post.author}</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <span>{post.readingTime}</span>
+            </div>
+          </div>
+
+          <div className="mt-4 flex flex-wrap gap-2">
+            {post.tags.map((tag: string) => (
+              <div key={tag} className="flex items-center gap-1 rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-800">
+                <Tag className="h-3 w-3" />
+                <span>{tag}</span>
+              </div>
+            ))}
+          </div>
+
+          <TableOfContents content={post.content} />
+
+          <div className="prose prose-blue mt-8 max-w-none blog-content">
+            {renderMarkdown(post.content)}
+          </div>
+
+          <div className="mt-12 rounded-lg border bg-blue-50 p-6 text-center">
+            <h3 className="text-xl font-semibold">Need Professional Rug Cleaning?</h3>
+            <p className="mt-2 text-muted-foreground">
+              Get a free quote for our expert rug cleaning services in London
+            </p>
+            <Button size="lg" className="mt-4 gap-2">
+              <Link to="/contact">Get Your Free Quote</Link>
+            </Button>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 

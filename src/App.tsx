@@ -4,6 +4,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { HelmetProvider } from "react-helmet-async";
 import Index from "./pages/Index";
 import About from "./pages/About";
 import Services from "./pages/Services";
@@ -28,33 +29,35 @@ const queryClient = new QueryClient();
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Navigation />
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/services" element={<Services />} />
-          <Route path="/services/persian-rug-cleaning" element={<PersianRugCleaning />} />
-          <Route path="/services/oriental-rug-cleaning" element={<OrientalRugCleaning />} />
-          <Route path="/services/wool-rug-cleaning" element={<WoolRugCleaning />} />
-          <Route path="/services/area-rug-cleaning" element={<AreaRugCleaning />} />
-          <Route path="/services/synthetic-rug-cleaning" element={<SyntheticRugCleaning />} />
-          <Route path="/services/antique-rug-cleaning" element={<AntiqueRugCleaning />} />
-          <Route path="/services/hand-knotted-rug-cleaning" element={<HandKnottedRugCleaning />} />
-          <Route path="/services/rug-stain-removal" element={<RugStainRemoval />} />
-          <Route path="/services/:id" element={<ServiceDetail />} />
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:slug" element={<BlogPost />} />
-        </Routes>
-        <Footer />
-        <FloatingButtons />
-      </BrowserRouter>
-    </TooltipProvider>
+    <HelmetProvider>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Navigation />
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/services" element={<Services />} />
+            <Route path="/services/persian-rug-cleaning" element={<PersianRugCleaning />} />
+            <Route path="/services/oriental-rug-cleaning" element={<OrientalRugCleaning />} />
+            <Route path="/services/wool-rug-cleaning" element={<WoolRugCleaning />} />
+            <Route path="/services/area-rug-cleaning" element={<AreaRugCleaning />} />
+            <Route path="/services/synthetic-rug-cleaning" element={<SyntheticRugCleaning />} />
+            <Route path="/services/antique-rug-cleaning" element={<AntiqueRugCleaning />} />
+            <Route path="/services/hand-knotted-rug-cleaning" element={<HandKnottedRugCleaning />} />
+            <Route path="/services/rug-stain-removal" element={<RugStainRemoval />} />
+            <Route path="/services/:id" element={<ServiceDetail />} />
+            <Route path="/gallery" element={<Gallery />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:slug" element={<BlogPost />} />
+          </Routes>
+          <Footer />
+          <FloatingButtons />
+        </BrowserRouter>
+      </TooltipProvider>
+    </HelmetProvider>
   </QueryClientProvider>
 );
 

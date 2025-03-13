@@ -6,6 +6,7 @@ import { ServiceFeatures } from "@/components/service-detail/ServiceFeatures";
 import { ServiceGallery } from "@/components/service-detail/ServiceGallery";
 import { ServiceFAQ } from "@/components/service-detail/ServiceFAQ";
 import { PricingTable } from "@/components/service-detail/PricingTable";
+import { HeadMeta } from "@/components/HeadMeta";
 
 const PersianRugCleaning = () => {
   const service = {
@@ -118,57 +119,60 @@ const PersianRugCleaning = () => {
   };
   
   return (
-    <div>
-      <ServiceHero 
-        title={service.title} 
-        description={service.description} 
-        heroImage={service.hero} 
+    <>
+      <HeadMeta
+        title={`${service.title} London | Professional Cleaning Services`}
+        description={service.description}
+        canonicalUrl={`https://londonrugcleaning.co.uk/services/persian-rug-cleaning`}
+        schema={service.schema}
       />
-      
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <p className="text-lg">{service.intro}</p>
+      <div>
+        <ServiceHero 
+          title={service.title} 
+          description={service.description} 
+          heroImage={service.hero} 
+        />
+        
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <p className="text-lg">{service.intro}</p>
+            </div>
           </div>
-        </div>
-      </section>
-      
-      <ServiceFeatures 
-        features={service.features} 
-        process={service.process} 
-      />
-      
-      <ServiceGallery 
-        title={service.title}
-        gallery={service.gallery}
-      />
-      
-      <PricingTable title={`${service.title} Pricing`} />
-      
-      <ServiceFAQ 
-        faqs={service.faqs}
-      />
-      
-      <section className="py-20 bg-blue-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-serif text-3xl font-semibold mb-6">
-            Ready to Get Your {service.title} Service?
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Contact us today for a free quote and consultation. We offer free collection and delivery across London.
-          </p>
-          <Button size="lg" className="gap-2 bg-blue-600 hover:bg-blue-700">
-            <Phone className="h-4 w-4" />
-            02034888344
-          </Button>
-        </div>
-      </section>
-      
-      <script 
-        type="application/ld+json" 
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(service.schema) }} 
-      />
-    </div>
+        </section>
+        
+        <ServiceFeatures 
+          features={service.features} 
+          process={service.process} 
+        />
+        
+        <ServiceGallery 
+          title={service.title}
+          gallery={service.gallery}
+        />
+        
+        <PricingTable title={`${service.title} Pricing`} />
+        
+        <ServiceFAQ 
+          faqs={service.faqs}
+        />
+        
+        <section className="py-20 bg-blue-50">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="font-serif text-3xl font-semibold mb-6">
+              Ready to Get Your {service.title} Service?
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Contact us today for a free quote and consultation. We offer free collection and delivery across London.
+            </p>
+            <Button size="lg" className="gap-2 bg-blue-600 hover:bg-blue-700">
+              <Phone className="h-4 w-4" />
+              02034888344
+            </Button>
+          </div>
+        </section>
+      </div>
+    </>
   );
 };
 
