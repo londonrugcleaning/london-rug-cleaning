@@ -7,6 +7,9 @@ import {
   Feather, Scissors, ShieldCheck
 } from "lucide-react";
 import { CTAButtons } from "@/components/CTAButtons";
+import { HeadMeta } from "@/components/HeadMeta";
+import { ServiceSchema } from "@/components/seo/ServiceSchema";
+import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 
 const services = [
   {
@@ -67,61 +70,16 @@ const services = [
   }
 ];
 
-// Service schema for this page
-const servicesSchema = {
-  "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Professional Rug Cleaning Services in London",
-  "provider": {
-    "@type": "LocalBusiness",
-    "name": "London Rug Cleaning",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "4 Maddison Court, 145 Great North Way",
-      "addressLocality": "London",
-      "postalCode": "NW4 1PW",
-      "addressCountry": "UK"
-    },
-    "telephone": "02034888344",
-    "priceRange": "££",
-    "areaServed": "London"
-  },
-  "serviceType": "Rug Cleaning",
-  "description": "Expert rug cleaning services near you. Specializing in Persian, Oriental, and Wool rugs with free collection and delivery across London.",
-  "offers": {
-    "@type": "Offer",
-    "availability": "https://schema.org/InStock",
-    "areaServed": "London"
-  }
-};
-
-// Local business schema
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "London Rug Cleaning",
-  "address": {
-    "@type": "PostalAddress",
-    "streetAddress": "4 Maddison Court, 145 Great North Way",
-    "addressLocality": "London",
-    "postalCode": "NW4 1PW",
-    "addressCountry": "UK"
-  },
-  "telephone": "02034888344",
-  "priceRange": "££",
-  "areaServed": "London",
-  "url": "https://londonrugcleaning.com",
-  "image": "https://londonrugcleaning.com/images/logo.png",
-  "sameAs": [
-    "https://www.facebook.com/londonrugcleaning",
-    "https://twitter.com/londonrugclean",
-    "https://www.instagram.com/londonrugcleaning"
-  ]
-};
-
 const Services = () => {
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+      <HeadMeta
+        title="Professional Rug Cleaning Services in London"
+        description="Expert rug cleaning services near you. Specializing in Persian, Oriental, and Wool rugs with free collection and delivery across London."
+        canonicalUrl="https://londonrugcleaning.co.uk/services"
+        keywords={["rug cleaning", "persian rug", "wool rug", "oriental rug", "london", "cleaning services"]}
+      />
+
       {/* Hero Section */}
       <section className="py-20">
         <div className="container mx-auto px-4">
@@ -188,14 +146,11 @@ const Services = () => {
       </section>
 
       {/* Add schema markup */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
+      <ServiceSchema 
+        name="Professional Rug Cleaning Services in London"
+        description="Expert rug cleaning services near you. Specializing in Persian, Oriental, and Wool rugs with free collection and delivery across London."
       />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
+      <LocalBusinessSchema />
     </div>
   );
 };

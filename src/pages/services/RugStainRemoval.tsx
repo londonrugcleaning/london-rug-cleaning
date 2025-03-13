@@ -1,4 +1,3 @@
-
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ServiceHero } from "@/components/service-detail/ServiceHero";
@@ -6,6 +5,9 @@ import { ServiceFeatures } from "@/components/service-detail/ServiceFeatures";
 import { ServiceGallery } from "@/components/service-detail/ServiceGallery";
 import { ServiceFAQ } from "@/components/service-detail/ServiceFAQ";
 import { PricingTable } from "@/components/service-detail/PricingTable";
+import { HeadMeta } from "@/components/HeadMeta";
+import { ServiceSchema } from "@/components/seo/ServiceSchema";
+import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 
 const RugStainRemoval = () => {
   const service = {
@@ -89,86 +91,72 @@ const RugStainRemoval = () => {
         question: "How much does rug stain removal cost?",
         answer: "Our standard pricing for complete rug cleaning is £20-30 per square meter with a minimum charge of £70. For spot treatments and stain removal only, services start at £25 for small, simple stains and range up to £120+ for extensive or challenging stains requiring specialized treatments. We provide a detailed quotation after initial inspection, as additional treatments may be needed depending on the type and severity of stains."
       }
-    ],
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Rug Stain Removal London",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "London Rug Cleaning",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "4 Maddison Court, 145 Great North Way",
-          "addressLocality": "London",
-          "postalCode": "NW4 1PW",
-          "addressCountry": "UK"
-        },
-        "telephone": "02034888344",
-        "areaServed": "London"
-      },
-      "serviceType": "Rug Cleaning",
-      "description": "Professional spot and stain treatment for all rug types in London",
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock",
-        "areaServed": "London"
-      }
-    }
+    ]
   };
   
   return (
-    <div>
-      <ServiceHero 
-        title={service.title} 
-        description={service.description} 
-        heroImage={service.hero} 
+    <>
+      <HeadMeta
+        title={`${service.title} | Professional Cleaning Services London`}
+        description={service.description}
+        canonicalUrl={`https://londonrugcleaning.co.uk/services/rug-stain-removal`}
+        keywords={["rug stain removal", "carpet cleaning", "stain treatment", "london", "professional cleaning"]}
+        ogImage="/images/rug-stain-removal-hero.jpg"
       />
       
-      <section className="py-16 bg-white">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <p className="text-lg">{service.intro}</p>
+      <div>
+        <ServiceHero 
+          title={service.title} 
+          description={service.description} 
+          heroImage={service.hero} 
+        />
+        
+        <section className="py-16 bg-white">
+          <div className="container mx-auto px-4">
+            <div className="max-w-3xl mx-auto">
+              <p className="text-lg">{service.intro}</p>
+            </div>
           </div>
-        </div>
-      </section>
-      
-      <ServiceFeatures 
-        features={service.features} 
-        process={service.process} 
-      />
-      
-      <ServiceGallery 
-        title={service.title}
-        gallery={service.gallery}
-      />
-      
-      <PricingTable title={`${service.title} Pricing`} />
-      
-      <ServiceFAQ 
-        faqs={service.faqs}
-      />
-      
-      <section className="py-20 bg-blue-50">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="font-serif text-3xl font-semibold mb-6">
-            Ready to Get Your {service.title} Service?
-          </h2>
-          <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-            Contact us today for a free quote and consultation. We offer free collection and delivery across London.
-          </p>
-          <Button size="lg" className="gap-2 bg-blue-600 hover:bg-blue-700">
-            <Phone className="h-4 w-4" />
-            02034888344
-          </Button>
-        </div>
-      </section>
-      
-      <script 
-        type="application/ld+json" 
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(service.schema) }} 
-      />
-    </div>
+        </section>
+        
+        <ServiceFeatures 
+          features={service.features} 
+          process={service.process} 
+        />
+        
+        <ServiceGallery 
+          title={service.title}
+          gallery={service.gallery}
+        />
+        
+        <PricingTable title={`${service.title} Pricing`} />
+        
+        <ServiceFAQ 
+          faqs={service.faqs}
+        />
+        
+        <section className="py-20 bg-blue-50">
+          <div className="container mx-auto px-4 text-center">
+            <h2 className="font-serif text-3xl font-semibold mb-6">
+              Ready to Get Your {service.title} Service?
+            </h2>
+            <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
+              Contact us today for a free quote and consultation. We offer free collection and delivery across London.
+            </p>
+            <Button size="lg" className="gap-2 bg-blue-600 hover:bg-blue-700">
+              <Phone className="h-4 w-4" />
+              02034888344
+            </Button>
+          </div>
+        </section>
+        
+        <ServiceSchema 
+          name={`${service.title} London`}
+          description={service.description}
+        />
+        <LocalBusinessSchema />
+      </div>
+    </>
   );
 };
 

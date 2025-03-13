@@ -7,6 +7,8 @@ import { ServiceGallery } from "@/components/service-detail/ServiceGallery";
 import { ServiceFAQ } from "@/components/service-detail/ServiceFAQ";
 import { PricingTable } from "@/components/service-detail/PricingTable";
 import { HeadMeta } from "@/components/HeadMeta";
+import { ServiceSchema } from "@/components/seo/ServiceSchema";
+import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 
 const PersianRugCleaning = () => {
   const service = {
@@ -90,32 +92,7 @@ const PersianRugCleaning = () => {
         question: "Can you remove old stains from Persian rugs?",
         answer: "Yes, we can successfully remove most stains from Persian rugs, even those that have been present for some time. Our technicians use specialized stain removal techniques appropriate for the specific type of stain and the rug's materials. However, some very old or improperly treated stains may be permanent."
       }
-    ],
-    schema: {
-      "@context": "https://schema.org",
-      "@type": "Service",
-      "name": "Persian Rug Cleaning London",
-      "provider": {
-        "@type": "LocalBusiness",
-        "name": "London Rug Cleaning",
-        "address": {
-          "@type": "PostalAddress",
-          "streetAddress": "4 Maddison Court, 145 Great North Way",
-          "addressLocality": "London",
-          "postalCode": "NW4 1PW",
-          "addressCountry": "UK"
-        },
-        "telephone": "02034888344",
-        "areaServed": "London"
-      },
-      "serviceType": "Rug Cleaning",
-      "description": "Expert Persian rug cleaning services in London combining traditional methods with modern technology",
-      "offers": {
-        "@type": "Offer",
-        "availability": "https://schema.org/InStock",
-        "areaServed": "London"
-      }
-    }
+    ]
   };
   
   return (
@@ -124,8 +101,11 @@ const PersianRugCleaning = () => {
         title={`${service.title} London | Professional Cleaning Services`}
         description={service.description}
         canonicalUrl={`https://londonrugcleaning.co.uk/services/persian-rug-cleaning`}
-        schema={service.schema}
+        keywords={["persian rug cleaning", "oriental rug cleaning", "professional rug cleaning", "london"]}
+        ogImage="/images/persian-rug-hero.jpg"
+        ogType="website"
       />
+      
       <div>
         <ServiceHero 
           title={service.title} 
@@ -171,6 +151,12 @@ const PersianRugCleaning = () => {
             </Button>
           </div>
         </section>
+        
+        <ServiceSchema 
+          name={`${service.title} London`}
+          description={service.description}
+        />
+        <LocalBusinessSchema />
       </div>
     </>
   );
