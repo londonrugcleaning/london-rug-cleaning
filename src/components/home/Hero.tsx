@@ -1,14 +1,9 @@
 
-import { Button } from "@/components/ui/button";
-import { ArrowRight, Star, Truck, Shield, MapPin } from "lucide-react";
-import { Link } from "react-router-dom";
+import { Truck, Shield, MapPin } from "lucide-react";
 import { CTAButtons } from "../CTAButtons";
+import Review from "../ui/review";
 
 export const Hero = () => {
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact-section');
-    contactSection?.scrollIntoView({ behavior: 'smooth' });
-  };
 
   const benefits = [
     {
@@ -24,7 +19,7 @@ export const Hero = () => {
     {
       icon: MapPin,
       title: "Local Service",
-      description: "Professional cleaners near you"
+      description: "Professional rug cleaners near you"
     }
   ];
 
@@ -40,51 +35,34 @@ export const Hero = () => {
                 <span className="text-blue-600">Rug Cleaning</span>{" "}
                 <span className="block">Service in London</span>
               </h1>
-              
-              <div className="flex items-center gap-4">
-                <div className="flex items-center">
-                  <Star className="h-5 w-5 text-yellow-400" fill="currentColor" />
-                  <span className="ml-2 font-semibold">4.9</span>
-                </div>
-                <div className="text-sm text-muted-foreground">
-                  Over 1,000+ satisfied customers
-                </div>
-              </div>
+
+              <Review />
 
               <p className="text-lg text-muted-foreground">
-                Expert care for all types of rugs - From antique Persian to modern designs. 
+                Expert care for all types of rugs - From antique Persian to modern designs.
                 Trusted by London residents for over 30 years.
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row">
-                <Button 
-                  size="lg" 
-                  className="gap-2 bg-blue-600 hover:bg-blue-700"
-                  onClick={scrollToContact}
-                >
-                  Get Started
-                  <ArrowRight className="h-4 w-4" />
-                </Button>
-                <Button size="lg" variant="outline" asChild>
-                  <Link to="/services">View Our Services</Link>
-                </Button>
+                <CTAButtons />
               </div>
             </div>
           </div>
 
           <div className="relative hidden lg:block">
-            <div className="absolute -right-20 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-blue-100/50 blur-3xl" />
+            <div className="absolute -right-24 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-blue-200/60 blur-3xl" />
             <img
-              src="/lovable-uploads/a7674ddc-b624-4dd8-aea9-54b266946b3f.png"
+              // src="/images/persian-rug-hero.jpg"
+              src="/images/antique-rug-hero.webp"
               alt="Professional Rug Cleaning Service"
-              className="relative z-10 mx-auto max-w-lg rounded-2xl shadow-2xl"
+              className="relative z-10 max-w-xl rounded-2xl shadow-2xl translate-x-20"
             />
           </div>
         </div>
 
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
           {benefits.map((benefit, index) => (
-            <div 
+            <div
               key={index}
               className="animate-fade-up rounded-xl bg-white p-6 shadow-lg transition-all hover:shadow-xl"
               style={{ animationDelay: `${index * 100}ms` }}
