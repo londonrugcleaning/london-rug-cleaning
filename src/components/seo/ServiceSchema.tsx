@@ -1,4 +1,6 @@
 
+import { SchemaMarkup } from "./SchemaMarkup";
+
 interface ServiceSchemaProps {
   name: string;
   description: string;

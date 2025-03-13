@@ -1,4 +1,6 @@
 
+import { SchemaMarkup } from "./SchemaMarkup";
+
 interface LocalBusinessSchemaProps {
   priceRange?: string;
   areaServed?: string;
