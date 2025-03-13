@@ -1,7 +1,7 @@
 
 export const Logo = () => {
   return (
-    <div className="flex items-center gap-2">
+    <div className="flex items-center gap-2 pl-2">
       <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 392.594 392.594">
         <g fill="#ffc10d">
           <path d="M325.68 278.558c-24.824 0-45.059 20.687-45.059 46.158s20.17 46.158 45.059 46.158c24.889 0 45.059-20.687 45.059-46.158 0-25.536-20.17-46.158-45.059-46.158zM37.551 331.244l-11.895 39.499h84.428l-11.895-39.499z" />

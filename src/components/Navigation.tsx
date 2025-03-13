@@ -46,8 +46,8 @@ export const Navigation = () => {
   ];
 
   return (
-    <header className="fixed top-4 z-50 mx-auto w-full px-4">
-      <nav className="rounded-full border bg-white/90 py-4 shadow-lg px-8 backdrop-blur-xs w-full max-w-7xl mx-auto">
+    <header className="fixed top-4 z-50 mx-auto w-full">
+      <nav className="container rounded-full border bg-white/90 py-2 shadow-lg px-4 backdrop-blur-xs w-full  mx-auto">
         <div className="flex items-center justify-between">
           <Link to="/">
             <Logo />
