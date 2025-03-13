@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 interface SitemapURL {
   loc: string;
   lastmod?: string;
-  changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
+  changefreq?: string;
   priority?: number;
 }
 
