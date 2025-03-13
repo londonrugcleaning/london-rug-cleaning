@@ -10,7 +10,6 @@ import {
   Menu,
   X,
   Phone,
-  ChevronDown,
   Image,
 } from "lucide-react";
 import {
@@ -69,10 +68,10 @@ export const Navigation = () => {
                   <NavigationMenuTrigger
                     className={location.pathname.startsWith("/services") ? "text-blue-600" : ""}
                   >
-                    <span className="flex items-center gap-2">
+                    <Link to="/services" className="flex items-center gap-2">
                       <List className="h-4 w-4" />
                       Services
-                    </span>
+                    </Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[500px] grid-cols-2 gap-3 p-4">
@@ -81,7 +80,7 @@ export const Navigation = () => {
                           <NavigationMenuLink asChild>
                             <Link
                               to={service.href}
-                              className={`block rounded-lg p-3 ${location.pathname === service.href ? 'text-blue-600' : 'hover:bg-accent'}`}
+                              className={`block rounded-lg p-3 ${location.pathname === service.href ? 'text-blue-600' : ''}`}
                             >
                               <div className="text-sm font-medium">{service.name}</div>
                               <p className="text-xs leading-snug text-muted-foreground">

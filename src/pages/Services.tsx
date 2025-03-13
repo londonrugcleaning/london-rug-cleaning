@@ -2,10 +2,9 @@
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { 
-  Droplets, Shield, Brush, Home, Truck, Bug, 
-  Sparkles, Clock, Award, Paintbrush, Gem, 
-  Feather, MapPin, Scissors, ShieldCheck
+import {
+  Droplets, Home, Award, Paintbrush, Gem,
+  Feather, Scissors, ShieldCheck
 } from "lucide-react";
 import { CTAButtons } from "@/components/CTAButtons";
 
@@ -174,9 +173,9 @@ const Services = () => {
             <p className="mt-4 text-blue-100">
               Book your free collection today and experience the difference of professional rug cleaning.
             </p>
-            <Button 
-              size="lg" 
-              variant="secondary" 
+            <Button
+              size="lg"
+              variant="secondary"
               className="mt-8"
               onClick={() => {
                 window.location.href = "/contact";
@@ -189,13 +188,13 @@ const Services = () => {
       </section>
 
       {/* Add schema markup */}
-      <script 
-        type="application/ld+json" 
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }} 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(servicesSchema) }}
       />
-      <script 
-        type="application/ld+json" 
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
       />
     </div>
   );
