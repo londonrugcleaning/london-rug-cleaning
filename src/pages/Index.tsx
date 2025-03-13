@@ -1,32 +1,31 @@
+
 import { Hero } from "@/components/home/Hero";
 import { ServicesSection } from "@/components/home/ServicesSection";
 import { ProcessSection } from "@/components/home/ProcessSection";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
 import { ContactSection } from "@/components/home/ContactSection";
-import { Phone } from "lucide-react";
+import { HeadMeta } from "@/components/HeadMeta";
+import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 
 const Index = () => {
   return (
-    <div className="min-h-screen">
-      <Hero />
-      <ServicesSection />
-      <ProcessSection />
-      <TestimonialsSection />
-      <ContactSection />
-
-      {/* Footer */}
-      <footer className="border-t bg-cream-50 py-12">
-        <div className="container mx-auto px-4 text-center sm:px-6 lg:px-8">
-          <div className="flex items-center justify-center space-x-2">
-            <Phone className="h-5 w-5" />
-            <span>020 1234 5678</span>
-          </div>
-          <p className="mt-4 text-sm text-muted-foreground">
-            © 2024 London Rug Cleaning. All rights reserved.
-          </p>
-        </div>
-      </footer>
-    </div>
+    <>
+      <HeadMeta 
+        title="London Rug Cleaning - Professional Rug Cleaning Services"
+        description="Expert rug cleaning services in London. Specializing in oriental, Persian, and antique rug cleaning with free collection and delivery. Get your free quote today!"
+        canonicalUrl="https://londonrugcleaning.co.uk"
+        ogImage="/og-image.png"
+        keywords={["rug cleaning", "carpet cleaning", "persian rug", "oriental rug", "london", "professional cleaning"]}
+      />
+      <div className="min-h-screen">
+        <Hero />
+        <ServicesSection />
+        <ProcessSection />
+        <TestimonialsSection />
+        <ContactSection />
+      </div>
+      <LocalBusinessSchema />
+    </>
   );
 };
 

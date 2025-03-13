@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -60,18 +61,18 @@ export default {
           400: "#E9D8B7",
           500: "#E3CEA5",
         },
-        sand: {
-          50: "#F9F7F4",
-          100: "#F2EEE8",
-          200: "#E5DDD1",
-          300: "#D8CCBA",
-          400: "#CBBBA3",
-          500: "#BEA98C",
+        blue: {
+          50: "#F0F7FF",
+          100: "#E0EFFF",
+          200: "#B8DBFF",
+          300: "#8FC7FF",
+          400: "#66B3FF",
+          500: "#3D9FFF",
         },
       },
       fontFamily: {
-        serif: ["Playfair Display", "serif"],
-        sans: ["Inter", "sans-serif"],
+        serif: ["Noto Serif", "serif"],
+        sans: ["Poppins", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",

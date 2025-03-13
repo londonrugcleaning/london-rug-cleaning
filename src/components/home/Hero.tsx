@@ -1,44 +1,79 @@
-import { Button } from "@/components/ui/button";
-import { Check } from "lucide-react";
+
+import { Truck, Shield, MapPin } from "lucide-react";
+import { CTAButtons } from "../CTAButtons";
+import Review from "../ui/review";
 
 export const Hero = () => {
+
   const benefits = [
-    "30+ Years of Expert Experience",
-    "Free Collection & Delivery",
-    "Advanced Cleaning Technology",
-    "Fully Insured Service",
+    {
+      icon: Shield,
+      title: "Expert Rug Care",
+      description: "Specialized in Persian & Oriental Rugs"
+    },
+    {
+      icon: Truck,
+      title: "Free Collection",
+      description: "Available across London"
+    },
+    {
+      icon: MapPin,
+      title: "Local Service",
+      description: "Professional rug cleaners near you"
+    }
   ];
 
   return (
-    <section className="hero-pattern relative overflow-hidden">
+    <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white pt-4">
+      <div className="absolute inset-0 bg-grid-pattern opacity-5" />
       <div className="container relative z-10 mx-auto px-4 py-24 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-4xl text-center">
-          <h1 className="animate-fade-up font-serif text-4xl font-semibold tracking-tight sm:text-5xl md:text-6xl">
-            Professional Rug Cleaning in{" "}
-            <span className="text-primary">London</span>
-          </h1>
-          <p className="mt-6 animate-fade-up text-lg text-muted-foreground">
-            Expert care for all types of rugs, from antique Persian to modern
-            designs. Free collection and delivery across London.
-          </p>
-          <div className="mt-8 animate-fade-up">
-            <ul className="mx-auto max-w-xl space-y-3">
-              {benefits.map((benefit, index) => (
-                <li
-                  key={index}
-                  className="flex items-center justify-center space-x-2 text-left"
-                >
-                  <Check className="h-5 w-5 flex-shrink-0 text-primary" />
-                  <span className="text-muted-foreground">{benefit}</span>
-                </li>
-              ))}
-            </ul>
+        <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
+          <div className="flex flex-col justify-center">
+            <div className="animate-fade-up space-y-8">
+              <h1 className="font-serif text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+                Professional{" "}
+                <span className="text-blue-600">Rug Cleaning</span>{" "}
+                <span className="block">Service in London</span>
+              </h1>
+
+              <Review />
+
+              <p className="text-lg text-muted-foreground">
+                Expert care for all types of rugs - From antique Persian to modern designs.
+                Trusted by London residents for over 30 years.
+              </p>
+
+              <div className="flex flex-col gap-4 sm:flex-row">
+                <CTAButtons />
+              </div>
+            </div>
           </div>
-          <div className="mt-10 animate-fade-up">
-            <Button size="lg" className="rounded-full">
-              Get Your Free Quote
-            </Button>
+
+          <div className="relative hidden lg:block">
+            <div className="absolute -right-24 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-blue-200/60 blur-3xl" />
+            <img
+              // src="/images/persian-rug-hero.jpg"
+              src="/images/antique-rug-hero.webp"
+              alt="Professional Rug Cleaning Service"
+              className="relative z-10 max-w-xl rounded-2xl shadow-2xl translate-x-20"
+            />
           </div>
+        </div>
+
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {benefits.map((benefit, index) => (
+            <div
+              key={index}
+              className="animate-fade-up rounded-xl bg-white p-6 shadow-lg transition-all hover:shadow-xl"
+              style={{ animationDelay: `${index * 100}ms` }}
+            >
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
+                <benefit.icon className="h-6 w-6 text-blue-600" />
+              </div>
+              <h3 className="mb-2 font-semibold">{benefit.title}</h3>
+              <p className="text-sm text-muted-foreground">{benefit.description}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

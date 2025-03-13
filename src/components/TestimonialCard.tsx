@@ -9,7 +9,7 @@ export const TestimonialCard = ({ name, role, content }: TestimonialCardProps) =
     <div className="testimonial-card animate-fade-up">
       <div className="mb-4">
         <svg
-          className="h-8 w-8 text-primary/20"
+          className="h-8 w-8 text-blue-300"
           fill="currentColor"
           viewBox="0 0 32 32"
           aria-hidden="true"
