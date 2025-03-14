@@ -2,10 +2,10 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 
-interface SitemapURL {
+export interface SitemapURL {
   loc: string;
   lastmod?: string;
-  changefreq?: string;
+  changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
   priority?: number;
 }
 

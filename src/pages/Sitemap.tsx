@@ -1,11 +1,11 @@
 
 import React from "react";
-import { SitemapGenerator } from "@/components/seo/SitemapGenerator";
+import { SitemapGenerator, SitemapURL } from "@/components/seo/SitemapGenerator";
 
 const Sitemap = () => {
   const baseUrl = "https://londonrugcleaning.co.uk";
   
-  const sitemapUrls = [
+  const sitemapUrls: SitemapURL[] = [
     { loc: "/", lastmod: "2023-11-15", changefreq: "yearly", priority: 1.0 },
     { loc: "/about", lastmod: "2023-11-01", changefreq: "yearly", priority: 0.8 },
     { loc: "/services", lastmod: "2023-11-10", changefreq: "yearly", priority: 0.9 },
