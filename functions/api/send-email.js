@@ -1,5 +1,6 @@
 
-// Cloudflare Worker for sending emails
+import nodemailer from 'nodemailer';
+
 export async function onRequest(context) {
   try {
     // Handle CORS
@@ -49,6 +50,17 @@ export async function onRequest(context) {
     const SMTP_PASS = context.env.SMTP_PASS;
     const TO_EMAIL = context.env.TO_EMAIL || "info@londonrugcleaning.co.uk";
 
+    // Create transporter object using nodemailer
+    const transporter = nodemailer.createTransport({
+      host: SMTP_HOST,
+      port: SMTP_PORT,
+      secure: true,
+      auth: {
+        user: SMTP_USER,
+        pass: SMTP_PASS,
+      },
+    });
+
     // Construct email content
     const emailContent = `
       Name: ${name}
@@ -57,31 +69,48 @@ export async function onRequest(context) {
       Message: ${message}
     `;
 
-    // Send email using Cloudflare Email Routing or a third-party email service
-    // This example uses the Web Standards Fetch API that Cloudflare Workers support
-    const emailSent = await fetch(`https://${SMTP_HOST}/api/send`, {
-      method: "POST",
+    // Email options
+    const mailOptions = {
+      from: `"London Rug Cleaning" <admin@londonrugcleaning.co.uk>`,
+      to: TO_EMAIL,
+      subject: `New Quote Request from ${name}`,
+      text: emailContent,
+      html: `<p><strong>Name:</strong> ${name}</p>
+             <p><strong>Email:</strong> ${email}</p>
+             <p><strong>Phone:</strong> ${phone}</p>
+             <p><strong>Message:</strong> ${message}</p>`,
       headers: {
-        "Content-Type": "application/json",
-        "Authorization": `Basic ${btoa(`${SMTP_USER}:${SMTP_PASS}`)}`,
+        "x-liara-tag": "quote_request", 
       },
-      body: JSON.stringify({
-        from: `London Rug Cleaning <noreply@londonrugcleaning.co.uk>`,
-        to: TO_EMAIL,
-        subject: `New Quote Request from ${name}`,
-        text: emailContent,
-        html: `<p><strong>Name:</strong> ${name}</p>
-               <p><strong>Email:</strong> ${email}</p>
-               <p><strong>Phone:</strong> ${phone}</p>
-               <p><strong>Message:</strong> ${message}</p>`,
-      }),
-    });
+    };
 
-    // Check if email was sent successfully
-    if (!emailSent.ok) {
-      console.error("Failed to send email:", await emailSent.text());
+    // Try to send the email
+    try {
+      const info = await transporter.sendMail(mailOptions);
+      
+      // Return success response
       return new Response(
-        JSON.stringify({ error: "Failed to send email" }),
+        JSON.stringify({ 
+          success: true, 
+          message: "Email sent successfully",
+          messageId: info.messageId 
+        }),
+        {
+          status: 200,
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      );
+    } catch (emailError) {
+      console.error("Error sending email:", emailError);
+      
+      return new Response(
+        JSON.stringify({ 
+          error: "Failed to send email", 
+          details: emailError.message 
+        }),
         {
           status: 500,
           headers: {
@@ -91,24 +120,12 @@ export async function onRequest(context) {
         }
       );
     }
-
-    // Return success response
-    return new Response(
-      JSON.stringify({ success: true, message: "Email sent successfully" }),
-      {
-        status: 200,
-        headers: {
-          "Content-Type": "application/json",
-          "Access-Control-Allow-Origin": "*",
-        },
-      }
-    );
   } catch (error) {
-    console.error("Error sending email:", error);
+    console.error("Error in request handler:", error);
     
     // Return error response
     return new Response(
-      JSON.stringify({ error: "Failed to send email", details: error.message }),
+      JSON.stringify({ error: "Failed to process request", details: error.message }),
       {
         status: 500,
         headers: {

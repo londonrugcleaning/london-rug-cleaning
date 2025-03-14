@@ -1,3 +1,4 @@
+
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -29,6 +30,8 @@ const Contact = () => {
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
         toast({
           title: "Thank you for your message",
@@ -38,11 +41,13 @@ const Contact = () => {
       } else {
         toast({
           title: "Error sending message",
-          description: "Please try again or call us directly.",
+          description: data.error || "Please try again or call us directly.",
           variant: "destructive",
         });
+        console.error("Form submission error:", data);
       }
     } catch (error) {
+      console.error("Form submission error:", error);
       toast({
         title: "Error sending message",
         description: "Please try again or call us directly.",
@@ -105,17 +110,17 @@ const Contact = () => {
                 </div>
                 <div className="space-y-4">
                   <Button asChild variant="link" className="flex items-center justify-start gap-3 p-0 hover:text-primary">
-                    <a href="tel:02034888344">
-                      <Phone className="h-5 w-5 text-primary" />
+                    <a href="tel:02034888344" aria-label="Call us at 020 3488 8344">
+                      <Phone className="h-5 w-5 text-primary" aria-hidden="true" />
                       <span>020 3488 8344</span>
                     </a>
                   </Button>
                   <div className="flex items-center gap-3">
-                    <Mail className="h-5 w-5 text-primary" />
+                    <Mail className="h-5 w-5 text-primary" aria-hidden="true" />
                     <span>info@londonrugcleaning.co.uk</span>
                   </div>
                   <div className="flex items-center gap-3">
-                    <MapPin className="h-5 w-5 text-primary" />
+                    <MapPin className="h-5 w-5 text-primary" aria-hidden="true" />
                     <span>4 Maddison Court, 145 Great North Way, NW4 1PW</span>
                   </div>
                 </div>
@@ -129,6 +134,7 @@ const Contact = () => {
                     setFormData({ ...formData, name: e.target.value })
                   }
                   required
+                  aria-label="Your Name"
                 />
                 <Input
                   type="email"
@@ -138,6 +144,7 @@ const Contact = () => {
                     setFormData({ ...formData, email: e.target.value })
                   }
                   required
+                  aria-label="Email Address"
                 />
                 <Input
                   placeholder="Phone Number"
@@ -146,6 +153,7 @@ const Contact = () => {
                     setFormData({ ...formData, phone: e.target.value })
                   }
                   required
+                  aria-label="Phone Number"
                 />
                 <Textarea
                   placeholder="Your Message"
@@ -154,12 +162,14 @@ const Contact = () => {
                     setFormData({ ...formData, message: e.target.value })
                   }
                   required
+                  aria-label="Your Message"
                 />
                 <Button 
                   type="submit" 
                   size="lg" 
                   className="w-full"
                   disabled={isSubmitting}
+                  aria-label={isSubmitting ? "Sending..." : "Send Message"}
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>

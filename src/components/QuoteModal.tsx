@@ -41,6 +41,8 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
         body: JSON.stringify(formData),
       });
 
+      const data = await response.json();
+
       if (response.ok) {
         toast({
           title: "Thank you for your message",
@@ -51,11 +53,13 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
       } else {
         toast({
           title: "Error sending message",
-          description: "Please try again or call us directly.",
+          description: data.error || "Please try again or call us directly.",
           variant: "destructive",
         });
+        console.error("Form submission error:", data);
       }
     } catch (error) {
+      console.error("Form submission error:", error);
       toast({
         title: "Error sending message",
         description: "Please try again or call us directly.",
@@ -81,6 +85,7 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             required
+            aria-label="Your Name"
           />
           <Input
             type="email"
@@ -88,24 +93,28 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             required
+            aria-label="Email Address"
           />
           <Input
             placeholder="Phone Number"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             required
+            aria-label="Phone Number"
           />
           <Textarea
             placeholder="Your Message"
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
             required
+            aria-label="Your Message"
           />
           <DialogFooter>
             <Button 
               type="submit" 
               className="w-full"
               disabled={isSubmitting}
+              aria-label={isSubmitting ? "Sending..." : "Submit Request"}
             >
               {isSubmitting ? "Sending..." : "Submit Request"}
             </Button>
