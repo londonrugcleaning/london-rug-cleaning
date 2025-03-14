@@ -23,6 +23,7 @@ import HandKnottedRugCleaning from "./pages/services/HandKnottedRugCleaning";
 import RugStainRemoval from "./pages/services/RugStainRemoval";
 import SyntheticRugCleaning from "./pages/services/SyntheticRugCleaning";
 import Sitemap from "./pages/Sitemap";
+import NotFound from "./pages/NotFound";
 
 import "./App.css";
 
@@ -55,6 +56,9 @@ function App() {
             
             {/* Sitemap route */}
             <Route path="/sitemap.xml" element={<Sitemap />} />
+            
+            {/* 404 route */}
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </main>
         

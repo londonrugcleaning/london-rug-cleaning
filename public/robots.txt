@@ -1,0 +1,10 @@
+
+# https://www.robotstxt.org/robotstxt.html
+User-agent: *
+Allow: /
+
+# Disallow admin paths
+Disallow: /admin/
+
+# Sitemap
+Sitemap: https://londonrugcleaning.co.uk/sitemap.xml

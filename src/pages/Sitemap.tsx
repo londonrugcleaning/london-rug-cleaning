@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useEffect } from "react";
 import { SitemapGenerator, SitemapURL } from "@/components/seo/SitemapGenerator";
 
 const Sitemap = () => {
@@ -23,6 +23,29 @@ const Sitemap = () => {
     { loc: "/services/rug-stain-removal", lastmod: "2023-11-10", changefreq: "monthly", priority: 0.8 },
     { loc: "/services/synthetic-rug-cleaning", lastmod: "2023-11-10", changefreq: "monthly", priority: 0.8 },
   ];
+
+  useEffect(() => {
+    // Set the content type to XML for direct rendering
+    const xmlString = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapUrls
+  .map(
+    (url) => `  <url>
+    <loc>${baseUrl}${url.loc}</loc>
+    ${url.lastmod ? `<lastmod>${url.lastmod}</lastmod>` : ""}
+    ${url.changefreq ? `<changefreq>${url.changefreq}</changefreq>` : ""}
+    ${url.priority !== undefined ? `<priority>${url.priority}</priority>` : ""}
+  </url>`
+  )
+  .join("\n")}
+</urlset>`;
+    
+    // When the component mounts, set document type to XML
+    document.addEventListener('DOMContentLoaded', () => {
+      const contentType = 'application/xml';
+      document.contentType = contentType;
+    });
+  }, [baseUrl, sitemapUrls]);
 
   return <SitemapGenerator baseUrl={baseUrl} urls={sitemapUrls} />;
 };

@@ -19,6 +19,9 @@ export const LazyLoadImage = ({
   const [isLoaded, setIsLoaded] = useState(false);
   const [currentSrc, setCurrentSrc] = useState(placeholderSrc);
 
+  // Ensure alt text is always provided
+  const accessibleAlt = alt || "Image";
+
   useEffect(() => {
     // Create new image to preload
     const img = new Image();
@@ -32,7 +35,7 @@ export const LazyLoadImage = ({
   return (
     <img
       src={currentSrc}
-      alt={alt}
+      alt={accessibleAlt}
       loading="lazy"
       className={cn(
         "transition-opacity duration-300",
