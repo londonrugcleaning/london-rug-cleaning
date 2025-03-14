@@ -43,12 +43,13 @@ export async function onRequest(context) {
       );
     }
 
-    // Get environment variables
-    const SMTP_HOST = context.env.SMTP_HOST;
-    const SMTP_PORT = context.env.SMTP_PORT;
-    const SMTP_USER = context.env.SMTP_USER;
-    const SMTP_PASS = context.env.SMTP_PASS;
-    const TO_EMAIL = context.env.TO_EMAIL || "info@londonrugcleaning.co.uk";
+    // Load environment variables
+    const SMTP_HOST = context.env.SMTP_HOST || process.env.SMTP_HOST;
+    const SMTP_PORT = context.env.SMTP_PORT || process.env.SMTP_PORT;
+    const SMTP_USER = context.env.SMTP_USER || process.env.SMTP_USER;
+    const SMTP_PASS = context.env.SMTP_PASS || process.env.SMTP_PASS;
+    const MAIL_FROM = context.env.MAIL_FROM || process.env.MAIL_FROM || "admin@londonrugcleaning.co.uk";
+    const TO_EMAIL = context.env.TO_EMAIL || process.env.TO_EMAIL || "info@londonrugcleaning.co.uk";
 
     // Check for environment variables
     if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
@@ -80,12 +81,15 @@ export async function onRequest(context) {
     // Create transporter object using nodemailer
     const transporter = nodemailer.createTransport({
       host: SMTP_HOST,
-      port: SMTP_PORT,
+      port: Number(SMTP_PORT),
       secure: true,
       auth: {
         user: SMTP_USER,
-        pass: SMTP_PASS,
+        pass: SMTP_PASS
       },
+      tls: {
+        rejectUnauthorized: false // Allows self-signed certs for local testing
+      }
     });
 
     // Verify SMTP connection works before trying to send
@@ -120,7 +124,7 @@ export async function onRequest(context) {
 
     // Email options
     const mailOptions = {
-      from: `"London Rug Cleaning" <admin@londonrugcleaning.co.uk>`,
+      from: `"London Rug Cleaning" <${MAIL_FROM}>`,
       to: TO_EMAIL,
       subject: `New Quote Request from ${name}`,
       text: emailContent,
