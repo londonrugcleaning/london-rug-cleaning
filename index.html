@@ -11,6 +11,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     
+    <!-- Critical CSS inline -->
+    <style>
+      /* Minimal critical CSS for initial render */
+      body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background-color: #fcfbf9; }
+      .container { width: 100%; max-width: 1280px; margin-left: auto; margin-right: auto; }
+    </style>
+    
     <!-- Defer non-critical CSS -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
     

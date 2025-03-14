@@ -1,13 +1,27 @@
 
-/* App-specific styles */
-.app-container {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
+/* 
+  App specific styles 
+  Keeping this file minimal to prevent render blocking  
+*/
+
+/* Improve scrolling experience */
+html {
+  scroll-behavior: smooth;
 }
 
-.main-content {
-  flex-grow: 1;
+/* Preload transition classes */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
 }
 
-/* Any additional app-level styles can be added here */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}

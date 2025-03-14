@@ -36,9 +36,9 @@ export const FloatingButtons = () => {
             size="icon" 
             className="rounded-full bg-blue-600 hover:bg-blue-700 shadow-lg transition-all duration-300"
             onClick={scrollToTop}
+            aria-label="Scroll to top"
           >
-            <ChevronUp className="h-5 w-5" />
-            <span className="sr-only">Scroll to top</span>
+            <ChevronUp className="h-5 w-5" aria-hidden="true" />
           </Button>
         )}
         
@@ -46,9 +46,9 @@ export const FloatingButtons = () => {
           size="icon" 
           className="rounded-full bg-green-600 hover:bg-green-700 shadow-lg transition-all duration-300"
           onClick={() => setShowQuoteModal(true)}
+          aria-label="Get a free quote"
         >
-          <MessageSquare className="h-5 w-5" />
-          <span className="sr-only">Get a free quote</span>
+          <MessageSquare className="h-5 w-5" aria-hidden="true" />
         </Button>
         
         <Button 
@@ -56,9 +56,8 @@ export const FloatingButtons = () => {
           className="rounded-full bg-blue-600 hover:bg-blue-700 shadow-lg transition-all duration-300"
           asChild
         >
-          <a href="tel:02034888344">
-            <Phone className="h-5 w-5" />
-            <span className="sr-only">Call us</span>
+          <a href="tel:02034888344" aria-label="Call us at 02034888344">
+            <Phone className="h-5 w-5" aria-hidden="true" />
           </a>
         </Button>
       </div>

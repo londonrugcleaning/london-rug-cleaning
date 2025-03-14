@@ -46,6 +46,10 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: 'dist',
+    // Optimize HTML/CSS size
+    minify: 'terser',
+    cssMinify: true,
+    // Improve chunk splitting
     rollupOptions: {
       output: {
         manualChunks: {
@@ -54,10 +58,21 @@ export default defineConfig(({ mode }) => ({
             '@radix-ui/react-accordion',
             '@radix-ui/react-dialog',
             '@radix-ui/react-scroll-area',
-            // Add other UI libraries here
           ],
+          icons: ['lucide-react'],
+          utils: ['class-variance-authority', 'clsx', 'tailwind-merge'],
+          forms: ['react-hook-form', '@hookform/resolvers'],
+          charts: ['recharts'],
         },
+        // Make sure chunks aren't too small
+        chunkFileNames: 'assets/js/[name]-[hash].js',
+        entryFileNames: 'assets/js/[name]-[hash].js',
+        assetFileNames: 'assets/[ext]/[name]-[hash].[ext]',
       },
     },
+    // Generate source maps in development only
+    sourcemap: mode === 'development',
+    // Add asset size reporting
+    reportCompressedSize: true,
   },
 }));
