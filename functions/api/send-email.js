@@ -50,6 +50,33 @@ export async function onRequest(context) {
     const SMTP_PASS = context.env.SMTP_PASS;
     const TO_EMAIL = context.env.TO_EMAIL || "info@londonrugcleaning.co.uk";
 
+    // Check for environment variables
+    if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
+      console.error("Missing email configuration environment variables");
+      
+      // Log specific missing variables for debugging
+      const missingVars = [];
+      if (!SMTP_HOST) missingVars.push("SMTP_HOST");
+      if (!SMTP_PORT) missingVars.push("SMTP_PORT");
+      if (!SMTP_USER) missingVars.push("SMTP_USER");
+      if (!SMTP_PASS) missingVars.push("SMTP_PASS");
+      
+      return new Response(
+        JSON.stringify({ 
+          error: "Email service is not properly configured", 
+          message: "Please call us directly at 02034888344",
+          technical: `Missing environment variables: ${missingVars.join(", ")}`
+        }),
+        {
+          status: 500,
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      );
+    }
+
     // Create transporter object using nodemailer
     const transporter = nodemailer.createTransport({
       host: SMTP_HOST,
@@ -60,6 +87,28 @@ export async function onRequest(context) {
         pass: SMTP_PASS,
       },
     });
+
+    // Verify SMTP connection works before trying to send
+    try {
+      await transporter.verify();
+    } catch (verifyError) {
+      console.error("SMTP connection verification failed:", verifyError);
+      
+      return new Response(
+        JSON.stringify({ 
+          error: "Email server connection failed", 
+          message: "Please call us directly at 02034888344",
+          technical: verifyError.message
+        }),
+        {
+          status: 500,
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      );
+    }
 
     // Construct email content
     const emailContent = `
@@ -109,7 +158,8 @@ export async function onRequest(context) {
       return new Response(
         JSON.stringify({ 
           error: "Failed to send email", 
-          details: emailError.message 
+          message: "Please call us directly at 02034888344",
+          technical: emailError.message 
         }),
         {
           status: 500,
@@ -125,7 +175,11 @@ export async function onRequest(context) {
     
     // Return error response
     return new Response(
-      JSON.stringify({ error: "Failed to process request", details: error.message }),
+      JSON.stringify({ 
+        error: "Failed to process request", 
+        message: "Please call us directly at 02034888344",
+        details: error.message 
+      }),
       {
         status: 500,
         headers: {

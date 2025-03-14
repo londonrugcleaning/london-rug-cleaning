@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { HeadMeta } from "@/components/HeadMeta";
 
@@ -15,11 +16,13 @@ const Contact = () => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
     try {
       const response = await fetch('/api/send-email', {
@@ -38,16 +41,24 @@ const Contact = () => {
           description: "We'll get back to you as soon as possible.",
         });
         setFormData({ name: "", email: "", phone: "", message: "" });
+        setError(null);
       } else {
+        console.error("Form submission error:", data);
+        
+        // Use custom message if provided, otherwise use generic error
+        const errorMessage = data.message || "Please try again or call us directly.";
+        setError(errorMessage);
+        
         toast({
           title: "Error sending message",
-          description: data.error || "Please try again or call us directly.",
+          description: errorMessage,
           variant: "destructive",
         });
-        console.error("Form submission error:", data);
       }
     } catch (error) {
       console.error("Form submission error:", error);
+      setError("Our email system is currently unavailable. Please call us directly.");
+      
       toast({
         title: "Error sending message",
         description: "Please try again or call us directly.",
@@ -126,54 +137,70 @@ const Contact = () => {
                 </div>
               </div>
 
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <Input
-                  placeholder="Your Name"
-                  value={formData.name}
-                  onChange={(e) =>
-                    setFormData({ ...formData, name: e.target.value })
-                  }
-                  required
-                  aria-label="Your Name"
-                />
-                <Input
-                  type="email"
-                  placeholder="Email Address"
-                  value={formData.email}
-                  onChange={(e) =>
-                    setFormData({ ...formData, email: e.target.value })
-                  }
-                  required
-                  aria-label="Email Address"
-                />
-                <Input
-                  placeholder="Phone Number"
-                  value={formData.phone}
-                  onChange={(e) =>
-                    setFormData({ ...formData, phone: e.target.value })
-                  }
-                  required
-                  aria-label="Phone Number"
-                />
-                <Textarea
-                  placeholder="Your Message"
-                  value={formData.message}
-                  onChange={(e) =>
-                    setFormData({ ...formData, message: e.target.value })
-                  }
-                  required
-                  aria-label="Your Message"
-                />
-                <Button 
-                  type="submit" 
-                  size="lg" 
-                  className="w-full"
-                  disabled={isSubmitting}
-                  aria-label={isSubmitting ? "Sending..." : "Send Message"}
-                >
-                  {isSubmitting ? "Sending..." : "Send Message"}
-                </Button>
-              </form>
+              <div>
+                {error && (
+                  <Alert variant="destructive" className="mb-6">
+                    <AlertDescription className="flex flex-col gap-2">
+                      <p>{error}</p>
+                      <Button asChild variant="outline" size="sm" className="flex items-center gap-2 w-fit">
+                        <a href="tel:02034888344" aria-label="Call us at 020 3488 8344">
+                          <Phone className="h-4 w-4" aria-hidden="true" />
+                          <span>Call us: 020 3488 8344</span>
+                        </a>
+                      </Button>
+                    </AlertDescription>
+                  </Alert>
+                )}
+              
+                <form onSubmit={handleSubmit} className="space-y-6">
+                  <Input
+                    placeholder="Your Name"
+                    value={formData.name}
+                    onChange={(e) =>
+                      setFormData({ ...formData, name: e.target.value })
+                    }
+                    required
+                    aria-label="Your Name"
+                  />
+                  <Input
+                    type="email"
+                    placeholder="Email Address"
+                    value={formData.email}
+                    onChange={(e) =>
+                      setFormData({ ...formData, email: e.target.value })
+                    }
+                    required
+                    aria-label="Email Address"
+                  />
+                  <Input
+                    placeholder="Phone Number"
+                    value={formData.phone}
+                    onChange={(e) =>
+                      setFormData({ ...formData, phone: e.target.value })
+                    }
+                    required
+                    aria-label="Phone Number"
+                  />
+                  <Textarea
+                    placeholder="Your Message"
+                    value={formData.message}
+                    onChange={(e) =>
+                      setFormData({ ...formData, message: e.target.value })
+                    }
+                    required
+                    aria-label="Your Message"
+                  />
+                  <Button 
+                    type="submit" 
+                    size="lg" 
+                    className="w-full"
+                    disabled={isSubmitting}
+                    aria-label={isSubmitting ? "Sending..." : "Send Message"}
+                  >
+                    {isSubmitting ? "Sending..." : "Send Message"}
+                  </Button>
+                </form>
+              </div>
             </div>
           </div>
         </section>

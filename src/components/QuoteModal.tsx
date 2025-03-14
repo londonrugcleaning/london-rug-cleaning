@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import { Alert, AlertDescription } from "@/components/ui/alert";
 import {
   Dialog,
   DialogContent,
@@ -12,6 +13,7 @@ import {
   DialogTitle,
   DialogFooter,
 } from "@/components/ui/dialog";
+import { Phone } from "lucide-react";
 
 interface QuoteModalProps {
   open: boolean;
@@ -26,11 +28,13 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setError(null);
 
     try {
       const response = await fetch('/api/send-email', {
@@ -51,15 +55,22 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
         setFormData({ name: "", email: "", phone: "", message: "" });
         onOpenChange(false);
       } else {
+        console.error("Form submission error:", data);
+        
+        // Use custom message if provided, otherwise use generic error
+        const errorMessage = data.message || "Please try again or call us directly.";
+        setError(errorMessage);
+        
         toast({
           title: "Error sending message",
-          description: data.error || "Please try again or call us directly.",
+          description: errorMessage,
           variant: "destructive",
         });
-        console.error("Form submission error:", data);
       }
     } catch (error) {
       console.error("Form submission error:", error);
+      setError("Our email system is currently unavailable. Please call us directly.");
+      
       toast({
         title: "Error sending message",
         description: "Please try again or call us directly.",
@@ -79,6 +90,21 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
             Fill out the form below and we'll get back to you as soon as possible.
           </DialogDescription>
         </DialogHeader>
+        
+        {error && (
+          <Alert variant="destructive" className="my-2">
+            <AlertDescription className="flex flex-col gap-2">
+              <p>{error}</p>
+              <Button asChild variant="outline" size="sm" className="flex items-center gap-2 w-fit">
+                <a href="tel:02034888344" aria-label="Call us at 020 3488 8344">
+                  <Phone className="h-4 w-4" aria-hidden="true" />
+                  <span>Call us: 020 3488 8344</span>
+                </a>
+              </Button>
+            </AlertDescription>
+          </Alert>
+        )}
+        
         <form onSubmit={handleSubmit} className="space-y-4 py-4">
           <Input
             placeholder="Your Name"
