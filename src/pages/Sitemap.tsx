@@ -1,6 +1,7 @@
 
 import React, { useEffect } from "react";
 import { SitemapGenerator, SitemapURL } from "@/components/seo/SitemapGenerator";
+import { HeadMeta } from "@/components/HeadMeta";
 
 const Sitemap = () => {
   const baseUrl = "https://londonrugcleaning.co.uk";
@@ -25,8 +26,9 @@ const Sitemap = () => {
   ];
 
   useEffect(() => {
-    // Set the content type to XML for direct rendering
-    const xmlString = `<?xml version="1.0" encoding="UTF-8"?>
+    // Set XML content type using response headers
+    if (document.querySelector('pre')) {
+      const xmlString = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 ${sitemapUrls
   .map(
@@ -39,15 +41,22 @@ ${sitemapUrls
   )
   .join("\n")}
 </urlset>`;
-    
-    // When the component mounts, set document type to XML
-    document.addEventListener('DOMContentLoaded', () => {
-      const contentType = 'application/xml';
-      document.contentType = contentType;
-    });
+      
+      document.querySelector('pre')!.textContent = xmlString;
+    }
   }, [baseUrl, sitemapUrls]);
 
-  return <SitemapGenerator baseUrl={baseUrl} urls={sitemapUrls} />;
+  return (
+    <>
+      <HeadMeta 
+        title="Sitemap" 
+        description="Sitemap for London Rug Cleaning website"
+        noindex={true}
+      />
+      <SitemapGenerator baseUrl={baseUrl} urls={sitemapUrls} />
+      <pre style={{ display: 'none' }}></pre>
+    </>
+  );
 };
 
 export default Sitemap;
