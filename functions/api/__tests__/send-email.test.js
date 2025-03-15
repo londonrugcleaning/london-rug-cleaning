@@ -1,26 +1,24 @@
+
 import { afterEach, describe, expect, it, vi } from 'vitest';
 import { onRequest } from '../send-email';
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
-// Mock nodemailer with shared transport instance
-const mockVerify = vi.fn();
-const mockSendMail = vi.fn();
-const mockCreateTransport = vi.fn(() => ({
-  verify: mockVerify,
-  sendMail: mockSendMail
-}));
-
-vi.mock('nodemailer', async (importOriginal) => ({
-  ...await importOriginal(),
-  createTransport: mockCreateTransport
-}));
+// Mock Resend
+vi.mock('resend', () => {
+  const mockSendEmail = vi.fn();
+  return {
+    Resend: vi.fn().mockImplementation(() => ({
+      emails: {
+        send: mockSendEmail
+      }
+    }))
+  };
+});
 
 const mockEnv = {
-  SMTP_HOST: 'smtp.test.com',
-  SMTP_PORT: '465',
-  SMTP_USER: 'testuser',
-  SMTP_PASS: 'testpass',
-  TO_EMAIL: 'test@example.com'
+  RESEND_API_KEY: 'test_api_key',
+  FROM_EMAIL: 'admin@londonrugcleaning.co.uk',
+  TO_EMAIL: 'info@londonrugcleaning.co.uk'
 };
 
 describe('Email API', () => {
@@ -57,7 +55,7 @@ describe('Email API', () => {
     expect(data.error).toBe('All fields are required');
   });
 
-  it('should handle missing SMTP configuration', async () => {
+  it('should handle missing API key configuration', async () => {
     const response = await onRequest({
       ...createMockContext('POST', {
         name: 'Test',
@@ -73,8 +71,10 @@ describe('Email API', () => {
     expect(data.error).toBe('Email service is not properly configured');
   });
 
-  it('should handle SMTP connection failures', async () => {
-    nodemailer.createTransport().verify.mockRejectedValue(new Error('Connection failed'));
+  it('should handle email sending errors', async () => {
+    // Configure the mock to return an error
+    const mockError = new Error('Failed to send email');
+    Resend().emails.send.mockResolvedValue({ error: mockError });
     
     const response = await onRequest(createMockContext('POST', {
       name: 'Test',
@@ -85,12 +85,15 @@ describe('Email API', () => {
     
     expect(response.status).toBe(500);
     const data = await response.json();
-    expect(data.error).toBe('Email server connection failed');
+    expect(data.error).toBe('Failed to send email');
   });
 
   it('should successfully send email', async () => {
-    nodemailer.createTransport().verify.mockResolvedValue(true);
-    nodemailer.createTransport().sendMail.mockResolvedValue({ messageId: '123' });
+    // Configure the mock to return success
+    Resend().emails.send.mockResolvedValue({ 
+      data: { id: 'email_123' },
+      error: null
+    });
     
     const response = await onRequest(createMockContext('POST', {
       name: 'Test',
@@ -102,6 +105,6 @@ describe('Email API', () => {
     expect(response.status).toBe(200);
     const data = await response.json();
     expect(data.success).toBe(true);
-    expect(data.messageId).toBe('123');
+    expect(data.messageId).toBe('email_123');
   });
 });

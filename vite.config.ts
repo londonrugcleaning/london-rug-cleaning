@@ -36,7 +36,8 @@ export default defineConfig(({ mode }) => ({
     mode === 'production' && 
     sitemapPlugin({
       baseUrl: 'https://londonrugcleaning.co.uk',
-      routes: sitemapRoutes
+      routes: sitemapRoutes,
+      blogPostsDir: path.resolve(__dirname, './src/data/blog')
     }),
   ].filter(Boolean),
   resolve: {

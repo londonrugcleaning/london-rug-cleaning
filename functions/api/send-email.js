@@ -1,5 +1,5 @@
 
-import nodemailer from 'nodemailer';
+import { Resend } from 'resend';
 
 export async function onRequest(context) {
   try {
@@ -44,29 +44,19 @@ export async function onRequest(context) {
     }
 
     // Load environment variables
-    const SMTP_HOST = context.env.SMTP_HOST || process.env.SMTP_HOST;
-    const SMTP_PORT = context.env.SMTP_PORT || process.env.SMTP_PORT;
-    const SMTP_USER = context.env.SMTP_USER || process.env.SMTP_USER;
-    const SMTP_PASS = context.env.SMTP_PASS || process.env.SMTP_PASS;
-    const MAIL_FROM = context.env.MAIL_FROM || process.env.MAIL_FROM || "admin@londonrugcleaning.co.uk";
+    const RESEND_API_KEY = context.env.RESEND_API_KEY || process.env.RESEND_API_KEY;
+    const FROM_EMAIL = context.env.FROM_EMAIL || process.env.FROM_EMAIL || "admin@londonrugcleaning.co.uk";
     const TO_EMAIL = context.env.TO_EMAIL || process.env.TO_EMAIL || "info@londonrugcleaning.co.uk";
 
     // Check for environment variables
-    if (!SMTP_HOST || !SMTP_PORT || !SMTP_USER || !SMTP_PASS) {
-      console.error("Missing email configuration environment variables");
-      
-      // Log specific missing variables for debugging
-      const missingVars = [];
-      if (!SMTP_HOST) missingVars.push("SMTP_HOST");
-      if (!SMTP_PORT) missingVars.push("SMTP_PORT");
-      if (!SMTP_USER) missingVars.push("SMTP_USER");
-      if (!SMTP_PASS) missingVars.push("SMTP_PASS");
+    if (!RESEND_API_KEY) {
+      console.error("Missing Resend API key");
       
       return new Response(
         JSON.stringify({ 
           error: "Email service is not properly configured", 
           message: "Please call us directly at 02034888344",
-          technical: `Missing environment variables: ${missingVars.join(", ")}`
+          technical: "Missing environment variable: RESEND_API_KEY"
         }),
         {
           status: 500,
@@ -78,41 +68,8 @@ export async function onRequest(context) {
       );
     }
 
-    // Create transporter object using nodemailer
-    const transporter = nodemailer.createTransport({
-      host: SMTP_HOST,
-      port: Number(SMTP_PORT),
-      secure: true,
-      auth: {
-        user: SMTP_USER,
-        pass: SMTP_PASS
-      },
-      tls: {
-        rejectUnauthorized: false // Allows self-signed certs for local testing
-      }
-    });
-
-    // Verify SMTP connection works before trying to send
-    try {
-      await transporter.verify();
-    } catch (verifyError) {
-      console.error("SMTP connection verification failed:", verifyError);
-      
-      return new Response(
-        JSON.stringify({ 
-          error: "Email server connection failed", 
-          message: "Please call us directly at 02034888344",
-          technical: verifyError.message
-        }),
-        {
-          status: 500,
-          headers: {
-            "Content-Type": "application/json",
-            "Access-Control-Allow-Origin": "*",
-          },
-        }
-      );
-    }
+    // Initialize Resend
+    const resend = new Resend(RESEND_API_KEY);
 
     // Construct email content
     const emailContent = `
@@ -122,31 +79,38 @@ export async function onRequest(context) {
       Message: ${message}
     `;
 
-    // Email options
-    const mailOptions = {
-      from: `"London Rug Cleaning" <${MAIL_FROM}>`,
-      to: TO_EMAIL,
-      subject: `New Quote Request from ${name}`,
-      text: emailContent,
-      html: `<p><strong>Name:</strong> ${name}</p>
-             <p><strong>Email:</strong> ${email}</p>
-             <p><strong>Phone:</strong> ${phone}</p>
-             <p><strong>Message:</strong> ${message}</p>`,
-      headers: {
-        "x-liara-tag": "quote_request", 
-      },
-    };
+    // Email HTML template
+    const htmlContent = `
+      <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h2 style="color: #333;">New Quote Request</h2>
+        <p><strong>Name:</strong> ${name}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone}</p>
+        <p><strong>Message:</strong> ${message}</p>
+      </div>
+    `;
 
-    // Try to send the email
+    // Try to send the email using Resend
     try {
-      const info = await transporter.sendMail(mailOptions);
+      const { data, error } = await resend.emails.send({
+        from: `London Rug Cleaning <${FROM_EMAIL}>`,
+        to: [TO_EMAIL],
+        subject: `New Quote Request from ${name}`,
+        text: emailContent,
+        html: htmlContent,
+        tags: [{ name: 'quote_request' }]
+      });
+      
+      if (error) {
+        throw new Error(error.message);
+      }
       
       // Return success response
       return new Response(
         JSON.stringify({ 
           success: true, 
           message: "Email sent successfully",
-          messageId: info.messageId 
+          messageId: data.id 
         }),
         {
           status: 200,
