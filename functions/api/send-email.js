@@ -24,7 +24,7 @@ export async function onRequest(context) {
 
     // Read environment variables (Cloudflare)
     const RESEND_API_KEY = context.env.RESEND_API_KEY;
-    const FROM_EMAIL = context.env.FROM_EMAIL || "admin@londonrugcleaning.co.uk";
+    const FROM_EMAIL = context.env.FROM_EMAIL || "info@londonrugcleaning.co.uk";
     const TO_EMAIL = context.env.TO_EMAIL || "info@londonrugcleaning.co.uk";
 
     // Validate API Key
