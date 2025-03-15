@@ -38,7 +38,7 @@ export const Hero = () => {
 
               <Review />
 
-              <p className="text-lg text-muted-foreground">
+              <p className="text-lg">
                 Expert care for all types of rugs - From antique Persian to modern designs.
                 Trusted by London residents for over 30 years.
               </p>
@@ -52,13 +52,13 @@ export const Hero = () => {
           <div className="relative hidden lg:block">
             <div className="absolute -right-24 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-blue-200/60 blur-3xl" aria-hidden="true" />
             <LazyLoadImage
-              src="/images/antique-rug-hero.webp"
-              alt="Professional antique rug cleaning service in London"
+              src="/images/Professional Rug Cleaning London.webp"
+              alt="Professional rug cleaning service in London"
               className="relative z-10 max-w-xl rounded-2xl shadow-2xl translate-x-20"
               loading="eager" 
               fetchPriority="high"
-              width={720}
-              height={480}
+              width={576}
+              height={384}
             />
           </div>
         </div>
