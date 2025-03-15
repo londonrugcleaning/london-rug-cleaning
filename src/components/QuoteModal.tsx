@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -37,7 +36,8 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
     setError(null);
 
     try {
-      // For Cloudflare Pages, use the /functions API path format
+      console.log("Submitting form data:", formData);
+      // Fixed API path to ensure it works both locally and on Cloudflare Pages
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
@@ -46,17 +46,15 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({
-          error: "Unable to parse server response",
-          message: "Please try calling us directly."
-        }));
-        
-        throw new Error(errorData.message || "Failed to send message");
-      }
+      console.log("Response status:", response.status);
       
       const data = await response.json();
+      console.log("Response data:", data);
 
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to send message");
+      }
+      
       if (data.success) {
         toast({
           title: "Thank you for your message",

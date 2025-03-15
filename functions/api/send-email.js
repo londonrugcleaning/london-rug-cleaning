@@ -28,6 +28,8 @@ export async function onRequest(context) {
     // Get form data from request body
     const body = await context.request.json();
     const { name, email, phone, message } = body;
+    
+    console.log("API received form data:", { name, email, phone });
 
     // Validate required fields
     if (!name || !email || !phone || !message) {
@@ -44,9 +46,15 @@ export async function onRequest(context) {
     }
 
     // Load environment variables
-    const RESEND_API_KEY = context.env.RESEND_API_KEY || process.env.RESEND_API_KEY;
-    const FROM_EMAIL = context.env.FROM_EMAIL || process.env.FROM_EMAIL || "admin@londonrugcleaning.co.uk";
-    const TO_EMAIL = context.env.TO_EMAIL || process.env.TO_EMAIL || "info@londonrugcleaning.co.uk";
+    const RESEND_API_KEY = context.env.RESEND_API_KEY;
+    const FROM_EMAIL = context.env.FROM_EMAIL || "admin@londonrugcleaning.co.uk";
+    const TO_EMAIL = context.env.TO_EMAIL || "info@londonrugcleaning.co.uk";
+    
+    console.log("Environment variables available:", { 
+      hasApiKey: !!RESEND_API_KEY,
+      fromEmail: FROM_EMAIL,
+      toEmail: TO_EMAIL
+    });
 
     // Check for environment variables
     if (!RESEND_API_KEY) {
@@ -92,6 +100,8 @@ export async function onRequest(context) {
 
     // Try to send the email using Resend
     try {
+      console.log("Attempting to send email with Resend...");
+      
       const { data, error } = await resend.emails.send({
         from: `London Rug Cleaning <${FROM_EMAIL}>`,
         to: [TO_EMAIL],
@@ -102,8 +112,11 @@ export async function onRequest(context) {
       });
       
       if (error) {
+        console.error("Resend API error:", error);
         throw new Error(error.message);
       }
+      
+      console.log("Email sent successfully:", data);
       
       // Return success response
       return new Response(

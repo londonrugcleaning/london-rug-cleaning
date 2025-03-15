@@ -25,6 +25,8 @@ const Contact = () => {
     setError(null);
 
     try {
+      console.log("Contact form - Submitting form data:", formData);
+      
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
@@ -33,17 +35,15 @@ const Contact = () => {
         body: JSON.stringify(formData),
       });
 
-      if (!response.ok) {
-        const errorData = await response.json().catch(() => ({
-          error: "Unable to parse server response",
-          message: "Please try calling us directly."
-        }));
-        
-        throw new Error(errorData.message || "Failed to send message");
-      }
+      console.log("Contact form - Response status:", response.status);
       
       const data = await response.json();
+      console.log("Contact form - Response data:", data);
 
+      if (!response.ok) {
+        throw new Error(data.message || "Failed to send message");
+      }
+      
       if (data.success) {
         toast({
           title: "Thank you for your message",
@@ -55,7 +55,7 @@ const Contact = () => {
         throw new Error(data.message || "Failed to send message");
       }
     } catch (error) {
-      console.error("Form submission error:", error);
+      console.error("Contact form - Submission error:", error);
       
       const errorMessage = error instanceof Error 
         ? error.message 
