@@ -39,7 +39,7 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
     try {
       console.log("Submitting form data:", formData);
       
-      // Fixed API path to ensure it works with Cloudflare Pages
+      // Use the correct API endpoint
       const response = await fetch('/functions/api/send-email', {
         method: 'POST',
         headers: {
@@ -51,21 +51,34 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
       console.log("Response status:", response.status);
       
       if (!response.ok) {
-        const text = await response.text();
-        console.log("Error response text:", text);
+        let errorMessage = `Server error: ${response.status}`;
         
-        let errorData;
         try {
-          errorData = text ? JSON.parse(text) : { message: "Unknown error occurred" };
-        } catch (e) {
-          console.error("Failed to parse error response:", e);
-          errorData = { message: `Server error: ${response.status}` };
+          const text = await response.text();
+          console.log("Error response text:", text);
+          
+          if (text && text.trim()) {
+            const errorData = JSON.parse(text);
+            errorMessage = errorData.message || errorMessage;
+          }
+        } catch (parseError) {
+          console.error("Failed to parse error response:", parseError);
         }
         
-        throw new Error(errorData.message || "Failed to send message");
+        throw new Error(errorMessage);
       }
       
-      const data = await response.json();
+      // Try to parse the response only if we get here (response was ok)
+      let data;
+      try {
+        const text = await response.text();
+        console.log("Response text:", text);
+        data = text ? JSON.parse(text) : {};
+      } catch (parseError) {
+        console.error("Failed to parse success response:", parseError);
+        throw new Error("Invalid response from server");
+      }
+      
       console.log("Response data:", data);
       
       if (data.success) {

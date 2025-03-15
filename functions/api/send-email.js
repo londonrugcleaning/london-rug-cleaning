@@ -3,6 +3,12 @@ import { Resend } from 'resend';
 
 export async function onRequest(context) {
   try {
+    // Log for debugging
+    console.log("API endpoint called", { 
+      method: context.request.method,
+      url: context.request.url
+    });
+
     // Handle CORS
     if (context.request.method === "OPTIONS") {
       return new Response(null, {
@@ -24,6 +30,12 @@ export async function onRequest(context) {
         },
       });
     }
+
+    // Log request headers for debugging
+    console.log("Request headers:", [...context.request.headers.entries()].reduce((obj, [key, value]) => {
+      obj[key] = value;
+      return obj;
+    }, {}));
 
     // Get form data from request body
     const body = await context.request.json();
@@ -76,7 +88,8 @@ export async function onRequest(context) {
       );
     }
 
-    // Initialize Resend
+    // Initialize Resend with additional logging
+    console.log("Initializing Resend with API key:", RESEND_API_KEY.substring(0, 4) + "...");
     const resend = new Resend(RESEND_API_KEY);
 
     // Construct email content
@@ -102,14 +115,18 @@ export async function onRequest(context) {
     try {
       console.log("Attempting to send email with Resend...");
       
-      const { data, error } = await resend.emails.send({
+      const emailOptions = {
         from: `London Rug Cleaning <${FROM_EMAIL}>`,
         to: [TO_EMAIL],
         subject: `New Quote Request from ${name}`,
         text: emailContent,
         html: htmlContent,
         tags: [{ name: 'quote_request' }]
-      });
+      };
+      
+      console.log("Email options:", emailOptions);
+      
+      const { data, error } = await resend.emails.send(emailOptions);
       
       if (error) {
         console.error("Resend API error:", error);
