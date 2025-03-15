@@ -37,6 +37,7 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
     setError(null);
 
     try {
+      // For Cloudflare Pages, use the /functions API path format
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
@@ -45,9 +46,18 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
         body: JSON.stringify(formData),
       });
 
+      if (!response.ok) {
+        const errorData = await response.json().catch(() => ({
+          error: "Unable to parse server response",
+          message: "Please try calling us directly."
+        }));
+        
+        throw new Error(errorData.message || "Failed to send message");
+      }
+      
       const data = await response.json();
 
-      if (response.ok) {
+      if (data.success) {
         toast({
           title: "Thank you for your message",
           description: "We'll get back to you as soon as possible.",
@@ -55,25 +65,20 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
         setFormData({ name: "", email: "", phone: "", message: "" });
         onOpenChange(false);
       } else {
-        console.error("Form submission error:", data);
-        
-        // Use custom message if provided, otherwise use generic error
-        const errorMessage = data.message || "Please try again or call us directly.";
-        setError(errorMessage);
-        
-        toast({
-          title: "Error sending message",
-          description: errorMessage,
-          variant: "destructive",
-        });
+        throw new Error(data.message || "Failed to send message");
       }
     } catch (error) {
       console.error("Form submission error:", error);
-      setError("Our email system is currently unavailable. Please call us directly.");
+      
+      const errorMessage = error instanceof Error 
+        ? error.message 
+        : "Our email system is currently unavailable. Please call us directly.";
+        
+      setError(errorMessage);
       
       toast({
         title: "Error sending message",
-        description: "Please try again or call us directly.",
+        description: errorMessage,
         variant: "destructive",
       });
     } finally {

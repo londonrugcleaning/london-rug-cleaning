@@ -68,6 +68,10 @@ export default {
           300: "#8FC7FF",
           400: "#66B3FF",
           500: "#3D9FFF",
+          600: "#1A88FF",
+          700: "#0075FF",
+          800: "#0056B3", // Added darker blue
+          900: "#003D80",
         },
       },
       fontFamily: {

@@ -13,9 +13,13 @@ async function sendTestEmail() {
     process.exit(1);
   }
 
+  console.log('Using Resend API Key:', RESEND_API_KEY.substring(0, 10) + '...');
+  
   const resend = new Resend(RESEND_API_KEY);
 
   try {
+    console.log(`Sending test email from ${FROM_EMAIL} to ${TO_EMAIL}...`);
+    
     const { data, error } = await resend.emails.send({
       from: `London Rug Cleaning <${FROM_EMAIL}>`,
       to: [TO_EMAIL],
@@ -29,9 +33,11 @@ async function sendTestEmail() {
       throw new Error(error.message);
     }
 
-    console.log('Test email sent:', data.id);
+    console.log('Test email sent successfully!');
+    console.log('Email ID:', data.id);
   } catch (error) {
     console.error('Error sending test email:', error);
+    console.error('Please check your Resend API key and network connection.');
   }
 }
 
