@@ -38,9 +38,9 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
 
     try {
       console.log("Submitting form data:", formData);
-      
+
       // Use the correct API endpoint
-      const response = await fetch('/functions/api/send-email', {
+      const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,14 +49,14 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
       });
 
       console.log("Response status:", response.status);
-      
+
       if (!response.ok) {
         let errorMessage = `Server error: ${response.status}`;
-        
+
         try {
           const text = await response.text();
           console.log("Error response text:", text);
-          
+
           if (text && text.trim()) {
             const errorData = JSON.parse(text);
             errorMessage = errorData.message || errorMessage;
@@ -64,10 +64,10 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
         } catch (parseError) {
           console.error("Failed to parse error response:", parseError);
         }
-        
+
         throw new Error(errorMessage);
       }
-      
+
       // Try to parse the response only if we get here (response was ok)
       let data;
       try {
@@ -78,9 +78,9 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
         console.error("Failed to parse success response:", parseError);
         throw new Error("Invalid response from server");
       }
-      
+
       console.log("Response data:", data);
-      
+
       if (data.success) {
         toast({
           title: "Thank you for your message",
@@ -93,13 +93,13 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
       }
     } catch (error) {
       console.error("Form submission error:", error);
-      
-      const errorMessage = error instanceof Error 
-        ? error.message 
+
+      const errorMessage = error instanceof Error
+        ? error.message
         : "Our email system is currently unavailable. Please call us directly.";
-        
+
       setError(errorMessage);
-      
+
       toast({
         title: "Error sending message",
         description: errorMessage,
@@ -119,7 +119,7 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
             Fill out the form below and we'll get back to you as soon as possible.
           </DialogDescription>
         </DialogHeader>
-        
+
         {error && (
           <Alert variant="destructive" className="my-2">
             <AlertDescription className="flex flex-col gap-2">
@@ -133,7 +133,7 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
             </AlertDescription>
           </Alert>
         )}
-        
+
         <form onSubmit={handleSubmit} className="space-y-4 py-4">
           <Input
             placeholder="Your Name"
@@ -165,8 +165,8 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
             aria-label="Your Message"
           />
           <DialogFooter>
-            <Button 
-              type="submit" 
+            <Button
+              type="submit"
               className="w-full"
               disabled={isSubmitting}
               aria-label={isSubmitting ? "Sending..." : "Submit Request"}
