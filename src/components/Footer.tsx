@@ -117,7 +117,7 @@ export const Footer = () => {
 
           {/* Column 4: Contact */}
           <div className="col-span-2">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2478.309398196074!2d-0.2233922!3d51.5992193!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487610d2acd824c7%3A0x219763172089e8e4!2sMaddison%20Court%2C%20145%20Great%20N%20Wy.%2C%20London%20NW4%201PW%2C%20UK!5e0!3m2!1sen!2sus!4v1741790726700!5m2!1sen!2sus" width="100%" height="350"  loading="lazy"></iframe>
+          <iframe title="London Rug Cleaning On Map" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d2478.309398196074!2d-0.2233922!3d51.5992193!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487610d2acd824c7%3A0x219763172089e8e4!2sMaddison%20Court%2C%20145%20Great%20N%20Wy.%2C%20London%20NW4%201PW%2C%20UK!5e0!3m2!1sen!2sus!4v1741790726700!5m2!1sen!2sus" width="100%" height="350"  loading="lazy"></iframe>
 
           </div>
         </div>
