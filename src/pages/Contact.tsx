@@ -27,7 +27,8 @@ const Contact = () => {
     try {
       console.log("Contact form - Submitting form data:", formData);
       
-      const response = await fetch('/api/send-email', {
+      // Fixed API path to ensure it works with Cloudflare Pages
+      const response = await fetch('/functions/api/send-email', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -37,12 +38,23 @@ const Contact = () => {
 
       console.log("Contact form - Response status:", response.status);
       
+      if (!response.ok) {
+        const text = await response.text();
+        console.log("Contact form - Error response text:", text);
+        
+        let errorData;
+        try {
+          errorData = text ? JSON.parse(text) : { message: "Unknown error occurred" };
+        } catch (e) {
+          console.error("Failed to parse error response:", e);
+          errorData = { message: `Server error: ${response.status}` };
+        }
+        
+        throw new Error(errorData.message || "Failed to send message");
+      }
+      
       const data = await response.json();
       console.log("Contact form - Response data:", data);
-
-      if (!response.ok) {
-        throw new Error(data.message || "Failed to send message");
-      }
       
       if (data.success) {
         toast({

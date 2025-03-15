@@ -25,3 +25,8 @@ html {
   outline: 2px solid #3b82f6;
   outline-offset: 2px;
 }
+
+/* Ensure hover states use blue-800 for better contrast */
+a:hover, .hover-link:hover {
+  color: #1e40af; /* blue-800 */
+}
