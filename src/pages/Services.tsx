@@ -122,7 +122,7 @@ const Services = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="bg-blue-700 py-20 text-white">
+      <section className="bg-blue-900 py-20 text-white">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-3xl font-bold sm:text-4xl">

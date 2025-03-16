@@ -116,7 +116,7 @@ export const Navigation = () => {
               );
             })}
           </div>
-            <Button size="lg" asChild className="hidden gap-2 bg-blue-700 hover:bg-blue-700 lg:flex">
+            <Button size="lg" asChild className="hidden gap-2 bg-blue-800 hover:bg-blue-900 lg:flex">
               <a href="tel:02034888344" aria-label="Call us: 020 3488 8344">
                 <Phone className="h-5 w-5" aria-hidden="true" />
                 <span>020 3488 8344</span>
@@ -199,7 +199,7 @@ export const Navigation = () => {
                     </Button>
                   ))}
                 </div>
-                <Button size="lg" asChild className="mt-4 w-full gap-2 bg-blue-700 hover:bg-blue-700">
+                <Button size="lg" asChild className="mt-4 w-full gap-2 bg-blue-800 hover:bg-blue-900">
                   <a href="tel:02034888344" aria-label="Call us: 02034888344">
                     <Phone className="h-4 w-4" aria-hidden="true" />
                     <span>02034888344</span>

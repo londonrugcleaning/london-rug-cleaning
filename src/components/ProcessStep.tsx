@@ -7,7 +7,7 @@ interface ProcessStepProps {
 export const ProcessStep = ({ number, title, description }: ProcessStepProps) => {
   return (
     <div className="flex animate-fade-up gap-4">
-      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-700 text-lg font-semibold text-primary-foreground">
+      <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-800 text-lg font-semibold text-primary-foreground">
         {number}
       </div>
       <div>

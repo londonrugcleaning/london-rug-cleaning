@@ -840,7 +840,7 @@ const ServiceDetail = () => {
           <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
             Contact us today for a free quote and consultation. We offer free collection and delivery across London.
           </p>
-          <Button size="lg" className="gap-2 bg-blue-700 hover:bg-blue-700">
+          <Button size="lg" className="gap-2 bg-blue-800 hover:bg-blue-900">
             <Phone className="h-4 w-4" />
             02034888344
           </Button>
