@@ -12,11 +12,11 @@ const WoolRugCleaning = () => {
   const service = {
     title: "Wool Rug Cleaning",
     description: "Specialized cleaning for premium wool rugs to maintain their beauty and extend their lifespan",
-    hero: "/images/wool-rug-hero.jpg",
+    hero: "/images/wool-rug-hero.webp",
     gallery: [
-      "/images/wool-rug-1.jpg",
-      "/images/wool-rug-2.jpg",
-      "/images/wool-rug-3.jpg"
+      "/images/wool-rug-1.webp",
+      "/images/wool-rug-2.webp",
+      "/images/wool-rug-3.webp"
     ],
     intro: "Wool rugs represent some of the finest floor coverings available, prized for their durability, natural beauty, and luxurious feel. However, wool's unique properties—including its susceptibility to water damage, dye bleeding, and shrinkage—mean that improper cleaning can cause permanent harm. Our specialized wool rug cleaning service takes these sensitivities into account, providing thorough yet gentle cleaning that preserves your wool rug's inherent qualities while extending its lifespan.",
     features: [
@@ -147,7 +147,7 @@ const WoolRugCleaning = () => {
         description={service.description}
         canonicalUrl={`https://londonrugcleaning.co.uk/services/wool-rug-cleaning`}
         keywords={["wool rug cleaning", "wool carpet cleaning", "professional rug cleaning", "london"]}
-        ogImage="/images/wool-rug-hero.jpg"
+        ogImage="/images/wool-rug-hero.webp"
       />
       
       <div>

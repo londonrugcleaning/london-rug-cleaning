@@ -10,11 +10,11 @@ const AreaRugCleaning = () => {
   const service = {
     title: "Area Rug Cleaning",
     description: "Professional area rug cleaning services for all types and sizes",
-    hero: "/images/area-rug-hero.jpg",
+    hero: "/images/area-rug-hero.webp",
     gallery: [
-      "/images/area-rug-1.jpg",
-      "/images/area-rug-2.jpg",
-      "/images/area-rug-3.jpg"
+      "/images/area-rug-1.webp",
+      "/images/area-rug-2.webp",
+      "/images/area-rug-3.webp"
     ],
     intro: "Area rugs require specialized cleaning approaches based on their varied materials, construction methods, and designs. Our comprehensive area rug cleaning service handles rugs of all sizes and types, from small accent rugs to large room-sized pieces. We tailor our cleaning methods to each rug's specific requirements, ensuring optimal results while preserving colors, textures, and structural integrity.",
     features: [
