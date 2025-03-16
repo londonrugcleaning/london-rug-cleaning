@@ -29,9 +29,9 @@ export const Hero = () => {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
           <div className="flex flex-col justify-center">
             <div className="animate-fade-up space-y-8">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+              <h1 className="hero-xl">
                 Professional{" "}
-                <span className="text-blue-700">Rug Cleaning</span>{" "}
+                <span className="text-blue-800">Rug Cleaning</span>{" "}
                 <span className="block">Service in London</span>
               </h1>
 
@@ -71,9 +71,9 @@ export const Hero = () => {
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
-                  <Icon className="h-6 w-6 text-blue-700" aria-hidden="true" />
+                  <Icon className="h-6 w-6 text-blue-800" aria-hidden="true" />
                 </div>
-                <h3 className="mb-2 font-semibold">{benefit.title}</h3>
+                <h2 className="mb-2 font-semibold">{benefit.title}</h2>
                 <p className="text-sm text-muted-foreground">{benefit.description}</p>
               </div>
             );

@@ -60,7 +60,7 @@ export const ServicesSection = () => {
           />
         </div>
         <div className="mt-12 text-center">
-          <Button size="lg" asChild className="bg-blue-700 hover:bg-blue-700">
+          <Button size="lg" asChild className="bg-blue-900 hover:bg-blue-900">
             <Link to="/services">View All Services</Link>
           </Button>
         </div>

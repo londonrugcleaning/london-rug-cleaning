@@ -99,7 +99,7 @@ const Blog = () => {
                         </div>
                       </div>
                       
-                      <h3 className="mt-2 text-xl font-semibold group-hover:text-blue-700">
+                      <h3 className="mt-2 text-xl font-semibold group-hover:text-blue-900">
                         <Link to={`/blog/${post.slug}`}>
                           {post.title}
                         </Link>
@@ -120,7 +120,7 @@ const Blog = () => {
                       
                       <Button
                         variant="link"
-                        className="mt-4 p-0 text-blue-700 hover:text-blue-700"
+                        className="mt-4 p-0 text-blue-800 hover:text-blue-900"
                         asChild
                       >
                         <Link to={`/blog/${post.slug}`}>
