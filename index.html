@@ -10,26 +10,23 @@
     <!-- Preconnect to Google Fonts to improve loading performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="/images/Professional Rug Cleaning London.webp">
     
-    <!-- Critical CSS inline -->
     <style>
-      /* Minimal critical CSS for initial render */
-      body { margin: 0; font-family: system-ui, -apple-system, sans-serif; background-color: #fcfbf9; }
-      .container { width: 100%; max-width: 1280px; margin-left: auto; margin-right: auto; }
+      body { margin: 0; font-family: "Poppins" ; background-color: #fcfbf9; }.container { width: 100%; max-width: 1280px; margin-left: auto; margin-right: auto; } .hero-lg{font-size: 1.125rem;line-height: 1.75rem;}
     </style>
     
     <!-- Defer non-critical CSS -->
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
     
     <!-- Fallback for browsers that don't support preload -->
     <noscript>
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" />
+      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
     </noscript>
   </head>
   <body>
     <div id="root"></div>
     <!-- Lovable script tag for the "Select" feature -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
