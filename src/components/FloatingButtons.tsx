@@ -34,7 +34,7 @@ export const FloatingButtons = () => {
         {showScrollTop && (
           <Button 
             size="icon" 
-            className="rounded-full bg-blue-600 hover:bg-blue-700 shadow-lg transition-all duration-300"
+            className="rounded-full bg-blue-700 hover:bg-blue-700 shadow-lg transition-all duration-300"
             onClick={scrollToTop}
             aria-label="Scroll to top"
           >
@@ -53,7 +53,7 @@ export const FloatingButtons = () => {
         
         <Button 
           size="icon" 
-          className="rounded-full bg-blue-600 hover:bg-blue-700 shadow-lg transition-all duration-300"
+          className="rounded-full bg-blue-700 hover:bg-blue-700 shadow-lg transition-all duration-300"
           asChild
         >
           <a href="tel:02034888344" aria-label="Call us at 02034888344">
