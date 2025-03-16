@@ -16,7 +16,7 @@ export const ServiceFeatures = ({ features, process }: ServiceFeaturesProps) => 
             <ul className="mt-6 grid gap-4">
               {features.map((feature, index) => (
                 <li key={index} className="flex items-start gap-3">
-                  <Check className="mt-1 h-5 w-5 flex-shrink-0 text-blue-700" />
+                  <Check className="mt-1 h-5 w-5 flex-shrink-0 text-blue-800" />
                   <span>{feature}</span>
                 </li>
               ))}
