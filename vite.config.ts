@@ -29,9 +29,6 @@ export default defineConfig(({ mode }) => ({
     host: "::",
     port: 8080,
   },
-  optimizeDeps: {
-    exclude: ['react-helmet-async']
-  },
   plugins: [
     react(),
     mode === 'development' &&

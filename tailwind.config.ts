@@ -70,13 +70,9 @@ export default {
           500: "#3D9FFF",
           600: "#1A88FF",
           700: "#0075FF",
-          800: "#0056B3", // Added darker blue
+          800: "#0056B3",
           900: "#003D80",
         },
-      },
-      fontFamily: {
-        serif: ["Noto Serif", "serif"],
-        sans: ["Poppins", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
