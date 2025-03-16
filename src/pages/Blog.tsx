@@ -59,7 +59,7 @@ const Blog = () => {
       <div className="min-h-screen">
         <section className="hero-pattern py-24">
           <div className="container mx-auto px-4">
-            <h1 className="animate-fade-up font-serif text-4xl font-semibold sm:text-5xl">
+            <h1 className="animate-fade-up text-4xl font-semibold sm:text-5xl">
               Our Blog
             </h1>
             <p className="mt-6 animate-fade-up text-lg text-muted-foreground">
@@ -99,7 +99,7 @@ const Blog = () => {
                         </div>
                       </div>
                       
-                      <h3 className="mt-2 text-xl font-semibold group-hover:text-blue-600">
+                      <h3 className="mt-2 text-xl font-semibold group-hover:text-blue-700">
                         <Link to={`/blog/${post.slug}`}>
                           {post.title}
                         </Link>
@@ -120,7 +120,7 @@ const Blog = () => {
                       
                       <Button
                         variant="link"
-                        className="mt-4 p-0 text-blue-600 hover:text-blue-700"
+                        className="mt-4 p-0 text-blue-700 hover:text-blue-700"
                         asChild
                       >
                         <Link to={`/blog/${post.slug}`}>

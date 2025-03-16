@@ -154,14 +154,14 @@ const BlogPost = () => {
 
           <div className="container mx-auto min-h-screen px-4 py-12">
             <div className="mx-auto max-w-3xl">
-              <Button variant="ghost" asChild className="mb-6 text-blue-600 hover:text-blue-700">
+              <Button variant="ghost" asChild className="mb-6 text-blue-700 hover:text-blue-700">
                 <Link to="/blog">
                   <ArrowLeft className="mr-2 h-4 w-4" />
                   Back to Blog
                 </Link>
               </Button>
 
-              <h1 className="font-serif text-3xl font-bold sm:text-4xl md:text-5xl">
+              <h1 className="text-3xl font-bold sm:text-4xl md:text-5xl">
                 {post.title}
               </h1>
 

@@ -9,7 +9,7 @@ export const ServicesSection = () => {
     <section className="bg-gray-100 py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-serif text-3xl font-semibold sm:text-4xl">
+          <h2 className="text-3xl font-semibold sm:text-4xl">
             Our Professional Services
           </h2>
           <p className="mt-4 text-muted-foreground">
@@ -60,7 +60,7 @@ export const ServicesSection = () => {
           />
         </div>
         <div className="mt-12 text-center">
-          <Button size="lg" asChild className="bg-blue-600 hover:bg-blue-700">
+          <Button size="lg" asChild className="bg-blue-700 hover:bg-blue-700">
             <Link to="/services">View All Services</Link>
           </Button>
         </div>

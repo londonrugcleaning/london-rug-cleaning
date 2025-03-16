@@ -57,7 +57,7 @@ const Gallery = () => {
     <div className="min-h-screen">
       <section className="hero-pattern py-24">
         <div className="container mx-auto px-4">
-          <h1 className="animate-fade-up font-serif text-4xl font-semibold sm:text-5xl">
+          <h1 className="animate-fade-up text-4xl font-semibold sm:text-5xl">
             Before & After Gallery
           </h1>
           <p className="mt-6 animate-fade-up text-lg text-muted-foreground">

@@ -137,13 +137,13 @@ const RugStainRemoval = () => {
         
         <section className="py-20 bg-blue-50">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="font-serif text-3xl font-semibold mb-6">
+            <h2 className="text-3xl font-semibold mb-6">
               Ready to Get Your {service.title} Service?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
               Contact us today for a free quote and consultation. We offer free collection and delivery across London.
             </p>
-            <Button size="lg" className="gap-2 bg-blue-600 hover:bg-blue-700">
+            <Button size="lg" className="gap-2 bg-blue-700 hover:bg-blue-700">
               <Phone className="h-4 w-4" />
               02034888344
             </Button>

@@ -18,7 +18,7 @@ export const ServiceFAQ = ({ faqs }: ServiceFAQProps) => {
   return (
     <section className="py-20">
       <div className="container mx-auto px-4">
-        <h2 className="mb-12 text-center font-serif text-3xl font-semibold">
+        <h2 className="mb-12 text-center text-3xl font-semibold">
           Frequently Asked Questions
         </h2>
         <div className="mx-auto max-w-3xl">

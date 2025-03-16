@@ -20,7 +20,7 @@ export const CTAButtons = ({
       <div className={`flex ${variant === "hero" ? "flex-col sm:flex-row" : "flex-row"} gap-4`}>
         <Button
           size="lg"
-          className="gap-2 bg-blue-600 hover:bg-blue-700"
+          className="gap-2 bg-blue-700 hover:bg-blue-700"
           onClick={() => setShowQuoteModal(true)}
           aria-label="Get a free quote"
         > 

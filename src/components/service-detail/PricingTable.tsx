@@ -10,7 +10,7 @@ export const PricingTable = ({ title = "Professional Rug Cleaning Services" }: P
     <section className="py-16 bg-gray-50">
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-serif font-semibold text-center mb-6">
+          <h2 className="text-3xl font-semibold text-center mb-6">
             {title}
           </h2>
           <p className="text-lg text-center mb-8">

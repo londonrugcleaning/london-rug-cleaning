@@ -2,7 +2,7 @@
 export const Logo = () => {
   return (
     <div className="flex items-center gap-2 pl-2">
-      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="text-blue-600" width="40" height="40" viewBox="0 0 253.037 302.512">
+      <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="text-blue-700" width="45" height="45" viewBox="0 0 253.037 302.512">
         <defs>
           <clipPath id="a">
             <path d="M60.98 36.246h25.524v8.219H60.98Zm32.954 0h25.164v8.219H93.934Zm32.066 0h25.559v8.219H126Zm31.281 0h26.871v8.219h-26.87zm33.645 0h24.605v8.219h-24.605zm30.012 0h27.136v8.219h-27.137zm31.015 0h26.625v8.219h-26.625zm33.793 0h28.27v8.219h-28.27zM126 44.465h8.219v12.953H126Zm-15.121 0h8.219v12.953h-8.22zm80.047 0h8.219V57.68h-8.22zm30.012 0h8.218V57.68h-8.219zm-45.004 0h8.218V57.68h-8.218zm31.379 0h8.218V57.68h-8.219zm-113.38 0h8.204v13.347h-8.203zm-15.644 0h8.215v13.347h-8.215zm78.992 0h8.219v13.48h-8.219zm-13.937 0h8.215v13.48h-8.215zm108.61 0h8.218v14.25h-8.219zm33.792 0h8.219v14.25h-8.219zm-45.89 0h8.218v14.25h-8.219zm30.503 0h8.22v14.25h-8.22zM110.88 57.418h23.34v8.219h-23.34zm65.055.262h23.21v8.218h-23.21zm31.379 0h21.843v8.218h-21.844Zm-129.024.133h23.848v8.218H78.289Zm65.055.132H165.5v8.215h-22.156zm96.511.77h20.317v8.219h-20.317zm30.504 0h23.606v8.219H270.36Zm35.438-14.25h8.219v36.719h-8.22zm-244.817 0h8.22v36.719h-8.22zm0 36.719h253.036v8.218H60.98Zm0 0" />
@@ -40,42 +40,42 @@ export const Logo = () => {
             <path d="M242.254 230.492s-1.02 16.059 14.844 15.235c0 0-14.055-.606-14.844 15.039 0 0 .625-15.844-15.02-14.727 0 0 15.844.922 15.04-15.547" />
           </clipPath>
         </defs>
-        <g clip-path="url(#a)" transform="translate(-60.98 -36.246)">
+        <g clipPath="url(#a)" transform="translate(-60.98 -36.246)">
           <path d="M52.762 28.031h269.476v318.95H52.762Zm0 0" />
         </g>
-        <g clip-path="url(#b)" transform="translate(-60.98 -36.246)">
-          <g clip-path="url(#c)">
+        <g clipPath="url(#b)" transform="translate(-60.98 -36.246)">
+          <g clipPath="url(#c)">
             <path d="M52.762 28.031h269.476v318.95H52.762Zm0 0" />
           </g>
         </g>
-        <g clip-path="url(#d)" transform="translate(-60.98 -36.246)">
-          <g clip-path="url(#e)">
+        <g clipPath="url(#d)" transform="translate(-60.98 -36.246)">
+          <g clipPath="url(#e)">
             <path d="M52.762 28.031h269.476v318.95H52.762Zm0 0" />
           </g>
         </g>
-        <g clip-path="url(#f)" transform="translate(-60.98 -36.246)">
-          <g clip-path="url(#g)">
+        <g clipPath="url(#f)" transform="translate(-60.98 -36.246)">
+          <g clipPath="url(#g)">
             <path d="M52.762 28.031h269.476v318.95H52.762Zm0 0" />
           </g>
         </g>
-        <g clip-path="url(#h)" transform="translate(-60.98 -36.246)">
-          <g clip-path="url(#i)">
+        <g clipPath="url(#h)" transform="translate(-60.98 -36.246)">
+          <g clipPath="url(#i)">
             <path d="M52.762 28.031h269.476v318.95H52.762Zm0 0" />
           </g>
         </g>
-        <g clip-path="url(#j)" transform="translate(-60.98 -36.246)">
-          <g clip-path="url(#k)">
+        <g clipPath="url(#j)" transform="translate(-60.98 -36.246)">
+          <g clipPath="url(#k)">
             <path d="M52.762 28.031h269.476v318.95H52.762Zm0 0" />
           </g>
         </g>
-        <g clip-path="url(#l)" transform="translate(-60.98 -36.246)">
-          <g clip-path="url(#m)">
+        <g clipPath="url(#l)" transform="translate(-60.98 -36.246)">
+          <g clipPath="url(#m)">
             <path d="M52.762 28.031h269.476v318.95H52.762Zm0 0" />
           </g>
         </g>
       </svg>
 
-      <span className="font-serif text-l font-bold">
+      <span className="text-l font-bold">
         London Rug<br></br>
         Cleaning
       </span>
