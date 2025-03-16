@@ -10,8 +10,6 @@ import {
   Twitter,
   Clock
 } from "lucide-react";
-import { CTAButtons } from "./CTAButtons";
-import { cn } from '../lib/utils';
 
 export const Footer = () => {
   const services = [
@@ -75,13 +73,13 @@ export const Footer = () => {
               </li>
             </ul>
             <div className="mt-6 flex space-x-4">
-              <a href="#" className="text-gray-600 hover:text-blue-800 transition-colors">
+              <a href="#" aria-label="London Rug Cleaning On Facebook" className="text-gray-600 hover:text-blue-800 transition-colors">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-blue-800 transition-colors">
+              <a href="#" aria-label="London Rug Cleaning On Instagram" className="text-gray-600 hover:text-blue-800 transition-colors">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" className="text-gray-600 hover:text-blue-800 transition-colors">
+              <a href="#" aria-label="London Rug Cleaning On X(Twitter)" className="text-gray-600 hover:text-blue-800 transition-colors">
                 <Twitter className="h-6 w-6" />
               </a>
             </div>
