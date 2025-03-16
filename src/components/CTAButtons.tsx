@@ -22,16 +22,14 @@ export const CTAButtons = ({
           size="lg"
           className="gap-2 bg-blue-600 hover:bg-blue-700"
           onClick={() => setShowQuoteModal(true)}
-          aria-label="Get a free quote"
-        > 
-          <MessageSquareQuote aria-hidden="true" />
-          {showText ? <span>Get a Free Quote</span> : null}
+        > <MessageSquareQuote />
+          {showText ? "Get a Free Quote" : null}
         </Button>
 
         <Button asChild size="lg" variant={variant === "hero" ? "outlineWhite" : "outline"} className="gap-2">
-          <a href="tel:02034888344" aria-label="Call us at 02034888344">
-            <Phone className="h-5 w-5" aria-hidden="true" />
-            {showText ? <span>02034888344</span> : null}
+          <a href="tel:02034888344">
+            <Phone className="h-5 w-5" />
+            {showText ? "02034888344" : null}
           </a>
         </Button>
       </div>

@@ -2,10 +2,10 @@
 import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 
-export interface SitemapURL {
+interface SitemapURL {
   loc: string;
   lastmod?: string;
-  changefreq?: "always" | "hourly" | "daily" | "weekly" | "monthly" | "yearly" | "never";
+  changefreq?: string;
   priority?: number;
 }
 
@@ -34,23 +34,12 @@ ${urls
 </urlset>`;
 
     setSitemapContent(xmlContent);
-
-    // In development, let's create a blob and download the file for testing
-    if (process.env.NODE_ENV === 'development') {
-      console.log('Sitemap content generated for development testing');
-    }
   }, [baseUrl, urls]);
 
-  // Return the XML content as a text/xml response
   return (
-    <>
-      <Helmet>
-        <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
-      </Helmet>
-      <div style={{ display: 'none' }} data-testid="sitemap-content">
-        {sitemapContent}
-      </div>
-    </>
+    <Helmet>
+      <link rel="sitemap" type="application/xml" href="/sitemap.xml" />
+    </Helmet>
   );
 };
 

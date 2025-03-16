@@ -1,4 +1,3 @@
-
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap');
 
 @tailwind base;
@@ -16,7 +15,7 @@
     --popover: 0 0% 100%;
     --popover-foreground: 30 10% 10%;
 
-    --primary: 221,83%,53%;
+    --primary: 32 43% 40%;
     --primary-foreground: 30 10% 98%;
 
     --secondary: 30 20% 96%;
@@ -46,9 +45,6 @@
   body {
     @apply bg-background text-foreground;
     font-feature-settings: "rlig" 1, "calt" 1;
-  }
-  a:hover {
-    @apply text-blue-800 transition-colors;
   }
 }
 

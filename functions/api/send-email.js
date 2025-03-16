@@ -1,9 +1,8 @@
-import { Resend } from 'resend';
 
-
+// Cloudflare Worker for sending emails
 export async function onRequest(context) {
   try {
-    // Handle CORS preflight request
+    // Handle CORS
     if (context.request.method === "OPTIONS") {
       return new Response(null, {
         headers: {
@@ -14,11 +13,14 @@ export async function onRequest(context) {
       });
     }
 
-    // Allow only POST requests
+    // Only allow POST requests
     if (context.request.method !== "POST") {
       return new Response(JSON.stringify({ error: "Method not allowed" }), {
         status: 405,
-        headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" },
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
       });
     }
 
@@ -36,54 +38,98 @@ export async function onRequest(context) {
       );
     }
 
-    // Parse request body
+    // Get form data from request body
     const body = await context.request.json();
     const { name, email, phone, message } = body;
 
-    // Validate request data
+    // Validate required fields
     if (!name || !email || !phone || !message) {
       return new Response(
         JSON.stringify({ error: "All fields are required" }),
-        { status: 400, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" } }
+        {
+          status: 400,
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
       );
     }
 
+    // Get environment variables
+    const SMTP_HOST = context.env.SMTP_HOST;
+    const SMTP_PORT = context.env.SMTP_PORT;
+    const SMTP_USER = context.env.SMTP_USER;
+    const SMTP_PASS = context.env.SMTP_PASS;
+    const TO_EMAIL = context.env.TO_EMAIL || "info@londonrugcleaning.co.uk";
+
     // Construct email content
-    const emailOptions = {
-      from: `London Rug Cleaning <${FROM_EMAIL}>`,
-      to: [TO_EMAIL],
-      subject: `New Quote Request from ${name}`,
-      text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nMessage: ${message}`,
-      html: `
-        <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto;">
-          <h2 style="color: #333;">New Quote Request</h2>
-          <p><strong>Name:</strong> ${name}</p>
-          <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Message:</strong> ${message}</p>
-        </div>
-      `,
-    };
+    const emailContent = `
+      Name: ${name}
+      Email: ${email}
+      Phone: ${phone}
+      Message: ${message}
+    `;
 
-    // Send email with Resend
-    const resend = new Resend(RESEND_API_KEY);
-    const { data, error } = await resend.emails.send(emailOptions);
+    // Send email using Cloudflare Email Routing or a third-party email service
+    // This example uses the Web Standards Fetch API that Cloudflare Workers support
+    const emailSent = await fetch(`https://${SMTP_HOST}/api/send`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": `Basic ${btoa(`${SMTP_USER}:${SMTP_PASS}`)}`,
+      },
+      body: JSON.stringify({
+        from: `London Rug Cleaning <noreply@londonrugcleaning.co.uk>`,
+        to: TO_EMAIL,
+        subject: `New Quote Request from ${name}`,
+        text: emailContent,
+        html: `<p><strong>Name:</strong> ${name}</p>
+               <p><strong>Email:</strong> ${email}</p>
+               <p><strong>Phone:</strong> ${phone}</p>
+               <p><strong>Message:</strong> ${message}</p>`,
+      }),
+    });
 
-    if (error) {
-      console.error("Resend API error:", error);
-      throw new Error(error.message);
+    // Check if email was sent successfully
+    if (!emailSent.ok) {
+      console.error("Failed to send email:", await emailSent.text());
+      return new Response(
+        JSON.stringify({ error: "Failed to send email" }),
+        {
+          status: 500,
+          headers: {
+            "Content-Type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+          },
+        }
+      );
     }
 
+    // Return success response
     return new Response(
-      JSON.stringify({ success: true, message: "Email sent successfully", messageId: data.id }),
-      { status: 200, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" } }
+      JSON.stringify({ success: true, message: "Email sent successfully" }),
+      {
+        status: 200,
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
     );
-
   } catch (error) {
-    console.error("Request handling error:", error);
+    console.error("Error sending email:", error);
+    
+    // Return error response
     return new Response(
-      JSON.stringify({ error: "Failed to process request", details: error.message }),
-      { status: 500, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" } }
+      JSON.stringify({ error: "Failed to send email", details: error.message }),
+      {
+        status: 500,
+        headers: {
+          "Content-Type": "application/json",
+          "Access-Control-Allow-Origin": "*",
+        },
+      }
     );
   }
 }

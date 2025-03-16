@@ -4,7 +4,6 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Alert, AlertDescription } from "@/components/ui/alert";
 import {
   Dialog,
   DialogContent,
@@ -13,7 +12,6 @@ import {
   DialogTitle,
   DialogFooter,
 } from "@/components/ui/dialog";
-import { Phone } from "lucide-react";
 
 interface QuoteModalProps {
   open: boolean;
@@ -28,18 +26,13 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [error, setError] = useState<string | null>(null);
   const { toast } = useToast();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setError(null);
 
     try {
-      console.log("Submitting form data:", formData);
-
-      // Use the correct API endpoint
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
@@ -48,40 +41,7 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
         body: JSON.stringify(formData),
       });
 
-      console.log("Response status:", response.status);
-
-      if (!response.ok) {
-        let errorMessage = `Server error: ${response.status}`;
-
-        try {
-          const text = await response.text();
-          console.log("Error response text:", text);
-
-          if (text && text.trim()) {
-            const errorData = JSON.parse(text);
-            errorMessage = errorData.message || errorMessage;
-          }
-        } catch (parseError) {
-          console.error("Failed to parse error response:", parseError);
-        }
-
-        throw new Error(errorMessage);
-      }
-
-      // Try to parse the response only if we get here (response was ok)
-      let data;
-      try {
-        const text = await response.text();
-        console.log("Response text:", text);
-        data = text ? JSON.parse(text) : {};
-      } catch (parseError) {
-        console.error("Failed to parse success response:", parseError);
-        throw new Error("Invalid response from server");
-      }
-
-      console.log("Response data:", data);
-
-      if (data.success) {
+      if (response.ok) {
         toast({
           title: "Thank you for your message",
           description: "We'll get back to you as soon as possible.",
@@ -89,20 +49,16 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
         setFormData({ name: "", email: "", phone: "", message: "" });
         onOpenChange(false);
       } else {
-        throw new Error(data.message || "Failed to send message");
+        toast({
+          title: "Error sending message",
+          description: "Please try again or call us directly.",
+          variant: "destructive",
+        });
       }
     } catch (error) {
-      console.error("Form submission error:", error);
-
-      const errorMessage = error instanceof Error
-        ? error.message
-        : "Our email system is currently unavailable. Please call us directly.";
-
-      setError(errorMessage);
-
       toast({
         title: "Error sending message",
-        description: errorMessage,
+        description: "Please try again or call us directly.",
         variant: "destructive",
       });
     } finally {
@@ -119,28 +75,12 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
             Fill out the form below and we'll get back to you as soon as possible.
           </DialogDescription>
         </DialogHeader>
-
-        {error && (
-          <Alert variant="destructive" className="my-2">
-            <AlertDescription className="flex flex-col gap-2">
-              <p>{error}</p>
-              <Button asChild variant="outline" size="sm" className="flex items-center gap-2 w-fit">
-                <a href="tel:02034888344" aria-label="Call us at 020 3488 8344">
-                  <Phone className="h-4 w-4" aria-hidden="true" />
-                  <span>Call us: 020 3488 8344</span>
-                </a>
-              </Button>
-            </AlertDescription>
-          </Alert>
-        )}
-
         <form onSubmit={handleSubmit} className="space-y-4 py-4">
           <Input
             placeholder="Your Name"
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
             required
-            aria-label="Your Name"
           />
           <Input
             type="email"
@@ -148,28 +88,24 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
             required
-            aria-label="Email Address"
           />
           <Input
             placeholder="Phone Number"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
             required
-            aria-label="Phone Number"
           />
           <Textarea
             placeholder="Your Message"
             value={formData.message}
             onChange={(e) => setFormData({ ...formData, message: e.target.value })}
             required
-            aria-label="Your Message"
           />
           <DialogFooter>
-            <Button
-              type="submit"
+            <Button 
+              type="submit" 
               className="w-full"
               disabled={isSubmitting}
-              aria-label={isSubmitting ? "Sending..." : "Submit Request"}
             >
               {isSubmitting ? "Sending..." : "Submit Request"}
             </Button>
