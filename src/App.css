@@ -1,0 +1,32 @@
+
+/* 
+  App specific styles 
+  Keeping this file minimal to prevent render blocking  
+*/
+
+/* Improve scrolling experience */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Preload transition classes */
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 0.5s ease-in forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+/* Focus styles for accessibility */
+:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Ensure hover states use blue-800 for better contrast */
+a:hover, .hover-link:hover {
+  color: #1e40af; /* blue-800 */
+}

@@ -46,9 +46,9 @@ export const Navigation = () => {
 
   return (
     <header className="fixed top-4 z-50 mx-auto w-full">
-      <nav className="container rounded-full border bg-white/90 py-2 shadow-lg px-4 backdrop-blur-xs w-full  mx-auto">
+      <nav className="container rounded-full border bg-white/90 py-2 shadow-lg px-4 backdrop-blur-xs w-full mx-auto" aria-label="Main navigation">
         <div className="flex items-center justify-between">
-          <Link to="/">
+          <Link to="/" aria-label="London Rug Cleaning - Home">
             <Logo />
           </Link>
 
@@ -56,10 +56,11 @@ export const Navigation = () => {
             <Button
               variant={location.pathname === "/" ? "link" : "ghost"}
               asChild
+              aria-current={location.pathname === "/" ? "page" : undefined}
             >
-              <Link to="/" className="gap-2">
-                <Home className="h-4 w-4" />
-                Home
+              <Link to="/" className="gap-2" aria-label="Home">
+                <Home className="h-4 w-4" aria-hidden="true" />
+                <span>Home</span>
               </Link>
             </Button>
             <NavigationMenu>
@@ -67,10 +68,11 @@ export const Navigation = () => {
                 <NavigationMenuItem>
                   <NavigationMenuTrigger
                     className={location.pathname.startsWith("/services") ? "text-blue-600" : ""}
+                    aria-label="Services menu"
                   >
-                    <Link to="/services" className="flex items-center gap-2">
-                      <List className="h-4 w-4" />
-                      Services
+                    <Link to="/services" className="flex items-center gap-2" aria-label="Services">
+                      <List className="h-4 w-4" aria-hidden="true" />
+                      <span>Services</span>
                     </Link>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
@@ -81,6 +83,7 @@ export const Navigation = () => {
                             <Link
                               to={service.href}
                               className={`block rounded-lg p-3 ${location.pathname === service.href ? 'text-blue-600' : ''}`}
+                              aria-current={location.pathname === service.href ? "page" : undefined}
                             >
                               <div className="text-sm font-medium">{service.name}</div>
                               <p className="text-xs leading-snug text-muted-foreground">
@@ -103,19 +106,20 @@ export const Navigation = () => {
                   key={item.name}
                   variant={location.pathname === item.href ? "link" : "ghost"}
                   asChild
+                  aria-current={location.pathname === item.href ? "page" : undefined}
                 >
-                  <Link to={item.href} className="gap-2">
-                    <Icon className="h-4 w-4" />
-                    {item.name}
+                  <Link to={item.href} className="gap-2" aria-label={item.name}>
+                    <Icon className="h-4 w-4" aria-hidden="true" />
+                    <span>{item.name}</span>
                   </Link>
                 </Button>
               );
             })}
           </div>
             <Button size="lg" asChild className="hidden gap-2 bg-blue-600 hover:bg-blue-700 lg:flex">
-              <a href="tel:02034888344">
-                <Phone className="h-5 w-5" />
-                020 3488 8344
+              <a href="tel:02034888344" aria-label="Call us: 020 3488 8344">
+                <Phone className="h-5 w-5" aria-hidden="true" />
+                <span>020 3488 8344</span>
               </a>
             </Button>
 
@@ -124,22 +128,26 @@ export const Navigation = () => {
             size="icon"
             className="md:hidden"
             onClick={() => setIsOpen(!isOpen)}
+            aria-label={isOpen ? "Close menu" : "Open menu"}
+            aria-expanded={isOpen}
+            aria-controls="mobile-menu"
           >
-            {isOpen ? <X /> : <Menu/>}
+            {isOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
           </Button>
 
           {isOpen && (
-            <div className="absolute left-0 top-full mt-2 w-full rounded-lg border bg-white p-4 md:hidden">
+            <div id="mobile-menu" className="absolute left-0 top-full mt-2 w-full rounded-lg border bg-white p-4 md:hidden">
               <div className="flex flex-col gap-2">
                 <Button
                   variant={location.pathname === "/" ? "secondary" : "ghost"}
                   className="w-full justify-start"
                   asChild
                   onClick={() => setIsOpen(false)}
+                  aria-current={location.pathname === "/" ? "page" : undefined}
                 >
-                  <Link to="/" className="gap-2">
-                    <Home className="h-4 w-4" />
-                    Home
+                  <Link to="/" className="gap-2" aria-label="Home">
+                    <Home className="h-4 w-4" aria-hidden="true" />
+                    <span>Home</span>
                   </Link>
                 </Button>
 
@@ -148,10 +156,11 @@ export const Navigation = () => {
                   className="w-full justify-start"
                   asChild
                   onClick={() => setIsOpen(false)}
+                  aria-current={location.pathname === "/services" ? "page" : undefined}
                 >
-                  <Link to="/services" className="gap-2">
-                    <List className="h-4 w-4" />
-                    Services
+                  <Link to="/services" className="gap-2" aria-label="Services">
+                    <List className="h-4 w-4" aria-hidden="true" />
+                    <span>Services</span>
                   </Link>
                 </Button>
 
@@ -164,10 +173,11 @@ export const Navigation = () => {
                       className="w-full justify-start"
                       asChild
                       onClick={() => setIsOpen(false)}
+                      aria-current={location.pathname === item.href ? "page" : undefined}
                     >
-                      <Link to={item.href} className="gap-2">
-                        <Icon className="h-4 w-4" />
-                        {item.name}
+                      <Link to={item.href} className="gap-2" aria-label={item.name}>
+                        <Icon className="h-4 w-4" aria-hidden="true" />
+                        <span>{item.name}</span>
                       </Link>
                     </Button>
                   );
@@ -181,15 +191,18 @@ export const Navigation = () => {
                       className="w-full justify-start"
                       asChild
                       onClick={() => setIsOpen(false)}
+                      aria-current={location.pathname === service.href ? "page" : undefined}
                     >
-                      <Link to={service.href}>{service.name}</Link>
+                      <Link to={service.href} aria-label={service.name}>
+                        <span>{service.name}</span>
+                      </Link>
                     </Button>
                   ))}
                 </div>
                 <Button size="lg" asChild className="mt-4 w-full gap-2 bg-blue-600 hover:bg-blue-700">
-                  <a href="tel:02034888344">
-                    <Phone className="h-4 w-4" />
-                    02034888344
+                  <a href="tel:02034888344" aria-label="Call us: 02034888344">
+                    <Phone className="h-4 w-4" aria-hidden="true" />
+                    <span>02034888344</span>
                   </a>
                 </Button>
               </div>
