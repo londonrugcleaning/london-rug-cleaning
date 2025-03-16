@@ -33,11 +33,11 @@ const serviceDetails: Record<string, ServiceDetails> = {
   "persian-rug-cleaning": {
     title: "Persian Rug Cleaning",
     description: "Expert Persian rug cleaning services in London combining traditional methods with modern technology",
-    hero: "/lovable-uploads/persian-rug-hero.jpg",
+    hero: "/images/persian-rug-hero.webp",
     gallery: [
-      "/lovable-uploads/persian-rug-1.jpg",
-      "/lovable-uploads/persian-rug-2.jpg",
-      "/lovable-uploads/persian-rug-3.jpg"
+      "/images/persian-rug-1.webp",
+      "/images/persian-rug-2.webp",
+      "/images/persian-rug-3.webp"
     ],
     intro: "Persian rugs are masterpieces of artisanal craftsmanship, distinguished by their intricate patterns, natural dyes, and hand-knotted construction. These valuable pieces require specialized cleaning expertise that respects their delicate nature while ensuring thorough cleansing. Our expert Persian rug cleaning service combines centuries-old traditional methods with modern cleaning technology to preserve the integrity, colors, and inherent value of your Persian rugs. With extensive experience in handling these precious textiles, we understand the unique care requirements of different Persian rug styles, from fine silk Qums to robust Heriz carpets.",
     features: [
@@ -141,11 +141,11 @@ const serviceDetails: Record<string, ServiceDetails> = {
   "oriental-rug-cleaning": {
     title: "Oriental Rug Cleaning",
     description: "Professional Oriental rug cleaning services specializing in antique and traditional pieces",
-    hero: "/lovable-uploads/oriental-rug-hero.jpg",
+    hero: "/images/oriental-rug-hero.webp",
     gallery: [
-      "/lovable-uploads/oriental-rug-1.jpg",
-      "/lovable-uploads/oriental-rug-2.jpg",
-      "/lovable-uploads/oriental-rug-3.jpg"
+      "/images/oriental-rug-1.webp",
+      "/images/oriental-rug-2.webp",
+      "/images/oriental-rug-3.webp"
     ],
     intro: "Oriental rugs are distinguished by their unique characteristics, from intricate tribal patterns to sophisticated court designs. Each type presents its own cleaning challenges, whether it's silk highlights in Chinese rugs, vegetable dyes in Turkish pieces, or delicate knots in antique carpets. Our specialized Oriental rug cleaning service addresses common issues like dye bleeding, fiber deterioration, and foundation weakening while preserving the distinctive qualities of each piece. We combine traditional cleaning wisdom with modern conservation techniques to ensure your Oriental rug receives the most appropriate and effective treatment.",
     features: [
@@ -250,11 +250,11 @@ const serviceDetails: Record<string, ServiceDetails> = {
   "wool-rug-cleaning": {
     title: "Wool Rug Cleaning",
     description: "Expert wool rug cleaning services in London with specialized care for natural fibers",
-    hero: "/lovable-uploads/wool-rug-hero.jpg",
+    hero: "/images/wool-rug-hero.webp",
     gallery: [
-      "/lovable-uploads/wool-rug-1.jpg",
-      "/lovable-uploads/wool-rug-2.jpg",
-      "/lovable-uploads/wool-rug-3.jpg"
+      "/images/wool-rug-1.webp",
+      "/images/wool-rug-2.webp",
+      "/images/wool-rug-3.webp"
     ],
     intro: "Wool rugs require special attention due to their natural fibers and unique properties. Our eco-friendly wool rug cleaning service maintains the softness, durability, and appearance of your wool rugs while extending their lifespan. We understand the specific requirements of wool and use specialized techniques that preserve the natural lanolin and fiber integrity.",
     features: [
@@ -359,11 +359,11 @@ const serviceDetails: Record<string, ServiceDetails> = {
   "area-rug-cleaning": {
     title: "Area Rug Cleaning",
     description: "Professional area rug cleaning services for all types and sizes",
-    hero: "/lovable-uploads/area-rug-hero.jpg",
+    hero: "/images/area-rug-hero.webp",
     gallery: [
-      "/lovable-uploads/area-rug-1.jpg",
-      "/lovable-uploads/area-rug-2.jpg",
-      "/lovable-uploads/area-rug-3.jpg"
+      "/images/area-rug-1.webp",
+      "/images/area-rug-2.webp",
+      "/images/area-rug-3.webp"
     ],
     intro: "Area rugs require specialized cleaning approaches based on their varied materials, construction methods, and designs. Our comprehensive area rug cleaning service handles rugs of all sizes and types, from small accent rugs to large room-sized pieces. We tailor our cleaning methods to each rug's specific requirements, ensuring optimal results while preserving colors, textures, and structural integrity.",
     features: [
@@ -468,11 +468,11 @@ const serviceDetails: Record<string, ServiceDetails> = {
   "synthetic-rug-cleaning": {
     title: "Synthetic Rug Cleaning",
     description: "Expert cleaning for modern synthetic rugs with advanced cleaning techniques and technology",
-    hero: "/lovable-uploads/synthetic-rug-hero.jpg",
+    hero: "/images/synthetic-rug-hero.webp",
     gallery: [
-      "/lovable-uploads/synthetic-rug-1.jpg",
-      "/lovable-uploads/synthetic-rug-2.jpg",
-      "/lovable-uploads/synthetic-rug-3.jpg"
+      "/images/synthetic-rug-1.webp",
+      "/images/synthetic-rug-2.webp",
+      "/images/synthetic-rug-3.webp"
     ],
     intro: "Synthetic rugs require different cleaning approaches than natural fiber rugs. Our specialized synthetic rug cleaning service uses modern techniques and solutions specifically formulated for nylon, polyester, polypropylene, and other synthetic materials. We help restore the appearance and extend the lifespan of your modern rugs while removing deeply embedded dirt and allergens.",
     features: [
@@ -577,11 +577,11 @@ const serviceDetails: Record<string, ServiceDetails> = {
   "antique-rug-cleaning": {
     title: "Antique Rug Cleaning",
     description: "Specialized cleaning and preservation for valuable antique and vintage rugs in London",
-    hero: "/lovable-uploads/antique-rug-hero.jpg",
+    hero: "/images/antique-rug-hero.webp",
     gallery: [
-      "/lovable-uploads/antique-rug-1.jpg",
-      "/lovable-uploads/antique-rug-2.jpg",
-      "/lovable-uploads/antique-rug-3.jpg"
+      "/images/antique-rug-1.webp",
+      "/images/antique-rug-2.webp",
+      "/images/antique-rug-3.webp"
     ],
     intro: "Antique rugs are treasured heirlooms that require extraordinary care during cleaning. Our specialized antique rug cleaning service combines traditional methods with modern conservation techniques to safely clean these valuable pieces while preserving their historical integrity, color stability, and structural condition. With decades of experience handling rare and valuable rugs, our master cleaners understand the unique requirements of antique textiles.",
     features: [
@@ -686,11 +686,11 @@ const serviceDetails: Record<string, ServiceDetails> = {
   "hand-knotted-rug-cleaning": {
     title: "Hand-Knotted Rug Cleaning",
     description: "Specialized cleaning for luxury hand-knotted rugs with meticulous attention to detail",
-    hero: "/lovable-uploads/hand-knotted-rug-hero.jpg",
+    hero: "/images/hand-knotted-rug-hero.webp",
     gallery: [
-      "/lovable-uploads/hand-knotted-rug-1.jpg",
-      "/lovable-uploads/hand-knotted-rug-2.jpg",
-      "/lovable-uploads/hand-knotted-rug-3.jpg"
+      "/images/hand-knotted-rug-1.webp",
+      "/images/hand-knotted-rug-2.webp",
+      "/images/hand-knotted-rug-3.webp"
     ],
     intro: "Hand-knotted rugs represent the pinnacle of rug craftsmanship and require cleaning methods that preserve their intricate details and structural integrity. Our specialized hand-knotted rug cleaning service honors the artistry in these luxury pieces while providing thorough cleaning that enhances their beauty and longevity. With exacting techniques and specialized knowledge, we ensure these valuable rugs receive the premium care they deserve.",
     features: [
