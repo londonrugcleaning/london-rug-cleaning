@@ -37,7 +37,7 @@ export const Hero = () => {
 
               <Review />
 
-              <p className="text-lg">
+              <p className="hero-lg">
                 Expert care for all types of rugs - From antique Persian to modern designs.
                 Trusted by London residents for over 30 years.
               </p>
