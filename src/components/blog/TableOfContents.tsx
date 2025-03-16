@@ -74,7 +74,7 @@ export const TableOfContents = ({ content }: TableOfContentsProps) => {
       <div className="mb-8 rounded-lg border bg-muted/50 p-4 shadow-sm">
         <Button
           variant="ghost"
-          className="mb-2 w-full justify-between text-blue-600"
+          className="mb-2 w-full justify-between text-blue-700"
           onClick={() => setIsOpen(!isOpen)}
         >
           <span className="flex items-center gap-2 font-semibold">
@@ -90,8 +90,8 @@ export const TableOfContents = ({ content }: TableOfContentsProps) => {
               .filter(heading => heading.level === 2)
               .map((heading, index) => (
                 <AccordionItem key={index} value={`section-${index}`}>
-                  <AccordionTrigger className="text-sm hover:no-underline hover:text-blue-600 py-2">
-                    <a href={`#${heading.id}`} className="hover:text-blue-600">
+                  <AccordionTrigger className="text-sm hover:no-underline hover:text-blue-700 py-2">
+                    <a href={`#${heading.id}`} className="hover:text-blue-700">
                       {heading.text}
                     </a>
                   </AccordionTrigger>
@@ -105,7 +105,7 @@ export const TableOfContents = ({ content }: TableOfContentsProps) => {
                             headings.indexOf(h) < headings.indexOf(headings.filter(h2 => h2.level === 2)[index + 1]))
                         )
                         .map((subheading, idx) => (
-                          <li key={idx} className="text-sm text-muted-foreground hover:text-blue-600">
+                          <li key={idx} className="text-sm text-muted-foreground hover:text-blue-700">
                             <a href={`#${subheading.id}`}>{subheading.text}</a>
                           </li>
                         ))

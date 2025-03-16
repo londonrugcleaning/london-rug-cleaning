@@ -2,7 +2,6 @@
 import { Truck, Shield, MapPin } from "lucide-react";
 import { CTAButtons } from "../CTAButtons";
 import Review from "../ui/review";
-import { LazyLoadImage } from "../ui/lazyload-image";
 
 export const Hero = () => {
   const benefits = [
@@ -30,9 +29,9 @@ export const Hero = () => {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
           <div className="flex flex-col justify-center">
             <div className="animate-fade-up space-y-8">
-              <h1 className="font-serif text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
                 Professional{" "}
-                <span className="text-blue-600">Rug Cleaning</span>{" "}
+                <span className="text-blue-700">Rug Cleaning</span>{" "}
                 <span className="block">Service in London</span>
               </h1>
 
@@ -51,12 +50,11 @@ export const Hero = () => {
 
           <div className="relative hidden lg:block">
             <div className="absolute -right-24 top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full bg-blue-200/60 blur-3xl" aria-hidden="true" />
-            <LazyLoadImage
+            <img
               src="/images/Professional Rug Cleaning London.webp"
               alt="Professional rug cleaning service in London"
               className="relative z-10 max-w-xl rounded-2xl shadow-2xl translate-x-20"
-              loading="eager" 
-              fetchPriority="high"
+              loading="lazy"
               width={576}
               height={384}
             />
@@ -73,7 +71,7 @@ export const Hero = () => {
                 style={{ animationDelay: `${index * 100}ms` }}
               >
                 <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
-                  <Icon className="h-6 w-6 text-blue-600" aria-hidden="true" />
+                  <Icon className="h-6 w-6 text-blue-700" aria-hidden="true" />
                 </div>
                 <h3 className="mb-2 font-semibold">{benefit.title}</h3>
                 <p className="text-sm text-muted-foreground">{benefit.description}</p>

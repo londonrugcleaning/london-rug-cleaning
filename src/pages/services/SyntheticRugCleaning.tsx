@@ -137,7 +137,7 @@ const SyntheticRugCleaning = () => {
         
         <section className="py-20 bg-blue-50">
           <div className="container mx-auto px-4 text-center">
-            <h2 className="font-serif text-3xl font-semibold mb-6">
+            <h2 className="text-3xl font-semibold mb-6">
               Ready to Get Your {service.title} Service?
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">

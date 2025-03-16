@@ -19,7 +19,7 @@ export const TestimonialCard = ({ name, role, content }: TestimonialCardProps) =
       </div>
       <p className="mb-4 text-lg text-muted-foreground">{content}</p>
       <div>
-        <p className="font-serif text-lg font-semibold">{name}</p>
+        <p className="text-lg font-semibold">{name}</p>
         <p className="text-sm text-muted-foreground">{role}</p>
       </div>
     </div>

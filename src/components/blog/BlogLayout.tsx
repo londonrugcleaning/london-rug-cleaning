@@ -31,7 +31,7 @@ export const BlogLayout: React.FC<BlogLayoutProps> = ({
     <article className="container mx-auto px-4 py-12">
       <div className="mx-auto max-w-3xl">
         <header className="mb-8">
-          <h1 className="font-serif text-4xl font-bold">{title}</h1>
+          <h1 className="text-4xl font-bold">{title}</h1>
           <div className="mt-4 flex items-center text-muted-foreground">
             <span>{author}</span>
             <span className="mx-2">•</span>

@@ -84,8 +84,8 @@ const Services = () => {
       <section className="py-20">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
-            <h1 className="font-serif text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-              Professional <span className="text-blue-600">Rug Cleaning</span> Services in London
+            <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+              Professional <span className="text-blue-700">Rug Cleaning</span> Services in London
             </h1>
             <p className="mt-6 text-lg text-muted-foreground">
               Expert rug cleaning services near you. Specializing in Persian, Oriental, and Wool rugs
@@ -107,9 +107,9 @@ const Services = () => {
                 <Card className="group h-full cursor-pointer transition-all hover:shadow-lg">
                   <div className="p-6">
                     <div className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl ${service.color}`}>
-                      <service.icon className="h-6 w-6 text-blue-600" />
+                      <service.icon className="h-6 w-6 text-blue-700" />
                     </div>
-                    <h3 className="mb-2 font-serif text-xl font-semibold group-hover:text-blue-600">
+                    <h3 className="mb-2 text-xl font-semibold group-hover:text-blue-700">
                       {service.title}
                     </h3>
                     <p className="text-muted-foreground">{service.description}</p>
@@ -125,7 +125,7 @@ const Services = () => {
       <section className="bg-blue-600 py-20 text-white">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-3xl text-center">
-            <h2 className="font-serif text-3xl font-bold sm:text-4xl">
+            <h2 className="text-3xl font-bold sm:text-4xl">
               Ready to Get Your Rugs Professionally Cleaned?
             </h2>
             <p className="mt-4 text-blue-100">

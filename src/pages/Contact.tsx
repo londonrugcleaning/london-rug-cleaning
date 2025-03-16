@@ -129,7 +129,7 @@ const Contact = () => {
       <div className="min-h-screen">
         <section className="hero-pattern py-24">
           <div className="container mx-auto px-4">
-            <h1 className="animate-fade-up font-serif text-4xl font-semibold sm:text-5xl">
+            <h1 className="animate-fade-up text-4xl font-semibold sm:text-5xl">
               Contact Us
             </h1>
             <p className="mt-6 animate-fade-up text-lg text-muted-foreground">
@@ -143,7 +143,7 @@ const Contact = () => {
             <div className="mx-auto grid max-w-5xl gap-12 lg:grid-cols-2">
               <div className="space-y-8">
                 <div className="space-y-6">
-                  <h2 className="font-serif text-3xl font-semibold">Get a Free Quote</h2>
+                  <h2 className="text-3xl font-semibold">Get a Free Quote</h2>
                   <p className="text-muted-foreground">
                     We're here to help with all your rug cleaning needs. Contact us for a free quote or any questions you may have.
                   </p>

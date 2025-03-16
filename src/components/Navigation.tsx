@@ -67,7 +67,7 @@ export const Navigation = () => {
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger
-                    className={location.pathname.startsWith("/services") ? "text-blue-600" : ""}
+                    className={location.pathname.startsWith("/services") ? "text-blue-700" : ""}
                     aria-label="Services menu"
                   >
                     <Link to="/services" className="flex items-center gap-2" aria-label="Services">
@@ -82,7 +82,7 @@ export const Navigation = () => {
                           <NavigationMenuLink asChild>
                             <Link
                               to={service.href}
-                              className={`block rounded-lg p-3 ${location.pathname === service.href ? 'text-blue-600' : ''}`}
+                              className={`block rounded-lg p-3 ${location.pathname === service.href ? 'text-blue-700' : ''}`}
                               aria-current={location.pathname === service.href ? "page" : undefined}
                             >
                               <div className="text-sm font-medium">{service.name}</div>
