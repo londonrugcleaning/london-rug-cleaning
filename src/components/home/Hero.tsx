@@ -29,7 +29,7 @@ export const Hero = () => {
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
           <div className="flex flex-col justify-center">
             <div className="animate-fade-up space-y-8">
-              <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
+              <h1 className="text-5xl font-bold tracking-tight leading-tight">
                 Professional{" "}
                 <span className="text-blue-800">Rug Cleaning</span>{" "}
                 <span className="block">Service in London</span>

@@ -55,13 +55,13 @@ export const Footer = () => {
               </li>
               <li className="flex items-center">
                 <Phone className="mr-3 h-5 w-5 text-gray-800" />
-                <a href="tel:02034888344" className="text-gray-600 hover:text-blue-800 transition-colors">
+                <a href="tel:02034888344" className="text-gray-600 hover:text-blue-900 transition-colors">
                   020 3488 8344
                 </a>
               </li>
               <li className="flex items-center">
                 <Mail className="mr-3 h-5 w-5 text-gray-800" />
-                <a href="mailto:info@londonrugcleaning.co.uk" className="text-gray-600 hover:text-blue-800 transition-colors">
+                <a href="mailto:info@londonrugcleaning.co.uk" className="text-gray-600 hover:text-blue-900 transition-colors">
                   info@londonrugcleaning.co.uk
                 </a>
               </li>
@@ -73,13 +73,13 @@ export const Footer = () => {
               </li>
             </ul>
             <div className="mt-6 flex space-x-4">
-              <a href="#" aria-label="London Rug Cleaning On Facebook" className="text-gray-600 hover:text-blue-800 transition-colors">
+              <a href="#" aria-label="London Rug Cleaning On Facebook" className="text-gray-600 hover:text-blue-900 transition-colors">
                 <Facebook className="h-6 w-6" />
               </a>
-              <a href="#" aria-label="London Rug Cleaning On Instagram" className="text-gray-600 hover:text-blue-800 transition-colors">
+              <a href="#" aria-label="London Rug Cleaning On Instagram" className="text-gray-600 hover:text-blue-900 transition-colors">
                 <Instagram className="h-6 w-6" />
               </a>
-              <a href="#" aria-label="London Rug Cleaning On X(Twitter)" className="text-gray-600 hover:text-blue-800 transition-colors">
+              <a href="#" aria-label="London Rug Cleaning On X(Twitter)" className="text-gray-600 hover:text-blue-900 transition-colors">
                 <Twitter className="h-6 w-6" />
               </a>
             </div>
@@ -91,7 +91,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               {services.slice(0, 6).map((service) => (
                 <li key={service.name}>
-                  <Link to={service.href} className="text-gray-600 hover:text-blue-800 transition-colors">
+                  <Link to={service.href} className="text-gray-600 hover:text-blue-900 transition-colors">
                     {service.name}
                   </Link>
                 </li>
@@ -105,7 +105,7 @@ export const Footer = () => {
             <ul className="space-y-3">
               {mainLinks.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-gray-600 hover:text-blue-800 transition-colors">
+                  <Link to={link.href} className="text-gray-600 hover:text-blue-900 transition-colors">
                     {link.name}
                   </Link>
                 </li>

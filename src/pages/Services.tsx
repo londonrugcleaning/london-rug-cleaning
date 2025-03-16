@@ -109,7 +109,7 @@ const Services = () => {
                     <div className={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl ${service.color}`}>
                       <service.icon className="h-6 w-6 text-blue-800" />
                     </div>
-                    <h3 className="mb-2 text-xl font-semibold group-hover:text-blue-800">
+                    <h3 className="mb-2 text-xl font-semibold group-hover:text-blue-900">
                       {service.title}
                     </h3>
                     <p className="text-muted-foreground">{service.description}</p>
