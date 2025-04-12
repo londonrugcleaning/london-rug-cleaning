@@ -24,4 +24,5 @@ dist
 *.sln
 *.sw?
 package-lock.json 
+bun.lockb
 .dev.vars
