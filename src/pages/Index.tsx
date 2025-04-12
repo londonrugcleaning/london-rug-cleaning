@@ -10,12 +10,11 @@ import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 const Index = () => {
   return (
     <>
-      <HeadMeta 
-        title="London Rug Cleaning - Professional Rug Cleaning Services"
-        description="Expert rug cleaning services in London. Specializing in oriental, Persian, and antique rug cleaning with free collection and delivery. Get your free quote today!"
+      <HeadMeta
+        title="London Rug Cleaning - Professional Rug Cleaner in London"
+        description="Expert rug cleaning services in London. Specializing in oriental, Persian, and antique rug cleaning with free collection and delivery. Get your free quote today"
         canonicalUrl="https://londonrugcleaning.co.uk"
         ogImage="/og-image.png"
-        keywords={["rug cleaning", "carpet cleaning", "persian rug", "oriental rug", "london", "professional cleaning"]}
       />
       <div className="min-h-screen">
         <Hero />

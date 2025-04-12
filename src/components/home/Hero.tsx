@@ -24,22 +24,21 @@ export const Hero = () => {
 
   return (
     <section className="relative overflow-hidden bg-gradient-to-b from-blue-50 to-white pt-4">
-      <div className="absolute inset-0 bg-grid-pattern opacity-5" aria-hidden="true" />
+      <div className="absolute inset-0 opacity-5" aria-hidden="true" />
       <div className="container relative z-10 mx-auto px-4 py-24 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2 lg:gap-8">
           <div className="flex flex-col justify-center">
             <div className="animate-fade-up space-y-8">
               <h1 className="hero-xl">
-                Professional{" "}
-                <span className="text-blue-800">Rug Cleaning</span>{" "}
+                Professional
+                <span className="text-blue-800"> Rug Cleaning </span>
                 <span className="block">Service in London</span>
               </h1>
 
               <Review />
 
               <p className="hero-lg">
-                Expert care for all types of rugs - From antique Persian to modern designs.
-                Trusted by London residents for over 30 years.
+                Expert care for all types of rugs - From antique Persian to modern designs. Trusted by London residents for over 30 years.
               </p>
 
               <div className="flex flex-col gap-4 sm:flex-row">
