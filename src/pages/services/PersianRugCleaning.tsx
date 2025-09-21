@@ -7,8 +7,8 @@ import { ServiceGallery } from "@/components/service-detail/ServiceGallery";
 import { ServiceFAQ } from "@/components/service-detail/ServiceFAQ";
 import { PricingTable } from "@/components/service-detail/PricingTable";
 import { HeadMeta } from "@/components/HeadMeta";
-import { ServiceSchema } from "@/components/seo/ServiceSchema";
-import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
+import { CombinedServiceSchema } from "@/components/seo/CombinedServiceSchema";
+
 
 const PersianRugCleaning = () => {
   const service = {
@@ -151,11 +151,11 @@ const PersianRugCleaning = () => {
           </div>
         </section>
 
-        <ServiceSchema
-          name={`${service.title} London`}
-          description={service.description}
+        <CombinedServiceSchema 
+          serviceType="Persian Rug Cleaning"
+          serviceName={`Expert ${service.title} in London`}
+          serviceDescription={service.description}
         />
-        <LocalBusinessSchema />
       </div>
     </>
   );
