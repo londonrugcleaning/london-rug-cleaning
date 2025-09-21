@@ -6,8 +6,7 @@ import { ServiceGallery } from "@/components/service-detail/ServiceGallery";
 import { ServiceFAQ } from "@/components/service-detail/ServiceFAQ";
 import { PricingTable } from "@/components/service-detail/PricingTable";
 import { HeadMeta } from "@/components/HeadMeta";
-import { ServiceSchema } from "@/components/seo/ServiceSchema";
-import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
+import { CombinedServiceSchema } from "@/components/seo/CombinedServiceSchema";
 
 const RugStainRemoval = () => {
   const service = {
@@ -97,11 +96,11 @@ const RugStainRemoval = () => {
   return (
     <>
       <HeadMeta
-        title={`${service.title} | Professional Cleaning Services London`}
+        title={`${service.title} London`}
         description={service.description}
-        canonicalUrl={`https://londonrugcleaning.co.uk/services/rug-stain-removal`}
-        keywords={["rug stain removal", "carpet cleaning", "stain treatment", "london", "professional cleaning"]}
-        ogImage="/images/rug-stain-removal-hero.webp"
+        canonicalUrl={`https://londonrugcleaning.co.uk/services/${service.title.toLowerCase().split(' ').join('-')}`}
+        ogImage={service.hero}
+        ogType="article"
       />
       
       <div>
@@ -150,11 +149,11 @@ const RugStainRemoval = () => {
           </div>
         </section>
         
-        <ServiceSchema 
-          name={`${service.title} London`}
-          description={service.description}
+        <CombinedServiceSchema
+          serviceType={service.title}
+          serviceName={`Expert ${service.title} in London`}
+          serviceDescription={service.description}
         />
-        <LocalBusinessSchema />
       </div>
     </>
   );
