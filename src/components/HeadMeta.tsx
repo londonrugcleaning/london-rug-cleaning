@@ -20,7 +20,7 @@ interface HeadMetaProps {
 
 export const HeadMeta = ({
   title = "London Rug Cleaning - Professional Rug Cleaning Services",
-  description = "Expert rug cleaning services in London. Specializing in oriental, Persian, and antique rug cleaning with free collection and delivery. Get your free quote today!",
+  description,
   canonicalUrl = "https://londonrugcleaning.co.uk",
   noindex = false,
   ogImage = "https://londonrugcleaning.co.uk/og-image.png",
@@ -37,10 +37,14 @@ export const HeadMeta = ({
   const baseTitle = "London Rug Cleaning";
   const fullTitle = title === baseTitle ? title : `${title} | ${baseTitle}`;
 
+  const baseDescription = "Expert rug cleaning services in London. Specializing in oriental, Persian, and antique rug cleaning with free collection and delivery. Get your free quote today!";
+  const fullDescription = description ? `${description}` : baseDescription;
+
+
   return (
     <Helmet>
       <title>{fullTitle}</title>
-      <meta name="description" content={description} />
+      <meta name="description" content={fullDescription} />
       <meta name="author" content={author} />
       <link rel="canonical" href={canonicalUrl} />
 
