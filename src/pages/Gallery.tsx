@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
@@ -8,11 +7,11 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ContactSection } from "@/components/home/ContactSection";
 
 interface GalleryImage {
   id: number;
   before: string;
-  after: string;
   title: string;
   description: string;
   category: string;
@@ -21,24 +20,21 @@ interface GalleryImage {
 const galleryItems: GalleryImage[] = [
   {
     id: 1,
-    before: "/placeholder.svg",
-    after: "/placeholder.svg",
+    before: "/images/Complete restoration of a 100-year-old Persian rug.webp",
     title: "Persian Rug Restoration",
     description: "Complete restoration of a 100-year-old Persian rug",
     category: "persian",
   },
   {
     id: 2,
-    before: "/placeholder.svg",
-    after: "/placeholder.svg",
+    before: "/images/Red wine stain completely removed from silk rug.webp",
     title: "Wine Stain Removal",
     description: "Red wine stain completely removed from silk rug",
     category: "stains",
   },
   {
     id: 3,
-    before: "/placeholder.svg",
-    after: "/placeholder.svg",
+    before: "/images/Deep cleaning of an antique oriental rug.webp",
     title: "Oriental Rug Cleaning",
     description: "Deep cleaning of an antique oriental rug",
     category: "oriental",
@@ -55,7 +51,7 @@ const Gallery = () => {
 
   return (
     <div className="min-h-screen">
-      <section className="hero-pattern py-24">
+      <section className="hero-pattern pt-32">
         <div className="container mx-auto px-4">
           <h1 className="animate-fade-up text-4xl font-semibold sm:text-5xl">
             Before & After Gallery
@@ -88,20 +84,13 @@ const Gallery = () => {
                     <CardContent>
                       <div className="space-y-4">
                         <div>
-                          <p className="mb-2 text-sm font-medium">Before</p>
+                          <p className="mb-2 text-sm font-medium text-center">Before</p>
                           <img
                             src={item.before}
                             alt={`${item.title} before cleaning`}
-                            className="h-48 w-full rounded-lg object-cover"
+                            className="h-full w-full rounded-lg object-cover"
                           />
-                        </div>
-                        <div>
-                          <p className="mb-2 text-sm font-medium">After</p>
-                          <img
-                            src={item.after}
-                            alt={`${item.title} after cleaning`}
-                            className="h-48 w-full rounded-lg object-cover"
-                          />
+                          <p className="mb-2 text-sm font-medium text-center">After</p>
                         </div>
                       </div>
                     </CardContent>
@@ -216,11 +205,7 @@ const Gallery = () => {
             </TabsContent>
           </Tabs>
 
-          <div className="mt-16 text-center">
-            <Button size="lg" className="rounded-full">
-              Get Your Free Quote
-            </Button>
-          </div>
+        <ContactSection ></ContactSection>
         </div>
       </section>
     </div>

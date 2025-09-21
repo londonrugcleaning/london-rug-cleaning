@@ -26,3 +26,4 @@ dist
 package-lock.json 
 bun.lockb
 .dev.vars
+bun.lockb
