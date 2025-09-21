@@ -7,11 +7,16 @@ import {
   CardTitle,
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import {
+  Dialog,
+  DialogContent,
+} from "@/components/ui/dialog";
 import { ContactSection } from "@/components/home/ContactSection";
 
 interface GalleryImage {
   id: number;
-  before: string;
+  thumb: string;
+  full: string;
   title: string;
   description: string;
   category: string;
@@ -20,21 +25,24 @@ interface GalleryImage {
 const galleryItems: GalleryImage[] = [
   {
     id: 1,
-    before: "/images/Complete restoration of a 100-year-old Persian rug.webp",
+    thumb: "/images/Complete restoration of a 100-year-old Persian rug.webp",
+    full: "/images/Complete restoration of a 100-year-old Persian rug.webp",
     title: "Persian Rug Restoration",
     description: "Complete restoration of a 100-year-old Persian rug",
     category: "persian",
   },
   {
     id: 2,
-    before: "/images/Red wine stain completely removed from silk rug.webp",
+    thumb: "/images/Red wine stain completely removed from silk rug.webp",
+    full: "/images/Red wine stain completely removed from silk rug.webp",
     title: "Wine Stain Removal",
     description: "Red wine stain completely removed from silk rug",
     category: "stains",
   },
   {
     id: 3,
-    before: "/images/Deep cleaning of an antique oriental rug.webp",
+    thumb: "/images/Deep cleaning of an antique oriental rug.webp",
+    full: "/images/Deep cleaning of an antique oriental rug.webp",
     title: "Oriental Rug Cleaning",
     description: "Deep cleaning of an antique oriental rug",
     category: "oriental",
@@ -43,6 +51,7 @@ const galleryItems: GalleryImage[] = [
 
 const Gallery = () => {
   const [selectedCategory, setSelectedCategory] = useState("all");
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const filteredItems =
     selectedCategory === "all"
@@ -86,9 +95,11 @@ const Gallery = () => {
                         <div>
                           <p className="mb-2 text-sm font-medium text-center">Before</p>
                           <img
-                            src={item.before}
-                            alt={`${item.title} before cleaning`}
-                            className="h-full w-full rounded-lg object-cover"
+                            src={item.thumb}
+                            alt={`${item.title} before after cleaning`}
+                            className="h-full w-full rounded-lg object-cover cursor-pointer"
+                            loading="lazy"
+                            onClick={() => setSelectedImage(item.full)}
                           />
                           <p className="mb-2 text-sm font-medium text-center">After</p>
                         </div>
@@ -111,22 +122,19 @@ const Gallery = () => {
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
-                          <div>
-                            <p className="mb-2 text-sm font-medium">Before</p>
-                            <img
-                              src={item.before}
-                              alt={`${item.title} before cleaning`}
-                              className="h-48 w-full rounded-lg object-cover"
-                            />
-                          </div>
-                          <div>
-                            <p className="mb-2 text-sm font-medium">After</p>
-                            <img
-                              src={item.after}
-                              alt={`${item.title} after cleaning`}
-                              className="h-48 w-full rounded-lg object-cover"
-                            />
-                          </div>
+                                                <div className="space-y-4">
+                        <div>
+                          <p className="mb-2 text-sm font-medium text-center">Before</p>
+                          <img
+                            src={item.thumb}
+                            alt={`${item.title} before after cleaning`}
+                            className="h-full w-full rounded-lg object-cover cursor-pointer"
+                            loading="lazy"
+                            onClick={() => setSelectedImage(item.full)}
+                          />
+                          <p className="mb-2 text-sm font-medium text-center">After</p>
+                        </div>
+                      </div>
                         </div>
                       </CardContent>
                     </Card>
@@ -146,22 +154,19 @@ const Gallery = () => {
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
-                          <div>
-                            <p className="mb-2 text-sm font-medium">Before</p>
-                            <img
-                              src={item.before}
-                              alt={`${item.title} before cleaning`}
-                              className="h-48 w-full rounded-lg object-cover"
-                            />
-                          </div>
-                          <div>
-                            <p className="mb-2 text-sm font-medium">After</p>
-                            <img
-                              src={item.after}
-                              alt={`${item.title} after cleaning`}
-                              className="h-48 w-full rounded-lg object-cover"
-                            />
-                          </div>
+                                                <div className="space-y-4">
+                        <div>
+                          <p className="mb-2 text-sm font-medium text-center">Before</p>
+                          <img
+                            src={item.thumb}
+                            alt={`${item.title} before after cleaning`}
+                            className="h-full w-full rounded-lg object-cover cursor-pointer"
+                            loading="lazy"
+                            onClick={() => setSelectedImage(item.full)}
+                          />
+                          <p className="mb-2 text-sm font-medium text-center">After</p>
+                        </div>
+                      </div>
                         </div>
                       </CardContent>
                     </Card>
@@ -181,22 +186,19 @@ const Gallery = () => {
                       </CardHeader>
                       <CardContent>
                         <div className="space-y-4">
-                          <div>
-                            <p className="mb-2 text-sm font-medium">Before</p>
-                            <img
-                              src={item.before}
-                              alt={`${item.title} before cleaning`}
-                              className="h-48 w-full rounded-lg object-cover"
-                            />
-                          </div>
-                          <div>
-                            <p className="mb-2 text-sm font-medium">After</p>
-                            <img
-                              src={item.after}
-                              alt={`${item.title} after cleaning`}
-                              className="h-48 w-full rounded-lg object-cover"
-                            />
-                          </div>
+                                                <div className="space-y-4">
+                        <div>
+                          <p className="mb-2 text-sm font-medium text-center">Before</p>
+                          <img
+                            src={item.thumb}
+                            alt={`${item.title} before after cleaning`}
+                            className="h-full w-full rounded-lg object-cover cursor-pointer"
+                            loading="lazy"
+                            onClick={() => setSelectedImage(item.full)}
+                          />
+                          <p className="mb-2 text-sm font-medium text-center">After</p>
+                        </div>
+                      </div>
                         </div>
                       </CardContent>
                     </Card>
@@ -208,6 +210,12 @@ const Gallery = () => {
         <ContactSection ></ContactSection>
         </div>
       </section>
+
+      <Dialog open={!!selectedImage} onOpenChange={() => setSelectedImage(null)}>
+        <DialogContent className="max-w-2xl max-h-screen">
+          <img src={selectedImage!} alt="Full size" className="mx-auto max-h-screen" />
+        </DialogContent>
+      </Dialog>
     </div>
   );
 };

@@ -13,7 +13,7 @@ import { LocalBusinessSchema } from "@/components/seo/LocalBusinessSchema";
 const PersianRugCleaning = () => {
   const service = {
     title: "Persian Rug Cleaning",
-    description: "Expert Persian rug cleaning services in London combining traditional methods with modern technology",
+    description: "Expert Persian rug cleaning in London. We combine traditional methods with modern technology to preserve the beauty and value of your delicate rugs.",
     hero: "/images/persian-rug-hero.webp",
     gallery: [
       "/images/persian-rug-1.webp",
@@ -94,25 +94,24 @@ const PersianRugCleaning = () => {
       }
     ]
   };
-  
+
   return (
     <>
       <HeadMeta
-        title={`${service.title} London | Professional Cleaning Services`}
+        title={`${service.title} London`}
         description={service.description}
-        canonicalUrl={`https://londonrugcleaning.co.uk/services/persian-rug-cleaning`}
-        keywords={["persian rug cleaning", "oriental rug cleaning", "professional rug cleaning", "london"]}
+        canonicalUrl={`https://londonrugcleaning.co.uk/services/${service.title.toLowerCase().split(' ').join('-')}`}
         ogImage="/images/persian-rug-hero.webp"
-        ogType="website"
+        ogType="article"
       />
-      
+
       <div>
-        <ServiceHero 
-          title={service.title} 
-          description={service.description} 
-          heroImage={service.hero} 
+        <ServiceHero
+          title={service.title}
+          description={service.description}
+          heroImage={service.hero}
         />
-        
+
         <section className="py-16 bg-white">
           <div className="container mx-auto px-4">
             <div className="max-w-3xl mx-auto">
@@ -120,23 +119,23 @@ const PersianRugCleaning = () => {
             </div>
           </div>
         </section>
-        
-        <ServiceFeatures 
-          features={service.features} 
-          process={service.process} 
+
+        <ServiceFeatures
+          features={service.features}
+          process={service.process}
         />
-        
-        <ServiceGallery 
+
+        <ServiceGallery
           title={service.title}
           gallery={service.gallery}
         />
-        
+
         <PricingTable title={`${service.title} Pricing`} />
-        
-        <ServiceFAQ 
+
+        <ServiceFAQ
           faqs={service.faqs}
         />
-        
+
         <section className="py-20 bg-blue-50">
           <div className="container mx-auto px-4 text-center">
             <h2 className="text-3xl font-semibold mb-6">
@@ -151,8 +150,8 @@ const PersianRugCleaning = () => {
             </Button>
           </div>
         </section>
-        
-        <ServiceSchema 
+
+        <ServiceSchema
           name={`${service.title} London`}
           description={service.description}
         />

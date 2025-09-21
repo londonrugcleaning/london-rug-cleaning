@@ -13,7 +13,6 @@ import Index from "./pages/Index";
 
 // Lazy load all other routes
 const Services = lazy(() => import("./pages/Services"));
-const ServiceDetail = lazy(() => import("./pages/ServiceDetail"));
 const About = lazy(() => import("./pages/About"));
 const Contact = lazy(() => import("./pages/Contact"));
 const Gallery = lazy(() => import("./pages/Gallery"));
@@ -51,7 +50,6 @@ function App() {
 
               {/* Lazy loaded routes */}
               <Route path="/services" element={<Services />} />
-              <Route path="/services/:service" element={<ServiceDetail />} />
               <Route path="/about" element={<About />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/gallery" element={<Gallery />} />
