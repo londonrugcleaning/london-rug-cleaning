@@ -3,7 +3,7 @@
   App specific styles 
   Keeping this file minimal to prevent render blocking  
 */
-
+@font-face {font-family: Poppins; font-style: normal; font-weight: 400; font-display: swap; src: url(/fonts/poppins.woff2) format("woff2");} @font-face {font-family: Poppins; font-style: normal; font-weight: 700; font-display: swap; src: url(/fonts/bold.woff2) format("woff2");} body { margin: 0; font-family: "Poppins" ; background-color: #fcfbf9; }.container { width: 100%; max-width: 1280px; margin-left: auto; margin-right: auto; } .hero-lg{font-size: 1.125rem;line-height: 1.75rem;} .hero-xl{font-size:3rem;font-weight:700;letter-spacing:-0.025em;line-height:1.25;}
 /* Improve scrolling experience */
 html {
   scroll-behavior: smooth;
