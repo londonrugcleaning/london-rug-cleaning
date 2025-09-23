@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { sitemapPlugin } from "./src/vite-plugins/sitemap-plugin";
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
-import { critical } from "rollup-plugin-critical";
+import critical from "rollup-plugin-critical";
 
 // Sitemap routes (keeping your existing sitemap configuration)
 const sitemapRoutes = [
