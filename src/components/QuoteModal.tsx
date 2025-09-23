@@ -8,10 +8,8 @@ import { Alert, AlertDescription } from "@/components/ui/alert";
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
-  DialogFooter,
 } from "@/components/ui/dialog";
 import { Phone } from "lucide-react";
 
@@ -37,9 +35,6 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
     setError(null);
 
     try {
-      console.log("Submitting form data:", formData);
-
-      // Use the correct API endpoint
       const response = await fetch('/api/send-email', {
         method: 'POST',
         headers: {
@@ -48,38 +43,29 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
         body: JSON.stringify(formData),
       });
 
-      console.log("Response status:", response.status);
-
       if (!response.ok) {
         let errorMessage = `Server error: ${response.status}`;
 
         try {
           const text = await response.text();
-          console.log("Error response text:", text);
-
           if (text && text.trim()) {
             const errorData = JSON.parse(text);
             errorMessage = errorData.message || errorMessage;
           }
         } catch (parseError) {
-          console.error("Failed to parse error response:", parseError);
+          // Ignore parse errors
         }
 
         throw new Error(errorMessage);
       }
 
-      // Try to parse the response only if we get here (response was ok)
       let data;
       try {
         const text = await response.text();
-        console.log("Response text:", text);
         data = text ? JSON.parse(text) : {};
       } catch (parseError) {
-        console.error("Failed to parse success response:", parseError);
         throw new Error("Invalid response from server");
       }
-
-      console.log("Response data:", data);
 
       if (data.success) {
         toast({
@@ -115,9 +101,6 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
       <DialogContent className="sm:max-w-[425px]">
         <DialogHeader>
           <DialogTitle className="text-xl font-semibold">Get a Free Quote</DialogTitle>
-          <DialogDescription>
-            Fill out the form below and we'll get back to you as soon as possible.
-          </DialogDescription>
         </DialogHeader>
 
         {error && (
@@ -164,7 +147,7 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
             required
             aria-label="Your Message"
           />
-          <DialogFooter>
+          <div>
             <Button
               type="submit"
               className="w-full"
@@ -173,7 +156,7 @@ export const QuoteModal = ({ open, onOpenChange }: QuoteModalProps) => {
             >
               {isSubmitting ? "Sending..." : "Submit Request"}
             </Button>
-          </DialogFooter>
+          </div>
         </form>
       </DialogContent>
     </Dialog>
