@@ -2,7 +2,6 @@
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
-import { componentTagger } from "lovable-tagger";
 import { sitemapPlugin } from "./src/vite-plugins/sitemap-plugin";
 
 // Sitemap routes
@@ -31,8 +30,6 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    mode === 'development' &&
-    componentTagger(),
     mode === 'production' && 
     sitemapPlugin({
       baseUrl: 'https://londonrugcleaning.co.uk',
@@ -63,7 +60,6 @@ export default defineConfig(({ mode }) => ({
           icons: ['lucide-react'],
           utils: ['class-variance-authority', 'clsx', 'tailwind-merge'],
           forms: ['react-hook-form', '@hookform/resolvers'],
-          charts: ['recharts'],
         },
         // Make sure chunks aren't too small
         chunkFileNames: 'assets/js/[name]-[hash].js',
