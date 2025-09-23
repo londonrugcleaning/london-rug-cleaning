@@ -60,7 +60,6 @@ export default defineConfig(({ mode }) => ({
           icons: ['lucide-react'],
           utils: ['class-variance-authority', 'clsx', 'tailwind-merge'],
           forms: ['react-hook-form', '@hookform/resolvers'],
-          charts: ['recharts'],
         },
         // Make sure chunks aren't too small
         chunkFileNames: 'assets/js/[name]-[hash].js',
