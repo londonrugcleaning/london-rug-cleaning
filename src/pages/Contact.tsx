@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
-import { Alert, AlertDescription } from "@/components/ui/alert";
+
 import { Mail, Phone, MapPin } from "lucide-react";
 import { HeadMeta } from "@/components/HeadMeta";
 
@@ -25,9 +25,6 @@ const Contact = () => {
     setError(null);
 
     try {
-      console.log("Contact form - Submitting form data:", formData);
-      
-      // Use the correct API endpoint
       const response = await fetch('/functions/api/send-email', {
         method: 'POST',
         headers: {
@@ -36,38 +33,29 @@ const Contact = () => {
         body: JSON.stringify(formData),
       });
 
-      console.log("Contact form - Response status:", response.status);
-      
       if (!response.ok) {
         let errorMessage = `Server error: ${response.status}`;
-        
+
         try {
           const text = await response.text();
-          console.log("Contact form - Error response text:", text);
-          
           if (text && text.trim()) {
             const errorData = JSON.parse(text);
             errorMessage = errorData.message || errorMessage;
           }
         } catch (parseError) {
-          console.error("Failed to parse error response:", parseError);
+          // Ignore parse errors
         }
-        
+
         throw new Error(errorMessage);
       }
-      
-      // Try to parse the response only if we get here (response was ok)
+
       let data;
       try {
         const text = await response.text();
-        console.log("Contact form - Response text:", text);
         data = text ? JSON.parse(text) : {};
       } catch (parseError) {
-        console.error("Failed to parse success response:", parseError);
         throw new Error("Invalid response from server");
       }
-      
-      console.log("Contact form - Response data:", data);
       
       if (data.success) {
         toast({
@@ -168,8 +156,8 @@ const Contact = () => {
 
               <div>
                 {error && (
-                  <Alert variant="destructive" className="mb-6">
-                    <AlertDescription className="flex flex-col gap-2">
+                  <div className="border border-red-500/50 text-red-600 p-4 rounded-lg mb-6">
+                    <div className="flex flex-col gap-2">
                       <p>{error}</p>
                       <Button asChild variant="outline" size="sm" className="flex items-center gap-2 w-fit">
                         <a href="tel:02034888344" aria-label="Call us at 020 3488 8344">
@@ -177,17 +165,15 @@ const Contact = () => {
                           <span>Call us: 020 3488 8344</span>
                         </a>
                       </Button>
-                    </AlertDescription>
-                  </Alert>
+                    </div>
+                  </div>
                 )}
               
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <Input
                     placeholder="Your Name"
                     value={formData.name}
-                    onChange={(e) =>
-                      setFormData({ ...formData, name: e.target.value })
-                    }
+                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     required
                     aria-label="Your Name"
                   />
@@ -195,27 +181,21 @@ const Contact = () => {
                     type="email"
                     placeholder="Email Address"
                     value={formData.email}
-                    onChange={(e) =>
-                      setFormData({ ...formData, email: e.target.value })
-                    }
+                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     required
                     aria-label="Email Address"
                   />
                   <Input
                     placeholder="Phone Number"
                     value={formData.phone}
-                    onChange={(e) =>
-                      setFormData({ ...formData, phone: e.target.value })
-                    }
+                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     required
                     aria-label="Phone Number"
                   />
                   <Textarea
                     placeholder="Your Message"
                     value={formData.message}
-                    onChange={(e) =>
-                      setFormData({ ...formData, message: e.target.value })
-                    }
+                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     required
                     aria-label="Your Message"
                   />
