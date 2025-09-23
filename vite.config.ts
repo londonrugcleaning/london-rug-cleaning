@@ -3,7 +3,7 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { sitemapPlugin } from "./src/vite-plugins/sitemap-plugin";
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
-import { vitePluginBeasties } from 'vite-plugin-beasties';
+import critical from "rollup-plugin-critical";
 
 // Sitemap routes (keeping your existing sitemap configuration)
 const sitemapRoutes = [
@@ -38,12 +38,17 @@ export default defineConfig(({ mode }) => ({
       jpg: { quality: 80 },
       webp: { quality: 80 },
     }),
-    // Add vite-plugin-beasties for critical CSS extraction
-    mode === 'production' && vitePluginBeasties({
-        // an array of files to find critical CSS and inline it
-        critical: [
-            'dist/index.html'
-        ]
+    // Critical CSS extraction for production builds
+    mode === 'production' && critical({
+      criticalUrl: './dist/index.html',
+      criticalBase: './dist',
+      criticalPages: [
+        { uri: '', template: 'index' }
+      ],
+      // Inline the critical CSS
+      inline: true,
+      // Minify the critical CSS
+      minify: true,
     }),
     // Sitemap generation for production builds
     mode === 'production' && 
