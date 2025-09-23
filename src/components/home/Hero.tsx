@@ -53,7 +53,7 @@ export const Hero = () => {
               src="/images/Professional Rug Cleaning London.webp"
               alt="Professional rug cleaning service in London"
               className="relative z-10 max-w-xl rounded-2xl shadow-2xl translate-x-20"
-              loading="lazy"
+              fetchPriority="high"
               width={576}
               height={384}
             />
