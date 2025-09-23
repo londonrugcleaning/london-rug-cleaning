@@ -6,7 +6,7 @@ import { Navigation } from "./components/Navigation";
 import { Footer } from "./components/Footer";
 import { FloatingButtons } from "./components/FloatingButtons";
 import { Toaster } from "./components/ui/toaster";
-import "./App.css";
+import "./App.css?inline";
 
 // Eagerly load the Index component for fast initial load
 import Index from "./pages/Index";
