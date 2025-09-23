@@ -1,11 +1,10 @@
+
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { sitemapPlugin } from "./src/vite-plugins/sitemap-plugin";
-import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
-import { critical } from "rollup-plugin-critical";
 
-// Sitemap routes (keeping your existing sitemap configuration)
+// Sitemap routes
 const sitemapRoutes = [
   { loc: "/", lastmod: "2023-11-15", changefreq: "yearly", priority: 1.0 },
   { loc: "/about", lastmod: "2023-11-01", changefreq: "yearly", priority: 0.8 },
@@ -31,26 +30,6 @@ export default defineConfig(({ mode }) => ({
   },
   plugins: [
     react(),
-    // Image optimization plugin
-    ViteImageOptimizer({
-      png: { quality: 80 },
-      jpeg: { quality: 80 },
-      jpg: { quality: 80 },
-      webp: { quality: 80 },
-    }),
-    // Critical CSS extraction for production builds
-    mode === 'production' && critical({
-      criticalUrl: './dist/index.html',
-      criticalBase: './dist',
-      criticalPages: [
-        { uri: '', template: 'index' }
-      ],
-      // Inline the critical CSS
-      inline: true,
-      // Minify the critical CSS
-      minify: true,
-    }),
-    // Sitemap generation for production builds
     mode === 'production' && 
     sitemapPlugin({
       baseUrl: 'https://londonrugcleaning.co.uk',
@@ -65,31 +44,33 @@ export default defineConfig(({ mode }) => ({
   },
   build: {
     outDir: 'dist',
+    // Optimize HTML/CSS size
     minify: 'terser',
     cssMinify: true,
+    // Improve chunk splitting
     rollupOptions: {
       output: {
-        // More refined chunking strategy
-        manualChunks: (id) => {
-          if (id.includes('node_modules')) {
-            if (id.includes('@radix-ui')) {
-              return 'radix-ui';
-            }
-            if (id.includes('react-router-dom') || id.includes('@remix-run') || id.includes('react-router')) {
-              return 'react-router';
-            }
-            if (id.includes('react-dom') || id.includes('react')) {
-              return 'react-vendor';
-            }
-            return 'vendor';
-          }
+        manualChunks: {
+          vendor: ['react', 'react-dom', 'react-router-dom'],
+          ui: [
+            '@radix-ui/react-accordion',
+            '@radix-ui/react-dialog',
+            '@radix-ui/react-scroll-area',
+          ],
+          icons: ['lucide-react'],
+          utils: ['class-variance-authority', 'clsx', 'tailwind-merge'],
+          forms: ['react-hook-form', '@hookform/resolvers'],
+          charts: ['recharts'],
         },
+        // Make sure chunks aren't too small
         chunkFileNames: 'assets/js/[name]-[hash].js',
         entryFileNames: 'assets/js/[name]-[hash].js',
         assetFileNames: 'assets/[ext]/[name]-[hash].[ext]',
       },
     },
+    // Generate source maps in development only
     sourcemap: mode === 'development',
+    // Add asset size reporting
     reportCompressedSize: true,
   },
 }));
