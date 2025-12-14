@@ -99,7 +99,7 @@ const businessSchema = {
     })} />
   </head>
   <body class="flex flex-col min-h-screen">
-    <Navigation client:load />
+    <Navigation client:load currentPath={Astro.url.pathname} />
     <main class="flex-grow">
       <slot />
     </main>

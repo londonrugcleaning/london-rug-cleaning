@@ -1,15 +1,20 @@
-
 import { useState } from "react";
 import { Phone, MessageSquareQuote } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { QuoteModal } from "./QuoteModal";
+import { cn } from "@/lib/utils";
 
-export const CTAButtons = () => {
+interface CTAButtonsProps {
+  variant?: "default" | "hero" | "outline";
+  className?: string; // Added className prop
+}
+
+export const CTAButtons = ({ variant = "default", className }: CTAButtonsProps) => {
   const [showQuoteModal, setShowQuoteModal] = useState(false);
 
   return (
     <>
-      <div className="flex flex-row gap-4">
+      <div className={cn("flex flex-row gap-4", className)}>
         <Button
           size="lg"
           className="gap-2 bg-blue-800 hover:bg-blue-900"

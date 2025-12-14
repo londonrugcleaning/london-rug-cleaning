@@ -2,17 +2,17 @@
 import { ServiceCard } from "@/components/ServiceCard";
 import { Droplets, Shield, Brush, Gem, Sparkles, Feather, Award, BadgeCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+
 
 export const ServicesSection = () => {
   return (
-    <section className="bg-gray-100 py-24">
+    <section className="bg-white py-24">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto max-w-2xl text-center">
-          <h2 className="text-3xl font-semibold sm:text-4xl">
+        <div className="mx-auto max-w-2xl text-center mb-16">
+          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
             Our Professional Services
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-4 text-lg text-slate-600">
             Expert rug cleaning solutions tailored to your needs, with free
             collection and delivery across London
           </p>
@@ -61,7 +61,7 @@ export const ServicesSection = () => {
         </div>
         <div className="mt-12 text-center">
           <Button size="lg" asChild className="bg-blue-900 hover:bg-blue-900">
-            <Link to="/services">View All Services</Link>
+            <a href="/services">View All Services</a>
           </Button>
         </div>
       </div>

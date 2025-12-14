@@ -1,3 +1,5 @@
+import { Star } from "lucide-react";
+
 interface TestimonialCardProps {
   name: string;
   role: string;
@@ -6,21 +8,23 @@ interface TestimonialCardProps {
 
 export const TestimonialCard = ({ name, role, content }: TestimonialCardProps) => {
   return (
-    <div className="testimonial-card animate-fade-up">
-      <div className="mb-4">
-        <svg
-          className="h-8 w-8 text-blue-300"
-          fill="currentColor"
-          viewBox="0 0 32 32"
-          aria-hidden="true"
-        >
-          <path d="M9.352 4C4.456 7.456 1 13.12 1 19.36c0 5.088 3.072 8.064 6.624 8.064 3.36 0 5.856-2.688 5.856-5.856 0-3.168-2.208-5.472-5.088-5.472-.576 0-1.344.096-1.536.192.48-3.264 3.552-7.104 6.624-9.024L9.352 4zm16.512 0c-4.8 3.456-8.256 9.12-8.256 15.36 0 5.088 3.072 8.064 6.624 8.064 3.264 0 5.856-2.688 5.856-5.856 0-3.168-2.304-5.472-5.184-5.472-.576 0-1.248.096-1.44.192.48-3.264 3.456-7.104 6.528-9.024L25.864 4z" />
-        </svg>
+    <div className="group rounded-2xl bg-white p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full">
+      <div className="mb-6 flex gap-1">
+        {[...Array(5)].map((_, i) => (
+          <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />
+        ))}
       </div>
-      <p className="mb-4 text-lg text-muted-foreground">{content}</p>
-      <div>
-        <p className="text-lg font-semibold">{name}</p>
-        <p className="text-sm text-muted-foreground">{role}</p>
+      <div className="mb-auto">
+        <p className="text-lg text-slate-700 leading-relaxed italic mb-6">"{content}"</p>
+      </div>
+      <div className="flex items-center gap-4 mt-4 pt-4 border-t border-slate-100">
+        <div className="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center font-bold text-blue-600 text-xl">
+          {name.charAt(0)}
+        </div>
+        <div>
+          <p className="text-base font-bold text-slate-900">{name}</p>
+          <p className="text-sm text-slate-500">{role}</p>
+        </div>
       </div>
     </div>
   );

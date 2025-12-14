@@ -1,5 +1,5 @@
 
-import { Link } from "react-router-dom";
+
 import { Logo } from "./Logo";
 import {
   Phone,
@@ -92,9 +92,9 @@ export const Footer = () => {
             <ul className="space-y-3">
               {services.slice(0, 6).map((service) => (
                 <li key={service.name}>
-                  <Link to={service.href} className="text-gray-600 hover:text-blue-900 transition-colors">
+                  <a href={service.href} className="text-gray-600 hover:text-blue-900 transition-colors">
                     {service.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -106,9 +106,9 @@ export const Footer = () => {
             <ul className="space-y-3">
               {mainLinks.map((link) => (
                 <li key={link.name}>
-                  <Link to={link.href} className="text-gray-600 hover:text-blue-900 transition-colors">
+                  <a href={link.href} className="text-gray-600 hover:text-blue-900 transition-colors">
                     {link.name}
-                  </Link>
+                  </a>
                 </li>
               ))}
             </ul>
@@ -116,7 +116,7 @@ export const Footer = () => {
 
           {/* Column 4: Contact */}
           <div className="col-span-2">
-          <iframe title="London Rug Cleaning On Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2478.3233029671273!2d-0.227003723116673!3d51.59896450400968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487617e321a6fcb7%3A0xcd3fdd953655999a!2sLondon%20Rug%20Cleaning!5e0!3m2!1sen!2sus!4v1758614769026!5m2!1sen!2sus" width="100%" height="350"  loading="lazy"></iframe>
+            <iframe title="London Rug Cleaning On Map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2478.3233029671273!2d-0.227003723116673!3d51.59896450400968!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487617e321a6fcb7%3A0xcd3fdd953655999a!2sLondon%20Rug%20Cleaning!5e0!3m2!1sen!2sus!4v1758614769026!5m2!1sen!2sus" width="100%" height="350" loading="lazy"></iframe>
 
           </div>
         </div>

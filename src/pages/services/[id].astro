@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+
+export const prerender = true;
 import { servicesData } from '@/data/services';
 import { ServiceHero } from "@/components/service-detail/ServiceHero";
 import { ServiceFeatures } from "@/components/service-detail/ServiceFeatures";
@@ -8,6 +10,7 @@ import { ServiceFAQ } from "@/components/service-detail/ServiceFAQ";
 import { PricingTable } from "@/components/service-detail/PricingTable";
 import { CTAButtons } from "@/components/CTAButtons";
 import { CombinedServiceSchema } from "@/components/seo/CombinedServiceSchema";
+import { ContactSection } from "@/components/home/ContactSection";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -64,19 +67,10 @@ if (!service) {
       client:visible
     />
 
-    <section class="py-20 bg-blue-50">
-      <div class="container mx-auto px-4 text-center">
-        <h2 class="text-3xl font-semibold mb-6">
-          Ready to Get Your {service.title} Service?
-        </h2>
-        <p class="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-          Contact us today for a free quote and consultation. We offer free collection and delivery across London.
-        </p>
-        <div class="flex justify-center">
-          <CTAButtons client:visible />
-        </div>
-      </div>
-    </section>
+    <ContactSection 
+      title={`Ready to Get Your ${service.title} Service?`}
+      client:visible 
+    />
 
     <CombinedServiceSchema
       serviceType={service.title}

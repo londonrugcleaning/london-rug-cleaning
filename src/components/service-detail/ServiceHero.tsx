@@ -8,14 +8,17 @@ interface ServiceHeroProps {
   heroImage: string;
 }
 
+import OptimizedImage from "@/components/OptimizedImage";
+
 export const ServiceHero = ({ title, description, heroImage }: ServiceHeroProps) => {
   return (
     <section className="relative h-[50vh] min-h-[300px] overflow-hidden pt-12">
       <div className="absolute inset-0">
-        <img
+        <OptimizedImage
           src={heroImage}
           alt={title}
           className="h-full w-full object-cover"
+          priority
         />
         <div className="absolute inset-0 bg-black/60" />
       </div>

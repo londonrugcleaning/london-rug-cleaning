@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Shield } from "lucide-react";
+import OptimizedImage from '../components/OptimizedImage';
+import { CTAButtons } from "../components/CTAButtons";
+import { Shield, Award, Leaf, MapPin, Users, PenTool, CheckCircle2 } from "lucide-react";
 
 const schema = {
   "@context": "https://schema.org",
@@ -21,6 +23,36 @@ const schema = {
     }
   }
 };
+
+const stats = [
+  { label: "Years Experience", value: "13+" },
+  { label: "Rugs Cleaned", value: "5000+" },
+  { label: "Satisfaction", value: "100%" },
+  { label: "Team Members", value: "15+" },
+];
+
+const values = [
+  {
+    icon: Shield,
+    title: "Fully Insured",
+    description: "Comprehensive insurance coverage for your peace of mind while your rugs are in our care."
+  },
+  {
+    icon: Award,
+    title: "NCCA Certified",
+    description: "Members of the National Carpet Cleaners Association, adhering to the highest industry standards."
+  },
+  {
+    icon: Leaf,
+    title: "Eco-Friendly",
+    description: "We use biodegradable, non-toxic cleaning solutions that are safe for pets and children."
+  },
+  {
+    icon: MapPin,
+    title: "Local Experts",
+    description: "Serving all of London from our dedicated rug cleaning facility with free collection & delivery."
+  }
+];
 ---
 
 <Layout 
@@ -29,44 +61,157 @@ const schema = {
   schema={schema}
 >
   <div class="min-h-screen">
-    <section class="hero-pattern py-24">
+    {/* Hero Section */}
+    <section class="relative overflow-hidden bg-slate-50 pt-32 pb-16 lg:pt-40 lg:pb-24">
       <div class="container mx-auto px-4">
-        <h1 class="animate-fade-up text-4xl font-semibold sm:text-5xl">
-          About London Rug Cleaning
-        </h1>
-        <p class="mt-6 animate-fade-up text-lg text-muted-foreground">
-          Your trusted experts in professional rug care since 2010
-        </p>
-      </div>
-    </section>
-
-    <section class="py-24">
-      <div class="container mx-auto px-4">
-        <div class="mx-auto max-w-3xl space-y-8">
-          <div class="space-y-4">
-            <h2 class="text-3xl font-semibold">Our Story</h2>
-            <p class="text-muted-foreground">
-              Founded in 2010, London Rug Cleaning has grown to become one of the most trusted names in professional rug care across London. Our journey began with a simple mission: to provide exceptional cleaning services for all types of rugs while ensuring customer satisfaction.
+        <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
+          <div class="animate-fade-up">
+            <h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl">
+              Restoring London's <span class="text-blue-600">Finest Rugs</span> Since 2010
+            </h1>
+            <p class="mt-6 text-lg text-slate-600 leading-relaxed">
+              We are London's premier rug cleaning specialists, dedicated to preserving the beauty and longevity of your hand-knotted, Persian, and Oriental rugs. Combining traditional techniques with modern technology for exceptional results.
             </p>
+            <div class="mt-8 flex flex-col sm:flex-row gap-4">
+              <CTAButtons variant="default" client:load />
+            </div>
+            
+            <div class="mt-12 grid grid-cols-2 sm:grid-cols-4 gap-8 border-t border-slate-200 pt-8">
+              {stats.map(stat => (
+                <div>
+                  <div class="text-3xl font-bold text-blue-600">{stat.value}</div>
+                  <div class="text-sm font-medium text-slate-500 mt-1">{stat.label}</div>
+                </div>
+              ))}
+            </div>
           </div>
-
-          <div class="space-y-4">
-            <h2 class="text-3xl font-semibold">Our Expertise</h2>
-            <p class="text-muted-foreground">
-              Our team consists of certified professionals with extensive experience in handling all types of rugs, from precious antiques to modern designs. We continuously invest in training and state-of-the-art equipment to deliver the best results.
-            </p>
-          </div>
-
-          <div class="mt-12 flex items-center justify-center gap-4 rounded-xl bg-cream-50 p-8">
-            <Shield className="h-12 w-12 text-primary" />
-            <div>
-              <h3 class="text-xl font-semibold">Our Guarantee</h3>
-              <p class="text-muted-foreground">
-                We stand behind our work with a 100% satisfaction guarantee
-              </p>
+          <div class="relative animate-fade-up lg:order-last">
+            <div class="absolute -right-12 top-1/2 h-[400px] w-[400px] -translate-y-1/2 rounded-full bg-blue-100 blur-3xl opacity-50" />
+            <div class="relative rounded-2xl overflow-hidden shadow-2xl rotate-1 hover:rotate-0 transition-transform duration-500">
+               <OptimizedImage
+                src="/images/rug-cleaning-workshop.webp"
+                alt="Our expert team examining a Persian rug in our London workshop"
+                className="w-full h-full object-cover"
+                priority
+                client:load
+              />
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    {/* Our Story & Guarantee */}
+    <section class="py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="grid gap-16 lg:grid-cols-2">
+          <div class="space-y-8">
+            <div>
+              <h2 class="text-3xl font-bold text-slate-900">Our Story</h2>
+              <div class="mt-4 space-y-4 text-slate-600 leading-relaxed">
+                <p>
+                  Founded in 2010 in a small workshop in North London, London Rug Cleaning began with a simple mission: to provide a level of care and expertise that was missing in the general carpet cleaning industry. We recognized that fine rugs are not just floor coverings; they are investments, family heirlooms, and works of art that require specialized attention.
+                </p>
+                <p>
+                   Over the last decade, we have grown into one of London's most trusted names in rug care. We have cleaned over 5,000 rugs, from delicate silk tapestries to robust wool Berbers. Despite our growth, our core philosophy remains unchanged: every rug is treated as if it were our own.
+                </p>
+              </div>
+            </div>
+
+             <div>
+              <h2 class="text-3xl font-bold text-slate-900">Our Expertise</h2>
+              <div class="mt-4 space-y-4 text-slate-600 leading-relaxed">
+                <p>
+                  Rug cleaning is both an art and a science. It requires deep knowledge of fibers, dyes, and weaves. Our team undergoes rigorous training and certification to ensure they can identify the specific needs of each rug.
+                </p>
+                <ul class="space-y-3 mt-4">
+                  {[
+                    "Specialized dye-bleed testing for every rug",
+                    "Hand-washing capabilities for delicate antiques",
+                    "Advanced dust extraction technology",
+                    "Customized drying processes to prevent shrinkage"
+                  ].map(item => (
+                    <li class="flex items-start gap-3">
+                      <CheckCircle2 className="h-6 w-6 text-green-500 flex-shrink-0" />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="lg:pl-12">
+             <div class="bg-blue-900 text-white rounded-3xl p-8 sm:p-12 lg:p-16 relative overflow-hidden shadow-xl">
+                <div class="absolute -right-10 -top-10 opacity-10 pointer-events-none">
+                  <Shield className="w-80 h-80" />
+                </div>
+                <div class="relative z-10">
+                  <div class="inline-flex p-3 rounded-2xl bg-blue-800/50 mb-6 ring-1 ring-blue-700">
+                    <Shield className="h-8 w-8 text-blue-300" />
+                  </div>
+                  <h3 class="text-2xl sm:text-3xl font-bold mb-6 leading-tight">Our 100% Satisfaction Guarantee</h3>
+                  <p class="text-blue-100 mb-8 leading-relaxed text-lg">
+                    We are so confident in our service that we offer a rock-solid guarantee. If you are not completely satisfied with the cleaning results, we will re-clean your rug for free. If you are still not happy, we will refund your money. No questions asked.
+                  </p>
+                  <div class="space-y-4 border-t border-blue-800/50 pt-8 mt-8">
+                    <div class="flex items-center gap-4">
+                      <div class="bg-blue-800/50 p-2 rounded-lg">
+                        <Users className="h-5 w-5 text-blue-300" />
+                      </div>
+                      <span class="font-medium">Dedicated Customer Support</span>
+                    </div>
+                    <div class="flex items-center gap-4">
+                      <div class="bg-blue-800/50 p-2 rounded-lg">
+                        <PenTool className="h-5 w-5 text-blue-300" />
+                      </div>
+                      <span class="font-medium">Detailed Inspection Reports</span>
+                    </div>
+                  </div>
+                </div>
+             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {/* Values Grid */}
+    <section class="py-24 bg-slate-50">
+      <div class="container mx-auto px-4">
+        <div class="text-center max-w-2xl mx-auto mb-16">
+          <h2 class="text-3xl font-bold text-slate-900">Why Choose Us?</h2>
+          <p class="mt-4 text-lg text-slate-600">
+            We combine old-world craftsmanship with modern service standards to deliver an unparalleled experience.
+          </p>
+        </div>
+        
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {values.map(value => {
+            const Icon = value.icon;
+            return (
+              <div class="bg-white rounded-xl p-8 lg:p-10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group border border-slate-100">
+                <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-100 transition-colors">
+                  <Icon className="h-7 w-7 text-blue-600" />
+                </div>
+                <h3 class="text-xl font-bold text-slate-900 mb-3">{value.title}</h3>
+                <p class="text-slate-600 text-sm leading-relaxed">{value.description}</p>
+              </div>
+            )
+          })}
+        </div>
+      </div>
+    </section>
+
+    {/* CTA Section */}
+    <section class="py-24 bg-white border-t border-slate-100">
+      <div class="container mx-auto px-4 text-center">
+        <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">
+          Ready to Restore Your Rug's Beauty?
+        </h2>
+        <p class="text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
+          Contact us today for a free, no-obligation quote. We can even collect your rug this week.
+        </p>
+        <CTAButtons variant="default" className="justify-center" client:load />
       </div>
     </section>
   </div>

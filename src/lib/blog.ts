@@ -1,5 +1,5 @@
 
-import { BlogPost } from "@/types/blog";
+import type { BlogPost } from "@/types/blog";
 
 // This is a utility function to parse markdown frontmatter
 export function parseMarkdownFrontmatter(markdown: string): {
@@ -22,7 +22,7 @@ export function parseMarkdownFrontmatter(markdown: string): {
     const [key, ...valueParts] = line.split(":");
     if (key && valueParts.length) {
       let value = valueParts.join(":").trim();
-      
+
       // Handle arrays (tags)
       if (value.startsWith("[") && value.endsWith("]")) {
         // Fix: Ensure we're handling arrays correctly
@@ -30,7 +30,7 @@ export function parseMarkdownFrontmatter(markdown: string): {
           .substring(1, value.length - 1)
           .split(",")
           .map((item) => item.trim().replace(/"/g, "").replace(/'/g, ""));
-        
+
         frontmatter[key.trim()] = arrayItems; // Now properly assigning array to frontmatter
       } else {
         // Remove quotes if present
@@ -40,7 +40,7 @@ export function parseMarkdownFrontmatter(markdown: string): {
         ) {
           value = value.substring(1, value.length - 1);
         }
-        
+
         frontmatter[key.trim()] = value;
       }
     }
@@ -135,7 +135,7 @@ Remember, proper rug care extends the life of your investment. For professional 
       readingTime: "5 min read"
     }
   ];
-  
+
   return posts;
 }
 

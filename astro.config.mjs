@@ -7,5 +7,7 @@ import cloudflare from '@astrojs/cloudflare';
 export default defineConfig({
     integrations: [react(), tailwind()],
     output: 'server',
-    adapter: cloudflare()
+    adapter: cloudflare({
+        imageService: 'compile',
+    })
 });

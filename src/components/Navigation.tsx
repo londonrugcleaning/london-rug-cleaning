@@ -1,6 +1,6 @@
 
-import { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { useState, useEffect } from "react";
+// import { Link, useLocation } from "react-router-dom"; // Removed
 import { Button } from "@/components/ui/button";
 import {
   Home,
@@ -22,9 +22,18 @@ import {
 } from "@/components/ui/navigation-menu";
 import { Logo } from "./Logo";
 
-export const Navigation = () => {
+export const Navigation = ({ currentPath = "" }: { currentPath?: string }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const [pathname, setPathname] = useState(currentPath);
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      setPathname(window.location.pathname);
+    }
+  }, []);
+
+  // Use prop if available (SSR), otherwise window (Client hydration fallback if prop missing, though prop should be passed)
+  const activePath = currentPath || pathname;
 
   const services = [
     { name: "Persian Rug Cleaning", href: "/services/persian-rug-cleaning" },
@@ -48,48 +57,49 @@ export const Navigation = () => {
     <header className="fixed top-4 z-50 mx-auto w-full">
       <nav className="container rounded-full border bg-white/90 py-2 shadow-lg px-4 backdrop-blur-xs w-full mx-auto" aria-label="Main navigation">
         <div className="flex items-center justify-between">
-          <Link to="/" aria-label="London Rug Cleaning - Home">
+
+          <a href="/" aria-label="London Rug Cleaning - Home">
             <Logo />
-          </Link>
+          </a>
 
           <div className="hidden items-center md:gap-2 lg:gap-4 md:flex">
             <Button
-              variant={location.pathname === "/" ? "link" : "ghost"}
+              variant={activePath === "/" ? "link" : "ghost"}
               asChild
-              aria-current={location.pathname === "/" ? "page" : undefined}
+              aria-current={activePath === "/" ? "page" : undefined}
             >
-              <Link to="/" className="gap-2" aria-label="Home">
+              <a href="/" className="gap-2" aria-label="Home">
                 <Home className="h-4 w-4" aria-hidden="true" />
                 <span>Home</span>
-              </Link>
+              </a>
             </Button>
             <NavigationMenu>
               <NavigationMenuList>
                 <NavigationMenuItem>
                   <NavigationMenuTrigger
-                    className={location.pathname.startsWith("/services") ? "text-blue-800" : ""}
+                    className={activePath.startsWith("/services") ? "text-blue-800" : ""}
                     aria-label="Services menu"
                   >
-                    <Link to="/services" className="flex items-center gap-2" aria-label="Services">
+                    <a href="/services" className="flex items-center gap-2" aria-label="Services">
                       <List className="h-4 w-4" aria-hidden="true" />
                       <span>Services</span>
-                    </Link>
+                    </a>
                   </NavigationMenuTrigger>
                   <NavigationMenuContent>
                     <ul className="grid w-[500px] grid-cols-2 gap-3 p-4">
                       {services.map((service) => (
                         <li key={service.name}>
                           <NavigationMenuLink asChild>
-                            <Link
-                              to={service.href}
-                              className={`block rounded-lg p-3 ${location.pathname === service.href ? 'text-blue-800' : ''}`}
-                              aria-current={location.pathname === service.href ? "page" : undefined}
+                            <a
+                              href={service.href}
+                              className={`block rounded-lg p-3 ${activePath === service.href ? 'text-blue-800' : ''}`}
+                              aria-current={activePath === service.href ? "page" : undefined}
                             >
                               <div className="text-sm font-medium">{service.name}</div>
                               <p className="text-xs leading-snug text-muted-foreground">
                                 Professional {service.name.toLowerCase()} services in London
                               </p>
-                            </Link>
+                            </a>
                           </NavigationMenuLink>
                         </li>
                       ))}
@@ -104,24 +114,24 @@ export const Navigation = () => {
               return (
                 <Button
                   key={item.name}
-                  variant={location.pathname === item.href ? "link" : "ghost"}
+                  variant={activePath === item.href ? "link" : "ghost"}
                   asChild
-                  aria-current={location.pathname === item.href ? "page" : undefined}
+                  aria-current={activePath === item.href ? "page" : undefined}
                 >
-                  <Link to={item.href} className="gap-2" aria-label={item.name}>
+                  <a href={item.href} className="gap-2" aria-label={item.name}>
                     <Icon className="h-4 w-4" aria-hidden="true" />
                     <span>{item.name}</span>
-                  </Link>
+                  </a>
                 </Button>
               );
             })}
           </div>
-            <Button size="lg" asChild className="hidden gap-2 bg-blue-800 hover:bg-blue-900 lg:flex">
-              <a href="tel:02034888344" aria-label="Call us: 020 3488 8344">
-                <Phone className="h-5 w-5" aria-hidden="true" />
-                <span>020 3488 8344</span>
-              </a>
-            </Button>
+          <Button size="lg" asChild className="hidden gap-2 bg-blue-800 hover:bg-blue-900 lg:flex">
+            <a href="tel:02034888344" aria-label="Call us: 020 3488 8344">
+              <Phone className="h-5 w-5" aria-hidden="true" />
+              <span>020 3488 8344</span>
+            </a>
+          </Button>
 
           <Button
             variant="ghost"
@@ -139,29 +149,29 @@ export const Navigation = () => {
             <div id="mobile-menu" className="absolute left-0 top-full mt-2 w-full rounded-lg border bg-white p-4 md:hidden">
               <div className="flex flex-col gap-2">
                 <Button
-                  variant={location.pathname === "/" ? "secondary" : "ghost"}
+                  variant={activePath === "/" ? "secondary" : "ghost"}
                   className="w-full justify-start"
                   asChild
                   onClick={() => setIsOpen(false)}
-                  aria-current={location.pathname === "/" ? "page" : undefined}
+                  aria-current={activePath === "/" ? "page" : undefined}
                 >
-                  <Link to="/" className="gap-2" aria-label="Home">
+                  <a href="/" className="gap-2" aria-label="Home">
                     <Home className="h-4 w-4" aria-hidden="true" />
                     <span>Home</span>
-                  </Link>
+                  </a>
                 </Button>
 
                 <Button
-                  variant={location.pathname === "/services" ? "secondary" : "ghost"}
+                  variant={activePath === "/services" ? "secondary" : "ghost"}
                   className="w-full justify-start"
                   asChild
                   onClick={() => setIsOpen(false)}
-                  aria-current={location.pathname === "/services" ? "page" : undefined}
+                  aria-current={activePath === "/services" ? "page" : undefined}
                 >
-                  <Link to="/services" className="gap-2" aria-label="Services">
+                  <a href="/services" className="gap-2" aria-label="Services">
                     <List className="h-4 w-4" aria-hidden="true" />
                     <span>Services</span>
-                  </Link>
+                  </a>
                 </Button>
 
                 {navigation.map((item) => {
@@ -169,16 +179,16 @@ export const Navigation = () => {
                   return (
                     <Button
                       key={item.name}
-                      variant={location.pathname === item.href ? "secondary" : "ghost"}
+                      variant={activePath === item.href ? "secondary" : "ghost"}
                       className="w-full justify-start"
                       asChild
                       onClick={() => setIsOpen(false)}
-                      aria-current={location.pathname === item.href ? "page" : undefined}
+                      aria-current={activePath === item.href ? "page" : undefined}
                     >
-                      <Link to={item.href} className="gap-2" aria-label={item.name}>
+                      <a href={item.href} className="gap-2" aria-label={item.name}>
                         <Icon className="h-4 w-4" aria-hidden="true" />
                         <span>{item.name}</span>
-                      </Link>
+                      </a>
                     </Button>
                   );
                 })}
@@ -187,15 +197,15 @@ export const Navigation = () => {
                   {services.map((service) => (
                     <Button
                       key={service.name}
-                      variant={location.pathname === service.href ? "secondary" : "ghost"}
+                      variant={activePath === service.href ? "secondary" : "ghost"}
                       className="w-full justify-start"
                       asChild
                       onClick={() => setIsOpen(false)}
-                      aria-current={location.pathname === service.href ? "page" : undefined}
+                      aria-current={activePath === service.href ? "page" : undefined}
                     >
-                      <Link to={service.href} aria-label={service.name}>
+                      <a href={service.href} aria-label={service.name}>
                         <span>{service.name}</span>
-                      </Link>
+                      </a>
                     </Button>
                   ))}
                 </div>

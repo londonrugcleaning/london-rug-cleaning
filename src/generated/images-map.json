@@ -1,0 +1,1362 @@
+{
+  "/images/wool-rug-hero.webp": {
+    "avif": [
+      {
+        "src": "/images/wool-rug-hero-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/wool-rug-hero-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/wool-rug-hero-1024.avif",
+        "width": 1024
+      },
+      {
+        "src": "/images/wool-rug-hero-1280.avif",
+        "width": 1280
+      },
+      {
+        "src": "/images/wool-rug-hero-1536.avif",
+        "width": 1536
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/wool-rug-hero-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/wool-rug-hero-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/wool-rug-hero-1024.webp",
+        "width": 1024
+      },
+      {
+        "src": "/images/wool-rug-hero-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/images/wool-rug-hero-1536.webp",
+        "width": 1536
+      }
+    ],
+    "original": "/images/wool-rug-hero.webp",
+    "placeholder": "data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAgCdASoUAA0APm0skkWkIqGYBABABsSzgFh2FySAAP7zX4Crwnj9DqvRaR3veLzVeFUTcORaugAA",
+    "width": 1600,
+    "height": 1067
+  },
+  "/images/wool-rug-3.webp": {
+    "avif": [
+      {
+        "src": "/images/wool-rug-3-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/wool-rug-3-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/wool-rug-3-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/wool-rug-3-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/wool-rug-3-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/wool-rug-3-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/wool-rug-3.webp",
+    "placeholder": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAQBACdASoUABQAPm0wk0ckIqGhKAqogA2JZwCxH3JBJQdso/LoR0RFAAD+ryDHQkgc05Ut6408vZdsFcrl2DYZVP6ttNL5UX9v1FmY7oGEzRb6Y8AAAA==",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/wool-rug-2.webp": {
+    "avif": [
+      {
+        "src": "/images/wool-rug-2-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/wool-rug-2-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/wool-rug-2-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/wool-rug-2-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/wool-rug-2-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/wool-rug-2-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/wool-rug-2.webp",
+    "placeholder": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAgCdASoUABQAPm0ylUekIqIhKAgAgA2JaQAARjNroAD+7yNeBQCmPe9ZFPF5qvCifGRRE+HemBU0gAA=",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/wool-rug-1.webp": {
+    "avif": [
+      {
+        "src": "/images/wool-rug-1-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/wool-rug-1-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/wool-rug-1-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/wool-rug-1-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/wool-rug-1-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/wool-rug-1-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/wool-rug-1.webp",
+    "placeholder": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwAwCdASoUABQAPm0sk0YkIqGhKA1QgA2JZwC7M2QBqgCyyovgAAD+9NbjW2tdLftM/nFA6EgGMXs7Vtwtpd3nBaa/FcTG5MerNoRODlf96hXrNAAAAA==",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/synthetic-rug-hero.webp": {
+    "avif": [
+      {
+        "src": "/images/synthetic-rug-hero-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/synthetic-rug-hero-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/synthetic-rug-hero-1024.avif",
+        "width": 1024
+      },
+      {
+        "src": "/images/synthetic-rug-hero-1280.avif",
+        "width": 1280
+      },
+      {
+        "src": "/images/synthetic-rug-hero-1536.avif",
+        "width": 1536
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/synthetic-rug-hero-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/synthetic-rug-hero-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/synthetic-rug-hero-1024.webp",
+        "width": 1024
+      },
+      {
+        "src": "/images/synthetic-rug-hero-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/images/synthetic-rug-hero-1536.webp",
+        "width": 1536
+      }
+    ],
+    "original": "/images/synthetic-rug-hero.webp",
+    "placeholder": "data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAgCdASoUAA0APm0qkUWkIqGYBABABsSxgFh2Fz9AAP7sHVm++CY9eqWuQC/FDzW9g09zHwnhysQAAAA=",
+    "width": 1600,
+    "height": 1067
+  },
+  "/images/synthetic-rug-3.webp": {
+    "avif": [
+      {
+        "src": "/images/synthetic-rug-3-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/synthetic-rug-3-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/synthetic-rug-3-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/synthetic-rug-3-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/synthetic-rug-3-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/synthetic-rug-3-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/synthetic-rug-3.webp",
+    "placeholder": "data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAABwAwCdASoUABQAPm0sk0YkIqGhKA1QgA2JaQAARKrTWzuIntAA/uxm/+oY1eP9raMmVca51xNeeRidpt9XpPVTHj5ohH5QqZWKv/dQgAAAAA==",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/synthetic-rug-2.webp": {
+    "avif": [
+      {
+        "src": "/images/synthetic-rug-2-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/synthetic-rug-2-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/synthetic-rug-2-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/synthetic-rug-2-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/synthetic-rug-2-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/synthetic-rug-2-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/synthetic-rug-2.webp",
+    "placeholder": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAAAwBACdASoUABQAPm0wk0ckIqGhKAqogA2JaQDKABEdxEW/bKZhbw4fu4AA/vf6/Mh9HQFvj0qgMEK28JRvhO8ejAR8hAAA",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/synthetic-rug-1.webp": {
+    "avif": [
+      {
+        "src": "/images/synthetic-rug-1-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/synthetic-rug-1-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/synthetic-rug-1-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/synthetic-rug-1-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/synthetic-rug-1-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/synthetic-rug-1-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/synthetic-rug-1.webp",
+    "placeholder": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAACwBACdASoUABQAPm0ukkYkIqGhKA1QgA2JaQAAI6G7EksBeTG1puKEqMd4vFkAAP73OITD8rjixYRf9jzk8Xe7MDDTOAAA",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/rug-stain-removal-hero.webp": {
+    "avif": [
+      {
+        "src": "/images/rug-stain-removal-hero-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/rug-stain-removal-hero-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/rug-stain-removal-hero-1024.avif",
+        "width": 1024
+      },
+      {
+        "src": "/images/rug-stain-removal-hero-1280.avif",
+        "width": 1280
+      },
+      {
+        "src": "/images/rug-stain-removal-hero-1536.avif",
+        "width": 1536
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/rug-stain-removal-hero-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/rug-stain-removal-hero-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/rug-stain-removal-hero-1024.webp",
+        "width": 1024
+      },
+      {
+        "src": "/images/rug-stain-removal-hero-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/images/rug-stain-removal-hero-1536.webp",
+        "width": 1536
+      }
+    ],
+    "original": "/images/rug-stain-removal-hero.webp",
+    "placeholder": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACQAwCdASoUAAoAPm0skUWkIqGYBABABsSxgE6ZQjgAFQ+fJU/AAP6wV4dD+P1myHIfmU3iSO/elULkuKJjIPAA",
+    "width": 1600,
+    "height": 778
+  },
+  "/images/rug-cleaning-workshop.webp": {
+    "avif": [
+      {
+        "src": "/images/rug-cleaning-workshop-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/rug-cleaning-workshop-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/rug-cleaning-workshop-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/rug-cleaning-workshop-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/rug-cleaning-workshop-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/rug-cleaning-workshop-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/rug-cleaning-workshop.webp",
+    "placeholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQBACdASoUABQAPmkokEWkIqGb+qwAQAaEs4BOmaYg4P/uves7qBnXScAQAP7zk20qKsSEGQThUOX1tgxGJrhD1Z7qtvfOWSewztZD9gBfppeyAl8on4AAAAA=",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/Red wine stain completely removed from silk rug.webp": {
+    "avif": [
+      {
+        "src": "/images/Red wine stain completely removed from silk rug-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/Red wine stain completely removed from silk rug-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/Red wine stain completely removed from silk rug-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/Red wine stain completely removed from silk rug-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/Red wine stain completely removed from silk rug-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/Red wine stain completely removed from silk rug-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/Red wine stain completely removed from silk rug.webp",
+    "placeholder": "data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAABwAwCdASoUAB4APm0qkkWkIiIYDAYAQAbEsYBdgAuhB/W8SQAA/vBmB4o83+N/zX9kZYfbzzW7D0HAjgx4QX8fL/uE3f1uWywQKqFfOfW4AjEAAAA=",
+    "width": 1024,
+    "height": 1536
+  },
+  "/images/Professional Rug Cleaning London.webp": {
+    "avif": [],
+    "webp": [],
+    "original": "/images/Professional Rug Cleaning London.webp",
+    "placeholder": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAABQAwCdASoUAA0APm0skkWkIqGYBABABsSgCdMoAEZxad9qAAD+6pHyMTsf7fbY1xVVgdJu/4obCM1gZFPDcssewoiAAA==",
+    "width": 576,
+    "height": 384
+  },
+  "/images/persian-rug-hero.webp": {
+    "avif": [
+      {
+        "src": "/images/persian-rug-hero-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/persian-rug-hero-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/persian-rug-hero-1024.avif",
+        "width": 1024
+      },
+      {
+        "src": "/images/persian-rug-hero-1280.avif",
+        "width": 1280
+      },
+      {
+        "src": "/images/persian-rug-hero-1536.avif",
+        "width": 1536
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/persian-rug-hero-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/persian-rug-hero-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/persian-rug-hero-1024.webp",
+        "width": 1024
+      },
+      {
+        "src": "/images/persian-rug-hero-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/images/persian-rug-hero-1536.webp",
+        "width": 1536
+      }
+    ],
+    "original": "/images/persian-rug-hero.webp",
+    "placeholder": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAgCdASoUAA0APm0skUWkIqGYBABABsSgC7H8AEJGwAD+9GKMawPnBuRr8bv1E9hGD5e1kialwd/1NX18ECgA",
+    "width": 1600,
+    "height": 1067
+  },
+  "/images/persian-rug-3.webp": {
+    "avif": [
+      {
+        "src": "/images/persian-rug-3-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/persian-rug-3-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/persian-rug-3-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/persian-rug-3-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/persian-rug-3-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/persian-rug-3-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/persian-rug-3.webp",
+    "placeholder": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAAAwBACdASoUABQAPm0wlEekIqIhKAgAgA2JZwC7ABDWkdrrTjB1MM77OMAA/u3eClnRYJc1h8nX5LNoJZTLKKm95SOrKIhSgGzLRgIzCbXrD2s1HAAAAA==",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/persian-rug-2.webp": {
+    "avif": [
+      {
+        "src": "/images/persian-rug-2-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/persian-rug-2-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/persian-rug-2-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/persian-rug-2-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/persian-rug-2-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/persian-rug-2-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/persian-rug-2.webp",
+    "placeholder": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAADQBACdASoUABQAPm0okUWkIqGb+qwAQAbEs4AAEWooJZxS+mFYIiphEyf9NDPbUAD+1dLA/tT4RskbAYl/uT9L0TctMYgNkB2aepACC3VW5nOECHpvAAAA",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/persian-rug-1.webp": {
+    "avif": [
+      {
+        "src": "/images/persian-rug-1-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/persian-rug-1-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/persian-rug-1-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/persian-rug-1-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/persian-rug-1-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/persian-rug-1-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/persian-rug-1.webp",
+    "placeholder": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAwCdASoUABQAPm0ulUakIqIhKAqogA2JZwAAJQIe0p1pfosrAADwqJcb7Kgq/ycojEX29/eJLN/1WTnyPAaFfQjzGcL1nUPuOIUAAAA=",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/oriental-rug-hero.webp": {
+    "avif": [
+      {
+        "src": "/images/oriental-rug-hero-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/oriental-rug-hero-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/oriental-rug-hero-1024.avif",
+        "width": 1024
+      },
+      {
+        "src": "/images/oriental-rug-hero-1280.avif",
+        "width": 1280
+      },
+      {
+        "src": "/images/oriental-rug-hero-1536.avif",
+        "width": 1536
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/oriental-rug-hero-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/oriental-rug-hero-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/oriental-rug-hero-1024.webp",
+        "width": 1024
+      },
+      {
+        "src": "/images/oriental-rug-hero-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/images/oriental-rug-hero-1536.webp",
+        "width": 1536
+      }
+    ],
+    "original": "/images/oriental-rug-hero.webp",
+    "placeholder": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAQAwCdASoUAA0APm0skkWkIqGYBABABsSgCw7CHWmXgQAA/uw4OgAKpHrNDNQnza+/Jl39qexHtSZn5mTm48u+F+F6whAuklP4AA==",
+    "width": 1600,
+    "height": 1067
+  },
+  "/images/oriental-rug-3.webp": {
+    "avif": [
+      {
+        "src": "/images/oriental-rug-3-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/oriental-rug-3-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/oriental-rug-3-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/oriental-rug-3-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/oriental-rug-3-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/oriental-rug-3-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/oriental-rug-3.webp",
+    "placeholder": "data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAABQAwCdASoUABQAPm0ylUesIqIhKAgBgA2JZwDBzBZl7iNh0AD+8Fya4FsCCvYYTkmT4D/0pikaSgO1FmYXhLyp+UyFEAAA",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/oriental-rug-2.webp": {
+    "avif": [
+      {
+        "src": "/images/oriental-rug-2-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/oriental-rug-2-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/oriental-rug-2-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/oriental-rug-2-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/oriental-rug-2-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/oriental-rug-2-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/oriental-rug-2.webp",
+    "placeholder": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACwAwCdASoUABQAPm0ukUWkIqGYDAYAQAbEs4AAEO31jo5WzcM+gAD+ryCd5cjS2fcn6yATctM+GYuY6Ntizs7Uh+FhlT/BClCNFtAGYAA=",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/oriental-rug-1.webp": {
+    "avif": [
+      {
+        "src": "/images/oriental-rug-1-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/oriental-rug-1-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/oriental-rug-1-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/oriental-rug-1-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/oriental-rug-1-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/oriental-rug-1-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/oriental-rug-1.webp",
+    "placeholder": "data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAABQAwCdASoUABQAPm0ylEevIqIhKAgB4A2JZwDDcBZENK0wgAD+7Wfd3U0YW6BPri5oAB/I7frTLxtCLWXJMqbxgDdDWRKbFbAAAA==",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/hand-knotted-rug-hero.webp": {
+    "avif": [
+      {
+        "src": "/images/hand-knotted-rug-hero-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/hand-knotted-rug-hero-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/hand-knotted-rug-hero-1024.avif",
+        "width": 1024
+      },
+      {
+        "src": "/images/hand-knotted-rug-hero-1280.avif",
+        "width": 1280
+      },
+      {
+        "src": "/images/hand-knotted-rug-hero-1536.avif",
+        "width": 1536
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/hand-knotted-rug-hero-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/hand-knotted-rug-hero-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/hand-knotted-rug-hero-1024.webp",
+        "width": 1024
+      },
+      {
+        "src": "/images/hand-knotted-rug-hero-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/images/hand-knotted-rug-hero-1536.webp",
+        "width": 1536
+      }
+    ],
+    "original": "/images/hand-knotted-rug-hero.webp",
+    "placeholder": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQBACdASoUAA4APm0skkWkIqGYBABABsSygE6ZQjgAFJD8ZJoysTqQvAD++jTNqTdicQAMPTCA6IOJJ4aXAfGifPsFstSL4AA=",
+    "width": 1600,
+    "height": 1085
+  },
+  "/images/hand-knotted-rug-2.webp": {
+    "avif": [
+      {
+        "src": "/images/hand-knotted-rug-2-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/hand-knotted-rug-2-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/hand-knotted-rug-2-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/hand-knotted-rug-2-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/hand-knotted-rug-2-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/hand-knotted-rug-2-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/hand-knotted-rug-2.webp",
+    "placeholder": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAACwAwCdASoUABQAPm0skUWkIqGYBABABsSzgAAbySdFyPCg5dSMYADoLLPR8hiLMBZf0l0uQ0XmvslHsaubo5+rn2/01ruG8Q1i98/tHfIUoBy3vSQAAA==",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/hand-knotted-rug-1.webp": {
+    "avif": [
+      {
+        "src": "/images/hand-knotted-rug-1-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/hand-knotted-rug-1-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/hand-knotted-rug-1-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/hand-knotted-rug-1-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/hand-knotted-rug-1-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/hand-knotted-rug-1-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/hand-knotted-rug-1.webp",
+    "placeholder": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAwAwCdASoUABQAPm0ylUeyIqIhKAgCQA2JZwAAQBCvn2QAAP7q++JZ9nH0NGoYj2yd/d2NJZttiAMUjEAAAA==",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/Deep cleaning of an antique oriental rug.webp": {
+    "avif": [
+      {
+        "src": "/images/Deep cleaning of an antique oriental rug-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/Deep cleaning of an antique oriental rug-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/Deep cleaning of an antique oriental rug-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/Deep cleaning of an antique oriental rug-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/Deep cleaning of an antique oriental rug-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/Deep cleaning of an antique oriental rug-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/Deep cleaning of an antique oriental rug.webp",
+    "placeholder": "data:image/webp;base64,UklGRmIAAABXRUJQVlA4IFYAAADQAwCdASoUAB4APmEqj0WkJKEb/VQASAYEsoBbZC/37+Aw62z+ucAA/uKPYsIUX6Fesvvpsf4u7EcZPDi55HfxkZ5pawqLRYZ4QyseBY6IksPJGD8AAA==",
+    "width": 1024,
+    "height": 1536
+  },
+  "/images/Complete restoration of a 100-year-old Persian rug.webp": {
+    "avif": [
+      {
+        "src": "/images/Complete restoration of a 100-year-old Persian rug-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/Complete restoration of a 100-year-old Persian rug-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/Complete restoration of a 100-year-old Persian rug-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/Complete restoration of a 100-year-old Persian rug-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/Complete restoration of a 100-year-old Persian rug-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/Complete restoration of a 100-year-old Persian rug-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/Complete restoration of a 100-year-old Persian rug.webp",
+    "placeholder": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAABQBACdASoUAB4APl0mjkWnoiEb9AB4BcSygF2coJoAAwn/qGwBcXNZBSsAAP7sfZvSrAka7xaYoKRhi7Ha9MlF73ZP469McmQ5gvMvmIkkCAAA",
+    "width": 1024,
+    "height": 1536
+  },
+  "/images/area-rug-hero.webp": {
+    "avif": [
+      {
+        "src": "/images/area-rug-hero-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/area-rug-hero-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/area-rug-hero-1024.avif",
+        "width": 1024
+      },
+      {
+        "src": "/images/area-rug-hero-1280.avif",
+        "width": 1280
+      },
+      {
+        "src": "/images/area-rug-hero-1536.avif",
+        "width": 1536
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/area-rug-hero-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/area-rug-hero-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/area-rug-hero-1024.webp",
+        "width": 1024
+      },
+      {
+        "src": "/images/area-rug-hero-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/images/area-rug-hero-1536.webp",
+        "width": 1536
+      }
+    ],
+    "original": "/images/area-rug-hero.webp",
+    "placeholder": "data:image/webp;base64,UklGRjYAAABXRUJQVlA4ICoAAACwAgCdASoUAA0APm0skkWkIqGYBABABsS0gAA9kAAA/vZYhxero2uYAAA=",
+    "width": 1600,
+    "height": 1067
+  },
+  "/images/area-rug-3.webp": {
+    "avif": [
+      {
+        "src": "/images/area-rug-3-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/area-rug-3-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/area-rug-3-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/area-rug-3-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/area-rug-3-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/area-rug-3-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/area-rug-3.webp",
+    "placeholder": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQBACdASoUABQAPm0wk0ckIqGlKAqooA2JZwCoBBEczjObcRgn2gDcAAD+2Qz3zVVzSHLV8/H2+WYkH4mdRKyXxMPoNX9bTrtmyeqYAAA=",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/area-rug-2.webp": {
+    "avif": [
+      {
+        "src": "/images/area-rug-2-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/area-rug-2-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/area-rug-2-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/area-rug-2-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/area-rug-2-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/area-rug-2-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/area-rug-2.webp",
+    "placeholder": "data:image/webp;base64,UklGRl4AAABXRUJQVlA4IFIAAACQAwCdASoUABQAPm0ukkakIqGhKA1QgA2JZwAALtcmHwZr5ZgAAP7UKIt4U9EHf/3uWIIe2y0Uv1VHPxylwd+ybqQjk6sER7ckKQMpEyyEQAAA",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/area-rug-1.webp": {
+    "avif": [
+      {
+        "src": "/images/area-rug-1-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/area-rug-1-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/area-rug-1-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/area-rug-1-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/area-rug-1-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/area-rug-1-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/area-rug-1.webp",
+    "placeholder": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAwCdASoUABQAPm0sk0akJ6GhMBgIAPANiWkAzFgQ6075YTf0zhYAAP7v8NF/K4RQQMnvmkBJ7vimufEz0l0uNlMq4t7/oAA=",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/antique-rug-hero.webp": {
+    "avif": [
+      {
+        "src": "/images/antique-rug-hero-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/antique-rug-hero-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/antique-rug-hero-1024.avif",
+        "width": 1024
+      },
+      {
+        "src": "/images/antique-rug-hero-1280.avif",
+        "width": 1280
+      },
+      {
+        "src": "/images/antique-rug-hero-1536.avif",
+        "width": 1536
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/antique-rug-hero-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/antique-rug-hero-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/antique-rug-hero-1024.webp",
+        "width": 1024
+      },
+      {
+        "src": "/images/antique-rug-hero-1280.webp",
+        "width": 1280
+      },
+      {
+        "src": "/images/antique-rug-hero-1536.webp",
+        "width": 1536
+      }
+    ],
+    "original": "/images/antique-rug-hero.webp",
+    "placeholder": "data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAADwAgCdASoUAA0APm0skkWkIqGYBABABsSgCdMoAEhwAAD+6vvyo7Ff2+2xriqrA6Td/xQ2EZrA/30RtOhzllS+FyGAAA==",
+    "width": 1600,
+    "height": 1067
+  },
+  "/images/antique-rug-3.webp": {
+    "avif": [
+      {
+        "src": "/images/antique-rug-3-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/antique-rug-3-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/antique-rug-3-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/antique-rug-3-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/antique-rug-3-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/antique-rug-3-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/antique-rug-3.webp",
+    "placeholder": "data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAACQBACdASoUABQAPm0wk0ckIqGhKAqogA2JZwC7ABEduy41N7cuak1pNBH7MxAA/uqM1cch95MpMhvR6X4/TZjIK1MmykWvuMYnVm/AAAA=",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/antique-rug-2.webp": {
+    "avif": [
+      {
+        "src": "/images/antique-rug-2-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/antique-rug-2-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/antique-rug-2-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/antique-rug-2-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/antique-rug-2-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/antique-rug-2-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/antique-rug-2.webp",
+    "placeholder": "data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAACQAwCdASoUABQAPm0ylUekIqIhKAgAgA2JZwDGqoAAMJAby1fIAP7ugTadt9eU+JtvuuMdpsB9b9WyqdaWAAAA",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/antique-rug-1.webp": {
+    "avif": [
+      {
+        "src": "/images/antique-rug-1-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/antique-rug-1-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/antique-rug-1-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/antique-rug-1-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/antique-rug-1-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/antique-rug-1-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/antique-rug-1.webp",
+    "placeholder": "data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAABQAwCdASoUABQAPm00lUekIyIhKAgAgA2JZwCxGoAAYXKAgAD+p3cFfN9j2Krc62LqnUCbnHlQXX3jJfmAAA==",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/blog/wool-rug-cleaning-guide.webp": {
+    "avif": [
+      {
+        "src": "/images/blog/wool-rug-cleaning-guide-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/blog/wool-rug-cleaning-guide-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/blog/wool-rug-cleaning-guide-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/blog/wool-rug-cleaning-guide-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/blog/wool-rug-cleaning-guide-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/blog/wool-rug-cleaning-guide-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/blog/wool-rug-cleaning-guide.webp",
+    "placeholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQBACdASoUABQAPmkokEWkIqGb+qwAQAaEs4BOmaYg4P/uves7qBnXScAQAP7zk20qKsSEGQThUOX1tgxGJrhD1Z7qtvfOWSewztZD9gBfppeyAl8on4AAAAA=",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/blog/rug-spill-care.webp": {
+    "avif": [
+      {
+        "src": "/images/blog/rug-spill-care-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/blog/rug-spill-care-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/blog/rug-spill-care-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/blog/rug-spill-care-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/blog/rug-spill-care-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/blog/rug-spill-care-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/blog/rug-spill-care.webp",
+    "placeholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQBACdASoUABQAPmkokEWkIqGb+qwAQAaEs4BOmaYg4P/uves7qBnXScAQAP7zk20qKsSEGQThUOX1tgxGJrhD1Z7qtvfOWSewztZD9gBfppeyAl8on4AAAAA=",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/blog/persian-rug-history.webp": {
+    "avif": [
+      {
+        "src": "/images/blog/persian-rug-history-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/blog/persian-rug-history-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/blog/persian-rug-history-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/blog/persian-rug-history-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/blog/persian-rug-history-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/blog/persian-rug-history-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/blog/persian-rug-history.webp",
+    "placeholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQBACdASoUABQAPmkokEWkIqGb+qwAQAaEs4BOmaYg4P/uves7qBnXScAQAP7zk20qKsSEGQThUOX1tgxGJrhD1Z7qtvfOWSewztZD9gBfppeyAl8on4AAAAA=",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/blog/carpet-cleaning-guide.webp": {
+    "avif": [
+      {
+        "src": "/images/blog/carpet-cleaning-guide-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/blog/carpet-cleaning-guide-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/blog/carpet-cleaning-guide-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/blog/carpet-cleaning-guide-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/blog/carpet-cleaning-guide-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/blog/carpet-cleaning-guide-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/blog/carpet-cleaning-guide.webp",
+    "placeholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQBACdASoUABQAPmkokEWkIqGb+qwAQAaEs4BOmaYg4P/uves7qBnXScAQAP7zk20qKsSEGQThUOX1tgxGJrhD1Z7qtvfOWSewztZD9gBfppeyAl8on4AAAAA=",
+    "width": 1024,
+    "height": 1024
+  }
+}

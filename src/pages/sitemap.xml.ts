@@ -6,8 +6,15 @@ const baseUrl = "https://londonrugcleaning.co.uk";
 export async function GET() {
     const posts = await getCollection('blog');
 
+    interface SitemapRoute {
+        loc: string;
+        changefreq: string;
+        priority: number;
+        lastmod?: string;
+    }
+
     // Static routes
-    const staticRoutes = [
+    const staticRoutes: SitemapRoute[] = [
         { loc: "/", changefreq: "yearly", priority: 1.0 },
         { loc: "/about", changefreq: "yearly", priority: 0.8 },
         { loc: "/contact", changefreq: "yearly", priority: 0.8 },
@@ -17,7 +24,7 @@ export async function GET() {
     ];
 
     // Service pages
-    const serviceRoutes = Object.keys(servicesData).map(id => ({
+    const serviceRoutes: SitemapRoute[] = Object.keys(servicesData).map(id => ({
         loc: `/services/${id}`,
         changefreq: "monthly",
         priority: 0.8
