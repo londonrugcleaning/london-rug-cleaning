@@ -1,72 +1,10 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { ServicesList } from "@/components/services/ServicesList";
 import { CTAButtons } from "@/components/CTAButtons";
-import { ServiceSchema } from "@/components/seo/ServiceSchema";
-import {
-  Droplets, Home, Award, Paintbrush, Gem,
-  Feather, Scissors, ShieldCheck
-} from "lucide-react";
+import { ContactSection } from "@/components/home/ContactSection";
 
-const services = [
-  {
-    id: "persian-rug-cleaning",
-    title: "Persian Rug Cleaning",
-    description: "Expert care for your valuable Persian rugs using traditional methods and modern technology",
-    icon: Gem,
-    color: "bg-blue-100",
-  },
-  {
-    id: "oriental-rug-cleaning",
-    title: "Oriental Rug Cleaning",
-    description: "Specialized cleaning for delicate oriental rugs with attention to detail",
-    icon: Paintbrush,
-    color: "bg-green-100",
-  },
-  {
-    id: "wool-rug-cleaning",
-    title: "Wool Rug Cleaning",
-    description: "Professional wool rug cleaning that preserves fiber integrity and natural colors",
-    icon: Feather,
-    color: "bg-purple-100",
-  },
-  {
-    id: "area-rug-cleaning",
-    title: "Area Rug Cleaning",
-    description: "Comprehensive cleaning solutions for all types of area rugs",
-    icon: Home,
-    color: "bg-yellow-100",
-  },
-  {
-    id: "synthetic-rug-cleaning",
-    title: "Synthetic Rug Cleaning",
-    description: "Specialized cleaning for modern synthetic rugs using advanced techniques",
-    icon: ShieldCheck,
-    color: "bg-indigo-100",
-  },
-  {
-    id: "antique-rug-cleaning",
-    title: "Antique Rug Cleaning",
-    description: "Delicate handling and restoration of vintage and antique rugs",
-    icon: Award,
-    color: "bg-amber-100",
-  },
-  {
-    id: "hand-knotted-rug-cleaning",
-    title: "Hand-Knotted Rug Cleaning",
-    description: "Meticulous cleaning of handcrafted luxury rugs",
-    icon: Scissors,
-    color: "bg-pink-100",
-  },
-  {
-    id: "rug-stain-removal",
-    title: "Rug Stain Removal",
-    description: "Professional spot and stain treatment for all rug types",
-    icon: Droplets,
-    color: "bg-teal-100",
-  }
-];
+
 
 const schema = {
   "@context": "https://schema.org",
@@ -85,19 +23,21 @@ const schema = {
   description="Expert rug cleaning services near you. Specializing in Persian, Oriental, and Wool rugs with free collection and delivery across London."
   schema={schema}
 >
-  <div class="min-h-screen bg-gradient-to-b from-blue-50 to-white">
+  <div class="min-h-screen">
     {/* Hero Section */}
-    <section class="py-20">
-      <div class="container mx-auto px-4">
-        <div class="mx-auto max-w-3xl text-center">
-          <h1 class="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
-            Professional <span class="text-blue-800">Rug Cleaning</span> Services in London
+    <section class="relative overflow-hidden bg-slate-50 pt-32 pb-16 lg:pt-40 lg:pb-24">
+       <div class="absolute inset-0 opacity-10 pointer-events-none">
+          <div class="absolute right-0 top-0 h-[600px] w-[600px] bg-blue-400 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      </div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="mx-auto max-w-4xl text-center">
+          <h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl mb-6">
+            Professional <span class="text-blue-600">Rug Cleaning</span> Services
           </h1>
-          <p class="mt-6 text-lg text-muted-foreground">
-            Expert rug cleaning services near you. Specializing in Persian, Oriental, and Wool rugs
-            with free collection and delivery across London.
+          <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+            From antique Persian rugs to modern synthetic carpets, we provide expert cleaning solutions tailored to your specific needs.
           </p>
-          <div class="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
+          <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
             <CTAButtons variant="hero" client:load />
           </div>
         </div>
@@ -105,49 +45,12 @@ const schema = {
     </section>
 
     {/* Services Grid */}
-    <section class="py-20">
+    <section class="py-24 bg-white">
       <div class="container mx-auto px-4">
-        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-          {services.map((service) => (
-            <a href={`/services/${service.id}`} class="block h-full">
-              <Card className="group h-full cursor-pointer transition-all hover:shadow-lg">
-                <div class="p-6">
-                  <div class={`mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl ${service.color}`}>
-                    <service.icon className="h-6 w-6 text-blue-800" />
-                  </div>
-                  <h3 class="mb-2 text-xl font-semibold group-hover:text-blue-900">
-                    {service.title}
-                  </h3>
-                  <p class="text-muted-foreground">{service.description}</p>
-                </div>
-              </Card>
-            </a>
-          ))}
-        </div>
+        <ServicesList client:load />
       </div>
     </section>
 
-    {/* CTA Section */}
-    <section class="bg-blue-900 py-20 text-white">
-      <div class="container mx-auto px-4">
-        <div class="mx-auto max-w-3xl text-center">
-          <h2 class="text-3xl font-bold sm:text-4xl">
-            Ready to Get Your Rugs Professionally Cleaned?
-          </h2>
-          <p class="mt-4 text-blue-100">
-            Book your free collection today and experience the difference of professional rug cleaning.
-          </p>
-          <Button
-            size="lg"
-            variant="secondary"
-            className="mt-8"
-            client:visible
-            asChild
-          >
-            <a href="/contact">Get a Free Quote</a>
-          </Button>
-        </div>
-      </div>
-    </section>
+    <ContactSection client:visible />
   </div>
 </Layout>
