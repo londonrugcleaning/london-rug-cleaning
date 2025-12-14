@@ -381,7 +381,7 @@ export const servicesData = {
         gallery: [
             "/images/hand-knotted-rug-1.webp",
             "/images/hand-knotted-rug-2.webp",
-            "/images/hand-knotted-rug-3.webp"
+            "/images/hand-knotted-rug-1.webp"
         ],
         intro: "Hand-knotted rugs represent the pinnacle of rug craftsmanship and require cleaning methods that preserve their intricate details and structural integrity. Our specialized hand-knotted rug cleaning service honors the artistry in these luxury pieces while providing thorough cleaning that enhances their beauty and longevity. With exacting techniques and specialized knowledge, we ensure these valuable rugs receive the premium care they deserve.",
         features: [
@@ -454,9 +454,9 @@ export const servicesData = {
         description: "Professional spot and stain treatment for all rug types in London",
         hero: "/images/rug-stain-removal-hero.webp",
         gallery: [
-            "/images/rug-stain-removal-1.webp",
-            "/images/rug-stain-removal-2.webp",
-            "/images/rug-stain-removal-3.webp"
+            "/images/area-rug-1.webp",
+            "/images/area-rug-2.webp",
+            "/images/area-rug-3.webp"
         ],
         intro: "Stains on valuable rugs can be distressing, particularly when they affect cherished or investment pieces. Our specialized rug stain removal service tackles a wide range of challenging stains while protecting your rug's delicate fibers, dyes, and structure. Using targeted treatments appropriate for each specific stain type and rug material, we achieve outstanding results even on stubborn, set-in stains that ordinary cleaning methods can't touch.",
         features: [
