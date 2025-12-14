@@ -1,0 +1,28 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { Button } from '@/components/ui/button';
+import { ArrowLeft, Mail } from 'lucide-react';
+
+const title = "Page Not Found - London Rug Cleaning";
+const description = "The page you are looking for could not be found.";
+---
+
+<Layout title={title} description={description} noindex={true}>
+  <div class="container mx-auto flex min-h-[70vh] flex-col items-center justify-center px-4 py-16 text-center">
+    <h1 class="text-6xl font-bold text-primary text-blue-900">404</h1>
+    <h2 class="mt-4 text-2xl font-semibold">Page Not Found</h2>
+    <p class="mt-4 max-w-md text-muted-foreground">
+      The page you are looking for doesn't exist or has been moved.
+    </p>
+    
+    <div class="mt-8 flex flex-col space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+      <a href="/" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2 bg-blue-800 text-white hover:bg-blue-900">
+         Return to Homepage
+      </a>
+      
+      <a href="/contact" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2">
+        Contact Us
+      </a>
+    </div>
+  </div>
+</Layout>
