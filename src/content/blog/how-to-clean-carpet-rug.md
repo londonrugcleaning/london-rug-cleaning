@@ -4,7 +4,7 @@ date: "2024-03-14"
 author: "London Rug Cleaning Team"
 excerpt: "Learn the professional techniques for cleaning your carpet rug effectively and safely at home."
 tags: ["rug cleaning", "carpet care", "DIY", "maintenance"]
-coverImage: "/images/blog/carpet-cleaning-guide.jpg"
+coverImage: "/images/blog/carpet-cleaning-guide.webp"
 ---
 
 # How to Clean a Carpet Rug: A Complete Guide

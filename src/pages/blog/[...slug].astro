@@ -1,10 +1,13 @@
 ---
 import { getCollection } from 'astro:content';
+
+export const prerender = true;
 import Layout from '../../layouts/Layout.astro';
 import { TableOfContents } from '@/components/blog/TableOfContents';
 import { Calendar, User, Tag, ArrowLeft } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { ArticleSchema } from "@/components/seo/ArticleSchema";
+import OptimizedImage from '@/components/OptimizedImage';
 
 export async function getStaticPaths() {
   const posts = await getCollection('blog');
@@ -78,6 +81,17 @@ const readingTime = calculateReadingTime(post.body);
       <h1 class="text-3xl font-bold sm:text-4xl md:text-5xl">
         {post.data.title}
       </h1>
+
+      {post.data.coverImage && (
+        <div class="mt-8 mb-8 rounded-lg overflow-hidden">
+          <OptimizedImage
+            src={post.data.coverImage}
+            alt={post.data.title}
+            className="w-full h-auto object-cover max-h-[500px]"
+            priority
+          />
+        </div>
+      )}
 
       <div class="mt-4 flex flex-wrap items-center gap-4 text-muted-foreground">
         <div class="flex items-center gap-2">
