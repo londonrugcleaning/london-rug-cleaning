@@ -1,0 +1,32 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ContactPageContent from '../components/ContactPageContent';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ContactPage",
+  "name": "Contact London Rug Cleaning",
+  "description": "Get in touch with our rug cleaning experts for a free quote",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "London Rug Cleaning",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "4 Maddison Court, 145 Great North Way",
+      "addressLocality": "London",
+      "postalCode": "NW4 1PW",
+      "addressCountry": "UK"
+    },
+    "telephone": "02034888344",
+    "email": "info@londonrugcleaning.co.uk"
+  }
+};
+---
+
+<Layout 
+  title="Contact Us | London Rug Cleaning" 
+  description="Contact our rug cleaning experts for a free quote. We offer professional rug cleaning services across London with free collection and delivery."
+  schema={schema}
+>
+  <ContactPageContent client:load />
+</Layout>

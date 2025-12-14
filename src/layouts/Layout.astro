@@ -1,0 +1,110 @@
+---
+import { Navigation } from "../components/Navigation";
+import { Footer } from "../components/Footer";
+import { FloatingButtons } from "../components/FloatingButtons";
+import { Toaster } from "../components/ui/toaster";
+import "../index.css";
+import "../App.css";
+
+interface Props {
+  title: string;
+  description?: string;
+  schema?: object;
+}
+
+const { title, description, schema } = Astro.props;
+
+const businessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "London Rug Cleaning",
+  "image": "https://londonrugcleaning.co.uk/images/Professional Rug Cleaning London.webp",
+  "@id": "https://londonrugcleaning.co.uk",
+  "url": "https://londonrugcleaning.co.uk",
+  "telephone": "+442034888344",
+  "email": "info@londonrugcleaning.co.uk",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "4 Maddison Court, 145 Great North Way",
+    "addressLocality": "London",
+    "postalCode": "NW4 1PW",
+    "addressCountry": "UK"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 51.597621,
+    "longitude": -0.219803
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": [
+      "Monday",
+      "Tuesday",
+      "Wednesday",
+      "Thursday",
+      "Friday",
+      "Saturday",
+      "Sunday"
+    ],
+    "opens": "08:00",
+    "closes": "20:00"
+  },
+  "sameAs": [
+    "https://www.facebook.com/londonrugcleaning",
+    "https://twitter.com/londonrugclean",
+    "https://www.instagram.com/londonrugcleaning"
+  ],
+  "areaServed": "London",
+  "priceRange": "££"
+};
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+    <meta name="description" content={description || "Professional Rug Cleaning Services in London"} />
+    
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/poppins.woff2" />
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="/fonts/bold.woff2" />
+    
+    <!-- Global Schema -->
+    <script type="application/ld+json" set:html={JSON.stringify(businessSchema)} />
+    
+    <!-- Page Specific Schema -->
+    {schema && <script type="application/ld+json" set:html={JSON.stringify(schema)} />}
+
+    {/* Breadcrumb Schema */}
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://londonrugcleaning.co.uk"
+        },
+        ...Astro.url.pathname.split('/').filter(Boolean).map((path, index, array) => ({
+          "@type": "ListItem",
+          "position": index + 2,
+          "name": path.charAt(0).toUpperCase() + path.slice(1).replace(/-/g, ' '),
+          "item": `https://londonrugcleaning.co.uk/${array.slice(0, index + 1).join('/')}`
+        }))
+      ]
+    })} />
+  </head>
+  <body class="flex flex-col min-h-screen">
+    <Navigation client:load />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer client:visible />
+    <FloatingButtons client:load />
+    <Toaster client:load />
+  </body>
+</html>
