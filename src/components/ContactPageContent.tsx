@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { useToast } from "@/hooks/use-toast";
 import { Mail, Phone, MapPin } from "lucide-react";
-import { HeadMeta } from "@/components/HeadMeta";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -53,7 +52,7 @@ const Contact = () => {
       } catch (parseError) {
         throw new Error("Invalid response from server");
       }
-      
+
       if (data.success) {
         toast({
           title: "Thank you for your message",
@@ -66,13 +65,13 @@ const Contact = () => {
       }
     } catch (error) {
       console.error("Contact form - Submission error:", error);
-      
-      const errorMessage = error instanceof Error 
-        ? error.message 
+
+      const errorMessage = error instanceof Error
+        ? error.message
         : "Our email system is currently unavailable. Please call us directly.";
-        
+
       setError(errorMessage);
-      
+
       toast({
         title: "Error sending message",
         description: errorMessage,
@@ -105,12 +104,6 @@ const Contact = () => {
 
   return (
     <>
-      <HeadMeta
-        title="Contact Us | London Rug Cleaning"
-        description="Contact our rug cleaning experts for a free quote. We offer professional rug cleaning services across London with free collection and delivery."
-        canonicalUrl="https://londonrugcleaning.co.uk/contact"
-        schema={schema}
-      />
       <div className="min-h-screen">
         <section className="hero-pattern py-24">
           <div className="container mx-auto px-4">
@@ -165,7 +158,7 @@ const Contact = () => {
                     </div>
                   </div>
                 )}
-              
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <input
                     type="text"
