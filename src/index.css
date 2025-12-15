@@ -76,3 +76,17 @@
 .testimonial-card:hover::before {
   @apply opacity-100;
 }
+
+h1[id], h2[id], h3[id], h4[id], h5[id], h6[id] {
+  scroll-margin-top: 8rem;
+}
+
+.blog-content a {
+  color: #3D9FFF;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.blog-content a:hover {
+  color: #1a81ff;
+  text-decoration: underline;
+}

@@ -12,15 +12,11 @@ This is a web application for a fictional company, London Rug Cleaning, that spe
 
 ## Technologies Used
 
-This project is a single-page application built with the following technologies:
-
-  * **Vite**: A fast build tool for modern web development.
+  * **Astro**: A web framework for building content-driven websites.
   * **React**: A JavaScript library for building user interfaces.
   * **TypeScript**: A typed superset of JavaScript that compiles to plain JavaScript.
   * **Tailwind CSS**: A utility-first CSS framework for rapid UI development.
   * **shadcn-ui**: A collection of re-usable components built with Radix UI and Tailwind CSS.
-  * **React Router**: For client-side routing.
-  * **React Helmet Async**: To manage changes to the document head.
   * **Resend**: For handling email delivery of quote requests.
 
 ## Getting Started
