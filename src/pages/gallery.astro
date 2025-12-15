@@ -1,0 +1,23 @@
+---
+import Layout from '../layouts/Layout.astro';
+import GalleryPageContent from '../components/GalleryPageContent';
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "ImageGallery",
+  "name": "Rug Cleaning Transformation Gallery",
+  "description": "View our portfolio of professional rug cleaning results. See before and after examples of Persian, Oriental, and antique rug restoration.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "London Rug Cleaning"
+  }
+};
+---
+
+<Layout 
+  title="Our Gallery | London Rug Cleaning" 
+  description="See the remarkable transformations we achieve with our expert rug cleaning services. View before and after photos of our work."
+  schema={schema}
+>
+  <GalleryPageContent client:load />
+</Layout>

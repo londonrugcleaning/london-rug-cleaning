@@ -1,0 +1,68 @@
+---
+import { ServiceCard } from "../ServiceCard";
+import { Button } from "../ui/button";
+import { Droplets, Shield, Brush, Gem, Sparkles, Feather, Award, BadgeCheck } from "lucide-react";
+import { getCollection } from 'astro:content';
+
+const services = await getCollection('services');
+
+// Map service IDs to icons
+const iconMap: Record<string, any> = {
+  'persian-rug-cleaning': Sparkles,
+  'oriental-rug-cleaning': Brush,
+  'wool-rug-cleaning': Feather,
+  'area-rug-cleaning': BadgeCheck,
+  'synthetic-rug-cleaning': Shield,
+  'antique-rug-cleaning': Award,
+  'hand-knotted-rug-cleaning': Gem,
+  'rug-stain-removal': Droplets,
+};
+
+// Sort or filter services if needed to match the design order.
+const order = [
+  'persian-rug-cleaning',
+  'oriental-rug-cleaning',
+  'wool-rug-cleaning',
+  'area-rug-cleaning',
+  'synthetic-rug-cleaning',
+  'antique-rug-cleaning',
+  'hand-knotted-rug-cleaning',
+  'rug-stain-removal'
+];
+
+const orderedServices = order.map(id => {
+  const service = services.find(s => s.id === id);
+  return service ? { ...service.data, id: service.id, icon: iconMap[id] } : null;
+}).filter(Boolean);
+
+---
+
+<section class="bg-white py-24">
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto max-w-2xl text-center mb-16">
+      <h2 class="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
+        Our Professional Services
+      </h2>
+      <p class="mt-4 text-lg text-slate-600">
+        Expert rug cleaning solutions tailored to your needs, with free
+        collection and delivery across London
+      </p>
+    </div>
+    <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+      {orderedServices.map((service) => (
+        <div class="h-full">
+          <ServiceCard
+            title={service.title}
+            description={service.description}
+            icon={service.icon}
+          />
+        </div>
+      ))}
+    </div>
+    <div class="mt-12 text-center">
+      <Button size="lg" asChild className="bg-blue-900 hover:bg-blue-900">
+        <a href="/services">View All Services</a>
+      </Button>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,126 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import { Calendar, Tag, User, Clock } from "lucide-react";
+import OptimizedImage from '@/components/OptimizedImage.astro';
+
+const posts = (await getCollection('blog')).sort(
+	(a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf()
+);
+
+function calculateReadingTime(content: string) {
+  const wordsPerMinute = 200;
+  const wordCount = content.split(/\s+/).length;
+  const readingTime = Math.ceil(wordCount / wordsPerMinute);
+  return `${readingTime} min read`;
+}
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "name": "London Rug Cleaning Blog",
+  "description": "Expert advice and insights on rug care and maintenance",
+  "publisher": {
+    "@type": "Organization",
+    "name": "London Rug Cleaning",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://londonrugcleaning.co.uk/logo.png"
+    }
+  },
+  "blogPost": posts.map(post => ({
+    "@type": "BlogPosting",
+    "headline": post.data.title,
+    "datePublished": post.data.date,
+    "author": {
+      "@type": "Person",
+      "name": post.data.author
+    },
+    "description": post.data.excerpt,
+    "keywords": post.data.tags.join(", "),
+    "url": `https://londonrugcleaning.co.uk/blog/${post.slug}`
+  }))
+};
+---
+
+<Layout 
+  title="Rug Cleaning Blog - Expert Advice and Tips"
+  description="Read our expert articles on rug care, cleaning methods, and maintenance tips to keep your rugs looking beautiful for years to come."
+  schema={schema}
+>
+  <div class="min-h-screen">
+    <section class="hero-pattern py-24">
+      <div class="container mx-auto px-4">
+        <h1 class="animate-fade-up text-4xl font-semibold sm:text-5xl">
+          Our Blog
+        </h1>
+        <p class="mt-6 animate-fade-up text-lg text-muted-foreground">
+          Expert advice and insights on rug care and maintenance
+        </p>
+      </div>
+    </section>
+
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+          {posts.map((post) => (
+            <div class="group overflow-hidden rounded-lg border bg-card shadow-xs transition-all hover:shadow-md flex flex-col h-full">
+              {post.data.coverImage && (
+                <div class="relative h-48 overflow-hidden">
+                  <OptimizedImage
+                    src={post.data.coverImage}
+                    alt={post.data.title}
+                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                </div>
+              )}
+              <div class="p-6 flex flex-col grow">
+                <div class="flex items-center gap-2 text-sm text-muted-foreground flex-wrap mb-3">
+                  <div class="flex items-center gap-1">
+                    <Calendar className="h-4 w-4" />
+                    <span>{new Date(post.data.date).toLocaleDateString()}</span>
+                  </div>
+                  <span>•</span>
+                  <div class="flex items-center gap-1">
+                    <User className="h-4 w-4" />
+                    <span>{post.data.author}</span>
+                  </div>
+                  <span>•</span>
+                  <div class="flex items-center gap-1">
+                    <Clock className="h-4 w-4" />
+                    <span>{calculateReadingTime(post.body)}</span>
+                  </div>
+                </div>
+                
+                <h3 class="mt-2 text-xl font-semibold group-hover:text-blue-900">
+                  <a href={`/blog/${post.slug}`}>
+                    {post.data.title}
+                  </a>
+                </h3>
+                
+                <p class="mt-2 line-clamp-3 text-muted-foreground">
+                  {post.data.excerpt}
+                </p>
+                
+                <div class="mt-auto pt-4 flex flex-wrap gap-2">
+                  {post.data.tags.map((tag) => (
+                    <div class="flex items-center gap-1 rounded-full bg-blue-100 px-2 py-1 text-xs text-blue-800">
+                      <Tag className="h-3 w-3" />
+                      <span>{tag}</span>
+                    </div>
+                  ))}
+                </div>
+                
+                <div class="mt-4">
+                  <a href={`/blog/${post.slug}`} class="text-blue-800 hover:text-blue-900 underline-offset-4 hover:underline">
+                    Read more
+                  </a>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,58 @@
+---
+import { cn } from '@/lib/utils';
+import imagesMap from '@/generated/images-map.json';
+
+interface Props {
+  src: string;
+  alt: string;
+  className?: string;
+  priority?: boolean;
+  fill?: boolean;
+  sizes?: string;
+}
+
+const { src, alt, className, priority, fill, sizes = "100vw" } = Astro.props;
+
+// Ensure src starts with /
+const imageKey = src.startsWith('/') ? src : `/${src}`;
+const imageData = (imagesMap as any)[imageKey];
+---
+
+{imageData ? (
+  <div class={cn("relative overflow-hidden", className)} 
+       data-optimized-image="true"
+       style={!fill ? `aspect-ratio: ${imageData.width}/${imageData.height}; background-image: url('${imageData.placeholder}'); background-size: cover;` : undefined}>
+      <picture>
+        {imageData.avif && imageData.avif.length > 0 && (
+          <source
+            type="image/avif"
+            srcset={imageData.avif.map((v: any) => `${v.src} ${v.width}w`).join(', ')}
+            sizes={sizes}
+          />
+        )}
+        {imageData.webp && imageData.webp.length > 0 && (
+          <source
+            type="image/webp"
+            srcset={imageData.webp.map((v: any) => `${v.src} ${v.width}w`).join(', ')}
+            sizes={sizes}
+          />
+        )}
+        <img
+          src={imageData.original}
+          alt={alt}
+          width={fill ? undefined : imageData.width}
+          height={fill ? undefined : imageData.height}
+          class={cn(
+             "object-cover transition-opacity duration-500",
+             fill ? "absolute inset-0 h-full w-full" : "w-full h-auto"
+          )}
+          loading={priority ? "eager" : "lazy"}
+          decoding={priority ? "sync" : "async"}
+        />
+      </picture>
+  </div>
+) : (
+  <div class={cn("bg-gray-200 flex items-center justify-center text-gray-400", className)}>
+    <span>Image not found: {src}</span>
+  </div>
+)}

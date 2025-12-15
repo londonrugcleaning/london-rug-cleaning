@@ -1,0 +1,75 @@
+{
+    "title": "Rug Stain Removal",
+    "description": "Professional spot and stain treatment for all rug types in London",
+    "hero": "/images/rug-stain-removal-hero.webp",
+    "gallery": [
+        "/images/area-rug-1.webp",
+        "/images/area-rug-2.webp",
+        "/images/area-rug-3.webp"
+    ],
+    "intro": "Stains on valuable rugs can be distressing, particularly when they affect cherished or investment pieces. Our specialized rug stain removal service tackles a wide range of challenging stains while protecting your rug's delicate fibers, dyes, and structure. Using targeted treatments appropriate for each specific stain type and rug material, we achieve outstanding results even on stubborn, set-in stains that ordinary cleaning methods can't touch.",
+    "features": [
+        "Specialized stain analysis and treatment",
+        "Safe solutions for delicate fibers",
+        "Color-safe stain removal techniques",
+        "Treatment for organic and inorganic stains",
+        "Red wine and food stain specialists",
+        "Pet stain and odor elimination",
+        "Ink and dye transfer resolution",
+        "Oil and grease stain treatment",
+        "Rust and water damage restoration",
+        "Preventative stain protection"
+    ],
+    "process": [
+        {
+            "title": "Detailed stain assessment",
+            "description": "Expert identification of stain type, age, and penetration to determine optimal treatment approach"
+        },
+        {
+            "title": "Fiber and dye testing",
+            "description": "Testing of the rug's fibers and dyes to ensure safe treatment without damage"
+        },
+        {
+            "title": "Pre-treatment",
+            "description": "Application of specialized pre-treatments to break down stain molecules"
+        },
+        {
+            "title": "Targeted stain removal",
+            "description": "Precise application of stain-specific agents using techniques appropriate for your rug type"
+        },
+        {
+            "title": "Neutralization",
+            "description": "Thorough neutralization of cleaning agents to prevent residue or fiber damage"
+        },
+        {
+            "title": "Final inspection",
+            "description": "Comprehensive review of results and application of any additional treatments if needed"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "Can you remove old stains that other cleaners couldn't fix?",
+            "answer": "Yes, we regularly rescue rugs with old, set-in stains that other cleaners couldn't resolve. Our specialized approach includes professional-grade stain removers that aren't available to general carpet cleaners, along with techniques specifically developed for different rug types. Even stains that have been present for years often respond to our targeted treatments."
+        },
+        {
+            "question": "Is it safe to use stain removers on expensive or antique rugs?",
+            "answer": "Our stain removal process for valuable rugs differs significantly from standard approaches. We first identify your rug's specific materials, construction, and dye types. We then carefully test all solutions on an inconspicuous area, and use only pH-balanced, fiber-appropriate treatments. For antique or delicate rugs, we employ specialized gentle methods that protect the rug's integrity while still achieving impressive stain removal."
+        },
+        {
+            "question": "How do you handle pet stains and odors?",
+            "answer": "Pet stains require a multi-faceted approach. We begin with enzyme treatments that break down the proteins in urine and other pet accidents. This is followed by specialized cleaning and neutralizing processes. For persistent odors, we employ additional deodorizing treatments that penetrate to the foundation of the rug. In severe cases, we may recommend our deep-saturation cleaning method which thoroughly addresses both the stain and odor."
+        },
+        {
+            "question": "What types of stains can you remove from rugs?",
+            "answer": "We successfully treat most common stains including red wine, coffee, tea, food spills, pet accidents, blood, ink, paint, makeup, oil, grease, and soil-based stains. We also address more challenging problems like dye bleeding, water damage, rust, and mold/mildew stains. The success rate depends on the stain type, rug material, and how long the stain has been present, but our specialized techniques achieve results in the vast majority of cases."
+        },
+        {
+            "question": "Do you offer any guarantees for stain removal?",
+            "answer": "We're confident in our stain removal expertise and achieve excellent results in most cases. However, due to variables such as previous DIY treatments, age of the stain, and certain dye-based stains, we cannot guarantee complete removal of every stain. We always provide honest assessments of expected outcomes during our initial inspection. If we believe a stain cannot be significantly improved, we'll tell you before proceeding with treatment."
+        },
+        {
+            "question": "How much does rug stain removal cost?",
+            "answer": "Our standard pricing for complete rug cleaning is £20-30 per square meter with a minimum charge of £70. For spot treatments and stain removal only, services start at £25 for small, simple stains and range up to £120+ for extensive or challenging stains requiring specialized treatments. We provide a detailed quotation after initial inspection, as additional treatments may be needed depending on the type and severity of stains."
+        }
+    ]
+}

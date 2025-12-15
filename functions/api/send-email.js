@@ -1,5 +1,12 @@
 import { Resend } from 'resend';
+import { z } from 'zod';
 
+const contactSchema = z.object({
+  name: z.string().min(1, "Name is required"),
+  email: z.string().email("Invalid email address"),
+  phone: z.string().min(5, "Phone number is too short"),
+  message: z.string().min(10, "Message must be at least 10 characters long"),
+});
 
 export async function onRequest(context) {
   try {
@@ -38,15 +45,19 @@ export async function onRequest(context) {
 
     // Parse request body
     const body = await context.request.json();
-    const { name, email, phone, message } = body;
 
-    // Validate request data
-    if (!name || !email || !phone || !message) {
+    // Validate request data with Zod
+    const validationResult = contactSchema.safeParse(body);
+
+    if (!validationResult.success) {
+      const errorMessages = validationResult.error.errors.map(e => e.message).join(", ");
       return new Response(
-        JSON.stringify({ error: "All fields are required" }),
+        JSON.stringify({ error: errorMessages }),
         { status: 400, headers: { "Content-Type": "application/json", "Access-Control-Allow-Origin": "*" } }
       );
     }
+
+    const { name, email, phone, message } = validationResult.data;
 
     // Construct email content
     const emailOptions = {

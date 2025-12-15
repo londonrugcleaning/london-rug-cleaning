@@ -1,0 +1,29 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Hero from "@/components/home/Hero.astro";
+import ServicesSection from "@/components/home/ServicesSection.astro";
+import ProcessSection from "@/components/home/ProcessSection.astro";
+import { TestimonialsSection } from "@/components/home/TestimonialsSection";
+import ContactSection from "@/components/home/ContactSection.astro";
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "WebPage",
+  "name": "London Rug Cleaning - Professional Rug Cleaner in London",
+  "description": "Expert rug cleaning services in London. Specializing in oriental, Persian, and antique rug cleaning with free collection and delivery. Get your free quote today"
+};
+---
+
+<Layout 
+  title="London Rug Cleaning - Professional Rug Cleaner in London" 
+  description="Expert rug cleaning services in London. Specializing in oriental, Persian, and antique rug cleaning with free collection and delivery. Get your free quote today"
+  schema={schema}
+>
+  <div class="min-h-screen">
+    <Hero />
+    <ServicesSection />
+    <ProcessSection />
+    <TestimonialsSection client:visible />
+    <ContactSection />
+  </div>
+</Layout>

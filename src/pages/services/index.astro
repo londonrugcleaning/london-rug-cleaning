@@ -1,0 +1,56 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { ServicesList } from "@/components/services/ServicesList";
+import { CTAButtons } from "@/components/CTAButtons";
+import ContactSection from "@/components/home/ContactSection.astro";
+
+
+
+const schema = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Professional Rug Cleaning Services in London",
+  "description": "Expert rug cleaning services near you. Specializing in Persian, Oriental, and Wool rugs with free collection and delivery across London.",
+  "provider": {
+    "@type": "LocalBusiness",
+    "name": "London Rug Cleaning"
+  }
+};
+---
+
+<Layout 
+  title="Professional Rug Cleaning Services in London" 
+  description="Expert rug cleaning services near you. Specializing in Persian, Oriental, and Wool rugs with free collection and delivery across London."
+  schema={schema}
+>
+  <div class="min-h-screen">
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-slate-50 pt-32 pb-16 lg:pt-40 lg:pb-24">
+       <div class="absolute inset-0 opacity-10 pointer-events-none">
+          <div class="absolute right-0 top-0 h-[600px] w-[600px] bg-blue-400 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
+      </div>
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="mx-auto max-w-4xl text-center">
+          <h1 class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl md:text-6xl mb-6">
+            Professional <span class="text-blue-600">Rug Cleaning</span> Services
+          </h1>
+          <p class="text-xl text-slate-600 mb-10 max-w-2xl mx-auto leading-relaxed">
+            From antique Persian rugs to modern synthetic carpets, we provide expert cleaning solutions tailored to your specific needs.
+          </p>
+          <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+            <CTAButtons variant="hero" client:load />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-24 bg-white">
+      <div class="container mx-auto px-4">
+        <ServicesList client:load />
+      </div>
+    </section>
+
+    <ContactSection />
+  </div>
+</Layout>

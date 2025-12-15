@@ -1,0 +1,75 @@
+{
+    "title": "Oriental Rug Cleaning",
+    "description": "Professional Oriental rug cleaning services specializing in antique and traditional pieces",
+    "hero": "/images/oriental-rug-hero.webp",
+    "gallery": [
+        "/images/oriental-rug-1.webp",
+        "/images/oriental-rug-2.webp",
+        "/images/oriental-rug-3.webp"
+    ],
+    "intro": "Oriental rugs are distinguished by their unique characteristics, from intricate tribal patterns to sophisticated court designs. Each type presents its own cleaning challenges, whether it's silk highlights in Chinese rugs, vegetable dyes in Turkish pieces, or delicate knots in antique carpets. Our specialized Oriental rug cleaning service addresses common issues like dye bleeding, fiber deterioration, and foundation weakening while preserving the distinctive qualities of each piece. We combine traditional cleaning wisdom with modern conservation techniques to ensure your Oriental rug receives the most appropriate and effective treatment.",
+    "features": [
+        "Expert care for all Oriental rug types",
+        "Antique rug conservation methods",
+        "Traditional cleaning techniques",
+        "Dye stability testing",
+        "Color and pattern preservation",
+        "Foundation strengthening",
+        "Free collection and delivery",
+        "Full insurance coverage",
+        "Expert fringe restoration",
+        "Climate-controlled facility"
+    ],
+    "process": [
+        {
+            "title": "Detailed Assessment",
+            "description": "Comprehensive evaluation of rug type, age, construction method, and condition"
+        },
+        {
+            "title": "Pre-cleaning Testing",
+            "description": "Thorough testing of dyes, fibers, and structure to determine optimal cleaning approach"
+        },
+        {
+            "title": "Gentle Dust Removal",
+            "description": "Careful removal of embedded dirt using techniques appropriate for antique and delicate rugs"
+        },
+        {
+            "title": "Hand Cleaning",
+            "description": "Traditional washing methods using appropriate solutions for each type of Oriental rug"
+        },
+        {
+            "title": "Specialized Care",
+            "description": "Targeted treatment of specific issues like dye bleeding, worn areas, or foundation problems"
+        },
+        {
+            "title": "Controlled Drying",
+            "description": "Careful drying in a climate-controlled environment to prevent any damage"
+        }
+    ],
+    "faqs": [
+        {
+            "question": "What types of Oriental rugs do you clean?",
+            "answer": "We clean all types of Oriental rugs including Turkish, Chinese, Indian, Pakistani, Afghan, Tibetan, and Moroccan rugs. Each type receives cleaning treatments specifically tailored to its unique characteristics, materials, and construction methods."
+        },
+        {
+            "question": "Do you offer repairs for Oriental rugs?",
+            "answer": "Yes, we provide comprehensive repair services including fringe repair, edge binding, patch work, reweaving, and restoration for damaged areas. Our skilled artisans can address most structural and aesthetic issues to restore your Oriental rug's beauty and integrity."
+        },
+        {
+            "question": "How do you prevent color bleeding in Oriental rugs?",
+            "answer": "We always perform dye stability tests before cleaning any Oriental rug. Based on these results, we select appropriate cleaning solutions and techniques. For rugs with sensitive dyes, we use specialized methods that clean effectively while preventing color migration."
+        },
+        {
+            "question": "Can antique Oriental rugs be safely cleaned?",
+            "answer": "Yes, antique Oriental rugs can be safely cleaned with proper techniques. We use gentle methods specifically designed for fragile, aged fibers and structures. Our specialists have extensive experience with valuable antique pieces and understand the delicate care they require."
+        },
+        {
+            "question": "How much does Oriental rug cleaning cost?",
+            "answer": "Our standard pricing is £20-30 per square meter with a minimum charge of £70 regardless of rug size. Oriental rugs typically fall within this range, with more intricate or delicate pieces at the higher end. All prices include collection, professional cleaning, and delivery. After initial inspection, we provide a detailed quotation as additional specialized treatments may be recommended based on your rug's specific condition."
+        },
+        {
+            "question": "How long will my Oriental rug last after professional cleaning?",
+            "answer": "With proper care including professional cleaning every 2-3 years, Oriental rugs can last for generations. Regular professional cleaning not only keeps your rug looking beautiful but also removes abrasive dirt and grit that would otherwise wear down fibers over time."
+        }
+    ]
+}

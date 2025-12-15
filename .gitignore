@@ -28,3 +28,4 @@ bun.lockb
 .dev.vars
 bun.lockb
 package-lock.json
+/.astro

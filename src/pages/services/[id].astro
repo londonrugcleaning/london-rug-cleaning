@@ -1,0 +1,80 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export const prerender = true;
+import { getCollection, type CollectionEntry } from 'astro:content';
+import ServiceHero from "@/components/service-detail/ServiceHero.astro";
+import { ServiceFeatures } from "@/components/service-detail/ServiceFeatures";
+import ServiceGallery from "@/components/service-detail/ServiceGallery.astro";
+import { ServiceFAQ } from "@/components/service-detail/ServiceFAQ";
+import { PricingTable } from "@/components/service-detail/PricingTable";
+import { CTAButtons } from "@/components/CTAButtons";
+import { CombinedServiceSchema } from "@/components/seo/CombinedServiceSchema";
+import ContactSection from "@/components/home/ContactSection.astro";
+import { Phone } from "lucide-react";
+import { Button } from "@/components/ui/button";
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map(service => ({
+    params: { id: service.id },
+    props: { service }
+  }));
+}
+
+interface Props {
+  service: CollectionEntry<'services'>;
+}
+
+const { service } = Astro.props;
+const data = service.data;
+---
+
+<Layout 
+  title={`${data.title} London`} 
+  description={data.description}
+>
+  <div>
+    <ServiceHero 
+      title={data.title} 
+      description={data.description} 
+      heroImage={data.hero} 
+    />
+
+    <section class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto">
+          <p class="text-lg">{data.intro}</p>
+        </div>
+      </div>
+    </section>
+
+    <ServiceFeatures 
+      features={data.features} 
+      process={data.process} 
+      client:visible
+    />
+
+    <ServiceGallery 
+      title={data.title}
+      gallery={data.gallery}
+    />
+
+    <PricingTable title={`${data.title} Pricing`} client:visible />
+
+    <ServiceFAQ 
+      faqs={data.faqs}
+      client:visible
+    />
+
+    <ContactSection 
+      title={`Ready to Get Your ${data.title} Service?`}
+    />
+
+    <CombinedServiceSchema
+      serviceType={data.title}
+      serviceName={`Expert ${data.title} in London`}
+      serviceDescription={data.description}
+    />
+  </div>
+</Layout>

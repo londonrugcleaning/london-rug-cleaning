@@ -1,0 +1,75 @@
+{
+    "title": "Antique Rug Cleaning",
+    "description": "Specialized cleaning and preservation for valuable antique and vintage rugs in London",
+    "hero": "/images/antique-rug-hero.webp",
+    "gallery": [
+        "/images/antique-rug-1.webp",
+        "/images/antique-rug-2.webp",
+        "/images/antique-rug-3.webp"
+    ],
+    "intro": "Antique rugs are treasured heirlooms that require extraordinary care during cleaning. Our specialized antique rug cleaning service combines traditional methods with modern conservation techniques to safely clean these valuable pieces while preserving their historical integrity, color stability, and structural condition. With decades of experience handling rare and valuable rugs, our master cleaners understand the unique requirements of antique textiles.",
+    "features": [
+        "Specialized antique rug conservation",
+        "Pre-cleaning stability testing",
+        "Traditional hand-washing techniques",
+        "Museum-quality preservation methods",
+        "Color and dye stabilization",
+        "Gentle pH-neutral cleaning solutions",
+        "Careful structural reinforcement",
+        "Climate-controlled drying process",
+        "Full documentation and condition reports",
+        "Free specialized transportation"
+    ],
+    "process": [
+        {
+            "title": "Heritage assessment",
+            "description": "Detailed examination of age, provenance, construction, dyes, and condition with documentation."
+        },
+        {
+            "title": "Conservation planning",
+            "description": "Development of a customized cleaning approach based on the rug's specific needs and vulnerabilities."
+        },
+        {
+            "title": "Controlled dust removal",
+            "description": "Gentle extraction of embedded particulates using specialized techniques for fragile textiles."
+        },
+        {
+            "title": "Hand washing",
+            "description": "Traditional hand cleaning using cold water and pH-neutral solutions appropriate for aged fibers."
+        },
+        {
+            "title": "Delicate drying",
+            "description": "Controlled air drying in a climate-regulated environment to prevent fiber stress."
+        },
+        {
+            "title": "Conservation finishing",
+            "description": "Careful blocking, stabilization of weak areas, and gentle grooming of pile."
+        }
+    ],
+    "faqs": [
+        {
+            "question": "How do you determine if an antique rug is safe to clean?",
+            "answer": "We conduct a comprehensive assessment that includes dye stability testing, structural integrity evaluation, and fiber condition analysis. We examine previous repairs, look for areas of deterioration, and test for colorfastness. Based on these assessments, we develop a customized cleaning approach or may recommend alternative conservation methods if full cleaning presents too much risk."
+        },
+        {
+            "question": "Will cleaning diminish the value of my antique rug?",
+            "answer": "When properly performed, professional cleaning typically enhances rather than diminishes an antique rug's value. Accumulated soil contains abrasive particles that damage fibers over time. Our gentle conservation cleaning removes these harmful elements while preserving the rug's patina and historical character. We maintain detailed documentation of the rug's condition before and after cleaning."
+        },
+        {
+            "question": "How old must a rug be to require antique cleaning methods?",
+            "answer": "We generally recommend our specialized antique cleaning approach for rugs over 80 years old. However, some rugs made with traditional methods and natural dyes may benefit from antique cleaning protocols even if they're somewhat younger. Conversely, some older rugs that have been previously restored or treated may not require the full antique protocol."
+        },
+        {
+            "question": "Do you offer restoration services for damaged antique rugs?",
+            "answer": "Yes, we provide comprehensive restoration services for antique rugs, including reweaving, rewrapping, fringe replacement, side cord repair, foundation stabilization, and color restoration. Our master restorers use traditional techniques and materials that match the original construction methods. All restoration work is documented and performed with archival-quality materials."
+        },
+        {
+            "question": "How much does antique rug cleaning cost?",
+            "answer": "Our pricing for antique rugs typically starts at the higher end of our standard range of £20-30 per square meter, with a minimum charge of £70. Due to the specialized care and techniques required, antique rugs often require premium treatment which may cost more. All prices include careful collection, professional cleaning, and delivery. We provide a detailed quotation after initial inspection, as additional conservation treatments may be recommended based on your rug's specific condition."
+        },
+        {
+            "question": "How often should antique rugs be cleaned?",
+            "answer": "We recommend professional cleaning for antique rugs every 3-5 years under normal conditions. However, this varies based on the rug's specific condition, use, and environment. Rugs in low-traffic areas with stable climate conditions may go longer between cleanings. We offer maintenance assessments to help determine the optimal cleaning schedule for your specific piece."
+        }
+    ]
+}

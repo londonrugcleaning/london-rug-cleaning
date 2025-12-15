@@ -1,0 +1,89 @@
+---
+import { ClientRouter } from "astro:transitions";
+import { Navigation } from "@/components/Navigation";
+import { Footer } from "@/components/Footer";
+import { FloatingButtons } from "@/components/FloatingButtons";
+import { siteConfig } from "@/config/site";
+// import "../index.css";
+import "../styles/global.css";
+
+interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  schema?: object;
+  article?: {
+    publishedTime?: string;
+    modifiedTime?: string;
+    authors?: string[];
+    tags?: string[];
+  };
+}
+
+const {
+  title = siteConfig.name, // Fallback to site name if title missing, or use siteConfig.title default?
+  description = "Professional Rug Cleaning Services in London",
+  image = "/og-image.png",
+  schema,
+  article,
+} = Astro.props;
+
+const canonicalURL = new URL(
+  Astro.url.pathname,
+  Astro.site || "https://londonrugcleaning.co.uk",
+);
+const currentPath = Astro.url.pathname;
+---
+
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <meta name="generator" content={Astro.generator} />
+    <link rel="canonical" href={canonicalURL} />
+
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content={article ? "article" : "website"} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL(image, Astro.url)} />
+    <meta property="og:site_name" content={siteConfig.name} />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content={canonicalURL} />
+    <meta property="twitter:title" content={title} />
+    <meta property="twitter:description" content={description} />
+    <meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+    {
+      /* Fonts? Inter? usually imported in CSS or here. Assuming CSS handles it. */
+    }
+
+    <!-- Schema.org -->
+    {
+      schema && (
+        <script type="application/ld+json" set:html={JSON.stringify(schema)} />
+      )
+    }
+
+    <!-- View Transitions -->
+    <ClientRouter />
+  </head>
+  <body
+    class="min-h-screen bg-white font-sans antialiased text-slate-900 flex flex-col"
+  >
+    <Navigation client:load currentPath={currentPath} />
+    <main class="grow">
+      <slot />
+    </main>
+    <Footer />
+    <FloatingButtons client:load />
+  </body>
+</html>

@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet-async';
+import { SchemaMarkup } from './SchemaMarkup';
 
 interface CombinedServiceSchemaProps {
   serviceType: string;
@@ -54,7 +54,7 @@ export const CombinedServiceSchema = ({
         },
         offers: {
           '@type': 'Offer',
-          priceSpecification: { // Corrected
+          priceSpecification: {
             '@type': 'PriceSpecification',
             price: '20-30',
             priceCurrency: 'GBP',
@@ -66,9 +66,5 @@ export const CombinedServiceSchema = ({
     ],
   };
 
-  return (
-    <Helmet>
-      <script type="application/ld+json">{JSON.stringify(schema)}</script>
-    </Helmet>
-  );
+  return <SchemaMarkup schema={schema} />;
 };

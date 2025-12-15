@@ -1,5 +1,5 @@
 
-import { LucideIcon } from "lucide-react";
+import type { LucideIcon } from "lucide-react";
 
 interface ServiceCardProps {
   title: string;
@@ -9,12 +9,12 @@ interface ServiceCardProps {
 
 export const ServiceCard = ({ title, description, icon: Icon }: ServiceCardProps) => {
   return (
-    <div className="service-card animate-fade-up">
-      <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-100">
-        <Icon className="h-6 w-6 text-gray-700" />
+    <div className="group h-full rounded-2xl bg-white p-8 shadow-xs hover:shadow-xl transition-all duration-300 border border-slate-100">
+      <div className="mb-6 inline-flex h-14 w-14 items-center justify-center rounded-xl bg-blue-50 group-hover:bg-blue-600 transition-colors duration-300">
+        <Icon className="h-7 w-7 text-blue-600 group-hover:text-white transition-colors duration-300" />
       </div>
-      <h3 className="mb-2 text-xl font-semibold">{title}</h3>
-      <p className="text-muted-foreground">{description}</p>
+      <h3 className="mb-3 text-xl font-bold text-slate-900">{title}</h3>
+      <p className="text-slate-600 leading-relaxed">{description}</p>
     </div>
   );
 };
