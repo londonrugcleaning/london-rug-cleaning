@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import OptimizedImage from '../components/OptimizedImage';
+import OptimizedImage from '@/components/OptimizedImage.astro';
 import { CTAButtons } from "../components/CTAButtons";
 import { Shield, Award, Leaf, MapPin, Users, PenTool, CheckCircle2 } from "lucide-react";
 
@@ -61,7 +61,7 @@ const values = [
   schema={schema}
 >
   <div class="min-h-screen">
-    {/* Hero Section */}
+    <!-- Hero Section -->
     <section class="relative overflow-hidden bg-slate-50 pt-32 pb-16 lg:pt-40 lg:pb-24">
       <div class="container mx-auto px-4">
         <div class="grid gap-12 lg:grid-cols-2 lg:items-center">
@@ -93,7 +93,6 @@ const values = [
                 alt="Our expert team examining a Persian rug in our London workshop"
                 className="w-full h-full object-cover"
                 priority
-                client:load
               />
             </div>
           </div>
@@ -101,7 +100,7 @@ const values = [
       </div>
     </section>
 
-    {/* Our Story & Guarantee */}
+    <!-- Our Story & Guarantee -->
     <section class="py-24 bg-white">
       <div class="container mx-auto px-4">
         <div class="grid gap-16 lg:grid-cols-2">
@@ -175,7 +174,7 @@ const values = [
       </div>
     </section>
 
-    {/* Values Grid */}
+    <!-- Values Grid -->
     <section class="py-24 bg-slate-50">
       <div class="container mx-auto px-4">
         <div class="text-center max-w-2xl mx-auto mb-16">
@@ -202,7 +201,7 @@ const values = [
       </div>
     </section>
 
-    {/* CTA Section */}
+    <!-- CTA Section -->
     <section class="py-24 bg-white border-t border-slate-100">
       <div class="container mx-auto px-4 text-center">
         <h2 class="text-3xl sm:text-4xl font-bold text-slate-900 mb-6">

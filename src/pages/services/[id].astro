@@ -2,81 +2,79 @@
 import Layout from '../../layouts/Layout.astro';
 
 export const prerender = true;
-import { servicesData } from '@/data/services';
-import { ServiceHero } from "@/components/service-detail/ServiceHero";
+import { getCollection, type CollectionEntry } from 'astro:content';
+import ServiceHero from "@/components/service-detail/ServiceHero.astro";
 import { ServiceFeatures } from "@/components/service-detail/ServiceFeatures";
-import { ServiceGallery } from "@/components/service-detail/ServiceGallery";
+import ServiceGallery from "@/components/service-detail/ServiceGallery.astro";
 import { ServiceFAQ } from "@/components/service-detail/ServiceFAQ";
 import { PricingTable } from "@/components/service-detail/PricingTable";
 import { CTAButtons } from "@/components/CTAButtons";
 import { CombinedServiceSchema } from "@/components/seo/CombinedServiceSchema";
-import { ContactSection } from "@/components/home/ContactSection";
+import ContactSection from "@/components/home/ContactSection.astro";
 import { Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export function getStaticPaths() {
-  return Object.keys(servicesData).map(id => ({
-    params: { id }
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map(service => ({
+    params: { id: service.id },
+    props: { service }
   }));
 }
 
-const { id } = Astro.params;
-const service = servicesData[id];
-
-if (!service) {
-  return Astro.redirect('/404');
+interface Props {
+  service: CollectionEntry<'services'>;
 }
+
+const { service } = Astro.props;
+const data = service.data;
 ---
 
 <Layout 
-  title={`${service.title} London`} 
-  description={service.description}
+  title={`${data.title} London`} 
+  description={data.description}
 >
   <div>
     <ServiceHero 
-      title={service.title} 
-      description={service.description} 
-      heroImage={service.hero} 
-      client:load
+      title={data.title} 
+      description={data.description} 
+      heroImage={data.hero} 
     />
 
     <section class="py-16 bg-white">
       <div class="container mx-auto px-4">
         <div class="max-w-3xl mx-auto">
-          <p class="text-lg">{service.intro}</p>
+          <p class="text-lg">{data.intro}</p>
         </div>
       </div>
     </section>
 
     <ServiceFeatures 
-      features={service.features} 
-      process={service.process} 
+      features={data.features} 
+      process={data.process} 
       client:visible
     />
 
     <ServiceGallery 
-      title={service.title}
-      gallery={service.gallery}
-      client:visible
+      title={data.title}
+      gallery={data.gallery}
     />
 
-    <PricingTable title={`${service.title} Pricing`} client:visible />
+    <PricingTable title={`${data.title} Pricing`} client:visible />
 
     <ServiceFAQ 
-      faqs={service.faqs}
+      faqs={data.faqs}
       client:visible
     />
 
     <ContactSection 
-      title={`Ready to Get Your ${service.title} Service?`}
-      client:visible 
+      title={`Ready to Get Your ${data.title} Service?`}
     />
 
     <CombinedServiceSchema
-      serviceType={service.title}
-      serviceName={`Expert ${service.title} in London`}
-      serviceDescription={service.description}
-      client:load
+      serviceType={data.title}
+      serviceName={`Expert ${data.title} in London`}
+      serviceDescription={data.description}
     />
   </div>
 </Layout>

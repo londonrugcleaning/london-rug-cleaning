@@ -1,10 +1,10 @@
 import { getCollection, type CollectionEntry } from 'astro:content';
-import { servicesData } from '@/data/services';
 
 const baseUrl = "https://londonrugcleaning.co.uk";
 
 export async function GET() {
     const posts = await getCollection('blog');
+    const services = await getCollection('services');
 
     interface SitemapRoute {
         loc: string;
@@ -24,8 +24,8 @@ export async function GET() {
     ];
 
     // Service pages
-    const serviceRoutes: SitemapRoute[] = Object.keys(servicesData).map(id => ({
-        loc: `/services/${id}`,
+    const serviceRoutes: SitemapRoute[] = services.map(service => ({
+        loc: `/services/${service.id}`,
         changefreq: "monthly",
         priority: 0.8
     }));

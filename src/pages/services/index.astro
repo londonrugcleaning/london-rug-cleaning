@@ -2,7 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { ServicesList } from "@/components/services/ServicesList";
 import { CTAButtons } from "@/components/CTAButtons";
-import { ContactSection } from "@/components/home/ContactSection";
+import ContactSection from "@/components/home/ContactSection.astro";
 
 
 
@@ -24,7 +24,7 @@ const schema = {
   schema={schema}
 >
   <div class="min-h-screen">
-    {/* Hero Section */}
+    <!-- Hero Section -->
     <section class="relative overflow-hidden bg-slate-50 pt-32 pb-16 lg:pt-40 lg:pb-24">
        <div class="absolute inset-0 opacity-10 pointer-events-none">
           <div class="absolute right-0 top-0 h-[600px] w-[600px] bg-blue-400 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2"></div>
@@ -44,13 +44,13 @@ const schema = {
       </div>
     </section>
 
-    {/* Services Grid */}
+    <!-- Services Grid -->
     <section class="py-24 bg-white">
       <div class="container mx-auto px-4">
         <ServicesList client:load />
       </div>
     </section>
 
-    <ContactSection client:visible />
+    <ContactSection />
   </div>
 </Layout>
