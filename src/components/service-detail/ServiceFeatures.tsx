@@ -32,7 +32,7 @@ export const ServiceFeatures = ({ features, process }: ServiceFeaturesProps) => 
 
               {process.map((step, index) => (
                 <div key={index} className="relative flex gap-6">
-                  <span className="relative flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-full bg-blue-600 text-white font-bold ring-4 ring-white">
+                  <span className="relative flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-blue-600 text-white font-bold ring-4 ring-white">
                     {index + 1}
                   </span>
                   <div>

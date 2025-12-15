@@ -64,7 +64,7 @@ const schema = {
       <div class="container mx-auto px-4">
         <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
           {posts.map((post) => (
-            <div class="group overflow-hidden rounded-lg border bg-card shadow-sm transition-all hover:shadow-md flex flex-col h-full">
+            <div class="group overflow-hidden rounded-lg border bg-card shadow-xs transition-all hover:shadow-md flex flex-col h-full">
               {post.data.coverImage && (
                 <div class="relative h-48 overflow-hidden">
                   <OptimizedImage
@@ -74,7 +74,7 @@ const schema = {
                   />
                 </div>
               )}
-              <div class="p-6 flex flex-col flex-grow">
+              <div class="p-6 flex flex-col grow">
                 <div class="flex items-center gap-2 text-sm text-muted-foreground flex-wrap mb-3">
                   <div class="flex items-center gap-1">
                     <Calendar className="h-4 w-4" />

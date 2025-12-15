@@ -8,7 +8,7 @@ interface TestimonialCardProps {
 
 export const TestimonialCard = ({ name, role, content }: TestimonialCardProps) => {
   return (
-    <div className="group rounded-2xl bg-white p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full">
+    <div className="group rounded-2xl bg-white p-8 shadow-xs hover:shadow-xl transition-all duration-300 border border-slate-100 flex flex-col h-full">
       <div className="mb-6 flex gap-1">
         {[...Array(5)].map((_, i) => (
           <Star key={i} className="h-5 w-5 fill-yellow-400 text-yellow-400" />

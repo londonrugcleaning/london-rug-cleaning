@@ -131,7 +131,7 @@ const values = [
                     "Customized drying processes to prevent shrinkage"
                   ].map(item => (
                     <li class="flex items-start gap-3">
-                      <CheckCircle2 className="h-6 w-6 text-green-500 flex-shrink-0" />
+                      <CheckCircle2 className="h-6 w-6 text-green-500 shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -188,7 +188,7 @@ const values = [
           {values.map(value => {
             const Icon = value.icon;
             return (
-              <div class="bg-white rounded-xl p-8 lg:p-10 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group border border-slate-100">
+              <div class="bg-white rounded-xl p-8 lg:p-10 shadow-xs hover:shadow-xl transition-all duration-300 flex flex-col items-center text-center group border border-slate-100">
                 <div class="w-14 h-14 bg-blue-50 rounded-full flex items-center justify-center mb-6 group-hover:bg-blue-100 transition-colors">
                   <Icon className="h-7 w-7 text-blue-600" />
                 </div>

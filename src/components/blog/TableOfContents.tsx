@@ -32,7 +32,7 @@ export const TableOfContents = ({ content }: TableOfContentsProps) => {
   if (headings.length === 0) return null;
 
   return (
-    <div className="my-8 rounded-xl border border-border/60 bg-gradient-to-br from-slate-50 to-slate-100/50 dark:from-slate-900/50 dark:to-slate-800/30 overflow-hidden shadow-sm">
+    <div className="my-8 rounded-xl border border-border/60 bg-linear-to-br from-slate-50 to-slate-100/50 dark:from-slate-900/50 dark:to-slate-800/30 overflow-hidden shadow-xs">
       {/* Toggle Header */}
       <button
         className="w-full flex items-center justify-between px-5 py-4 text-left hover:bg-slate-100/50 dark:hover:bg-slate-800/30 transition-colors duration-200"
