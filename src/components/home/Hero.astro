@@ -38,14 +38,10 @@ const benefits = [
     </div>
   </div>
 
-  <div class="container relative z-10 mx-auto px-4 py-12 sm:px-6 lg:px-8">
+  <div class="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
     <div class="grid gap-12 lg:grid-cols-2 lg:gap-16 items-center">
       <div class="flex flex-col justify-center text-center lg:text-left">
         <div class="animate-fade-up space-y-8">
-          <div class="flex justify-center lg:justify-start">
-            <Review client:visible />
-          </div>
-
           <h1
             class="text-4xl font-bold tracking-tight text-slate-900 sm:text-5xl lg:text-6xl leading-tight"
           >
@@ -54,6 +50,9 @@ const benefits = [
             <span class="block mt-2">Service in London</span>
           </h1>
 
+          <div class="flex justify-center lg:justify-start">
+            <Review client:visible />
+          </div>
           <p
             class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0"
           >
