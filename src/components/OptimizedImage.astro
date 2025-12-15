@@ -20,7 +20,7 @@ const imageData = (imagesMap as any)[imageKey];
 
 {imageData ? (
   <div class={cn("relative overflow-hidden", className)} 
-       style={!fill ? `aspect-ratio: ${imageData.width}/${imageData.height}; background-image: url('${imageData.placeholder}'); background-size: cover;` : undefined}>
+       style={`background-image: url('${imageData.placeholder}'); background-size: cover; ${!fill ? `aspect-ratio: ${imageData.width}/${imageData.height};` : ''}`}>
       <picture>
         {imageData.avif && imageData.avif.length > 0 && (
           <source
