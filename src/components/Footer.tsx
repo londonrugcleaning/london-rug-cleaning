@@ -104,8 +104,11 @@ export const Footer = () => {
           </div>
         </div>
 
-        <div className="mt-8 border-t border-gray-300 pt-8 text-center text-sm text-gray-600">
+        <div className="mt-8 border-t border-gray-300 pt-8 flex flex-col md:flex-row justify-between items-center text-sm text-gray-600">
           <p>© {currentYear} {siteConfig.name}. All rights reserved.</p>
+          <p className="mt-2 md:mt-0">
+            Development and SEO by <a href="https://webabc.ir/en" target="_blank" rel="noopener noreferrer" className="hover:text-blue-900 transition-colors">WebABC</a>
+          </p>
         </div>
       </div>
     </footer>
