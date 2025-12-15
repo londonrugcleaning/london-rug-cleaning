@@ -2,6 +2,7 @@
 import { ClientRouter } from "astro:transitions";
 import { Navigation } from "@/components/Navigation";
 import { Footer } from "@/components/Footer";
+import { FloatingButtons } from "@/components/FloatingButtons";
 import { siteConfig } from "@/config/site";
 import "../index.css";
 
@@ -18,15 +19,18 @@ interface Props {
   };
 }
 
-const { 
+const {
   title = siteConfig.name, // Fallback to site name if title missing, or use siteConfig.title default?
-  description = "Professional Rug Cleaning Services in London", 
+  description = "Professional Rug Cleaning Services in London",
   image = "/og-image.png",
   schema,
-  article
+  article,
 } = Astro.props;
 
-const canonicalURL = new URL(Astro.url.pathname, Astro.site || "https://londonrugcleaning.co.uk");
+const canonicalURL = new URL(
+  Astro.url.pathname,
+  Astro.site || "https://londonrugcleaning.co.uk",
+);
 const currentPath = Astro.url.pathname;
 ---
 
@@ -57,21 +61,28 @@ const currentPath = Astro.url.pathname;
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, Astro.url)} />
 
-    {/* Fonts? Inter? usually imported in CSS or here. Assuming CSS handles it. */}
+    {
+      /* Fonts? Inter? usually imported in CSS or here. Assuming CSS handles it. */
+    }
 
     <!-- Schema.org -->
-    {schema && (
+    {
+      schema && (
         <script type="application/ld+json" set:html={JSON.stringify(schema)} />
-    )}
+      )
+    }
 
     <!-- View Transitions -->
     <ClientRouter />
   </head>
-  <body class="min-h-screen bg-white font-sans antialiased text-slate-900 flex flex-col">
-      <Navigation client:load currentPath={currentPath} />
-      <main class="flex-grow">
-        <slot />
-      </main>
-      <Footer />
+  <body
+    class="min-h-screen bg-white font-sans antialiased text-slate-900 flex flex-col"
+  >
+    <Navigation client:load currentPath={currentPath} />
+    <main class="flex-grow">
+      <slot />
+    </main>
+    <Footer />
+    <FloatingButtons client:load />
   </body>
 </html>
