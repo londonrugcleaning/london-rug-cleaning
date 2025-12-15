@@ -32,7 +32,8 @@
     "react-dom": "^19.2.3",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
-    "typescript": "^5.9.3"
+    "typescript": "^5.9.3",
+    "zod": "^3.25.76"
   },
   "devDependencies": {
     "@eslint/js": "^9.9.0",
@@ -43,6 +44,7 @@
     "eslint": "^9.9.0",
     "glob": "^13.0.0",
     "postcss": "^8.4.47",
+    "schema-dts": "^1.1.5",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.4.11",
     "vite": "^7.2.7",
