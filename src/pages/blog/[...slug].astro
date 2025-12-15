@@ -4,6 +4,7 @@ import { getCollection } from 'astro:content';
 export const prerender = true;
 import Layout from '../../layouts/Layout.astro';
 import { TableOfContents } from '@/components/blog/TableOfContents';
+import { CTAButtons } from '@/components/CTAButtons';
 import { Calendar, User, Tag, ArrowLeft } from 'lucide-react';
 import { ArticleSchema } from "@/components/seo/ArticleSchema";
 import OptimizedImage from '@/components/OptimizedImage.astro';
@@ -105,14 +106,14 @@ const readingTime = calculateReadingTime(post.body);
         <Content />
       </div>
 
-      <div class="mt-12 rounded-lg border bg-blue-50 p-6 text-center">
-        <h3 class="text-xl font-semibold">Need Professional Rug Cleaning?</h3>
-        <p class="mt-2 text-muted-foreground">
+      <div class="mt-12 rounded-xl border border-border/60 bg-gradient-to-br from-blue-50 to-slate-50 dark:from-blue-950/30 dark:to-slate-900/50 p-8 text-center shadow-sm">
+        <h3 class="text-xl font-semibold text-slate-800 dark:text-slate-200">Need Professional Rug Cleaning?</h3>
+        <p class="mt-2 text-slate-600 dark:text-slate-400">
           Get a free quote for our expert rug cleaning services in London
         </p>
-        <a href="/contact" class="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-11 rounded-md px-8 mt-4 gap-2">
-          Get Your Free Quote
-        </a>
+        <div class="mt-5 flex justify-center">
+          <CTAButtons client:load />
+        </div>
       </div>
     </div>
   </div>
