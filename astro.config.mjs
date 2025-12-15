@@ -13,5 +13,12 @@ export default defineConfig({
     }),
     markdown: {
         rehypePlugins: [rehypeSlug]
-    }
+    },
+    vite: {
+        resolve: {
+            alias: {
+                "react-dom/server": "react-dom/server.edge",
+            },
+        },
+    },
 });
