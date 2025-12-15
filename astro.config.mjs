@@ -16,9 +16,12 @@ export default defineConfig({
     },
     vite: {
         resolve: {
-            alias: {
+            // ONLY apply this alias when building for production (Cloudflare).
+            // In development, we let Astro use the standard React Server DOM,
+            // which avoids the "require is not defined" error.
+            alias: process.env.NODE_ENV === 'production' ? {
                 "react-dom/server": "react-dom/server.edge",
-            },
+            } : undefined,
         },
     },
 });
