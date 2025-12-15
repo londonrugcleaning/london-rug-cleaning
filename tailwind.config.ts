@@ -4,10 +4,10 @@ import type { Config } from "tailwindcss";
 export default {
   darkMode: ["class"],
   content: [
-    "./pages/**/*.{ts,tsx}",
-    "./components/**/*.{ts,tsx}",
-    "./app/**/*.{ts,tsx}",
-    "./src/**/*.{ts,tsx}",
+    "./pages/**/*.{ts,tsx,astro}",
+    "./components/**/*.{ts,tsx,astro}",
+    "./app/**/*.{ts,tsx,astro}",
+    "./src/**/*.{ts,tsx,astro}",
   ],
   prefix: "",
   theme: {
@@ -112,6 +112,9 @@ export default {
         "accordion-up": "accordion-up 0.2s ease-out",
         "fade-up": "fade-up 0.5s ease-out",
         "fade-in": "fade-in 0.3s ease-out",
+      },
+      fontFamily: {
+        sans: ["Poppins", "sans-serif"],
       },
     },
   },
