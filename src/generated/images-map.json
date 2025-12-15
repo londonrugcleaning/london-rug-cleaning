@@ -353,6 +353,108 @@
     "width": 1600,
     "height": 778
   },
+  "/images/rug-stain-removal-3.webp": {
+    "avif": [
+      {
+        "src": "/images/rug-stain-removal-3-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/rug-stain-removal-3-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/rug-stain-removal-3-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/rug-stain-removal-3-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/rug-stain-removal-3-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/rug-stain-removal-3-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/rug-stain-removal-3.webp",
+    "placeholder": "data:image/webp;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAUABQDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAIDBAUG/8QAHhAAAQQCAwEAAAAAAAAAAAAAAAECAzEEIRESIkH/xAAWAQEBAQAAAAAAAAAAAAAAAAABAAP/xAAWEQEBAQAAAAAAAAAAAAAAAAAAEgH/2gAMAwEAAhEDEQA/APUTy8KUtn3ZXkrtTMjthSl12Tr1sHPY/wAgbUJ5FqZPoBjrbE20AAL/2Q==",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/rug-stain-removal-2.webp": {
+    "avif": [
+      {
+        "src": "/images/rug-stain-removal-2-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/rug-stain-removal-2-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/rug-stain-removal-2-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/rug-stain-removal-2-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/rug-stain-removal-2-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/rug-stain-removal-2-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/rug-stain-removal-2.webp",
+    "placeholder": "data:image/webp;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAUABQDASIAAhEBAxEB/8QAGQABAAMBAQAAAAAAAAAAAAAAAAIDBAUG/8QAHRAAAgEFAQEAAAAAAAAAAAAAAAEDAgQRIUESMf/EABkBAAIDAQAAAAAAAAAAAAAAAAABAgMEBf/EABYRAQEBAAAAAAAAAAAAAAAAAAAREv/aAAwDAQACEQMRAD8A9RRaY4aI7bHDoqFElGkc+tUYlBr4Dd5QHootI1AFaatvYAAP/9k=",
+    "width": 1024,
+    "height": 1024
+  },
+  "/images/rug-stain-removal-1.webp": {
+    "avif": [
+      {
+        "src": "/images/rug-stain-removal-1-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/rug-stain-removal-1-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/rug-stain-removal-1-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/rug-stain-removal-1-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/rug-stain-removal-1-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/rug-stain-removal-1-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/rug-stain-removal-1.webp",
+    "placeholder": "data:image/webp;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAYHBAX/xAAdEAACAQUBAQAAAAAAAAAAAAAAAQIDBAUREiEx/8QAFQEBAQAAAAAAAAAAAAAAAAAAAgP/xAAXEQEBAQEAAAAAAAAAAAAAAAAAAQIR/9oADAMBAAIRAxEAPwDU8nHaZE5q3668L69h0mTuQtOt+AyVZjdWLdZ+AsK2N3NvQKdiTSK6R5txCL34AQi1cE6UOvgAEL//2Q==",
+    "width": 1024,
+    "height": 1024
+  },
   "/images/rug-cleaning-workshop.webp": {
     "avif": [
       {
@@ -782,6 +884,40 @@
     "placeholder": "data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAAAQBACdASoUAA4APm0skkWkIqGYBABABsSygE6ZQjgAFJD8ZJoysTqQvAD++jTNqTdicQAMPTCA6IOJJ4aXAfGifPsFstSL4AA=",
     "width": 1600,
     "height": 1085
+  },
+  "/images/hand-knotted-rug-3.webp": {
+    "avif": [
+      {
+        "src": "/images/hand-knotted-rug-3-640.avif",
+        "width": 640
+      },
+      {
+        "src": "/images/hand-knotted-rug-3-768.avif",
+        "width": 768
+      },
+      {
+        "src": "/images/hand-knotted-rug-3-1024.avif",
+        "width": 1024
+      }
+    ],
+    "webp": [
+      {
+        "src": "/images/hand-knotted-rug-3-640.webp",
+        "width": 640
+      },
+      {
+        "src": "/images/hand-knotted-rug-3-768.webp",
+        "width": 768
+      },
+      {
+        "src": "/images/hand-knotted-rug-3-1024.webp",
+        "width": 1024
+      }
+    ],
+    "original": "/images/hand-knotted-rug-3.webp",
+    "placeholder": "data:image/webp;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAUGAwf/xAAdEAACAQUBAQAAAAAAAAAAAAAAAQQCAyEiMTJB/8QAFwEBAQEBAAAAAAAAAAAAAAAAAgEEBf/EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAwDAQACEQMRAD8A8zh/DQwXwz0R8L0GrhlrqavWqtEDjaq0QCLCxXlFyC3gAdVbteEAAo//2Q==",
+    "width": 1024,
+    "height": 1024
   },
   "/images/hand-knotted-rug-2.webp": {
     "avif": [
@@ -1253,7 +1389,7 @@
       }
     ],
     "original": "/images/blog/wool-rug-cleaning-guide.webp",
-    "placeholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQBACdASoUABQAPmkokEWkIqGb+qwAQAaEs4BOmaYg4P/uves7qBnXScAQAP7zk20qKsSEGQThUOX1tgxGJrhD1Z7qtvfOWSewztZD9gBfppeyAl8on4AAAAA=",
+    "placeholder": "data:image/webp;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAAMBAAAAAAAAAAAAAAAAAAQFBgf/xAAcEAADAAMAAwAAAAAAAAAAAAAAAQIDBBEFEiH/xAAYAQACAwAAAAAAAAAAAAAAAAACAwABBP/EABYRAQEBAAAAAAAAAAAAAAAAAAABEf/aAAwDAQACEQMRAD8A6RubHU/pnvIV7dLLNTZW7MN9MlPihyx22CbeFugBgtaTIkRMsoAaXEaoXQAUj//Z",
     "width": 1024,
     "height": 1024
   },
@@ -1287,7 +1423,7 @@
       }
     ],
     "original": "/images/blog/rug-spill-care.webp",
-    "placeholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQBACdASoUABQAPmkokEWkIqGb+qwAQAaEs4BOmaYg4P/uves7qBnXScAQAP7zk20qKsSEGQThUOX1tgxGJrhD1Z7qtvfOWSewztZD9gBfppeyAl8on4AAAAA=",
+    "placeholder": "data:image/webp;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAQDBQf/xAAdEAADAQABBQAAAAAAAAAAAAAAAQIDIQQRMUFh/8QAFwEAAwEAAAAAAAAAAAAAAAAAAAEDAv/EABURAQEAAAAAAAAAAAAAAAAAAAAR/9oADAMBAAIRAxEAPwD1K+pb9k+m/wBMKbMdKZKqRpW3PkEdU+4CiOlcom1QBk01LkAAb//Z",
     "width": 1024,
     "height": 1024
   },
@@ -1321,7 +1457,7 @@
       }
     ],
     "original": "/images/blog/persian-rug-history.webp",
-    "placeholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQBACdASoUABQAPmkokEWkIqGb+qwAQAaEs4BOmaYg4P/uves7qBnXScAQAP7zk20qKsSEGQThUOX1tgxGJrhD1Z7qtvfOWSewztZD9gBfppeyAl8on4AAAAA=",
+    "placeholder": "data:image/webp;base64,/9j/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAUABQDASIAAhEBAxEB/8QAGQABAAIDAAAAAAAAAAAAAAAAAAMEAgUH/8QAGRABAAMBAQAAAAAAAAAAAAAAAAECAxEh/8QAFwEBAQEBAAAAAAAAAAAAAAAAAwUCBP/EABgRAQADAQAAAAAAAAAAAAAAAAACEiEB/9oADAMBAAIRAxEAPwDjuOfGwwjiLPNYpHESer0cXKX5UQRPg56msjpEM+AeQ+AA2n//2Q==",
     "width": 1024,
     "height": 1024
   },
@@ -1355,7 +1491,7 @@
       }
     ],
     "original": "/images/blog/carpet-cleaning-guide.webp",
-    "placeholder": "data:image/webp;base64,UklGRmYAAABXRUJQVlA4IFoAAABQBACdASoUABQAPmkokEWkIqGb+qwAQAaEs4BOmaYg4P/uves7qBnXScAQAP7zk20qKsSEGQThUOX1tgxGJrhD1Z7qtvfOWSewztZD9gBfppeyAl8on4AAAAA=",
+    "placeholder": "data:image/webp;base64,UklGRmQAAABXRUJQVlA4IFgAAAAQBACdASoUABQAPmkokEWkIqGb+qwAQAaEs4BOgAj+34i+adilo95TAAD+85NtRgt4SUSO5lscoNe5aKQ5N9IDeeDvgvgYSp/pVeWzAFnE5jcBJ10CsAAA",
     "width": 1024,
     "height": 1024
   }
