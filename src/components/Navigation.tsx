@@ -1,6 +1,4 @@
-
-import { useState, useEffect } from "react";
-// import { Link, useLocation } from "react-router-dom"; // Removed
+import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Home,
@@ -21,44 +19,35 @@ import {
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
 import { Logo } from "./Logo";
+import { siteConfig } from "@/config/site";
 
 export const Navigation = ({ currentPath = "" }: { currentPath?: string }) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [pathname, setPathname] = useState(currentPath);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      setPathname(window.location.pathname);
-    }
-  }, []);
+  // Use currentPath prop directly
+  const activePath = currentPath;
 
-  // Use prop if available (SSR), otherwise window (Client hydration fallback if prop missing, though prop should be passed)
-  const activePath = currentPath || pathname;
+  const services = siteConfig.links.services;
 
-  const services = [
-    { name: "Persian Rug Cleaning", href: "/services/persian-rug-cleaning" },
-    { name: "Oriental Rug Cleaning", href: "/services/oriental-rug-cleaning" },
-    { name: "Wool Rug Cleaning", href: "/services/wool-rug-cleaning" },
-    { name: "Area Rug Cleaning", href: "/services/area-rug-cleaning" },
-    { name: "Synthetic Rug Cleaning", href: "/services/synthetic-rug-cleaning" },
-    { name: "Antique Rug Cleaning", href: "/services/antique-rug-cleaning" },
-    { name: "Hand-Knotted Rug Cleaning", href: "/services/hand-knotted-rug-cleaning" },
-    { name: "Rug Stain Removal", href: "/services/rug-stain-removal" },
-  ];
+  const iconMap: Record<string, any> = {
+    "About": FileText,
+    "Gallery": Image,
+    "Blog": FileText,
+    "Contact": MessageSquare,
+    "FAQ": FileText
+  };
 
-  const navigation = [
-    { name: "About", href: "/about", icon: FileText },
-    { name: "Gallery", href: "/gallery", icon: Image },
-    { name: "Blog", href: "/blog", icon: FileText },
-    { name: "Contact", href: "/contact", icon: MessageSquare },
-  ];
+  const navigation = siteConfig.links.main.filter(link => link.name !== "FAQ").map(link => ({
+    ...link,
+    icon: iconMap[link.name] || FileText
+  }));
 
   return (
     <header className="fixed top-4 z-50 mx-auto w-full">
       <nav className="container rounded-full border bg-white/90 py-2 shadow-lg px-4 backdrop-blur-xs w-full mx-auto" aria-label="Main navigation">
         <div className="flex items-center justify-between">
 
-          <a href="/" aria-label="London Rug Cleaning - Home">
+          <a href="/" aria-label={`${siteConfig.name} - Home`}>
             <Logo />
           </a>
 
@@ -127,9 +116,9 @@ export const Navigation = ({ currentPath = "" }: { currentPath?: string }) => {
             })}
           </div>
           <Button size="lg" asChild className="hidden gap-2 bg-blue-800 hover:bg-blue-900 lg:flex">
-            <a href="tel:02034888344" aria-label="Call us: 020 3488 8344">
+            <a href={`tel:${siteConfig.contact.phoneLink}`} aria-label={`Call us: ${siteConfig.contact.phone}`}>
               <Phone className="h-5 w-5" aria-hidden="true" />
-              <span>020 3488 8344</span>
+              <span>{siteConfig.contact.phone}</span>
             </a>
           </Button>
 
@@ -210,9 +199,9 @@ export const Navigation = ({ currentPath = "" }: { currentPath?: string }) => {
                   ))}
                 </div>
                 <Button size="lg" asChild className="mt-4 w-full gap-2 bg-blue-800 hover:bg-blue-900">
-                  <a href="tel:02034888344" aria-label="Call us: 02034888344">
+                  <a href={`tel:${siteConfig.contact.phoneLink}`} aria-label={`Call us: ${siteConfig.contact.phone}`}>
                     <Phone className="h-4 w-4" aria-hidden="true" />
-                    <span>02034888344</span>
+                    <span>{siteConfig.contact.phoneLink}</span>
                   </a>
                 </Button>
               </div>

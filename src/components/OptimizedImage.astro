@@ -1,0 +1,34 @@
+---
+import { Image } from 'astro:assets';
+import { getImage as getLocalImage } from '@/lib/images';
+import { cn } from '@/lib/utils';
+
+interface Props {
+  src: string;
+  alt: string;
+  className?: string;
+  priority?: boolean;
+  fill?: boolean;
+}
+
+const { src, alt, className, priority, fill } = Astro.props;
+const imageMetadata = await getLocalImage(src);
+---
+
+{imageMetadata ? (
+  <div class={cn("relative overflow-hidden", className)}>
+      <Image 
+        src={imageMetadata} 
+        alt={alt} 
+        class={cn(
+             "object-cover transition-opacity duration-500",
+             fill ? "absolute inset-0 h-full w-full" : "w-full h-auto"
+        )}
+        loading={priority ? "eager" : "lazy"} 
+      />
+  </div>
+) : (
+  <div class={cn("bg-gray-200 flex items-center justify-center text-gray-400", className)}>
+    <span>Image not found</span>
+  </div>
+)}
