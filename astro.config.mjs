@@ -1,12 +1,13 @@
 import { defineConfig } from 'astro/config';
 import react from '@astrojs/react';
-import tailwind from '@astrojs/tailwind';
 import cloudflare from '@astrojs/cloudflare';
 import rehypeSlug from 'rehype-slug';
 
+import tailwindcss from '@tailwindcss/vite';
+
 // https://astro.build/config
 export default defineConfig({
-    integrations: [react(), tailwind()],
+    integrations: [react()],
     output: 'server',
     adapter: cloudflare({
         imageService: 'compile',
@@ -15,13 +16,13 @@ export default defineConfig({
         rehypePlugins: [rehypeSlug]
     },
     vite: {
-        resolve: {
-            // ONLY apply this alias when building for production (Cloudflare).
-            // In development, we let Astro use the standard React Server DOM,
-            // which avoids the "require is not defined" error.
-            alias: process.env.NODE_ENV === 'production' ? {
-                "react-dom/server": "react-dom/server.edge",
-            } : undefined,
-        },
+      resolve: {
+
+          alias: process.env.NODE_ENV === 'production' ? {
+              "react-dom/server": "react-dom/server.edge",
+          } : undefined,
+      },
+
+      plugins: [tailwindcss()],
     },
 });
