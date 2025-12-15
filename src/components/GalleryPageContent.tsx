@@ -11,9 +11,57 @@ import {
   DialogContent,
 } from "@/components/ui/dialog";
 import { ContactSection } from "@/components/home/ContactSection";
-import OptimizedImage from "@/components/OptimizedImage";
+import imagesMap from "@/generated/images-map.json"; // Import the map
 
-interface GalleryImage {
+interface GalleryImageProps {
+  src: string;
+  alt: string;
+  className?: string;
+  onClick?: () => void;
+}
+
+const GalleryImage = ({ src, alt, className, onClick }: GalleryImageProps) => {
+  const imageKey = src.startsWith('/') ? src : `/${src}`;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const imageData = (imagesMap as any)[imageKey];
+
+  if (!imageData) {
+    return (
+      <div className={`bg-gray-200 flex items-center justify-center text-gray-400 ${className}`}>
+        <span>Image not found</span>
+      </div>
+    );
+  }
+
+  return (
+    <div className={`relative overflow-hidden ${className}`} onClick={onClick}>
+      <picture>
+        {imageData.avif && imageData.avif.length > 0 && (
+          <source
+            type="image/avif"
+            srcSet={imageData.avif.map((v: any) => `${v.src} ${v.width}w`).join(', ')}
+          />
+        )}
+        {imageData.webp && imageData.webp.length > 0 && (
+          <source
+            type="image/webp"
+            srcSet={imageData.webp.map((v: any) => `${v.src} ${v.width}w`).join(', ')}
+          />
+        )}
+        <img
+          src={imageData.original}
+          alt={alt}
+          className="w-full h-full object-cover"
+          loading="lazy"
+          width={imageData.width}
+          height={imageData.height}
+        />
+      </picture>
+    </div>
+  );
+};
+
+interface GalleryImageItem {
   id: number;
   thumb: string;
   full: string;
@@ -21,7 +69,7 @@ interface GalleryImage {
   description: string;
 }
 
-const galleryItems: GalleryImage[] = [
+const galleryItems: GalleryImageItem[] = [
   {
     id: 1,
     thumb: "/images/Complete restoration of a 100-year-old Persian rug.webp",
@@ -75,7 +123,7 @@ const Gallery = () => {
                   <div className="space-y-4">
                     <div>
                       <p className="mb-2 text-sm font-medium text-center text-muted-foreground uppercase tracking-wider">Before & After</p>
-                      <OptimizedImage
+                      <GalleryImage
                         src={item.thumb}
                         alt={`${item.title} cleaning result`}
                         className="h-64 w-full rounded-lg object-cover cursor-pointer hover:opacity-95 transition-opacity"

@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Hero } from "@/components/home/Hero";
+import Hero from "@/components/home/Hero.astro";
 import ServicesSection from "@/components/home/ServicesSection.astro";
 import ProcessSection from "@/components/home/ProcessSection.astro";
 import { TestimonialsSection } from "@/components/home/TestimonialsSection";
@@ -20,7 +20,7 @@ const schema = {
   schema={schema}
 >
   <div class="min-h-screen">
-    <Hero client:load />
+    <Hero />
     <ServicesSection />
     <ProcessSection />
     <TestimonialsSection client:visible />
