@@ -1,0 +1,64 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import { ServiceFAQ } from "@/components/service-detail/ServiceFAQ";
+
+const faqs = [
+    {
+        question: "Do you offer pickup and delivery?",
+        answer: "Yes, we offer free collection and delivery services across London. We can arrange a time that suits your schedule.",
+    },
+    {
+        question: "How long does the cleaning process take?",
+        answer: "Our standard turnaround time is 7-10 days, depending on the rug's condition and the type of cleaning required. We also offer express services for urgent requests.",
+    },
+    {
+        question: "Are your cleaning methods safe for pets and children?",
+        answer: "Absolutely. We use eco-friendly, non-toxic, and biodegradable cleaning solutions that are completely safe for your family and pets.",
+    },
+    {
+        question: "Do you clean all types of rugs?",
+        answer: "Yes, we specialize in cleaning all types of rugs, including Persian, Oriental, Silk, Wool, Synthetic, Antique, and delicate hand-knotted rugs.",
+    },
+    {
+        question: "How much does rug cleaning cost?",
+        answer: "Our pricing depends on the size and material of your rug. Please contact us for a free, no-obligation quote.",
+    },
+    {
+        question: "Do you offer stain protection?",
+        answer: "Yes, we can apply a protective treatment after cleaning to help repel future stains and spills.",
+    },
+];
+
+const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    name: "London Rug Cleaning FAQ",
+    mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.question,
+        acceptedAnswer: {
+            "@type": "Answer",
+            text: faq.answer,
+        },
+    })),
+};
+---
+
+<Layout
+    title="Frequently Asked Questions | London Rug Cleaning"
+    description="Find answers to common questions about our professional rug cleaning services in London. Learn about our process, pricing, and pickup options."
+    schema={schema}
+>
+    <div class="pt-32 pb-12 bg-slate-50">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl font-bold text-slate-900 mb-4">
+                Frequently Asked Questions
+            </h1>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                Everything you need to know about our rug cleaning services.
+            </p>
+        </div>
+    </div>
+
+    <ServiceFAQ faqs={faqs} client:load />
+</Layout>
