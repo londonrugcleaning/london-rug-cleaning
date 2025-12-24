@@ -16,23 +16,24 @@ export async function GET() {
     // Static routes
     const staticRoutes: SitemapRoute[] = [
         { loc: "/", changefreq: "yearly", priority: 1.0 },
-        { loc: "/about", changefreq: "yearly", priority: 0.8 },
-        { loc: "/contact", changefreq: "yearly", priority: 0.8 },
-        { loc: "/gallery", changefreq: "monthly", priority: 0.6 },
-        { loc: "/services", changefreq: "yearly", priority: 0.9 },
-        { loc: "/blog", changefreq: "weekly", priority: 0.7 },
+        { loc: "/about/", changefreq: "yearly", priority: 0.8 },
+        { loc: "/contact/", changefreq: "yearly", priority: 0.8 },
+        { loc: "/gallery/", changefreq: "monthly", priority: 0.6 },
+        { loc: "/services/", changefreq: "yearly", priority: 0.9 },
+        { loc: "/blog/", changefreq: "weekly", priority: 0.7 },
+        { loc: "/faq/", changefreq: "monthly", priority: 0.7 },
     ];
 
     // Service pages
     const serviceRoutes: SitemapRoute[] = services.map(service => ({
-        loc: `/services/${service.id}`,
+        loc: `/services/${service.id}/`,
         changefreq: "monthly",
         priority: 0.8
     }));
 
     // Blog posts
     const blogRoutes = posts.map((post: CollectionEntry<'blog'>) => ({
-        loc: `/blog/${post.slug}`,
+        loc: `/blog/${post.slug}/`,
         lastmod: post.data.date,
         changefreq: "monthly",
         priority: 0.7
