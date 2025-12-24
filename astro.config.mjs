@@ -8,8 +8,9 @@ import tailwindcss from '@tailwindcss/vite';
 // https://astro.build/config
 export default defineConfig({
     integrations: [react()],
+    integrations: [react()],
     output: 'server',
-    trailingSlash: 'never',
+    trailingSlash: 'always',
     adapter: cloudflare({
         imageService: 'compile',
     }),
@@ -17,13 +18,13 @@ export default defineConfig({
         rehypePlugins: [rehypeSlug]
     },
     vite: {
-      resolve: {
+        resolve: {
 
-          alias: process.env.NODE_ENV === 'production' ? {
-              "react-dom/server": "react-dom/server.edge",
-          } : undefined,
-      },
+            alias: process.env.NODE_ENV === 'production' ? {
+                "react-dom/server": "react-dom/server.edge",
+            } : undefined,
+        },
 
-      plugins: [tailwindcss()],
+        plugins: [tailwindcss()],
     },
 });
