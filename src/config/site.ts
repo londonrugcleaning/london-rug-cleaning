@@ -18,21 +18,21 @@ export const siteConfig = {
     offer: "Professional Rug Cleaning Services in London",
     links: {
         services: [
-            { name: "Persian Rug Cleaning", href: "/services/persian-rug-cleaning" },
-            { name: "Oriental Rug Cleaning", href: "/services/oriental-rug-cleaning" },
-            { name: "Wool Rug Cleaning", href: "/services/wool-rug-cleaning" },
-            { name: "Area Rug Cleaning", href: "/services/area-rug-cleaning" },
-            { name: "Synthetic Rug Cleaning", href: "/services/synthetic-rug-cleaning" },
-            { name: "Antique Rug Cleaning", href: "/services/antique-rug-cleaning" },
-            { name: "Hand-Knotted Rug Cleaning", href: "/services/hand-knotted-rug-cleaning" },
-            { name: "Rug Stain Removal", href: "/services/rug-stain-removal" },
+            { name: "Persian Rug Cleaning", href: "/services/persian-rug-cleaning/" },
+            { name: "Oriental Rug Cleaning", href: "/services/oriental-rug-cleaning/" },
+            { name: "Wool Rug Cleaning", href: "/services/wool-rug-cleaning/" },
+            { name: "Area Rug Cleaning", href: "/services/area-rug-cleaning/" },
+            { name: "Synthetic Rug Cleaning", href: "/services/synthetic-rug-cleaning/" },
+            { name: "Antique Rug Cleaning", href: "/services/antique-rug-cleaning/" },
+            { name: "Hand-Knotted Rug Cleaning", href: "/services/hand-knotted-rug-cleaning/" },
+            { name: "Rug Stain Removal", href: "/services/rug-stain-removal/" },
         ],
         main: [
-            { name: "About", href: "/about" },
-            { name: "Gallery", href: "/gallery" },
-            { name: "Blog", href: "/blog" },
-            { name: "Contact", href: "/contact" },
-            { name: "FAQ", href: "/faq" },
+            { name: "About", href: "/about/" },
+            { name: "Gallery", href: "/gallery/" },
+            { name: "Blog", href: "/blog/" },
+            { name: "Contact", href: "/contact/" },
+            { name: "FAQ", href: "/faq/" },
         ]
     }
 };

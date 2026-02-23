@@ -56,10 +56,10 @@ export const CombinedServiceSchema = ({
           '@type': 'Offer',
           priceSpecification: {
             '@type': 'PriceSpecification',
-            price: '20-30',
+            minPrice: 20,
+            maxPrice: 30,
             priceCurrency: 'GBP',
-            unitText: 'per square meter',
-            minPrice: 70
+            unitText: 'SQM'
           },
         },
       },

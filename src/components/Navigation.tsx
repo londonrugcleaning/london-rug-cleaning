@@ -69,7 +69,7 @@ export const Navigation = ({ currentPath = "" }: { currentPath?: string }) => {
                     className={activePath.startsWith("/services") ? "text-blue-800" : ""}
                     aria-label="Services menu"
                   >
-                    <a href="/services" className="flex items-center gap-2" aria-label="Services">
+                    <a href="/services/" className="flex items-center gap-2" aria-label="Services">
                       <List className="h-4 w-4" aria-hidden="true" />
                       <span>Services</span>
                     </a>
@@ -151,13 +151,13 @@ export const Navigation = ({ currentPath = "" }: { currentPath?: string }) => {
                 </Button>
 
                 <Button
-                  variant={activePath === "/services" ? "secondary" : "ghost"}
+                  variant={activePath === "/services" || activePath === "/services/" ? "secondary" : "ghost"}
                   className="w-full justify-start"
                   asChild
                   onClick={() => setIsOpen(false)}
-                  aria-current={activePath === "/services" ? "page" : undefined}
+                  aria-current={activePath === "/services" || activePath === "/services/" ? "page" : undefined}
                 >
-                  <a href="/services" className="gap-2" aria-label="Services">
+                  <a href="/services/" className="gap-2" aria-label="Services">
                     <List className="h-4 w-4" aria-hidden="true" />
                     <span>Services</span>
                   </a>

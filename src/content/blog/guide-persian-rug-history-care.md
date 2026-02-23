@@ -7,9 +7,7 @@ tags: ["persian rugs", "antique rugs", "history", "investment"]
 coverImage: "/images/blog/persian-rug-history.webp"
 ---
 
-# A Guide to Persian Rug History & Care
-
-Persian rugs are more than just floor coverings; they are woven history, art, and culture. For centuries, these masterpieces have been prized for their intricate designs, exceptional craftsmanship, and durability. Owning a Persian rug is like owning a piece of history, and it entails a responsibility to preserve it.
+## Introduction rugs are more than just floor coverings; they are woven history, art, and culture. For centuries, these masterpieces have been prized for their intricate designs, exceptional craftsmanship, and durability. Owning a Persian rug is like owning a piece of history, and it entails a responsibility to preserve it.
 
 ## A Brief History
 

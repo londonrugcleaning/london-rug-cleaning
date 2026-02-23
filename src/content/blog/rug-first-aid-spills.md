@@ -7,8 +7,6 @@ tags: ["stain removal", "emergency", "tips", "DIY"]
 coverImage: "/images/blog/rug-spill-care.webp"
 ---
 
-# Rug First Aid: What to Do When Spills Happen
-
 It happens in slow motion: the glass of wine slips, the coffee cup tips over, or the pet has an accident. Panic sets in. But what you do in the first few minutes can make the difference between a temporary spot and a permanent stain.
 
 ## The Golden Rule: BLOT, DON'T RUB
