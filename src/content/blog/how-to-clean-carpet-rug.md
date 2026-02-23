@@ -2,12 +2,10 @@
 title: "How to Clean a Carpet Rug: A Complete Guide"
 date: "2024-03-14"
 author: "London Rug Cleaning Team"
-excerpt: "Learn the professional techniques for cleaning your carpet rug effectively and safely at home."
+excerpt: "Learn how to clean a carpet rug at home with our complete guide. Discover professional techniques for safe stain removal, deep cleaning, and proper rug maintenance."
 tags: ["rug cleaning", "carpet care", "DIY", "maintenance"]
 coverImage: "/images/blog/carpet-cleaning-guide.webp"
 ---
-
-# How to Clean a Carpet Rug: A Complete Guide
 
 ## Introduction
 Carpet rugs require regular cleaning to maintain their appearance and extend their lifespan. This guide will walk you through professional techniques for effective rug cleaning at home.

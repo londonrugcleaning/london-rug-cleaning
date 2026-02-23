@@ -1,3 +1,4 @@
 name = "london-rug-cleaning"
 pages_build_output_dir = "dist"
-compatibility_date = "2025-03-13"
+compatibility_date = "2025-03-25"
+compatibility_flags = ["nodejs_compat"]
