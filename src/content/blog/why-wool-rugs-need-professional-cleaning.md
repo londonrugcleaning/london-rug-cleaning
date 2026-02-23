@@ -35,4 +35,4 @@ Most industry experts recommend professional cleaning every **12 to 18 months**,
 
 Don't risk damaging your beautiful wool rug with DIY methods. Trust the experts to clean, sanitize, and preserve your rug using safe, effective, and time-tested methods.
 
-[**Contact us today for a free quote on your wool rug cleaning.**](/contact)
+[**Contact us today for a free quote on your wool rug cleaning.**](/contact/)
