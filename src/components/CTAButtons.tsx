@@ -5,7 +5,7 @@ import { QuoteModal } from "./QuoteModal";
 import { cn } from "@/lib/utils";
 
 interface CTAButtonsProps {
-  variant?: "default" | "hero" | "outline-solid" | "secondary";
+  variant?: "default" | "hero" | "outline-solid" | "secondary" | "outline";
   className?: string;
 }
 

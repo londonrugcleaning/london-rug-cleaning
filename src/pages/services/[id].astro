@@ -1,44 +1,38 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 
 export const prerender = true;
-import { getCollection, type CollectionEntry } from 'astro:content';
+import { getCollection, type CollectionEntry } from "astro:content";
 import ServiceHero from "@/components/service-detail/ServiceHero.astro";
 import { ServiceFeatures } from "@/components/service-detail/ServiceFeatures";
 import ServiceGallery from "@/components/service-detail/ServiceGallery.astro";
 import { ServiceFAQ } from "@/components/service-detail/ServiceFAQ";
 import { PricingTable } from "@/components/service-detail/PricingTable";
-import { CTAButtons } from "@/components/CTAButtons";
 import { CombinedServiceSchema } from "@/components/seo/CombinedServiceSchema";
 import ContactSection from "@/components/home/ContactSection.astro";
-import { Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
 
 export async function getStaticPaths() {
-  const services = await getCollection('services');
-  return services.map(service => ({
+  const services = await getCollection("services");
+  return services.map((service) => ({
     params: { id: service.id },
-    props: { service }
+    props: { service },
   }));
 }
 
 interface Props {
-  service: CollectionEntry<'services'>;
+  service: CollectionEntry<"services">;
 }
 
 const { service } = Astro.props;
 const data = service.data;
 ---
 
-<Layout 
-  title={`${data.title} London`} 
-  description={data.description}
->
+<Layout title={`${data.title} London`} description={data.description}>
   <div>
-    <ServiceHero 
-      title={data.title} 
-      description={data.description} 
-      heroImage={data.hero} 
+    <ServiceHero
+      title={data.title}
+      description={data.description}
+      heroImage={data.hero}
     />
 
     <section class="py-16 bg-white">
@@ -49,27 +43,19 @@ const data = service.data;
       </div>
     </section>
 
-    <ServiceFeatures 
-      features={data.features} 
-      process={data.process} 
+    <ServiceFeatures
+      features={data.features}
+      process={data.process}
       client:visible
     />
 
-    <ServiceGallery 
-      title={data.title}
-      gallery={data.gallery}
-    />
+    <ServiceGallery title={data.title} gallery={data.gallery} />
 
     <PricingTable title={`${data.title} Pricing`} client:visible />
 
-    <ServiceFAQ 
-      faqs={data.faqs}
-      client:visible
-    />
+    <ServiceFAQ faqs={data.faqs} client:visible />
 
-    <ContactSection 
-      title={`Ready to Get Your ${data.title} Service?`}
-    />
+    <ContactSection title={`Ready to Get Your ${data.title} Service?`} />
 
     <CombinedServiceSchema
       serviceType={data.title}
