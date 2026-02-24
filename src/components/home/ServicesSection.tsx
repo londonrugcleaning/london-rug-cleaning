@@ -18,50 +18,66 @@ export const ServicesSection = () => {
           </p>
         </div>
         <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          <ServiceCard
-            icon={Sparkles}
-            title="Persian Rug Cleaning"
-            description="Expert care for your valuable Persian rugs using traditional methods and modern technology"
-          />
-          <ServiceCard
-            icon={Brush}
-            title="Oriental Rug Cleaning"
-            description="Specialized cleaning for delicate oriental rugs with attention to detail"
-          />
-          <ServiceCard
-            icon={Feather}
-            title="Wool Rug Cleaning"
-            description="Professional wool rug cleaning that preserves fiber integrity and natural colors"
-          />
-          <ServiceCard
-            icon={BadgeCheck}
-            title="Area Rug Cleaning"
-            description="Comprehensive cleaning solutions for all types of area rugs"
-          />
-          <ServiceCard
-            icon={Shield}
-            title="Synthetic Rug Cleaning"
-            description="Specialized cleaning for modern synthetic rugs using advanced techniques"
-          />
-          <ServiceCard
-            icon={Award}
-            title="Antique Rug Cleaning"
-            description="Delicate handling and restoration of vintage and antique rugs"
-          />
-          <ServiceCard
-            icon={Gem}
-            title="Hand-Knotted Rug Cleaning"
-            description="Meticulous cleaning of handcrafted luxury rugs"
-          />
-          <ServiceCard
-            icon={Droplets}
-            title="Rug Stain Removal"
-            description="Professional spot and stain treatment for all rug types"
-          />
+          <a href="/services/persian-rug-cleaning/" className="block h-full group">
+            <ServiceCard
+              icon={Sparkles}
+              title="Persian Rug Cleaning"
+              description="Expert care for your valuable Persian rugs using traditional methods and modern technology"
+            />
+          </a>
+          <a href="/services/oriental-rug-cleaning/" className="block h-full group">
+            <ServiceCard
+              icon={Brush}
+              title="Oriental Rug Cleaning"
+              description="Specialized cleaning for delicate oriental rugs with attention to detail"
+            />
+          </a>
+          <a href="/services/wool-rug-cleaning/" className="block h-full group">
+            <ServiceCard
+              icon={Feather}
+              title="Wool Rug Cleaning"
+              description="Professional wool rug cleaning that preserves fiber integrity and natural colors"
+            />
+          </a>
+          <a href="/services/area-rug-cleaning/" className="block h-full group">
+            <ServiceCard
+              icon={BadgeCheck}
+              title="Area Rug Cleaning"
+              description="Comprehensive cleaning solutions for all types of area rugs"
+            />
+          </a>
+          <a href="/services/synthetic-rug-cleaning/" className="block h-full group">
+            <ServiceCard
+              icon={Shield}
+              title="Synthetic Rug Cleaning"
+              description="Specialized cleaning for modern synthetic rugs using advanced techniques"
+            />
+          </a>
+          <a href="/services/antique-rug-cleaning/" className="block h-full group">
+            <ServiceCard
+              icon={Award}
+              title="Antique Rug Cleaning"
+              description="Delicate handling and restoration of vintage and antique rugs"
+            />
+          </a>
+          <a href="/services/hand-knotted-rug-cleaning/" className="block h-full group">
+            <ServiceCard
+              icon={Gem}
+              title="Hand-Knotted Rug Cleaning"
+              description="Meticulous cleaning of handcrafted luxury rugs"
+            />
+          </a>
+          <a href="/services/rug-stain-removal/" className="block h-full group">
+            <ServiceCard
+              icon={Droplets}
+              title="Rug Stain Removal"
+              description="Professional spot and stain treatment for all rug types"
+            />
+          </a>
         </div>
         <div className="mt-12 text-center">
           <Button size="lg" asChild className="bg-blue-900 hover:bg-blue-900">
-            <a href="/services">View All Services</a>
+            <a href="/services/">View All Services</a>
           </Button>
         </div>
       </div>
