@@ -41,12 +41,14 @@ const order = [
 
 const orderedServices = order
   .map((id) => {
-    const service = services.find((s) => s.id === id);
+    const service = services.find(
+      (s: (typeof services)[number]) => s.id === id,
+    );
     return service
       ? { ...service.data, id: service.id, icon: iconMap[id] }
       : null;
   })
-  .filter(Boolean);
+  .filter((s): s is NonNullable<typeof s> => !!s);
 ---
 
 <section class="bg-white py-24">

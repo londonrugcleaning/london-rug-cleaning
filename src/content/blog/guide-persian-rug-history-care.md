@@ -36,4 +36,4 @@ At London Rug Cleaning, we use traditional immersion washing techniques. We gent
 
 A well-maintained Persian rug can appreciate in value over time. By investing in professional care, you are protecting not just a decor item, but a financial and historical asset.
 
-**Do you have an antique Persian rug that needs attention?** [Schedule a consultation with our experts.](/contact)
+**Do you have an antique Persian rug that needs attention?** [Schedule a consultation with our experts.](/contact/)

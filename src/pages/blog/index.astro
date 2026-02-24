@@ -1,11 +1,12 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-import { getCollection } from "astro:content";
+import { getCollection, type CollectionEntry } from "astro:content";
 import { Calendar, Tag, User, Clock } from "lucide-react";
 import OptimizedImage from "@/components/OptimizedImage.astro";
 
 const posts = (await getCollection("blog")).sort(
-  (a, b) => new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
+  (a: CollectionEntry<"blog">, b: CollectionEntry<"blog">) =>
+    new Date(b.data.date).valueOf() - new Date(a.data.date).valueOf(),
 );
 
 function calculateReadingTime(content: string) {
@@ -28,7 +29,7 @@ const schema = {
       url: "https://londonrugcleaning.co.uk/logo.png",
     },
   },
-  blogPost: posts.map((post) => ({
+  blogPost: posts.map((post: CollectionEntry<"blog">) => ({
     "@type": "BlogPosting",
     headline: post.data.title,
     datePublished: post.data.date,
