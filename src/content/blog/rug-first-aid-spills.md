@@ -40,4 +40,4 @@ It happens in slow motion: the glass of wine slips, the coffee cup tips over, or
 
 If the stain is stubborn, involves red dye (like wine), or is on a delicate silk or antique rug, **stop immediately and call us**. We have specialized treatments that can release stains without damaging the rug.
 
-[**Get Emergency Stain Removal Help**](/contact)
+[**Get Emergency Stain Removal Help**](/contact/)

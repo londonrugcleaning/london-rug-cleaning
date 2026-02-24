@@ -41,12 +41,14 @@ const order = [
 
 const orderedServices = order
   .map((id) => {
-    const service = services.find((s) => s.id === id);
+    const service = services.find(
+      (s: (typeof services)[number]) => s.id === id,
+    );
     return service
       ? { ...service.data, id: service.id, icon: iconMap[id] }
       : null;
   })
-  .filter(Boolean);
+  .filter((s): s is NonNullable<typeof s> => !!s);
 ---
 
 <section class="bg-white py-24">
@@ -63,13 +65,13 @@ const orderedServices = order
     <div class="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {
         orderedServices.map((service) => (
-          <div class="h-full">
+          <a href={`/services/${service.id}/`} class="block h-full group">
             <ServiceCard
               title={service.title}
               description={service.description}
               icon={service.icon}
             />
-          </div>
+          </a>
         ))
       }
     </div>

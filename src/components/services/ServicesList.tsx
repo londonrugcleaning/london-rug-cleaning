@@ -72,7 +72,7 @@ export const ServicesList = () => {
             {services.map((service) => (
                 <a
                     key={service.id}
-                    href={`/services/${service.id}`}
+                    href={`/services/${service.id}/`}
                     className="block h-full group"
                 >
                     <ServiceCard
