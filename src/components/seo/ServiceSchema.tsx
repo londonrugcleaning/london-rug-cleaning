@@ -38,7 +38,7 @@ export const ServiceSchema = ({
       "availability": "https://schema.org/InStock",
       "areaServed": areaServed,
       "priceSpecification": {
-        "@type": "PriceSpecification",
+        "@type": "UnitPriceSpecification",
         "minPrice": 20,
         "maxPrice": 30,
         "priceCurrency": "GBP",

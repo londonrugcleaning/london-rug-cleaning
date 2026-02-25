@@ -55,7 +55,7 @@ export const CombinedServiceSchema = ({
         offers: {
           '@type': 'Offer',
           priceSpecification: {
-            '@type': 'PriceSpecification',
+            '@type': 'UnitPriceSpecification',
             minPrice: 20,
             maxPrice: 30,
             priceCurrency: 'GBP',
