@@ -29,3 +29,4 @@ bun.lockb
 bun.lockb
 package-lock.json
 /.astro
+*.csv
